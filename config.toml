@@ -1,3 +1,55 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://nawo.to"
+languageCode = "ja"
+DefaultContentLanguage = "ja"
+title = "@nawo.to"
+theme = "anatole"
+publishDir = "docs"
+summarylength = 10
+enableEmoji = true
+
+# Enable Disqus
+disqusShortname = "nawoto"
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+[params]
+title = "@nawoto"
+author = "Nishimura Naoto"
+description = "Call me nawoto"
+profilePicture = "images/profile.jpg"
+keywords = ""
+favicon = "favicons/"
+customCss = []
+mainSections = ["post"]
+
+## Math settings
+[params.math]
+enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+[[params.socialIcons]]
+icon = "fa-twitter"
+title = "Twitter"
+url = "https://twitter.com/nawoto/"
+
+[[params.socialIcons]]
+icon = "fa-github"
+title = "GitHub"
+url = "https://github.com/nawoto/"
+
+[[params.socialIcons]]
+icon = "fab fa-speaker-deck"
+title = "SpeakerDeck"
+url = "https://speakerdeck.com/nawoto/"
+
+## Menu items
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
