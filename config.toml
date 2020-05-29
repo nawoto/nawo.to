@@ -40,7 +40,7 @@ title = "GitHub"
 url = "https://github.com/nawoto/"
 
 [[params.socialIcons]]
-icon = "fab fa-speaker-deck"
+icon = "fa-slideshare"
 title = "SpeakerDeck"
 url = "https://speakerdeck.com/nawoto/"
 
