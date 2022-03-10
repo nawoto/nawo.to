@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `@nawoto`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Nishimura Naoto`,
+      summary: `(a.k.a nawoto)`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `nawoto's official site`,
+    siteUrl: `https://nawo.to/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `nawoto`,
     },
   },
   plugins: [
