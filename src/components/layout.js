@@ -20,9 +20,26 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  const menu = (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Top</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+      <header className="global-header">
+        {header}
+        {menu}
+      </header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
