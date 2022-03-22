@@ -26,22 +26,22 @@ const TopPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle} className="font-Titillium">
       <Seo title="All posts" />
-      <div className="hover:bg-black hover:text-white">
-        <h1 className="text-3xl text-center tracking-widest font-medium py-4">LOG</h1>
+      <div className="boder-solid hover:bg-black hover:text-white">
+        <h1 className="border-y text-4xl text-center tracking-widest font-medium py-4 ">LOG</h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="border-solid border-y py-2">
               <article
-                className="post-list-item"
+                className="w-5/6 mx-auto"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <header>
-                  <h2>
+                <header className="py-4">
+                  <h2 className="font-medium text-2xl">
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
@@ -55,6 +55,9 @@ const TopPage = ({ data, location }) => {
                     }}
                     itemProp="description"
                   />
+                  <div className="boder-solid border py-2 my-2 text-center">
+                    <Link to={post.fields.slug}>READ MORE</Link>
+                  </div>
                 </section>
               </article>
             </li>
@@ -82,7 +85,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY/MM/DD")
           title
           description
         }
