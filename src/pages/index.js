@@ -24,9 +24,11 @@ const TopPage = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} className="font-Titillium">
       <Seo title="All posts" />
-      <Bio />
+      <div className="hover:bg-black hover:text-white">
+        <h1 className="text-3xl text-center tracking-widest font-medium py-4">LOG</h1>
+      </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -59,6 +61,7 @@ const TopPage = ({ data, location }) => {
           )
         })}
       </ol>
+      <Bio />
     </Layout>
   )
 }
