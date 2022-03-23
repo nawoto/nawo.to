@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 const Header = ({ title }) => {
     return (
         <header className="font-Titillium">
-            <div className="flex justify-around hover:bg-black hover:text-white">
-                <h3 className="font-black text-4xl tracking-widest text-justify">
+            <div className="hover:bg-black hover:text-white py-6">
+                <h3 className="font-black text-6xl tracking-widest text-center">
                     <Link to="/">{title}</Link>
                 </h3>
             </div>
