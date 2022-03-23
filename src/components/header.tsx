@@ -3,14 +3,14 @@ import { Link } from "gatsby"
 
 const Header = ({ title }) => {
     return (
-        <header className="font-Titillium">
+        <header>
             <div className="hover:bg-black hover:text-white py-6">
                 <h3 className="font-black text-6xl tracking-widest text-center">
                     <Link to="/">{title}</Link>
                 </h3>
             </div>
             <nav className="">
-                <ul className="grid grid-cols-2 divide-x boder-solid text-center">
+                <ul className="grid grid-cols-2 divide-x text-center">
                     <li className="border-y">
                         <Link to="/">TOP</Link>
                     </li>

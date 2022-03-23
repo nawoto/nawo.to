@@ -24,9 +24,9 @@ const TopPage = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle} className="font-Titillium">
+    <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <div className="boder-solid hover:bg-black hover:text-white">
+      <div className="hover:bg-black hover:text-white">
         <h1 className="border-y text-4xl text-center tracking-widest font-light py-4 ">LOG</h1>
       </div>
       <ol style={{ listStyle: `none` }}>
@@ -55,7 +55,7 @@ const TopPage = ({ data, location }) => {
                     }}
                     itemProp="description"
                   />
-                  <div className="boder-solid border py-2 my-2 text-center">
+                  <div className="border py-2 my-2 text-center">
                     <Link to={post.fields.slug}>READ MORE</Link>
                   </div>
                 </section>
