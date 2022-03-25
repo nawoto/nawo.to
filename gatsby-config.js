@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `@nawoto`,
     author: {
-      name: `Nishimura Naoto`,
-      summary: `(a.k.a nawoto)`,
+      name: `NISHIMURA Naoto`,
+      summary: `西村直人。おもに nawoto という名前でいろいろしています`,
     },
-    description: `nawoto's official site`,
+    description: `nawoto's presonal site`,
     siteUrl: `https://nawo.to/`,
     social: {
       twitter: `nawoto`,

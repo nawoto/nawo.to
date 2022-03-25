@@ -6,7 +6,7 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
@@ -31,26 +31,46 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
+    <div>
+      <h3 className="border-y font-medium text-2xl text-center tracking-widest uppercase">author</h3>
+      <div className="flex">
+          <div className="border h-25 w-25">
+            <StaticImage
+              className="rounded-full"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/profile-pic.png"
+              width={100}
+              height={100}
+              quality={95}
+              alt="Profile picture"
+            />
+          </div>
+        {author?.name && (
+        <div className="w-full max-h-25 p-1 border-b">
+          <p className="text-lg font-bold">{author.name}</p>
+          <p className="text-sm">{author.summary}</p>
+          <p className="text-sm text-right">
+            <Link to="/about" className="uppercase underline">read more</Link>
+          </p>
+        </div>
       )}
+      </div>
+      <div>
+        <ul className="text-center text-xl">
+          <li className="py-2 border-b">
+            <a href="https://twitter.com/nawoto">Twitter</a></li>
+          <li className="py-2 border-b">
+            <a href="https://github.com/nawoto/">Github</a>
+          </li>
+          <li className="py-2 border-b">
+            <a href="https://speakerdeck.com/nawoto">SpeakerDeck</a>
+          </li>
+          <li className="py-2 border-b">
+            <a href="https://www.instagram.com/nawoto/">Instagram</a>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
