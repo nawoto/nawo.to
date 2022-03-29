@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />        
       </article>
       <Bio />
-      <nav className="blog-post-nav">
+      <nav>
         <ul
           style={{
             display: `flex`,
