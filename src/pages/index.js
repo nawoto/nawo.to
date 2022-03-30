@@ -27,7 +27,7 @@ const TopPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <div className="hover:bg-black hover:text-white">
-        <h1 className="border-y text-4xl text-center tracking-widest font-light py-4 ">LOG</h1>
+        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 ">LOG</h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
