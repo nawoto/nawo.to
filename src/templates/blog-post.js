@@ -17,21 +17,22 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="prose"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+        <header className="p-2">
+          <h1 itemProp="headline" className="text-3xl font-bold">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-          className="px-4"
-        />        
+          className="prose px-4"
+        />
+        <footer>
+          <Bio />
+        </footer>
       </article>
-      <Bio />
       <nav>
         <ul
           style={{
