@@ -32,8 +32,8 @@ const Bio = () => {
 
   return (
     <div>
-      <h3 className="border-y font-medium text-2xl text-center tracking-widest uppercase">author</h3>
-      <div className="flex">
+      <h3 className="border-y font-medium text-2xl text-center tracking-widest uppercase hover-style">author</h3>
+      <div className="flex hover-style">
           <div className="border h-25 w-25">
             <StaticImage
               className="rounded-full"
@@ -58,15 +58,15 @@ const Bio = () => {
       </div>
       <div>
         <ul className="text-center text-xl">
-          <li className="py-2 border-b">
+          <li className="py-2 border-b hover-style">
             <a href="https://twitter.com/nawoto">Twitter</a></li>
-          <li className="py-2 border-b">
+          <li className="py-2 border-b hover-style">
             <a href="https://github.com/nawoto/">Github</a>
           </li>
-          <li className="py-2 border-b">
+          <li className="py-2 border-b hover-style">
             <a href="https://speakerdeck.com/nawoto">SpeakerDeck</a>
           </li>
-          <li className="py-2 border-b">
+          <li className="py-2 border-b hover-style">
             <a href="https://www.instagram.com/nawoto/">Instagram</a>
           </li>
         </ul>

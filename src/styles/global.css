@@ -6,6 +6,13 @@
 
 @layer base {
     body {
-        @apply font-Titillium border-solid;
+        @apply font-Titillium border-solid bg-white text-black;
     }
+}
+
+@layer components {
+    .hover-style {
+        @apply hover:bg-black hover:text-white;
+    }
+
 }
