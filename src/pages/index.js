@@ -7,17 +7,20 @@ import Seo from "../components/seo"
 
 const TopPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMarkdownRemark.nodes.filter(
+    node => node.fields.collection === `blog`
+  )
+  const articles = data.allMarkdownRemark.nodes.filter(
+    node => node.fields.collection === `article`
+  )
 
-  if (posts.length === 0) {
+  if (posts.length === 0 || articles.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
+        <Seo />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No contents found.
         </p>
       </Layout>
     )
@@ -25,9 +28,9 @@ const TopPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      <Seo />
       <div className="hover-style">
-        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 ">LOG</h1>
+        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase">log</h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -55,8 +58,47 @@ const TopPage = ({ data, location }) => {
                     }}
                     itemProp="description"
                   />
-                  <div className="border py-2 my-2 text-center">
-                    <Link to={post.fields.slug}>READ MORE</Link>
+                  <div className="border py-2 my-2 text-center uppercase">
+                    <Link to={post.fields.slug}>read more</Link>
+                  </div>
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </ol>
+
+      <div className="hover-style">
+        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase">texts</h1>
+      </div>
+      <ol style={{ listStyle: `none` }}>
+        {articles.map(article => {
+          const title = article.frontmatter.title || article.fields.slug
+
+          return (
+            <li key={article.fields.slug} className="border-solid border-y py-2 hover-style">
+              <article
+                className="w-5/6 mx-auto"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header className="py-4">
+                  <h2 className="font-medium text-2xl">
+                    <Link to={article.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <small>{article.frontmatter.date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: article.frontmatter.description || article.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                  <div className="border py-2 my-2 text-center uppercase">
+                    <Link to={article.fields.slug}>read more</Link>
                   </div>
                 </section>
               </article>
@@ -82,6 +124,7 @@ export const pageQuery = graphql`
       nodes {
         excerpt
         fields {
+          collection
           slug
         }
         frontmatter {

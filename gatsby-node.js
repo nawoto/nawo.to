@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+              collection
             }
           }
         }
@@ -34,12 +35,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.allMarkdownRemark.nodes.filter(
+    node => node.fields.collection === `blog`
+  )
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
-
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
@@ -56,6 +58,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  const articles = result.data.allMarkdownRemark.nodes.filter(
+    node => node.fields.collection === `article`
+  )
+
+  if (articles.length > 0) {
+    articles.forEach((article, index) => {
+      const previousArticleId = index === 0 ? null : articles[index - 1].id
+      const nextArticleId = index === articles.length -1 ? null : articles[index + 1].id
+
+      createPage({
+        path: article.fields.slug,
+        component: blogPost,
+        context: {
+          id: article.id,
+          previousArticleId,
+          nextArticleId,
+        },
+      })
+
+      console.log(article.fields.slug)
+    })
+  }
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -63,6 +88,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    const parent = getNode(node.parent)
+        
+    createNodeField({
+      node,
+      name: `collection`,
+      value: parent.sourceInstanceName,
+    })
 
     createNodeField({
       name: `slug`,
