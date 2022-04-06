@@ -65,20 +65,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (articles.length > 0) {
     articles.forEach((article, index) => {
-      const previousArticleId = index === 0 ? null : articles[index - 1].id
-      const nextArticleId = index === articles.length -1 ? null : articles[index + 1].id
+      const previousPostId = index === 0 ? null : articles[index - 1].id
+      const nextPostId = index === articles.length -1 ? null : articles[index + 1].id
 
       createPage({
         path: article.fields.slug,
         component: blogPost,
         context: {
           id: article.id,
-          previousArticleId,
-          nextArticleId,
+          previousPostId,
+          nextPostId,
         },
       })
-
-      console.log(article.fields.slug)
     })
   }
 }
@@ -89,7 +87,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     const parent = getNode(node.parent)
-        
+    const slug = parent.sourceInstanceName === `article` ? `/articles${value}` : value
+
     createNodeField({
       node,
       name: `collection`,
@@ -99,7 +98,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
   }
 }
