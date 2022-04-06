@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "nawo.to",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "nawoto's personal site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "NISHIMURA Naoto <nishimura@nawo.to>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/nawoto/nawo.to/issues"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.2",
@@ -38,14 +38,14 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.23"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://nawo.to",
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/nawoto/nawo.to.git"
   },
   "scripts": {
     "build": "gatsby build",
