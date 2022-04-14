@@ -32,9 +32,9 @@ const Bio = () => {
 
   return (
     <div>
-      <h3 className="border-y font-medium text-2xl text-center tracking-widest uppercase hover-style">author</h3>
-      <div className="flex hover-style">
-          <div className="border h-25 w-25">
+      <h3 className="border-y font-medium text-2xl text-center tracking-widest uppercase hover-style md:hidden">author</h3>
+      <div className="flex hover-style md:grid md:grid-cols-1">
+          <div className="border h-25 w-25 md:mx-auto md:border-none">
             <StaticImage
               className="rounded-full"
               layout="fixed"
@@ -47,17 +47,17 @@ const Bio = () => {
             />
           </div>
         {author?.name && (
-        <div className="w-full max-h-25 p-1 border-b">
+        <div className="w-full max-h-25 p-1 border-b md:text-center">
           <p className="text-lg font-bold">{author.name}</p>
           <p className="text-sm">{author.summary}</p>
-          <p className="text-sm text-right">
+          <p className="text-sm text-right md:text-center">
             <Link to="/about" className="uppercase underline">read more</Link>
           </p>
         </div>
       )}
       </div>
       <div>
-        <ul className="text-center text-xl">
+        <ul className="text-center text-sm">
           <li className="py-2 border-b hover-style">
             <a href="https://twitter.com/nawoto">Twitter</a></li>
           <li className="py-2 border-b hover-style">

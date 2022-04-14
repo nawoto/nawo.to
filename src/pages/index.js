@@ -18,7 +18,6 @@ const TopPage = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo />
-        <Bio />
         <p>
           No contents found.
         </p>
@@ -30,7 +29,7 @@ const TopPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo />
       <div className="hover-style">
-        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase">log</h1>
+        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase md:border-none">log</h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -106,7 +105,6 @@ const TopPage = ({ data, location }) => {
           )
         })}
       </ol>
-      <Bio />
     </Layout>
   )
 }
