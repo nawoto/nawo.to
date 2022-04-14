@@ -29,9 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
           className="prose px-4"
         />
-        <footer>
-          <Bio />
-        </footer>
+        <footer />
       </article>
       <nav>
         <ul
