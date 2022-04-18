@@ -58,7 +58,8 @@ const Bio = () => {
       <div>
         <ul className="text-center text-sm">
           <li className="py-2 border-b hover-style">
-            <a href="https://twitter.com/nawoto">Twitter</a></li>
+            <a href="https://twitter.com/nawoto">Twitter</a>
+          </li>
           <li className="py-2 border-b hover-style">
             <a href="https://github.com/nawoto/">Github</a>
           </li>
