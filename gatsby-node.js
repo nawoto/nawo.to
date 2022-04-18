@@ -66,7 +66,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (articles.length > 0) {
     articles.forEach((article, index) => {
       const previousPostId = index === 0 ? null : articles[index - 1].id
-      const nextPostId = index === articles.length -1 ? null : articles[index + 1].id
+      const nextPostId =
+        index === articles.length - 1 ? null : articles[index + 1].id
 
       createPage({
         path: article.fields.slug,
@@ -87,7 +88,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     const parent = getNode(node.parent)
-    const slug = parent.sourceInstanceName === `article` ? `/texts${value}` : value
+    const slug =
+      parent.sourceInstanceName === `article` ? `/texts${value}` : value
 
     createNodeField({
       node,

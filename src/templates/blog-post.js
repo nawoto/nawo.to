@@ -15,12 +15,11 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article itemScope itemType="http://schema.org/Article">
         <header className="p-2">
-          <h1 itemProp="headline" className="text-3xl font-bold">{post.frontmatter.title}</h1>
+          <h1 itemProp="headline" className="text-3xl font-bold">
+            {post.frontmatter.title}
+          </h1>
           <p>{post.frontmatter.date}</p>
         </header>
         <section

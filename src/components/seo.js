@@ -72,12 +72,12 @@ const Seo = ({ description, lang, meta, title, link }) => {
         },
       ].concat(meta)}
       link={[
-        { rel: `me`, href: `https://twitter.com/nawoto"`},
-        { rel: `me`, href: `https://github.com/nawoto/`},
-        { rel: `me`, href: `https://speakerdeck.com/nawoto`},
-        { rel: `me`, href: `https://www.instagram.com/nawoto/`},
-        { rel: `me`, href: `https://www.facebook.com/nishimura.nawoto`},
-        { rel: `me`, href: `https://www.amazon.co.jp/~/e/B00B46MLPG`}
+        { rel: `me`, href: `https://twitter.com/nawoto"` },
+        { rel: `me`, href: `https://github.com/nawoto/` },
+        { rel: `me`, href: `https://speakerdeck.com/nawoto` },
+        { rel: `me`, href: `https://www.instagram.com/nawoto/` },
+        { rel: `me`, href: `https://www.facebook.com/nishimura.nawoto` },
+        { rel: `me`, href: `https://www.amazon.co.jp/~/e/B00B46MLPG` },
       ].concat(link)}
     />
   )

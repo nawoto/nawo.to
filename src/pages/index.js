@@ -17,9 +17,7 @@ const TopPage = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo />
-        <p>
-          No contents found.
-        </p>
+        <p>No contents found.</p>
       </Layout>
     )
   }
@@ -28,21 +26,26 @@ const TopPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo />
       <div className="hover-style">
-        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase md:border-none">log</h1>
+        <h1 className="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
+          log
+        </h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug} className="border-solid border-y py-2 hover-style">
+            <li
+              key={post.fields.slug}
+              className="hover-style border-y border-solid py-2"
+            >
               <article
-                className="w-5/6 mx-auto"
+                className="mx-auto w-5/6"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header className="py-4">
-                  <h2 className="font-medium text-2xl">
+                  <h2 className="text-2xl font-medium">
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
@@ -56,7 +59,7 @@ const TopPage = ({ data, location }) => {
                     }}
                     itemProp="description"
                   />
-                  <div className="border py-2 my-2 text-center uppercase">
+                  <div className="my-2 border py-2 text-center uppercase">
                     <Link to={post.fields.slug}>read more</Link>
                   </div>
                 </section>
@@ -67,21 +70,26 @@ const TopPage = ({ data, location }) => {
       </ol>
 
       <div className="hover-style">
-        <h1 className="border-y text-4xl text-center tracking-widest font-semibold py-4 uppercase">texts</h1>
+        <h1 className="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest">
+          texts
+        </h1>
       </div>
       <ol style={{ listStyle: `none` }}>
         {articles.map(article => {
           const title = article.frontmatter.title || article.fields.slug
 
           return (
-            <li key={article.fields.slug} className="border-solid border-y py-2 hover-style">
+            <li
+              key={article.fields.slug}
+              className="hover-style border-y border-solid py-2"
+            >
               <article
-                className="w-5/6 mx-auto"
+                className="mx-auto w-5/6"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header className="py-4">
-                  <h2 className="font-medium text-2xl">
+                  <h2 className="text-2xl font-medium">
                     <Link to={article.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
@@ -91,11 +99,12 @@ const TopPage = ({ data, location }) => {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: article.frontmatter.description || article.excerpt,
+                      __html:
+                        article.frontmatter.description || article.excerpt,
                     }}
                     itemProp="description"
                   />
-                  <div className="border py-2 my-2 text-center uppercase">
+                  <div className="my-2 border py-2 text-center uppercase">
                     <Link to={article.fields.slug}>read more</Link>
                   </div>
                 </section>

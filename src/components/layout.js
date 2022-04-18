@@ -11,8 +11,10 @@ const Layout = ({ location, title, children }) => {
       <Header title={title} />
       <main>
         <div className="md:flex md:flex-row">
-          <div className="md:basis-3/4 md:order-last">{children}</div>
-          <div className="md:basis-1/4 border-r"><Bio /></div>
+          <div className="md:order-last md:basis-3/4">{children}</div>
+          <div className="border-r md:basis-1/4">
+            <Bio />
+          </div>
         </div>
       </main>
       <footer>
