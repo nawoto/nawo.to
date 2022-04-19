@@ -15,10 +15,10 @@ const Header = ({ title }) => {
             <Link to="/">TOP</Link>
           </li>
           <li className="hover-style border-y">
-            <Link to="/">LOG</Link>
+            <Link to="/logs">LOG</Link>
           </li>
           <li className="hover-style border-b md:border-y">
-            <Link to="/">TEXTS</Link>
+            <Link to="/texts">TEXTS</Link>
           </li>
           <li className="hover-style border-b md:border-y">
             <Link to="/about">ABOUT</Link>

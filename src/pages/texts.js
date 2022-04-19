@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const LogsPage = ({ data, location }) => {
+const TextsPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -22,10 +22,10 @@ const LogsPage = ({ data, location }) => {
       <Seo />
       <div className="hover-style py-4 text-center">
         <h1 className="text-4xl font-semibold uppercase tracking-widest">
-          log
+          texts
         </h1>
         <p className="text-sm text-gray-500">
-          日々のなんとなくを書き留めてます✍️
+          不定期に思いついたことなどを文章にまとめています✍️
         </p>
       </div>
       <ol style={{ listStyle: `none` }}>
@@ -70,7 +70,7 @@ const LogsPage = ({ data, location }) => {
   )
 }
 
-export default LogsPage
+export default TextsPage
 
 export const pageQuery = graphql`
   query {
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "blog" } } }
+      filter: { fields: { collection: { eq: "article" } } }
     ) {
       nodes {
         excerpt
