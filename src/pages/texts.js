@@ -11,7 +11,7 @@ const TextsPage = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo />
+        <Seo title="TEXTS"/>
         <p>No contents found.</p>
       </Layout>
     )
@@ -19,7 +19,7 @@ const TextsPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo />
+      <Seo title="TEXTS"/>
       <div className="hover-style py-4 text-center">
         <h1 className="text-4xl font-semibold uppercase tracking-widest">
           texts
