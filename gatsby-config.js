@@ -5,7 +5,7 @@ module.exports = {
       name: `NISHIMURA Naoto`,
       summary: `西村直人。おもに nawoto という名前でいろいろしています`,
     },
-    description: `nawoto's presonal site`,
+    description: `NISHIMURA(@nawoto) write some texts about Software Development, Life and more`,
     siteUrl: `https://nawo.to/`,
     social: {
       twitter: `nawoto`,
@@ -120,7 +120,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Nawoto's personal site`,
+        name: `nawo.to`,
         short_name: `@Nawoto`,
         start_url: `/`,
         background_color: `#ffffff`,

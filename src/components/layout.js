@@ -17,7 +17,7 @@ const Layout = ({ location, title, children }) => {
           </div>
         </div>
       </main>
-      <footer>
+      <footer className="border border-t text-center text-sm">
         © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
       </footer>
     </div>
