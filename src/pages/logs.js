@@ -11,7 +11,7 @@ const LogsPage = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="LOG"/>
+        <Seo title="LOG" />
         <p>No contents found.</p>
       </Layout>
     )
@@ -19,7 +19,7 @@ const LogsPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="LOG"/>
+      <Seo title="LOG" />
       <div className="hover-style py-4 text-center">
         <h1 className="text-4xl font-semibold uppercase tracking-widest">
           log
