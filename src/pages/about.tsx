@@ -9,12 +9,12 @@ const About = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="About me" />
-      <div className="">
-        <h1 className="">Naoto Nishimura</h1>
+      <Seo title={`About Me | ${siteTitle}`} />
+      <div>
+        <h1>Naoto Nishimura</h1>
         <p>Welcome to About Page.</p>
         <p>TBD.</p>
-        <Link to="/">Topへ</Link>
+        <Link to="/">Top</Link>
       </div>
     </Layout>
   )

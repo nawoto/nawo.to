@@ -16,7 +16,7 @@ const TopPage = ({ data, location }) => {
   if (posts.length === 0 || articles.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo />
+        <Seo title={siteTitle} />
         <p>No contents found.</p>
       </Layout>
     )
@@ -24,10 +24,10 @@ const TopPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo />
+      <Seo title={siteTitle} />
       <div className="hover-style">
         <h1 className="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
-          log
+          <Link to="/logs">log</Link>
         </h1>
       </div>
       <ol style={{ listStyle: `none` }}>
@@ -71,7 +71,7 @@ const TopPage = ({ data, location }) => {
 
       <div className="hover-style">
         <h1 className="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest">
-          texts
+          <Link to="/texts">texts</Link>
         </h1>
       </div>
       <ol style={{ listStyle: `none` }}>
