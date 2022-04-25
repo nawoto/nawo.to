@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { LikeButton } from "@lyket/react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -27,7 +28,13 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
           className="prose px-4 md:mx-10 md:max-w-fit"
         />
-        <footer />
+        <footer className="border-y text-center text-xl">
+          <LikeButton
+            id={post.id}
+            namespace={post.fields.collection}
+            component={LikeButton.templates.Twitter}
+          />
+        </footer>
       </article>
       <nav>
         <ul
@@ -76,6 +83,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        collection
+      }
       frontmatter {
         title
         date(formatString: "YYYY/MM/DD")
