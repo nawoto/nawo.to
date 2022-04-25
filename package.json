@@ -8,6 +8,7 @@
     "url": "https://github.com/nawoto/nawo.to/issues"
   },
   "dependencies": {
+    "@lyket/react": "^1.4.8",
     "@tailwindcss/typography": "^0.5.2",
     "gatsby": "^4.9.0",
     "gatsby-plugin-feed": "^4.9.0",
