@@ -37,7 +37,7 @@ const Bio = () => {
       <div className="hover-style flex md:grid md:grid-cols-1">
         <div className="h-25 w-25 border md:mx-auto md:border-none">
           <StaticImage
-            className="rounded-full"
+            className="z-10 overflow-hidden rounded-full"
             layout="fixed"
             formats={["auto", "webp", "avif"]}
             src="../images/profile-pic.png"
