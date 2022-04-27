@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `@nawoto`,
+    title: `#nawoto`,
     author: {
       name: `NISHIMURA Naoto`,
       summary: `西村直人。おもに nawoto という名前でいろいろしています`,
@@ -119,7 +119,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "@nawoto RSS Feed",
+            title: "#nawoto",
           },
         ],
       },
@@ -128,7 +128,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `nawo.to`,
-        short_name: `@Nawoto`,
+        short_name: `#nawoto`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
