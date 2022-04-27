@@ -14,5 +14,4 @@
     .hover-style {
         @apply hover:bg-black hover:text-white;
     }
-
 }
