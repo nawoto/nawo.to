@@ -53,27 +53,31 @@ const BlogPostTemplate = ({ data, location }) => {
         </footer>
       </article>
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+        <ul className="my-5 grid grid-cols-2 divide-x border-y text-center text-2xl uppercase">
+          <li className="hover-style p-3">
+            {previous ? (
+              <Link
+                to={previous.fields.slug}
+                title={previous.frontmatter.title}
+                rel="prev"
+              >
+                prev
               </Link>
+            ) : (
+              <span className="text-gray-400">prev</span>
             )}
           </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+          <li className="hover-style p-3">
+            {next ? (
+              <Link
+                to={next.fields.slug}
+                title={next.frontmatter.title}
+                rel="next"
+              >
+                next
               </Link>
+            ) : (
+              <span className="text-gray-400">next</span>
             )}
           </li>
         </ul>
