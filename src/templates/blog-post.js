@@ -1,6 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { LikeButton } from "@lyket/react"
+import {
+  HatenaIcon,
+  HatenaShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -8,12 +14,16 @@ import Seo from "../components/seo"
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteUrl = data.site.siteMetadata?.siteUrl
   const { previous, next } = data
+
+  const pageTitle = `${post.frontmatter.title} | ${siteTitle}`
+  const shareUrl = `${siteUrl}${post.fields.slug}`
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
-        title={post.frontmatter.title}
+        title={pageTitle}
         description={post.frontmatter.description || post.excerpt}
       />
       <article itemScope itemType="http://schema.org/Article">
@@ -26,9 +36,15 @@ const BlogPostTemplate = ({ data, location }) => {
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-          className="prose px-4 md:mx-10 md:max-w-fit"
+          className="prose px-4 py-3 md:mx-10 md:max-w-fit"
         />
-        <footer className="border-y text-center text-xl">
+        <footer className="mx-2 md:mx-14">
+          <TwitterShareButton url={shareUrl} title={pageTitle}>
+            <TwitterIcon round={true} size={28} />
+          </TwitterShareButton>
+          <HatenaShareButton url={shareUrl} title={pageTitle}>
+            <HatenaIcon round={true} size={28} />
+          </HatenaShareButton>
           <LikeButton
             id={post.id}
             namespace={post.fields.collection}
@@ -76,6 +92,7 @@ export const pageQuery = graphql`
   ) {
     site {
       siteMetadata {
+        siteUrl
         title
       }
     }
@@ -84,6 +101,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       fields {
+        slug
         collection
       }
       frontmatter {
