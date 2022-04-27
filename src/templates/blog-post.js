@@ -10,6 +10,7 @@ import {
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Comments from "../components/comments"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -50,6 +51,8 @@ const BlogPostTemplate = ({ data, location }) => {
             namespace={post.fields.collection}
             component={LikeButton.templates.Twitter}
           />
+
+          <Comments />
         </footer>
       </article>
       <nav>
