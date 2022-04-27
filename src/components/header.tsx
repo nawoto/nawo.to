@@ -10,18 +10,18 @@ const Header = ({ title }) => {
         </h3>
       </div>
       <nav>
-        <ul className="grid grid-cols-2 divide-x text-center text-lg md:grid-cols-4">
+        <ul className="grid grid-cols-2 divide-x text-center text-lg uppercase md:grid-cols-4">
           <li className="hover-style border-y">
-            <Link to="/">TOP</Link>
+            <Link to="/">top</Link>
           </li>
           <li className="hover-style border-y">
-            <Link to="/logs">LOG</Link>
+            <Link to="/logs">log</Link>
           </li>
           <li className="hover-style border-b md:border-y">
-            <Link to="/texts">TEXTS</Link>
+            <Link to="/texts">texts</Link>
           </li>
           <li className="hover-style border-b md:border-y">
-            <Link to="/about">ABOUT</Link>
+            <Link to="/about">about</Link>
           </li>
         </ul>
       </nav>
