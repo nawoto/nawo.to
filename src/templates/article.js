@@ -12,7 +12,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Comments from "../components/comments"
 
-const BlogPostTemplate = ({ data, location }) => {
+const ArticleTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const siteUrl = data.site.siteMetadata?.siteUrl
@@ -39,8 +39,8 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
           className="prose px-4 py-3 md:mx-10 md:max-w-fit"
         />
-        <footer className="mx-2 md:mx-14">
-          <TwitterShareButton url={shareUrl} title={pageTitle}>
+        <footer className="md:mx-10">
+          <TwitterShareButton url={shareUrl} title={pageTitle} className="mx-4">
             <TwitterIcon round={true} size={28} />
           </TwitterShareButton>
           <HatenaShareButton url={shareUrl} title={pageTitle}>
@@ -51,7 +51,6 @@ const BlogPostTemplate = ({ data, location }) => {
             namespace={post.fields.collection}
             component={LikeButton.templates.Twitter}
           />
-
           <Comments />
         </footer>
       </article>
@@ -89,7 +88,7 @@ const BlogPostTemplate = ({ data, location }) => {
   )
 }
 
-export default BlogPostTemplate
+export default ArticleTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
