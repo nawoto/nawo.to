@@ -15,3 +15,8 @@
         @apply hover:bg-black hover:text-white;
     }
 }
+
+/* for Utterances(http://utteranc.es) */
+.utterances {
+    margin-left: 0px !important;
+}
