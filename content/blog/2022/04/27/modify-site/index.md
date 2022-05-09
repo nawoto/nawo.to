@@ -10,6 +10,7 @@ description:
 - シェアボタン
 - いいねボタン
 - コメント機能
+- OGP 画像
 
 [Gatsby](https://gatsbyjs.com/)だと plugin が豊富にあるので利用していく。
 あと、先人たちがだいたい何かしらやってくれているので、調べながら実装。
@@ -50,6 +51,31 @@ React のコンポーネントもあったけど、数行程度のコード量�
 ↑ な感じでポチポチと必要な要素を配置しながら、いろんなサイトを参考にしてみた。
 最近だと、シェアとかいいね！とかは記事のタイトル部分に配置してたりするサイトが増えた気がする。(特に記事を投稿する系のサービス)
 たしかに、タイトルと概要だけ読んでシュっとボタンを押して拡散する方がサービスの観点では良さそうだけど、個人サイトなんで一応、文章を読んで「これは良さそう！！」と思って押してもらった方が嬉しいので、ひとまずページ下部にボタンやコメント類を配置するオールドスタイルな感じにしてみた 😄
+
+## Open Graph Image をつけた
+
+シェアボタンをつけたので、OGP 画像も設定。  
+画像にどんなフォントでテキストを入れるかで一番悩んでしまった。
+Graffiti っぽいフォントにしたかったので、[Molle](https://fonts.google.com/specimen/Molle)を使った。
+他にも Google Fonts だとここら辺がいい感じ。(そのうちスライドなんかで使おう)
+
+- https://fonts.google.com/specimen/Finger+Paint
+- https://fonts.google.com/specimen/Moon+Dance
+- https://fonts.google.com/specimen/Molle
+- https://fonts.google.com/specimen/Sedgwick+Ave
+- https://fonts.google.com/specimen/Sedgwick+Ave+Display
+
+画像は、[Pablo](https://pablo.buffer.com/) あたりとを使うと良さげなのが作れそうだけど、シュっと自前で用意。  
+サイズを 1024x512 で作成して、解像度を 96x96 にしてみた。
+
+設定の仕方は、ここら辺を参考にさせてもらった。
+
+- https://juliangaramendy.dev/blog/custom-open-graph-images-in-gatsby-blog
+
+あとは Twitter と Facebook あたりでちゃんと表示されているかを確認。
+
+- https://cards-dev.twitter.com/validator
+- https://developers.facebook.com/tools/debug/
 
 ## まだまだお手入れの道は続く
 
