@@ -1,5 +1,5 @@
 ---
-title: 🚧 サイトのお手入れ ⛏️
+title: サイトのお手入れ 🌱🚿
 date: "2022-04-27T08:46:09.664Z"
 description:
 ---
@@ -56,7 +56,10 @@ React のコンポーネントもあったけど、数行程度のコード量�
 ひとまず、ふつうのサイトっぽい機能は実装できたけど、まだまだ手を入れたいところは次々と出てくる。
 ひとまず忘れないようにメモして、あとでちまちまやっていこう。
 
-- OGP 画像つけたい。Twitter にシェアするときに残念な気持ちになる
-- IndieWeb 化したい。[IndieWebfy.Me](https://indiewebify.me/)
+- ~~OGP 画像つけたい。Twitter にシェアするときに残念な気持ちになる~~
+  - つけた
+- GA4 をいれる
+- Google Search Console に登録する
 - [Font Awesome](https://fontawesome.com/) でアイコンをつけたい
 - 🍔 ハンバーガーメニューつけたい。大したメニューのコンテンツないけどなんとなく
+- IndieWebify したい。[IndieWebify.Me](https://indiewebify.me/)
