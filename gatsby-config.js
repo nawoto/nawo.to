@@ -119,7 +119,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "@nawoto",
+            title: "#nawoto",
           },
         ],
       },
@@ -127,8 +127,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `nawo.to`,
-        short_name: `@nawoto`,
+        name: `#nawoto`,
+        short_name: `#nawoto`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
