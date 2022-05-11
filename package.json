@@ -8,6 +8,10 @@
     "url": "https://github.com/nawoto/nawo.to/issues"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@lyket/react": "^1.4.8",
     "@tailwindcss/typography": "^0.5.2",
     "gatsby": "^4.9.0",

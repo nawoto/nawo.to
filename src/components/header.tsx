@@ -5,7 +5,7 @@ const Header = ({ title }) => {
   return (
     <header>
       <div className="hover-style py-6">
-        <h3 className="text-center text-6xl font-black tracking-widest">
+        <h3 className="text-center text-6xl font-black tracking-widest md:text-8xl">
           <Link to="/">{title}</Link>
         </h3>
       </div>
