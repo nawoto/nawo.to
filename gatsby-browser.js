@@ -4,6 +4,9 @@ import "./src/styles/global.css"
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
 
+// CSS style for Font Awesome
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
 // Support like button (by Lyket)
 import { Provider } from "@lyket/react"
 const React = require("react")
