@@ -45,7 +45,7 @@ const TopPage = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 <header className="py-4">
-                  <h2 className="text-2xl font-medium">
+                  <h2 className="text-2xl font-bold">
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
