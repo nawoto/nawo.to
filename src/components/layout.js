@@ -7,14 +7,17 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-    <div className="" data-is-root-path={isRootPath}>
+    <div data-is-root-path={isRootPath}>
       <Header title={title} />
       <main>
         <div className="md:flex md:flex-row">
-          <div className="md:order-last md:basis-3/4">{children}</div>
+          {!isRootPath && (
+            <div className="md:order-last md:basis-3/4">{children}</div>
+          )}
           <div className="border-r md:basis-1/4">
             <Bio />
           </div>
+          {isRootPath && <div className="md:basis-3/4">{children}</div>}
         </div>
       </main>
       <footer className="border-t text-center text-sm">
