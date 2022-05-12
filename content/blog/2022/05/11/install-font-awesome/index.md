@@ -4,7 +4,7 @@ date: "2022-05-11T06:50:21.987Z"
 description:
 ---
 
-SNS とかのリンクは、ふつうにアイコンで良いと思うので定番の [Font Awesome](https://fontawesome.com/) を導入した。
+自分の SNS アカウントへのリンクは、アイコンのみで良さそうなので [Font Awesome](https://fontawesome.com/) を導入した。
 (個人的にはタイポグラフィなサイトが好みなので、文字多めな傾向はある。)
 
 ## 必要な Package をインストール
