@@ -22,7 +22,7 @@ const About = ({ data, location }) => {
       <Seo title={`About Me | ${siteTitle}`} />
       <header>
         <div className="py-6">
-          <h3 className="font-bolt text-center text-xl uppercase tracking-widest text-gray-500 md:text-4xl">
+          <h3 className="text-center text-6xl font-black uppercase tracking-widest text-gray-500 md:text-8xl">
             readme
           </h3>
         </div>
@@ -112,16 +112,8 @@ const About = ({ data, location }) => {
         </section>
 
         <section className="py-3 text-xs">
-          <h3 className="font-bold">@@@</h3>
+          <h3 className="font-bold text-gray-500">@@@</h3>
           <p>
-            <p itemProp="affiliation" className="md:text-sm">
-              一般社団法人アジャイルチームを支える会
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              代表理事
-            </p>
-          </p>
-          <p className="pt-2">
             <p itemID="affiliation" className="md:text-sm">
               株式会社エス・エム・エス
             </p>
@@ -130,6 +122,14 @@ const About = ({ data, location }) => {
             </p>
             <p itemProp="jobTitle" className="pl-2">
               スクラムマスター
+            </p>
+          </p>
+          <p className="pt-2">
+            <p itemProp="affiliation" className="md:text-sm">
+              一般社団法人アジャイルチームを支える会
+            </p>
+            <p itemProp="jobTitle" className="pl-2">
+              代表理事
             </p>
           </p>
         </section>
