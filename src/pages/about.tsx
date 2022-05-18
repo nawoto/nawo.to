@@ -19,7 +19,7 @@ const About = ({ data, location }) => {
 
   return (
     <div>
-      <Seo title={`About Me | ${siteTitle}`} />
+      <Seo title={`About | ${siteTitle}`} />
       <header>
         <div className="py-6">
           <h3 className="text-center text-6xl font-black uppercase tracking-widest text-gray-500 md:text-8xl">
