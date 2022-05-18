@@ -62,7 +62,7 @@ const Bio = () => {
             <p className="text-sm md:px-10 md:text-left">{author.summary}</p>
             <p className="text-right text-sm md:text-center">
               <Link to="/about" className="uppercase underline">
-                read more
+                read me
               </Link>
             </p>
             <ul className="flex flex-row justify-end pt-2 text-2xl md:justify-center">
