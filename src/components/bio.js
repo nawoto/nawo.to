@@ -43,10 +43,11 @@ const Bio = () => {
       <h3 className="hover-style border-y text-center text-2xl font-medium uppercase tracking-widest md:hidden">
         author
       </h3>
-      <div className="hover-style flex md:grid md:grid-cols-1">
+      <div className="hover-style h-card flex md:grid md:grid-cols-1">
         <div className="border md:mx-auto md:border-none md:pt-1">
           <StaticImage
             className="z-10 overflow-hidden rounded-full"
+            imgClassName="u-photo"
             layout="fixed"
             formats={["auto", "webp", "avif"]}
             src="../images/profile-pic.png"
@@ -58,8 +59,16 @@ const Bio = () => {
         </div>
         {author?.name && (
           <div className="w-full border-b p-1 md:text-center">
-            <p className="text-lg font-bold">{author.name}</p>
-            <p className="text-sm md:px-10 md:text-left">{author.summary}</p>
+            <p className="text-lg font-bold">
+              <Link to="/" className="p-name u-url">
+                {author.name}
+              </Link>
+            </p>
+            <p className="text-sm md:px-10 md:text-left">
+              <span className="p-name">西村直人</span>。 おもに
+              <span className="p-nickname">nawoto</span> という名前で
+              <span className="p-note">いろいろしています</span>
+            </p>
             <p className="text-right text-sm md:text-center">
               <Link to="/about" className="uppercase underline">
                 read me
@@ -67,22 +76,42 @@ const Bio = () => {
             </p>
             <ul className="flex flex-row justify-end pt-2 text-2xl md:justify-center">
               <li className="hover-style px-2">
-                <a href="https://twitter.com/nawoto">
+                <a
+                  href="https://twitter.com/nawoto"
+                  className="u-url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>
               <li className="hover-style px-2">
-                <a href="https://github.com/nawoto/">
+                <a
+                  href="https://github.com/nawoto/"
+                  className="u-url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               </li>
               <li className="hover-style px-2">
-                <a href="https://speakerdeck.com/nawoto">
+                <a
+                  href="https://speakerdeck.com/nawoto"
+                  className="u-url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faSpeakerDeck} />
                 </a>
               </li>
               <li className="hover-style px-2">
-                <a href="https://www.instagram.com/nawoto/">
+                <a
+                  href="https://www.instagram.com/nawoto/"
+                  className="u-url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
