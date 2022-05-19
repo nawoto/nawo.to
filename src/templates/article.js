@@ -27,19 +27,37 @@ const ArticleTemplate = ({ data, location }) => {
         title={pageTitle}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article itemScope itemType="http://schema.org/Article">
+      <article
+        itemScope
+        itemType="http://schema.org/Article"
+        className="h-entry"
+      >
         <header className="p-2">
-          <h1 itemProp="headline" className="text-3xl font-bold">
+          <h1 itemProp="headline" className="p-name text-3xl font-bold">
             {post.frontmatter.title}
           </h1>
-          <p>{post.frontmatter.date}</p>
+          <p className="dt-published">{post.frontmatter.date}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-          className="prose px-4 py-3 md:mx-10 md:max-w-fit"
+          className="e-content prose px-4 py-3 md:mx-10 md:max-w-fit"
         />
         <footer className="md:mx-10">
+          <p className="px-4 text-sm text-gray-400">
+            <a href={shareUrl} className="u-url pr-1">
+              this article
+            </a>
+            written by
+            <a
+              href="http://nawo.to/about"
+              rel="author"
+              className="h-card p-author px-1"
+            >
+              NISHIMURA Naoto
+            </a>
+            (<span className="p-nickname">nawoto</span>)
+          </p>
           <TwitterShareButton url={shareUrl} title={pageTitle} className="mx-4">
             <TwitterIcon round={true} size={28} />
           </TwitterShareButton>
