@@ -63,6 +63,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
@@ -147,6 +148,7 @@ module.exports = {
         },
       },
     },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
