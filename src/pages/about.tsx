@@ -11,16 +11,26 @@ import {
   faInstagram,
   faAmazon,
 } from "@fortawesome/free-brands-svg-icons"
+import { LikeButton } from "@lyket/react"
+import {
+  HatenaIcon,
+  HatenaShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share"
 
+import Comments from "../components/comments"
 import Seo from "../components/seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const pageTitle = `About | ${siteTitle}`
+  const shareUrl = `https://nawo.to/about`
   const authorName = data.site.siteMetadata?.author.name
 
   return (
     <div>
-      <Seo title={`About | ${siteTitle}`} />
+      <Seo title={pageTitle} />
       <header>
         <div className="py-6">
           <h3 className="text-center text-6xl font-black uppercase tracking-widest text-gray-500 md:text-8xl">
@@ -84,10 +94,14 @@ const About = ({ data, location }) => {
               </span>
             </div>
             <div>
-              <Link className="text-gray-400" to="/" itemProp="url">
+              <Link className="text-gray-400" to="/">
                 https://nawo.to
-                <meta itemRef="my-urls" />
               </Link>
+              <meta
+                itemProp="url"
+                content="https://nawo.to/about"
+                itemRef="my-urls"
+              />
             </div>
             <ul
               className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
@@ -126,7 +140,12 @@ const About = ({ data, location }) => {
           <meta itemProp="gender" content="Male" />
           <meta itemProp="birthDate" content="1974-05-24" />
           <meta itemRef="my-awards" />
-          <meta itemProp="author" itemRef="my-books" />
+          <meta itemProp="author" itemRef="scrum-bcbook-2020" />
+          <meta itemProp="owns" itemRef="scrum-bcbook-2020" />
+          <meta itemProp="author" itemRef="scrum-bcbook" />
+          <meta itemProp="owns" itemRef="scrum-bcbook" />
+          <meta itemProp="translator" itemRef="agile-samurai-ja" />
+          <meta itemProp="owns" itemRef="agile-samurai-ja" />
         </section>
 
         <section className="py-3 text-xs">
@@ -176,8 +195,9 @@ const About = ({ data, location }) => {
         <section className="py-2">
           <h3 className="text-4xl">📚Books</h3>
           <span className="text-sm text-gray-400">/** 執筆などなど **/</span>
-          <ul className="md:list-disc md:text-lg" id="my-books">
+          <ul className="md:list-disc md:text-lg">
             <li
+              id="scrum-bcbook-2020"
               className="py-2"
               itemScope
               itemType="https://www.schema.org/Book"
@@ -191,10 +211,13 @@ const About = ({ data, location }) => {
               ,
               <span
                 className="pl-2 font-bold"
+                itemProp="author"
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <span itemProp="name">西村 直人</span>
+                <a href="/about" rel="author" itemProp="url">
+                  <b itemProp="name">西村 直人</b>
+                </a>
               </span>
               (著)・
               <span
@@ -202,7 +225,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                永瀬 美穂
+                <b itemProp="name">永瀬 美穂</b>
               </span>
               (著)・
               <span
@@ -210,7 +233,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                吉羽 龍太郎
+                <b itemProp="name">吉羽 龍太郎</b>
               </span>
               (著),
               <span
@@ -219,16 +242,20 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                翔泳社
+                <b itemProp="name">翔泳社</b>
               </span>
               ,
               <span className="p-2" itemProp="datePublished">
                 2020/05/20
               </span>
-              , ISBM:<span itemProp="isbn">978-4798163680</span>
+              , ISBM:
+              <a href="https://www.shoeisha.co.jp/book/detail/9784798167282">
+                <span itemProp="isbn">9784798163680</span>
+              </a>
             </li>
 
             <li
+              id="scrum-bcbook"
               className="py-2 text-gray-500"
               itemScope
               itemType="https://www.schema.org/Book"
@@ -243,7 +270,9 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                西村 直人
+                <a href="/about" rel="author" itemProp="url">
+                  <b itemProp="name">西村 直人</b>
+                </a>
               </span>
               (著)・
               <span
@@ -251,7 +280,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                永瀬 美穂
+                <b itemProp="name">永瀬 美穂</b>
               </span>
               (著)・
               <span
@@ -259,7 +288,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                吉羽 龍太郎
+                <b itemProp="name">吉羽 龍太郎</b>
               </span>
               (著),
               <span
@@ -268,16 +297,20 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                翔泳社
+                <b itemProp="name">翔泳社</b>
               </span>
               ,
               <span className="pl-2" itemProp="datePublished">
                 2013/02/13
               </span>
-              , ISBM:<span itemProp="isbn">978-4798129716</span>
+              , ISBM:
+              <a href="https://www.shoeisha.co.jp/book/detail/9784798129716">
+                <span itemProp="isbn">9784798129716</span>
+              </a>
             </li>
 
             <li
+              id="agile-samurai-ja"
               className="py-2"
               itemScope
               itemType="https://www.schema.org/Book"
@@ -292,7 +325,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                Jonathan Rasmusson
+                <b itemID="name">Jonathan Rasmusson</b>
               </span>
               (著)・
               <span
@@ -301,7 +334,9 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                西村 直人
+                <a href="/about" rel="author" itemProp="url">
+                  <b itemProp="name">西村 直人</b>
+                </a>
               </span>
               (監訳)・
               <span
@@ -309,7 +344,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                角谷 信太郎
+                <b itemProp="name">角谷 信太郎</b>
               </span>
               (監訳)・
               <span
@@ -317,7 +352,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                近藤 修平
+                <b itemProp="name">近藤 修平</b>
               </span>
               (訳)・
               <span
@@ -325,7 +360,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                角掛 拓未
+                <b itemProp="name">角掛 拓未</b>
               </span>
               (訳),
               <span
@@ -334,13 +369,16 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                オーム社
+                <b itemProp="name">オーム社</b>
               </span>
               ,
               <span className="pl-2" itemProp="datePublished">
                 2011/07/16
               </span>
-              , ISBM:<span itemProp="isbn">978-4274068560</span>
+              , ISBM:
+              <a href="https://shop.ohmsha.co.jp/shopdetail/000000001901/">
+                <span itemProp="isbn">9784274068560</span>
+              </a>
             </li>
           </ul>
 
@@ -408,12 +446,24 @@ const About = ({ data, location }) => {
         </section>
 
         <div className="py-5 text-gray-400">
-          (🚧More descriptions comes later...)
+          <p>(🚧More descriptions comes later...)</p>
+          <p className="text-sm">ver 2022.05.20</p>
         </div>
 
-        <div>
-          <p className="text-sm text-gray-400">ver 2022.05.18</p>
-        </div>
+        <footer className="border-y">
+          <TwitterShareButton url={shareUrl} title={pageTitle} className="mr-3">
+            <TwitterIcon round={true} size={28} />
+          </TwitterShareButton>
+          <HatenaShareButton url={shareUrl} title={pageTitle}>
+            <HatenaIcon round={true} size={28} />
+          </HatenaShareButton>
+          <LikeButton
+            id="about"
+            namespace="page"
+            component={LikeButton.templates.Twitter}
+          />
+          <Comments />
+        </footer>
       </article>
 
       <footer className="border-t text-center text-sm">
