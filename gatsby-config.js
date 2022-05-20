@@ -57,6 +57,19 @@ module.exports = {
               rel: "noopener noreferrer",
             },
           },
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              usePrefix: false,
+              providers: {
+                include: ["Twitter", "Instagram", "YouTube"],
+                settings: {
+                  Twitter: { maxwidth: 300 },
+                  Instagram: { hidecaption: true },
+                },
+              },
+            },
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
