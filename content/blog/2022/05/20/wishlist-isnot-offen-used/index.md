@@ -6,7 +6,7 @@ description:
 
 誕生日が近いので、Amazon の Wish List をひさびさに触っている。
 
-http://amzn.to/happy_birthday_nawoto
+https://amzn.to/happy_birthday_nawoto
 
 お祝いで何かを送ってもらえると嬉しいので公開しているのだけれど、自分では贈り物では Wish List を使うことが少なくなってきている。  
 理由は、贈りたい人の Wish List を探すのが面倒 😅
