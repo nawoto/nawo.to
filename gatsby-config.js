@@ -138,6 +138,15 @@ module.exports = {
         icon: `src/images/site-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-8NM6BNDNKR"],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
