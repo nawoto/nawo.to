@@ -6,7 +6,7 @@ module.exports = {
       summary: `西村直人。おもに nawoto という名前でいろいろしています`,
     },
     description: `@nawoto write some texts about Software Development, Life and more`,
-    siteUrl: `https://nawo.to/`,
+    siteUrl: `https://nawo.to`,
     social: {
       twitter: `nawoto`,
     },
@@ -63,7 +63,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
@@ -148,7 +147,14 @@ module.exports = {
         },
       },
     },
-
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://nawo.to`,
+        stripQueryString: true,
+      },
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
