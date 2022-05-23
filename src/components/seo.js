@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import defaultOpenGraphImage from "../images/opengraph-default.png"
 
-const Seo = ({ description, lang, meta, title, link }) => {
+const Seo = ({ description, lang, meta, title, link, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -31,7 +31,8 @@ const Seo = ({ description, lang, meta, title, link }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImageUrl = site.siteMetadata.siteUrl + defaultOpenGraphImage
+  const ogImageUrl =
+    site.siteMetadata.siteUrl + (image || defaultOpenGraphImage)
 
   return (
     <Helmet
