@@ -21,11 +21,15 @@ const ArticleTemplate = ({ data, location }) => {
   const pageTitle = `${post.frontmatter.title} | ${siteTitle}`
   const shareUrl = `${siteUrl}${post.fields.slug}`
 
+  const { ogimage } = post.frontmatter
+  const ogImagePath = ogimage && ogimage.childImageSharp.fixed.src
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
         title={pageTitle}
         description={post.frontmatter.description || post.excerpt}
+        image={ogImagePath}
       />
       <article
         itemScope
@@ -132,6 +136,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY/MM/DD")
         description
+        ogimage {
+          childImageSharp {
+            fixed {
+              src
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
