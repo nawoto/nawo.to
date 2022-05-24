@@ -1,7 +1,7 @@
 ---
 title: 誕生日🎂🎉
 date: "2022-05-24T06:50:21.987Z"
-description: おめでとう、自分！
+description: おめでとう、自分
 ogimage: "./opengraph-hbd.png"
 ---
 
