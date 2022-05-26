@@ -1,4 +1,5 @@
 import * as React from "react"
+import Link from "gatsby"
 import Header from "../components/header"
 import Bio from "../components/bio"
 
@@ -22,6 +23,9 @@ const Layout = ({ location, title, children }) => {
       </main>
       <footer className="border-t text-center text-sm">
         © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
+        <span className="mx-5 text-xs underline">
+          <Link to="/privacy">Privacy Policy</Link>
+        </span>
       </footer>
     </div>
   )
