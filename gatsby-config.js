@@ -62,7 +62,7 @@ module.exports = {
             options: {
               usePrefix: false,
               providers: {
-                include: ["Twitter", "YouTube", "SpeakerDeck", "Spotify"],
+                include: ["Twitter", "YouTube", "SpeakerDeck", "Spotify", "SlideShare"],
                 settings: {
                   Twitter: { maxwidth: 300 },
                 },
