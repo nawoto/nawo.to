@@ -62,10 +62,9 @@ module.exports = {
             options: {
               usePrefix: false,
               providers: {
-                include: ["Twitter", "Instagram", "YouTube"],
+                include: ["Twitter", "YouTube", "SpeakerDeck", "Spotify"],
                 settings: {
                   Twitter: { maxwidth: 300 },
-                  Instagram: { hidecaption: true },
                 },
               },
             },
