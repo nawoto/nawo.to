@@ -87,12 +87,14 @@ const Seo = ({ description, lang, meta, title, link, image }) => {
         },
       ].concat(meta)}
       link={[
-        { rel: `me`, href: `https://twitter.com/nawoto"` },
+        { rel: `me authn`, href: `https://twitter.com/nawoto` },
         { rel: `me`, href: `https://github.com/nawoto/` },
         { rel: `me`, href: `https://speakerdeck.com/nawoto` },
         { rel: `me`, href: `https://www.instagram.com/nawoto/` },
         { rel: `me`, href: `https://www.facebook.com/nishimura.nawoto` },
         { rel: `me`, href: `https://www.amazon.co.jp/~/e/B00B46MLPG` },
+        { rel: `webmention`, href: `https://webmention.io/nawo.to/webmention` },
+        { rel: `pingback`, href: `https://webmention.io/nawo.to/xmlrpc` },
       ].concat(link)}
     />
   )
