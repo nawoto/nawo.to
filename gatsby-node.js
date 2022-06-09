@@ -11,6 +11,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
@@ -46,6 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const permaLink = `${result.data.site.siteMetadata.siteUrl}${post.fields.slug}`
 
       createPage({
         path: post.fields.slug,
@@ -54,6 +60,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
+          permaLink,
         },
       })
     })
@@ -68,6 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : articles[index - 1].id
       const nextPostId =
         index === articles.length - 1 ? null : articles[index + 1].id
+      const permaLink = `${result.data.site.siteMetadata.siteUrl}${article.fields.slug}`
 
       createPage({
         path: article.fields.slug,
@@ -76,6 +84,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: article.id,
           previousPostId,
           nextPostId,
+          permaLink,
         },
       })
     })
