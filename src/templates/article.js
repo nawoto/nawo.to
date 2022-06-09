@@ -11,6 +11,7 @@ import {
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Comments from "../components/comments"
+import WebMentions from "../components/webmentions"
 
 const ArticleTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -74,6 +75,7 @@ const ArticleTemplate = ({ data, location }) => {
             component={LikeButton.templates.Twitter}
           />
           <Comments />
+          <WebMentions {...data.allWebMentionEntry} />
         </footer>
       </article>
       <nav>
@@ -117,6 +119,7 @@ export const pageQuery = graphql`
     $id: String!
     $previousPostId: String
     $nextPostId: String
+    $permaLink: String
   ) {
     site {
       siteMetadata {
@@ -141,6 +144,28 @@ export const pageQuery = graphql`
             fixed {
               src
             }
+          }
+        }
+      }
+    }
+    allWebMentionEntry(filter: { wmTarget: { eq: $permaLink } }) {
+      edges {
+        node {
+          wmTarget
+          wmSource
+          wmProperty
+          wmId
+          type
+          url
+          likeOf
+          author {
+            url
+            type
+            photo
+            name
+          }
+          content {
+            text
           }
         }
       }

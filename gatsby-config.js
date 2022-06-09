@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `#nawoto`,
@@ -164,6 +168,20 @@ module.exports = {
       options: {
         siteUrl: `https://nawo.to`,
         stripQueryString: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: `nawo.to`, // webmention.io username
+        identity: {
+          github: `nawoto`,
+          twitter: `nawoto`, // no @
+        },
+        mentions: true,
+        pingbacks: true,
+        domain: `nawo.to`,
+        token: process.env.WEBMENTIONS_TOKEN,
       },
     },
     `gatsby-plugin-sitemap`,
