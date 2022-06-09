@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { LikeButton } from "@lyket/react"
 import {
@@ -24,6 +24,18 @@ const ArticleTemplate = ({ data, location }) => {
 
   const { ogimage } = post.frontmatter
   const ogImagePath = ogimage && ogimage.childImageSharp.fixed.src
+
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.type = "text/javascript"
+
+    var attr = document.createAttribute("src")
+    attr.value = "//www.instagram.com/embed.js"
+    script.setAttributeNode(attr)
+
+    const head = document.getElementsByTagName("head")[0]
+    head.appendChild(script)
+  })
 
   return (
     <Layout location={location} title={siteTitle}>
