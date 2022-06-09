@@ -12,11 +12,13 @@ const WebMentions = ({ edges }) => {
   )
 
   return (
-    <div className="mx-3">
-      <h3 className="border-b text-center">WebMentions</h3>
+    <div>
+      <h3 className="border-b text-center">Webmentions</h3>
 
       <div>
-        {likes.length === 0 ? <span>No Webmentions</span> : null}
+        {likes.length === 0 ? (
+          <span className="text-gray-500">No Webmention</span>
+        ) : null}
 
         {likeAuthors.map(author => (
           <div className="py-1 text-lg md:flex" key={author.wmId}>
@@ -25,6 +27,7 @@ const WebMentions = ({ edges }) => {
                 <img
                   alt={author.name}
                   src={author.photo}
+                  loading="lazy"
                   className="z-index overflow-hidden rounded-lg"
                   width={30}
                   height={30}
