@@ -35,3 +35,9 @@ https://twitter.com/nawoto/status/1440541132111310856
 あと 10 年前にアジャイルサムライ横浜道場でお祝いしてもらった動画を見つけたので貼っておこう 😄
 
 https://www.youtube.com/watch?v=nDBxZ7ZbtlA
+
+### プレゼントもらった
+
+ありがとうございます！
+
+https://nawo.to/2022/06/09/thx-hbd-gifts/
