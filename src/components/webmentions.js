@@ -10,13 +10,14 @@ const WebMentions = ({ edges }) => {
         ...node.author,
       }
   )
-  if (likes.length === 0) {
-    return <span>no mentions</span>
-  }
+
   return (
     <div className="mx-3">
       <h3 className="border-b text-center">WebMentions</h3>
+
       <div>
+        {likes.length === 0 ? <span>No Webmentions</span> : null}
+
         {likeAuthors.map(author => (
           <div className="py-1 text-lg md:flex" key={author.wmId}>
             <p className="flex">
