@@ -151,7 +151,7 @@ const About = ({ data, location }) => {
 
         <section className="py-3 text-xs">
           <h3>@@@@@</h3>
-          <p>
+          <div>
             <p itemProp="affiliation" className="md:text-sm">
               株式会社エス・エム・エス
             </p>
@@ -161,15 +161,15 @@ const About = ({ data, location }) => {
             <p itemProp="jobTitle" className="pl-2">
               スクラムマスター
             </p>
-          </p>
-          <p className="pt-2">
+          </div>
+          <div className="pt-2">
             <p itemProp="affiliation" className="md:text-sm">
               一般社団法人アジャイルチームを支える会
             </p>
             <p itemProp="jobTitle" className="pl-2">
               代表理事
             </p>
-          </p>
+          </div>
         </section>
 
         <section className="py-2">
