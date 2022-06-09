@@ -1,30 +1,24 @@
-import React, { useEffect } from "react"
-
-const COMMENTS_ID = "comments-container"
+import React from "react"
+import Giscus from "@giscus/react"
 
 const Comments = () => {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://utteranc.es/client.js"
-    script.setAttribute("repo", "nawoto/nawo.to")
-    script.setAttribute("issue-term", "pathname")
-    script.setAttribute("theme", "github-light")
-    script.setAttribute("label", "💬")
-    script.setAttribute("crossorigin", "anonymous")
-    script.async = true
-
-    const comments = document.getElementById(COMMENTS_ID)
-    if (comments) comments.appendChild(script)
-
-    // This function will get called when the component unmounts
-    // To make sure we don't end up with multiple instances of the comments component
-    return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ""
-    }
-  }, [])
-
-  return <div id={COMMENTS_ID} />
+  return (
+    <Giscus
+      id="comments"
+      repo="nawoto/nawo.to"
+      repoId="R_kgDOHLJkHA"
+      category="Announcements"
+      categoryId="DIC_kwDOHLJkHM4CPjYl"
+      mapping="pathname"
+      term="Welcome to @giscus/react component!"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme="light"
+      lang="en"
+      loading="lazy"
+    />
+  )
 }
 
 export default Comments
