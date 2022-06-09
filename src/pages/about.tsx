@@ -21,6 +21,7 @@ import {
 
 import Comments from "../components/comments"
 import Seo from "../components/seo"
+import Footer from "../components/footer"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -466,9 +467,7 @@ const About = ({ data, location }) => {
         </footer>
       </article>
 
-      <footer className="border-t text-center text-sm">
-        © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
-      </footer>
+      <Footer />
     </div>
   )
 }

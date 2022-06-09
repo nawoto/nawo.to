@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import Header from "../components/header"
 import Bio from "../components/bio"
+import Footer from "../components/footer"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -21,12 +22,7 @@ const Layout = ({ location, title, children }) => {
           {isRootPath && <div className="md:basis-3/4">{children}</div>}
         </div>
       </main>
-      <footer className="border-t text-center text-sm">
-        © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
-        <span className="mx-5 text-xs underline">
-          <Link to="/privacy">Privacy Policy</Link>
-        </span>
-      </footer>
+      <Footer />
     </div>
   )
 }
