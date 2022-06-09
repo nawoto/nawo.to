@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Seo from "../components/seo"
+import Footer from "../components/footer"
 
 const PrivacyPage = ({ date, location }) => {
   return (
@@ -149,12 +150,7 @@ const PrivacyPage = ({ date, location }) => {
           </ul>
         </div>
       </article>
-      <footer className="border-t text-center text-sm">
-        © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
-        <span className="mx-5 text-xs underline">
-          <Link to="/privacy">Privacy Policy</Link>
-        </span>
-      </footer>
+      <Footer />
     </div>
   )
 }
