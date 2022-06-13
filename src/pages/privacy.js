@@ -8,7 +8,7 @@ const PrivacyPage = ({ date, location }) => {
   return (
     <div>
       <Seo title="Privacy Policy" />
-      <header className="pb-20">
+      <header className="pb-5">
         <div>
           <h1 className="text-center text-2xl tracking-widest text-gray-500">
             &gt; Privacy Policy
@@ -22,7 +22,7 @@ const PrivacyPage = ({ date, location }) => {
           </div>
         </nav>
       </header>
-      <article className="mx-20 px-10">
+      <article className="mx-5 px-5 md:mx-20 md:px-10">
         <div className="my-5">
           <h3 className="my-3 text-xl">個人情報の取り扱いについて</h3>
           <p>
