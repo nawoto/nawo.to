@@ -33,7 +33,14 @@ const TopPage = ({ data, location }) => {
       </div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          return <ContentItem key={post.fields.slug} article={post} />
+          return (
+            <li
+              key={post.fields.slug}
+              className="hover-style border-y border-solid py-2"
+            >
+              <ContentItem article={post} />
+            </li>
+          )
         })}
       </ol>
 
@@ -44,7 +51,14 @@ const TopPage = ({ data, location }) => {
       </div>
       <ol style={{ listStyle: `none` }}>
         {articles.map(article => {
-          return <ContentItem key={article.fields.slug} article={article} />
+          return (
+            <li
+              key={article.fields.slug}
+              className="hover-style border-y border-solid py-2"
+            >
+              <ContentItem article={article} />
+            </li>
+          )
         })}
       </ol>
     </Layout>
