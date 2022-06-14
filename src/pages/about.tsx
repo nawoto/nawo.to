@@ -61,119 +61,120 @@ const About = ({ data, location }) => {
         itemScope
         itemType="https://www.schema.org/Person"
       >
-        <section className="flex flex-row py-3">
-          <div>
-            <StaticImage
-              className="z-10 overflow-hidden rounded-lg"
-              layout="fixed"
-              itemProp="image"
-              formats={["auto", "webp", "avif"]}
-              src="../images/profile-pic.png"
-              width={164}
-              height={164}
-              quality={95}
-              alt="Profile picture"
-            />
-          </div>
-          <div className="px-3 text-right md:text-left">
-            <h3
-              className="text-lg font-bold md:text-4xl"
-              itemProp="name"
-              lang="en"
-            >
-              {authorName}
-            </h3>
-            <div className="text-xl" itemProp="name">
-              西村 直人
-            </div>
-            <div className="text-gray-400">nawoto</div>
-            <div className="text-gray-400">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span className="pl-px" itemProp="address">
-                <span>Taito-ku, Tokyo</span>,
-                <span itemProp="nationality">Japan</span>
-              </span>
-            </div>
+        <div className="">
+          <section className="flex flex-row py-3">
             <div>
-              <Link className="text-gray-400" to="/">
-                https://nawo.to
-              </Link>
-              <meta
-                itemProp="url"
-                content="https://nawo.to/about"
-                itemRef="my-urls"
+              <StaticImage
+                className="z-10 overflow-hidden rounded-lg"
+                layout="fixed"
+                itemProp="image"
+                formats={["auto", "webp", "avif"]}
+                src="../images/profile-pic.png"
+                width={164}
+                height={164}
+                quality={95}
+                alt="Profile picture"
               />
             </div>
-            <ul
-              className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
-              id="my-urls"
-            >
-              <li className="hover-style pr-2">
-                <a href="https://twitter.com/nawoto" itemProp="sameas">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://github.com/nawoto/" itemProp="sameas">
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://speakerdeck.com/nawoto" itemProp="sameas">
-                  <FontAwesomeIcon icon={faSpeakerDeck} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://www.instagram.com/nawoto/" itemProp="sameas">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-              </li>
-              <li className="hover-style pl-2">
-                <Link to="/rss.xml">
-                  <FontAwesomeIcon icon={faSquareRss} />
+            <div className="px-3 text-right md:text-left">
+              <h3
+                className="text-lg font-bold md:text-4xl"
+                itemProp="name"
+                lang="en"
+              >
+                {authorName}
+              </h3>
+              <div className="text-xl" itemProp="name">
+                西村 直人
+              </div>
+              <div className="text-gray-400">nawoto</div>
+              <div className="text-gray-400">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <span className="pl-px" itemProp="address">
+                  <span>Taito-ku, Tokyo</span>,
+                  <span itemProp="nationality">Japan</span>
+                </span>
+              </div>
+              <div>
+                <Link className="text-gray-400" to="/">
+                  https://nawo.to
                 </Link>
-              </li>
-            </ul>
-          </div>
-        </section>
+                <meta
+                  itemProp="url"
+                  content="https://nawo.to/about"
+                  itemRef="my-urls"
+                />
+              </div>
+              <ul
+                className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
+                id="my-urls"
+              >
+                <li className="hover-style pr-2">
+                  <a href="https://twitter.com/nawoto" itemProp="sameas">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://github.com/nawoto/" itemProp="sameas">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://speakerdeck.com/nawoto" itemProp="sameas">
+                    <FontAwesomeIcon icon={faSpeakerDeck} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://www.instagram.com/nawoto/" itemProp="sameas">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                </li>
+                <li className="hover-style pl-2">
+                  <Link to="/rss.xml">
+                    <FontAwesomeIcon icon={faSquareRss} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-        <section>
-          <meta itemProp="gender" content="Male" />
-          <meta itemProp="birthDate" content="1974-05-24" />
-          <meta itemRef="my-awards" />
-          <meta itemProp="author" itemRef="scrum-bcbook-2020" />
-          <meta itemProp="owns" itemRef="scrum-bcbook-2020" />
-          <meta itemProp="author" itemRef="scrum-bcbook" />
-          <meta itemProp="owns" itemRef="scrum-bcbook" />
-          <meta itemProp="translator" itemRef="agile-samurai-ja" />
-          <meta itemProp="owns" itemRef="agile-samurai-ja" />
-        </section>
+            <meta itemProp="gender" content="Male" />
+            <meta itemProp="birthDate" content="1974-05-24" />
+            <meta itemRef="my-awards" />
+            <meta itemProp="author" itemRef="scrum-bcbook-2020" />
+            <meta itemProp="owns" itemRef="scrum-bcbook-2020" />
+            <meta itemProp="author" itemRef="scrum-bcbook" />
+            <meta itemProp="owns" itemRef="scrum-bcbook" />
+            <meta itemProp="translator" itemRef="agile-samurai-ja" />
+            <meta itemProp="owns" itemRef="agile-samurai-ja" />
+          </section>
 
-        <section className="py-3 text-xs">
-          <h3>@@@@@</h3>
-          <div>
-            <p itemProp="affiliation" className="md:text-sm">
-              株式会社エス・エム・エス
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              エンジニアリングマネージャー
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              スクラムマスター
-            </p>
-          </div>
-          <div className="pt-2">
-            <p itemProp="affiliation" className="md:text-sm">
-              一般社団法人アジャイルチームを支える会
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              代表理事
-            </p>
-          </div>
-        </section>
+          <section className="py-3 text-xs">
+            <h3>#####</h3>
+            <div>
+              <p itemProp="affiliation" className="md:text-sm">
+                株式会社エス・エム・エス
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                エンジニアリングマネージャー
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                スクラムマスター
+              </p>
+            </div>
+            <div className="pt-2">
+              <p itemProp="affiliation" className="md:text-sm">
+                一般社団法人アジャイルチームを支える会
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                代表理事
+              </p>
+            </div>
+            <span>#####</span>
+          </section>
+        </div>
 
         <section className="py-2">
-          <h3 className="text-4xl">TL;DR</h3>
+          <h3 className="text-2xl">TL;DR</h3>
           <span className="text-sm text-gray-400">
             /** 講演するときのプロフィール **/
           </span>
@@ -185,8 +186,14 @@ const About = ({ data, location }) => {
               エクストリーム・プログラミングとの出会いと株式会社永和システムマネジメントでチーム開発を経験して以来、「アジャイルな開発を通じて、ビジネスとともに成長できるような良いチームを増やしたい」という想いで日々奮闘中。
             </p>
             <p className="py-2" itemProp="description">
-              書籍 『アジャイルサムライ』監訳、書籍「SCRUM BOOT CAMP THE
-              BOOK【増補改訂版】」の執筆をはじめ、 「Scrum Boot Camp
+              <a href="#agile-samurai-ja" className="link">
+                書籍 『アジャイルサムライ』
+              </a>
+              監訳、
+              <a href="#scrum-bcbook-2020" className="link">
+                書籍「SCRUM BOOT CAMP THE BOOK【増補改訂版】」
+              </a>
+              の執筆をはじめ、 「Scrum Boot Camp
               Premium」「アジャイル相談室」などこれからの人に向けた研修やイベント、支援を続けています。
             </p>
             <p className="py-2">現在、幼い娘の子育てに奮闘中😊</p>
@@ -194,7 +201,7 @@ const About = ({ data, location }) => {
         </section>
 
         <section className="py-2">
-          <h3 className="text-4xl">📚Books</h3>
+          <h3 className="text-2xl">📚Books</h3>
           <span className="text-sm text-gray-400">/** 執筆などなど **/</span>
           <ul className="md:list-disc md:text-lg">
             <li
@@ -203,7 +210,11 @@ const About = ({ data, location }) => {
               itemScope
               itemType="https://www.schema.org/Book"
             >
-              <a href="https://amzn.to/3a8TEfA" className="font-bold underline">
+              <a
+                href="https://amzn.to/3a8TEfA"
+                className="link"
+                target="_blank"
+              >
                 <span itemProp="name">
                   SCRUM BOOT CAMP THE BOOK【増補改訂版】
                   スクラムチームではじめるアジャイル開発
@@ -211,13 +222,19 @@ const About = ({ data, location }) => {
               </a>
               ,
               <span
-                className="pl-2 font-bold"
+                className="pl-2"
                 itemProp="author"
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <a href="/about" rel="author" itemProp="url">
-                  <b itemProp="name">西村 直人</b>
+                <a
+                  href="/about"
+                  rel="author"
+                  itemProp="url"
+                  className="link"
+                  target="_blank"
+                >
+                  <span itemProp="name">西村 直人</span>
                 </a>
               </span>
               (著)・
@@ -226,7 +243,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">永瀬 美穂</b>
+                <span itemProp="name">永瀬 美穂</span>
               </span>
               (著)・
               <span
@@ -234,7 +251,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">吉羽 龍太郎</b>
+                <span itemProp="name">吉羽 龍太郎</span>
               </span>
               (著),
               <span
@@ -243,14 +260,19 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                <b itemProp="name">翔泳社</b>
+                <span itemProp="name">翔泳社</span>
               </span>
               ,
-              <span className="p-2" itemProp="datePublished">
+              <span className="pl-2" itemProp="datePublished">
                 2020/05/20
               </span>
-              , ISBM:
-              <a href="https://www.shoeisha.co.jp/book/detail/9784798167282">
+              ,
+              <a
+                href="https://www.shoeisha.co.jp/book/detail/9784798167282"
+                className="link pl-2"
+                target="_blank"
+              >
+                ISBM:
                 <span itemProp="isbn">9784798163680</span>
               </a>
             </li>
@@ -261,18 +283,18 @@ const About = ({ data, location }) => {
               itemScope
               itemType="https://www.schema.org/Book"
             >
-              <a href="https://amzn.to/39Yagq7" className="font-bold underline">
+              <a href="https://amzn.to/39Yagq7" className="link">
                 <span itemProp="name">SCRUM BOOT CAMP THE BOOK</span>
               </a>
               ,
               <span
-                className="pl-2 font-bold"
+                className="pl-2"
                 itemProp="author"
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <a href="/about" rel="author" itemProp="url">
-                  <b itemProp="name">西村 直人</b>
+                <a href="/about" rel="author" itemProp="url" className="link">
+                  <span itemProp="name">西村 直人</span>
                 </a>
               </span>
               (著)・
@@ -281,7 +303,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">永瀬 美穂</b>
+                <span itemProp="name">永瀬 美穂</span>
               </span>
               (著)・
               <span
@@ -289,7 +311,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">吉羽 龍太郎</b>
+                <span itemProp="name">吉羽 龍太郎</span>
               </span>
               (著),
               <span
@@ -298,14 +320,19 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                <b itemProp="name">翔泳社</b>
+                <span itemProp="name">翔泳社</span>
               </span>
               ,
               <span className="pl-2" itemProp="datePublished">
                 2013/02/13
               </span>
-              , ISBM:
-              <a href="https://www.shoeisha.co.jp/book/detail/9784798129716">
+              ,
+              <a
+                href="https://www.shoeisha.co.jp/book/detail/9784798129716"
+                target="_blank"
+                className="link pl-2"
+              >
+                ISBM:
                 <span itemProp="isbn">9784798129716</span>
               </a>
             </li>
@@ -316,7 +343,11 @@ const About = ({ data, location }) => {
               itemScope
               itemType="https://www.schema.org/Book"
             >
-              <a href="https://amzn.to/3NibkUc" className="font-bold underline">
+              <a
+                href="https://amzn.to/3NibkUc"
+                className="link"
+                target="_blank"
+              >
                 <span itemProp="name">アジャイルサムライ−達人開発者への道</span>
               </a>
               ,
@@ -326,7 +357,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemID="name">Jonathan Rasmusson</b>
+                <span itemID="name">Jonathan Rasmusson</span>
               </span>
               (著)・
               <span
@@ -335,8 +366,14 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <a href="/about" rel="author" itemProp="url">
-                  <b itemProp="name">西村 直人</b>
+                <a
+                  href="/about"
+                  rel="author"
+                  itemProp="url"
+                  className="link"
+                  target="_blank"
+                >
+                  <span itemProp="name">西村 直人</span>
                 </a>
               </span>
               (監訳)・
@@ -345,7 +382,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">角谷 信太郎</b>
+                <span itemProp="name">角谷 信太郎</span>
               </span>
               (監訳)・
               <span
@@ -353,7 +390,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">近藤 修平</b>
+                <span itemProp="name">近藤 修平</span>
               </span>
               (訳)・
               <span
@@ -361,7 +398,7 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="https://schema.org/Person"
               >
-                <b itemProp="name">角掛 拓未</b>
+                <span itemProp="name">角掛 拓未</span>
               </span>
               (訳),
               <span
@@ -370,14 +407,19 @@ const About = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Organization"
               >
-                <b itemProp="name">オーム社</b>
+                <span itemProp="name">オーム社</span>
               </span>
               ,
               <span className="pl-2" itemProp="datePublished">
                 2011/07/16
               </span>
-              , ISBM:
-              <a href="https://shop.ohmsha.co.jp/shopdetail/000000001901/">
+              ,
+              <a
+                href="https://shop.ohmsha.co.jp/shopdetail/000000001901/"
+                className="link"
+                target="_blank"
+              >
+                ISBM:
                 <span itemProp="isbn">9784274068560</span>
               </a>
             </li>
@@ -421,10 +463,11 @@ const About = ({ data, location }) => {
             </p>
           </div>
 
-          <div className="pt-3 text-xl">
+          <div>
             <a
               href="https://www.amazon.co.jp/~/e/B00B46MLPG"
               className="underline"
+              target="_blank"
             >
               <FontAwesomeIcon icon={faAmazon} />
               <span className="pl-1">Amazonの著者ページ</span>
@@ -438,17 +481,21 @@ const About = ({ data, location }) => {
             /** 表彰は嬉しいものです 😊 **/
           </span>
           <div>
-            <Link to="https://tech.rakuten.co.jp/rtc2011/report_award.html">
+            <a
+              href="https://tech.rakuten.co.jp/rtc2011/report_award.html"
+              className="link"
+              target="_blank"
+            >
               <span itemProp="award">
                 楽天テクロノロジーアワード 2011 Ruby 賞
               </span>
-            </Link>
+            </a>
           </div>
         </section>
 
         <div className="py-5 text-gray-400">
           <p>(🚧More descriptions comes later...)</p>
-          <p className="text-sm">ver 2022.05.20</p>
+          <p className="text-sm">ver 2022.06.14</p>
         </div>
 
         <footer className="border-y">

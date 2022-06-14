@@ -14,4 +14,7 @@
     .hover-style {
         @apply hover:bg-black hover:text-white;
     }
+    .link {
+        @apply font-semibold underline decoration-gray-500;
+    }
 }
