@@ -61,117 +61,117 @@ const About = ({ data, location }) => {
         itemScope
         itemType="https://www.schema.org/Person"
       >
-        <section className="flex flex-row py-3">
-          <div>
-            <StaticImage
-              className="z-10 overflow-hidden rounded-lg"
-              layout="fixed"
-              itemProp="image"
-              formats={["auto", "webp", "avif"]}
-              src="../images/profile-pic.png"
-              width={164}
-              height={164}
-              quality={95}
-              alt="Profile picture"
-            />
-          </div>
-          <div className="px-3 text-right md:text-left">
-            <h3
-              className="text-lg font-bold md:text-4xl"
-              itemProp="name"
-              lang="en"
-            >
-              {authorName}
-            </h3>
-            <div className="text-xl" itemProp="name">
-              西村 直人
-            </div>
-            <div className="text-gray-400">nawoto</div>
-            <div className="text-gray-400">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span className="pl-px" itemProp="address">
-                <span>Taito-ku, Tokyo</span>,
-                <span itemProp="nationality">Japan</span>
-              </span>
-            </div>
+        <div className="md:flex">
+          <section className="flex flex-row py-3">
             <div>
-              <Link className="text-gray-400" to="/">
-                https://nawo.to
-              </Link>
-              <meta
-                itemProp="url"
-                content="https://nawo.to/about"
-                itemRef="my-urls"
+              <StaticImage
+                className="z-10 overflow-hidden rounded-lg"
+                layout="fixed"
+                itemProp="image"
+                formats={["auto", "webp", "avif"]}
+                src="../images/profile-pic.png"
+                width={164}
+                height={164}
+                quality={95}
+                alt="Profile picture"
               />
             </div>
-            <ul
-              className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
-              id="my-urls"
-            >
-              <li className="hover-style pr-2">
-                <a href="https://twitter.com/nawoto" itemProp="sameas">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://github.com/nawoto/" itemProp="sameas">
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://speakerdeck.com/nawoto" itemProp="sameas">
-                  <FontAwesomeIcon icon={faSpeakerDeck} />
-                </a>
-              </li>
-              <li className="hover-style px-2">
-                <a href="https://www.instagram.com/nawoto/" itemProp="sameas">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-              </li>
-              <li className="hover-style pl-2">
-                <Link to="/rss.xml">
-                  <FontAwesomeIcon icon={faSquareRss} />
+            <div className="px-3 text-right md:text-left">
+              <h3
+                className="text-lg font-bold md:text-4xl"
+                itemProp="name"
+                lang="en"
+              >
+                {authorName}
+              </h3>
+              <div className="text-xl" itemProp="name">
+                西村 直人
+              </div>
+              <div className="text-gray-400">nawoto</div>
+              <div className="text-gray-400">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <span className="pl-px" itemProp="address">
+                  <span>Taito-ku, Tokyo</span>,
+                  <span itemProp="nationality">Japan</span>
+                </span>
+              </div>
+              <div>
+                <Link className="text-gray-400" to="/">
+                  https://nawo.to
                 </Link>
-              </li>
-            </ul>
-          </div>
-        </section>
+                <meta
+                  itemProp="url"
+                  content="https://nawo.to/about"
+                  itemRef="my-urls"
+                />
+              </div>
+              <ul
+                className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
+                id="my-urls"
+              >
+                <li className="hover-style pr-2">
+                  <a href="https://twitter.com/nawoto" itemProp="sameas">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://github.com/nawoto/" itemProp="sameas">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://speakerdeck.com/nawoto" itemProp="sameas">
+                    <FontAwesomeIcon icon={faSpeakerDeck} />
+                  </a>
+                </li>
+                <li className="hover-style px-2">
+                  <a href="https://www.instagram.com/nawoto/" itemProp="sameas">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                </li>
+                <li className="hover-style pl-2">
+                  <Link to="/rss.xml">
+                    <FontAwesomeIcon icon={faSquareRss} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-        <section>
-          <meta itemProp="gender" content="Male" />
-          <meta itemProp="birthDate" content="1974-05-24" />
-          <meta itemRef="my-awards" />
-          <meta itemProp="author" itemRef="scrum-bcbook-2020" />
-          <meta itemProp="owns" itemRef="scrum-bcbook-2020" />
-          <meta itemProp="author" itemRef="scrum-bcbook" />
-          <meta itemProp="owns" itemRef="scrum-bcbook" />
-          <meta itemProp="translator" itemRef="agile-samurai-ja" />
-          <meta itemProp="owns" itemRef="agile-samurai-ja" />
-        </section>
+            <meta itemProp="gender" content="Male" />
+            <meta itemProp="birthDate" content="1974-05-24" />
+            <meta itemRef="my-awards" />
+            <meta itemProp="author" itemRef="scrum-bcbook-2020" />
+            <meta itemProp="owns" itemRef="scrum-bcbook-2020" />
+            <meta itemProp="author" itemRef="scrum-bcbook" />
+            <meta itemProp="owns" itemRef="scrum-bcbook" />
+            <meta itemProp="translator" itemRef="agile-samurai-ja" />
+            <meta itemProp="owns" itemRef="agile-samurai-ja" />
+          </section>
 
-        <section className="py-3 text-xs">
-          <h3>#####</h3>
-          <div>
-            <p itemProp="affiliation" className="md:text-sm">
-              株式会社エス・エム・エス
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              エンジニアリングマネージャー
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              スクラムマスター
-            </p>
-          </div>
-          <div className="pt-2">
-            <p itemProp="affiliation" className="md:text-sm">
-              一般社団法人アジャイルチームを支える会
-            </p>
-            <p itemProp="jobTitle" className="pl-2">
-              代表理事
-            </p>
-          </div>
-          <span>#####</span>
-        </section>
+          <section className="py-3 text-xs md:ml-10 md:pt-12">
+            <h3>#####</h3>
+            <div>
+              <p itemProp="affiliation" className="md:text-sm">
+                株式会社エス・エム・エス
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                エンジニアリングマネージャー
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                スクラムマスター
+              </p>
+            </div>
+            <div className="pt-2">
+              <p itemProp="affiliation" className="md:text-sm">
+                一般社団法人アジャイルチームを支える会
+              </p>
+              <p itemProp="jobTitle" className="pl-2">
+                代表理事
+              </p>
+            </div>
+            <span>#####</span>
+          </section>
+        </div>
 
         <section className="py-2">
           <h3 className="text-2xl">TL;DR</h3>
@@ -495,7 +495,7 @@ const About = ({ data, location }) => {
 
         <div className="py-5 text-gray-400">
           <p>(🚧More descriptions comes later...)</p>
-          <p className="text-sm">ver 2022.05.20</p>
+          <p className="text-sm">ver 2022.06.14</p>
         </div>
 
         <footer className="border-y">
