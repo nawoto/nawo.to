@@ -61,7 +61,7 @@ const About = ({ data, location }) => {
         itemScope
         itemType="https://www.schema.org/Person"
       >
-        <div className="md:flex">
+        <div className="">
           <section className="flex flex-row py-3">
             <div>
               <StaticImage
@@ -148,7 +148,7 @@ const About = ({ data, location }) => {
             <meta itemProp="owns" itemRef="agile-samurai-ja" />
           </section>
 
-          <section className="py-3 text-xs md:ml-10 md:pt-12">
+          <section className="py-3 text-xs">
             <h3>#####</h3>
             <div>
               <p itemProp="affiliation" className="md:text-sm">
