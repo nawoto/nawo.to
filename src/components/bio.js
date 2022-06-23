@@ -10,7 +10,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSquareRss } from "@fortawesome/free-solid-svg-icons"
+import { faSquareRss, faTShirt } from "@fortawesome/free-solid-svg-icons"
 import {
   faTwitter,
   faGithub,
@@ -113,6 +113,16 @@ const Bio = () => {
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </li>
+              <li className="hover-style px-2">
+                <a
+                  href="https://suzuri.jp/nawoto/"
+                  className="u-url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faTShirt} />
                 </a>
               </li>
               <li className="hover-style pl-2">
