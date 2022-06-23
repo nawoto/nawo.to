@@ -72,9 +72,18 @@ module.exports = {
                   "SpeakerDeck",
                   "Spotify",
                   "SlideShare",
+                  "Suzuri",
                 ],
                 settings: {
                   Twitter: { maxwidth: 300 },
+                  Suzuri: {
+                    endpoints: [
+                      {
+                        schemes: ["https://suzuri.jp/*"],
+                        url: "https://suzuri.jp/oembed",
+                      },
+                    ],
+                  },
                 },
               },
             },
