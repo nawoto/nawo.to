@@ -75,7 +75,7 @@ const Bio = () => {
               </Link>
             </p>
             <ul className="flex flex-row justify-end pt-2 text-2xl md:justify-center">
-              <li className="hover-style px-2">
+              <li className="hover-style px-1">
                 <a
                   href="https://twitter.com/nawoto"
                   className="u-url"
@@ -85,7 +85,7 @@ const Bio = () => {
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>
-              <li className="hover-style px-2">
+              <li className="hover-style px-1">
                 <a
                   href="https://github.com/nawoto/"
                   className="u-url"
@@ -95,7 +95,7 @@ const Bio = () => {
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               </li>
-              <li className="hover-style px-2">
+              <li className="hover-style px-1">
                 <a
                   href="https://speakerdeck.com/nawoto"
                   className="u-url"
@@ -105,7 +105,7 @@ const Bio = () => {
                   <FontAwesomeIcon icon={faSpeakerDeck} />
                 </a>
               </li>
-              <li className="hover-style px-2">
+              <li className="hover-style px-1">
                 <a
                   href="https://www.instagram.com/nawoto/"
                   className="u-url"
@@ -115,7 +115,7 @@ const Bio = () => {
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
-              <li className="hover-style px-2">
+              <li className="hover-style px-1">
                 <a
                   href="https://suzuri.jp/nawoto/"
                   className="u-url"
@@ -125,7 +125,7 @@ const Bio = () => {
                   <FontAwesomeIcon icon={faTShirt} />
                 </a>
               </li>
-              <li className="hover-style pl-2">
+              <li className="hover-style pl-1">
                 <Link to="/rss.xml">
                   <FontAwesomeIcon icon={faSquareRss} />
                 </Link>
