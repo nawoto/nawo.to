@@ -3,7 +3,11 @@ import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSquareRss, faLocationDot } from "@fortawesome/free-solid-svg-icons"
+import {
+  faSquareRss,
+  faLocationDot,
+  faTShirt,
+} from "@fortawesome/free-solid-svg-icons"
 import {
   faTwitter,
   faGithub,
@@ -109,27 +113,57 @@ const About = ({ data, location }) => {
                 className="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm"
                 id="my-urls"
               >
-                <li className="hover-style pr-2">
-                  <a href="https://twitter.com/nawoto" itemProp="sameas">
+                <li className="hover-style pr-1">
+                  <a
+                    href="https://twitter.com/nawoto"
+                    itemProp="sameas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faTwitter} />
                   </a>
                 </li>
-                <li className="hover-style px-2">
-                  <a href="https://github.com/nawoto/" itemProp="sameas">
+                <li className="hover-style px-1">
+                  <a
+                    href="https://github.com/nawoto/"
+                    itemProp="sameas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faGithub} />
                   </a>
                 </li>
-                <li className="hover-style px-2">
-                  <a href="https://speakerdeck.com/nawoto" itemProp="sameas">
+                <li className="hover-style px-1">
+                  <a
+                    href="https://speakerdeck.com/nawoto"
+                    itemProp="sameas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faSpeakerDeck} />
                   </a>
                 </li>
-                <li className="hover-style px-2">
-                  <a href="https://www.instagram.com/nawoto/" itemProp="sameas">
+                <li className="hover-style px-1">
+                  <a
+                    href="https://www.instagram.com/nawoto/"
+                    itemProp="sameas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </li>
-                <li className="hover-style pl-2">
+                <li className="hover-style px-1">
+                  <a
+                    href="https://suzuri.jp/nawoto/"
+                    itemProp="sameas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faTShirt} />
+                  </a>
+                </li>
+                <li className="hover-style pl-1">
                   <Link to="/rss.xml">
                     <FontAwesomeIcon icon={faSquareRss} />
                   </Link>
