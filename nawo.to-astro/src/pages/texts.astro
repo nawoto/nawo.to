@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { SITE } from '../../astro.config.mjs';
 
 const texts = (await getCollection('texts')).sort(
 	(a: CollectionEntry<'texts'>, b: CollectionEntry<'texts'>) => 
@@ -38,13 +39,13 @@ const textsWithExcerpt = await Promise.all(
 );
 ---
 
-<Layout title="TEXTS | #nawoto" isRootPath={false}>
+<Layout title={`TEXTS | ${SITE.title}`} isRootPath={false}>
 	<div class="hover-style py-4 text-center">
 		<h1 class="text-4xl font-semibold uppercase tracking-widest">
 			texts
 		</h1>
 		<p class="text-sm text-gray-500">
-			テキストコンテンツ
+			不定期に思いついたことなどを文章にまとめています✍️
 		</p>
 	</div>
 	<ol style="list-style: none;">

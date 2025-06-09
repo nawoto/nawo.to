@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
 
 const posts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
@@ -53,7 +54,7 @@ const textsWithExcerpt = await Promise.all(
 );
 ---
 
-<Layout title="nawo.to" isRootPath={true}>
+<Layout title={SITE.title} isRootPath={true}>
 	<!-- LOG Section -->
 	<div class="hover-style">
 		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
