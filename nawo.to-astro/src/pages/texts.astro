@@ -1,7 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { SITE } from '../../astro.config.mjs';
+import { SITE } from '../config';
 
 const texts = (await getCollection('texts')).sort(
 	(a: CollectionEntry<'texts'>, b: CollectionEntry<'texts'>) => 
