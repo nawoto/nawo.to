@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Bio from '../components/Bio.astro';
+
+interface Props {
+  title: string;
+  isRootPath?: boolean;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  isRootPath = false,
+  description = "nawotoのブログ。主にプログラミングやWeb開発に関する内容を扱っています。",
+  image
+} = Astro.props;
+
+const siteTitle = title || "nawo.to";
+const siteDescription = description || "nawotoのブログ";
+const siteImage = image || "/default-og-image.png";
+const siteUrl = "https://nawo.to";
+const ogType = "website";
+const siteName = "nawo.to";
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/site-icon.png" />
+    
+    <!-- Open Graph -->
+    <meta property={`og:title`} content={siteTitle} />
+    <meta property={`og:description`} content={siteDescription} />
+    <meta property={`og:type`} content={ogType} />
+    <meta property={`og:url`} content={siteUrl} />
+    <meta property={`og:image`} content={siteImage} />
+    <meta property={`og:site_name`} content={siteName} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nawoto" />
+  </head>
+  <body class="mx-auto max-w-screen-xl">
+    <header class="text-center p-4">
+      <h1><a href="/">#nawoto</a></h1>
+      <nav>
+        <ul class="flex justify-center space-x-4">
+          <li><a href="/logs">LOG</a></li>
+          <li><a href="/texts">TEXTS</a></li>
+          <li><a href="/about">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="flex flex-row">
+      <aside class="border-r md:basis-1/4 p-4">
+        <Bio />
+      </aside>
+      <div class="p-4 flex-1">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="mt-8 border-t p-4 text-center text-sm text-gray-500">
+      © {new Date().getFullYear()}, NISHIMURA Naoto All Rights Reserved.
+    </footer>
+  </body>
+</html> 

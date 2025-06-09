@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout 
+  title="ABOUT | #nawoto" 
+  description="西村直人（nawoto）について。プログラマー・エンジニア・デザイナーとして活動しています。"
+  isRootPath={false}
+>
+  <!-- Main Content -->
+  <article class="mx-5 md:mx-44" itemscope itemtype="https://www.schema.org/Person">
+    <div>
+      <!-- Profile Section -->
+      <section class="flex flex-row py-3">
+        <div>
+          <img
+            class="z-10 overflow-hidden rounded-lg"
+            itemprop="image"
+            src="/images/profile-pic.png"
+            width="164"
+            height="164"
+            alt="Profile picture"
+          />
+        </div>
+        <div class="px-3 text-right md:text-left">
+          <h3 class="text-lg font-bold md:text-4xl" itemprop="name" lang="en">
+            NISHIMURA Naoto
+          </h3>
+          <div class="text-xl" itemprop="name">
+            西村 直人
+          </div>
+          <div class="text-gray-400">nawoto</div>
+          <div class="text-gray-400">
+            <Icon name="location-dot" class="inline w-4 h-4" />
+            <span class="pl-px" itemprop="address">
+              <span>Taito-ku, Tokyo</span>,
+              <span itemprop="nationality">Japan</span>
+            </span>
+          </div>
+          <div>
+            <a class="text-gray-400" href="/">
+              https://nawo.to
+            </a>
+            <meta itemprop="url" content="https://nawo.to/about" />
+          </div>
+          <ul class="flex flex-row justify-end pt-2 text-xl md:justify-start md:text-sm">
+            <li class="hover-style pr-1">
+              <a
+                href="https://twitter.com/nawoto"
+                itemprop="sameas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="twitter" class="w-4 h-4" />
+              </a>
+            </li>
+            <li class="hover-style px-1">
+              <a
+                href="https://github.com/nawoto/"
+                itemprop="sameas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="github" class="w-4 h-4" />
+              </a>
+            </li>
+            <li class="hover-style px-1">
+              <a
+                href="https://speakerdeck.com/nawoto"
+                itemprop="sameas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="speaker-deck" class="w-4 h-4" />
+              </a>
+            </li>
+            <li class="hover-style px-1">
+              <a
+                href="https://www.instagram.com/nawoto_sai/"
+                itemprop="sameas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="instagram" class="w-4 h-4" />
+              </a>
+            </li>
+            <li class="hover-style px-1">
+              <a
+                href="https://suzuri.jp/nawoto/"
+                itemprop="sameas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="t-shirt" class="w-4 h-4" />
+              </a>
+            </li>
+            <li class="hover-style pl-1">
+              <a href="/rss.xml">
+                <Icon name="rss" class="w-4 h-4" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bio Section -->
+      <section class="py-4">
+        <h4 class="text-lg font-bold uppercase text-gray-600">
+          bio
+        </h4>
+        <p class="pb-4 text-sm" itemprop="description">
+          <span class="pr-2 font-bold">nawoto</span>
+          こと
+          <span class="font-bold">西村直人</span>
+          です。
+        </p>
+        <p class="pb-4 text-sm">
+          プログラマー・エンジニア・デザイナーです。
+          <br />
+          Web開発・システム開発・デザインなどを得意としています。
+        </p>
+        <p class="pb-4 text-sm">
+          よろしくお願いいたします。
+        </p>
+      </section>
+    </div>
+  </article>
+</Layout> 

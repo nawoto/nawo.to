@@ -1,0 +1,74 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
+		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// 記事の抜粋を生成する関数
+function generateExcerpt(content: string, maxLength: number = 200): string {
+	// マークダウンの記号を除去して、プレーンテキストに変換
+	const plainText = content
+		.replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
+		.replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
+		.replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
+		.replace(/\n{2,}/g, ' ') // 改行を空白に変換
+		.trim();
+	
+	return plainText.length > maxLength 
+		? plainText.substring(0, maxLength) + '...'
+		: plainText;
+}
+
+// 記事の本文を読み込んで抜粋を生成
+const postsWithExcerpt = await Promise.all(
+	posts.map(async (post) => {
+		const excerpt = generateExcerpt(post.body);
+		return {
+			...post,
+			excerpt
+		};
+	})
+);
+---
+
+<Layout title="LOG | #nawoto" isRootPath={false}>
+	<div class="hover-style py-4 text-center">
+		<h1 class="text-4xl font-semibold uppercase tracking-widest">
+			log
+		</h1>
+		<p class="text-sm text-gray-500">
+			日々のなんとなくを書き留めてます✍️
+		</p>
+	</div>
+	<div class="space-y-4">
+		{postsWithExcerpt.map((post) => {
+			const title = post.data.title || post.slug;
+			return (
+				<article class="hover-style border-b p-4">
+					<header>
+						<h2 class="text-xl font-semibold mb-2">
+							<a href={`/blog/${post.slug}/`}>{title}</a>
+						</h2>
+						<time datetime={post.data.pubDate.toISOString()} class="text-sm text-gray-500">
+							{post.data.pubDate.toLocaleDateString('ja-JP', {
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit'
+							}).replace(/\//g, '/')}
+						</time>
+					</header>
+					{(post.data.description || post.excerpt) && (
+						<p class="mt-2 text-gray-700" set:html={post.data.description || post.excerpt}></p>
+					)}
+					<div class="mt-2">
+						<a href={`/blog/${post.slug}/`} class="text-blue-600 hover:underline text-sm uppercase">Read More</a>
+					</div>
+				</article>
+			);
+		})}
+	</div>
+</Layout> 
