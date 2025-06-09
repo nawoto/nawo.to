@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+---
+
+<Layout title={`404: Not Found | ${SITE.title}`}>
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <h1 class="text-4xl font-bold mb-4">404: Not Found</h1>
+    <p class="text-lg text-gray-600">You just hit a route that doesn't exist... the sadness.</p>
+    <a href="/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 underline">
+      ← 戻る
+    </a>
+  </main>
+</Layout> 

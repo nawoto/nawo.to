@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import { SITE } from '../config';
 
 interface Props {
   className?: string;
@@ -10,7 +11,7 @@ const { className = '', showImage = true } = Astro.props;
 ---
 
 <div class={`p-4 bg-gray-100 ${className}`}>
-  <h3 class="hover-style border-y text-center text-2xl font-medium uppercase tracking-widest md:hidden">
+  <h3 class="hover-style border-y text-center text-2xl font-semibold uppercase tracking-widest md:hidden">
     author
   </h3>
   <div class="hover-style h-card flex md:grid md:grid-cols-1">
@@ -28,7 +29,7 @@ const { className = '', showImage = true } = Astro.props;
     <div class="w-full border-b p-1 md:text-center">
       <p class="text-lg font-bold">
         <a href="/" class="p-name u-url">
-          NISHIMURA Naoto
+          {SITE.author.name}
         </a>
       </p>
       <p class="text-sm md:px-10 md:text-left">
