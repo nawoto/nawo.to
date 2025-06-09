@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Bio from '../components/Bio.astro';
+import { SITE } from '../config';
+
+interface Props {
+  title: string;
+  isRootPath?: boolean;
+  description?: string;
+}
+
+const { 
+  title, 
+  isRootPath = false,
+  description = "nawotoのブログ。主にプログラミングやWeb開発に関する内容を扱っています。"
+} = Astro.props;
+
+const siteUrl = "https://nawo.to";
+const ogImageUrl = siteUrl + "/images/opengraph-default.png";
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/site-icon.png" />
+    
+    <!-- Open Graph -->
+    <meta {...{"property": "og:title"}} content={title} />
+    <meta {...{"property": "og:description"}} content={description} />
+    <meta {...{"property": "og:type"}} content="website" />
+    <meta {...{"property": "og:url"}} content={siteUrl} />
+    <meta {...{"property": "og:image"}} content={ogImageUrl} />
+    <meta {...{"property": "og:site_name"}} content="nawo.to" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nawoto" />
+  </head>
+  <body>
+    <div data-is-root-path={isRootPath.toString()}>
+      <Header title={SITE.title} />
+      <main>
+        <div class="md:flex md:flex-row">
+          {!isRootPath && (
+            <div class="md:order-last md:basis-3/4">
+              <slot />
+            </div>
+          )}
+          <div class="border-r md:basis-1/4">
+            <Bio />
+          </div>
+          {isRootPath && <div class="md:basis-3/4"><slot /></div>}
+        </div>
+      </main>
+      <footer>
+        <slot name="footer" />
+      </footer>
+    </div>
+  </body>
+</html> 

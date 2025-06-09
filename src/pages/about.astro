@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Bio from '../components/Bio.astro';
+---
+
+<Layout title="About - nawo.to">
+  <div class="brutalist-container">
+    <h1 class="brutalist-heading">About</h1>
+    <div class="mt-8 prose prose-lg mx-auto">
+      <Bio className="mb-8" />
+      <div class="mt-8">
+        <h2 class="text-2xl font-semibold">このサイトについて</h2>
+        <p class="mt-4">
+          個人的な記録や考えをまとめているサイトです。主にプログラミングやWeb開発に関する内容を扱っています。
+        </p>
+        <p class="mt-4">
+          サイトは<a href="https://astro.build" class="link">Astro</a>で構築されており、
+          Almost Brutalismなデザインを採用しています。
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout> 

@@ -1,0 +1,38 @@
+---
+import Layout from './Layout.astro';
+import Bio from '../components/Bio.astro';
+import { format } from 'date-fns';
+
+interface Props {
+  title: string;
+  date: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, date, description, ogImage } = Astro.props;
+const formattedDate = format(new Date(date), 'yyyy-MM-dd');
+---
+
+<Layout 
+  title={title}
+  description={description}
+  ogImage={ogImage}
+>
+  <article class="brutalist-container prose prose-lg mx-auto">
+    <header class="mb-8">
+      <h1 class="brutalist-heading">{title}</h1>
+      <div class="mt-4 text-center text-gray-600">
+        <time datetime={date}>{formattedDate}</time>
+      </div>
+      {description && (
+        <p class="mt-4 text-center text-gray-600">{description}</p>
+      )}
+    </header>
+    <div class="mt-8">
+      <slot />
+    </div>
+    <hr class="my-8" />
+    <Bio className="mt-8" showImage={false} />
+  </article>
+</Layout> 

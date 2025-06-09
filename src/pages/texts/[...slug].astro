@@ -1,0 +1,17 @@
+import { getCollection } from 'astro:content';
+import TextPost from '../../layouts/TextPost.astro';
+
+export async function getStaticPaths() {
+  const texts = await getCollection('texts');
+  return texts.map(text => ({
+    params: { slug: text.slug },
+    props: { text },
+  }));
+}
+
+const { text } = Astro.props;
+const { Content } = await text.render();
+
+<TextPost {...text.data}>
+  <Content />
+</TextPost> 

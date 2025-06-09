@@ -1,0 +1,31 @@
+@import '@fontsource/titillium-web/400.css';
+@import '@fontsource/titillium-web/600.css';
+@import '@fontsource/titillium-web/900.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-titillium border-solid bg-white text-black;
+  }
+}
+
+@layer components {
+  .hover-style {
+    @apply transition-colors duration-200 hover:bg-black hover:text-white;
+  }
+  
+  .link {
+    @apply font-semibold underline decoration-gray-500;
+  }
+  
+  .brutalist-container {
+    @apply mx-auto max-w-4xl px-4 py-8;
+  }
+  
+  .brutalist-heading {
+    @apply border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest;
+  }
+} 

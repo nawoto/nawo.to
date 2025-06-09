@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Bio from '../components/Bio.astro';
+import { getCollection } from 'astro:content';
+import { format } from 'date-fns';
+import { SITE } from '../config';
+
+// ブログ記事の取得
+const blogPosts = await getCollection('blog');
+const sortedBlogPosts = blogPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 5);
+
+// texts記事の取得
+const textsPosts = await getCollection('texts');
+const sortedTextsPosts = textsPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 5);
+
+// 抜粋を生成する関数
+function generateExcerpt(content: string, limit: number = 140): string {
+  // コードブロックを[コード]に置換
+  const withoutCodeBlocks = content.replace(/```[\s\S]*?```/g, '[コード]');
+  
+  // HTMLタグを除去
+  const withoutHtml = withoutCodeBlocks.replace(/<[^>]*>/g, '');
+  
+  // 改行や余分な空白を整理
+  const cleaned = withoutHtml.replace(/\s+/g, ' ').trim();
+  
+  // 指定された文字数で切り詰め
+  if (cleaned.length <= limit) {
+    return cleaned;
+  }
+  
+  return cleaned.substring(0, limit) + '...';
+}
+---
+
+<Layout title={SITE.title} isRootPath={true}>
+  <div class="space-y-8">
+    {/* LOGセクション */}
+    <section>
+      <div class="border-b border-gray-300 mb-4">
+        <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-widest">
+          <a href="/logs">LOG</a>
+        </h2>
+      </div>
+      <div class="space-y-4">
+        {sortedBlogPosts.map(post => (
+          <article class="border-b border-gray-200 pb-4">
+            <header>
+              <h3 class="text-lg font-semibold">
+                <a href={`/blog/${post.slug}`} class="hover:underline">
+                  {post.data.title}
+                </a>
+              </h3>
+              <div class="mt-1 text-sm text-gray-500">
+                <time datetime={post.data.date}>
+                  {format(new Date(post.data.date), 'yyyy-MM-dd')}
+                </time>
+              </div>
+            </header>
+            <p class="mt-2 text-gray-600 text-sm">
+              {generateExcerpt(post.body)}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* TEXTSセクション */}
+    <section>
+      <div class="border-b border-gray-300 mb-4">
+        <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-widest">
+          <a href="/texts">TEXTS</a>
+        </h2>
+      </div>
+      <div class="space-y-4">
+        {sortedTextsPosts.map(post => (
+          <article class="border-b border-gray-200 pb-4">
+            <header>
+              <h3 class="text-lg font-semibold">
+                <a href={`/texts/${post.slug}`} class="hover:underline">
+                  {post.data.title}
+                </a>
+              </h3>
+              <div class="mt-1 text-sm text-gray-500">
+                <time datetime={post.data.date}>
+                  {format(new Date(post.data.date), 'yyyy-MM-dd')}
+                </time>
+              </div>
+            </header>
+            <p class="mt-2 text-gray-600 text-sm">
+              {generateExcerpt(post.body)}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout> 
