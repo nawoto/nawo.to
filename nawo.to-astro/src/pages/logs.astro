@@ -5,22 +5,25 @@ import Layout from '../layouts/Layout.astro';
 const posts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
 		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+); // 全記事表示
 
-// 記事の抜粋を生成する関数
-function generateExcerpt(content: string, maxLength: number = 200): string {
-	// マークダウンの記号を除去して、プレーンテキストに変換
+// 記事の抜粋を生成する関数（Gatsbyライク版）
+function generateExcerpt(content: string): string {
+	// 最初の140文字程度を取得（Gatsbyのデフォルト）
 	const plainText = content
+		.replace(/---[\s\S]*?---/g, '') // フロントマターを除去
+		.slice(0, 500) // 最初の500文字から処理開始
+		.replace(/```[\s\S]*?```/g, '[コード]') // コードブロックを[コード]に置換
 		.replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
 		.replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
 		.replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
 		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
-		.replace(/\n{2,}/g, ' ') // 改行を空白に変換
-		.trim();
+		.replace(/\n+/g, ' ') // 改行を空白に変換
+		.replace(/\s+/g, ' ') // 複数の空白を1つに
+		.trim()
+		.slice(0, 140); // 最終的に140文字に制限
 	
-	return plainText.length > maxLength 
-		? plainText.substring(0, maxLength) + '...'
-		: plainText;
+	return plainText + (plainText.length >= 140 ? '...' : '');
 }
 
 // 記事の本文を読み込んで抜粋を生成
@@ -44,31 +47,41 @@ const postsWithExcerpt = await Promise.all(
 			日々のなんとなくを書き留めてます✍️
 		</p>
 	</div>
-	<div class="space-y-4">
+	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
 			return (
-				<article class="hover-style border-b p-4">
-					<header>
-						<h2 class="text-xl font-semibold mb-2">
-							<a href={`/blog/${post.slug}/`}>{title}</a>
-						</h2>
-						<time datetime={post.data.pubDate.toISOString()} class="text-sm text-gray-500">
-							{post.data.pubDate.toLocaleDateString('ja-JP', {
+				<li class="hover-style border-y border-solid py-2">
+					<article
+						class="mx-auto w-5/6"
+						itemscope
+						itemtype="http://schema.org/Article"
+					>
+						<header class="py-4">
+							<h2 class="text-2xl font-bold">
+								<a href={`/blog/${post.slug}/`} itemprop="url">
+									<span itemprop="headline">{title}</span>
+								</a>
+							</h2>
+							<small>{post.data.pubDate.toLocaleDateString('ja-JP', {
 								year: 'numeric',
 								month: '2-digit',
 								day: '2-digit'
-							}).replace(/\//g, '/')}
-						</time>
-					</header>
-					{(post.data.description || post.excerpt) && (
-						<p class="mt-2 text-gray-700" set:html={post.data.description || post.excerpt}></p>
-					)}
-					<div class="mt-2">
-						<a href={`/blog/${post.slug}/`} class="text-blue-600 hover:underline text-sm uppercase">Read More</a>
-					</div>
-				</article>
+							}).replace(/\//g, '/')}</small>
+						</header>
+						<section>
+							<p
+								itemprop="description"
+								set:html={post.data.description || post.excerpt}
+							>
+							</p>
+							<div class="my-2 border py-2 text-center uppercase">
+								<a href={`/blog/${post.slug}/`}>read more</a>
+							</div>
+						</section>
+					</article>
+				</li>
 			);
 		})}
-	</div>
+	</ol>
 </Layout> 
