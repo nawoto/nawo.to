@@ -1,0 +1,322 @@
+---
+import Layout from './Layout.astro';
+import Bio from '../components/Bio.astro';
+import { SITE } from '../config';
+
+export interface Props {
+  title: string;
+  content: any;
+  previousPost?: any;
+  nextPost?: any;
+  shareUrl?: string;
+}
+
+const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
+const pageTitle = `${title} | ${SITE.title}`;
+const authorName = SITE.author.name;
+---
+
+<Layout title={pageTitle}>
+  <article
+    itemscope
+    itemtype="http://schema.org/Article"
+    class="h-entry brutalist-container prose prose-lg mx-auto"
+  >
+    <header class="mb-8">
+      <h1 itemprop="headline" class="p-name brutalist-heading">
+        {title}
+      </h1>
+      <div class="mt-4 text-center text-gray-600">
+        <time datetime={content.data.pubDate.toISOString()} class="dt-published">
+          {content.data.pubDate.toLocaleDateString('ja-JP', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+        {content.data.author && (
+          <span class="mx-2">by</span>
+          <span itemprop="author" class="p-author h-card">{content.data.author}</span>
+        )}
+      </div>
+    </header>
+
+    <div itemprop="articleBody" class="e-content mt-8">
+      <slot />
+    </div>
+
+    <footer class="mt-8">
+      {(previousPost || nextPost) && (
+        <nav class="flex justify-between items-center py-4">
+          {previousPost && (
+            <a 
+              href={previousPost.slug} 
+              class="text-sm text-gray-600 hover:text-gray-900"
+            >
+              ← {previousPost.data.title}
+            </a>
+          )}
+          {!previousPost && <div></div>}
+          {nextPost && (
+            <a 
+              href={nextPost.slug} 
+              class="text-sm text-gray-600 hover:text-gray-900"
+            >
+              {nextPost.data.title} →
+            </a>
+          )}
+        </nav>
+      )}
+      
+      <Bio className="mt-8" />
+    </footer>
+  </article>
+
+  <!-- Instagram Embed and OEmbed Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if Instagram embed exists on the page
+      const instagramEmbeds = document.querySelectorAll('.instagram-media');
+      if (instagramEmbeds.length > 0) {
+        // Instagram embed script
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
+        } else {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.instagram.com/embed.js';
+          script.onload = function() {
+            if ((window as any).instgrm) {
+              (window as any).instgrm.Embeds.process();
+            }
+          };
+          document.head.appendChild(script);
+        }
+      }
+
+      // Process OEmbed for multiple providers (like Gatsby version)
+      const processedUrls = new Set<string>();
+      
+      // OEmbed provider configurations
+      const oembedProviders = [
+        {
+          name: 'YouTube',
+          patterns: [/https:\/\/(www\.)?youtube\.com\/watch\?v=/, /https:\/\/youtu\.be\//],
+          endpoint: 'https://www.youtube.com/oembed'
+        },
+        {
+          name: 'Twitter',
+          patterns: [/https:\/\/(www\.)?twitter\.com\/\w+\/status\/\d+/, /https:\/\/x\.com\/\w+\/status\/\d+/],
+          useWidget: true,
+          maxwidth: 300
+        },
+        {
+          name: 'SpeakerDeck',
+          patterns: [/https:\/\/speakerdeck\.com\//],
+          endpoint: 'https://speakerdeck.com/oembed.json'
+        },
+        {
+          name: 'Spotify',
+          patterns: [/https:\/\/open\.spotify\.com\//],
+          endpoint: 'https://open.spotify.com/oembed'
+        },
+        {
+          name: 'SlideShare',
+          patterns: [/https:\/\/www\.slideshare\.net\//],
+          endpoint: 'https://www.slideshare.net/api/oembed/2'
+        },
+        {
+          name: 'Suzuri',
+          patterns: [/https:\/\/suzuri\.jp\/[^\/]+\/\d+/],
+          endpoint: 'https://suzuri.jp/oembed'
+        }
+      ] as Array<{
+        name: string;
+        patterns: RegExp[];
+        endpoint?: string;
+        useWidget?: boolean;
+        maxwidth?: number;
+      }>;
+
+      // Find all links that might be oembed candidates
+      const allLinks = document.querySelectorAll('a:not([data-oembed-processed])') as NodeListOf<HTMLAnchorElement>;
+      
+      allLinks.forEach(link => {
+        const url = link.href;
+        
+        // Check if this URL matches any oembed provider
+        const provider = oembedProviders.find(p => 
+          p.patterns.some(pattern => pattern.test(url))
+        );
+        
+        if (provider) {
+          console.log(`Found ${provider.name} URL:`, url);
+          
+          // Check if it's a standalone link
+          const isStandalone = isStandaloneLink(link);
+          console.log(`Is standalone link:`, isStandalone);
+          
+          if (!isStandalone) {
+            return; // Skip non-standalone links
+          }
+          
+          // Skip if already processed
+          if (processedUrls.has(url)) {
+            link.style.display = 'none';
+            return;
+          }
+          
+          // Mark as processed
+          link.setAttribute('data-oembed-processed', 'true');
+          processedUrls.add(url);
+          
+          // Handle Twitter with Widget.js
+          if (provider.useWidget && provider.name === 'Twitter') {
+            handleTwitterEmbed(link, url);
+            return;
+          }
+          
+          // Handle other providers with oembed API
+          if (provider.endpoint) {
+            // Build oembed URL
+            const oembedUrl = new URL(provider.endpoint);
+            oembedUrl.searchParams.set('url', url);
+            if (provider.maxwidth) {
+              oembedUrl.searchParams.set('maxwidth', provider.maxwidth.toString());
+            }
+            
+            console.log(`Fetching oembed from:`, oembedUrl.toString());
+            
+            fetch(oembedUrl.toString())
+              .then(response => {
+                console.log(`${provider.name} oembed response status:`, response.status);
+                return response.json();
+              })
+              .then(data => {
+                console.log(`${provider.name} oembed data:`, data);
+                if (data.html) {
+                  const embedContainer = document.createElement('div');
+                  embedContainer.innerHTML = data.html;
+                  embedContainer.className = `${provider.name.toLowerCase()}-embed my-4`;
+                  
+                  // Replace the link
+                  const parentP = link.closest('p');
+                  if (parentP) {
+                    const linkText = link.textContent || '';
+                    const parentText = parentP.textContent || '';
+                    
+                    if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
+                      parentP.replaceWith(embedContainer);
+                    } else {
+                      link.replaceWith(embedContainer);
+                    }
+                  } else {
+                    link.replaceWith(embedContainer);
+                  }
+                  console.log(`${provider.name} embed successfully inserted`);
+                }
+              })
+              .catch(error => {
+                console.log(`${provider.name} oembed failed:`, error);
+              });
+          }
+        }
+      });
+
+      // Check if a link is standalone (same logic as before)
+      function isStandaloneLink(link: HTMLAnchorElement): boolean {
+        const linkText = link.textContent || '';
+        const linkUrl = link.href;
+        
+        // Link text should match URL (standalone link)
+        if (linkText.trim() !== linkUrl) {
+          return false;
+        }
+        
+        // Check if parent p element contains only this link
+        const parentP = link.closest('p');
+        if (parentP) {
+          const parentText = parentP.textContent || '';
+          return parentText.trim() === linkText.trim();
+        }
+        
+        return true;
+      }
+
+      // Handle Twitter embed using Widget.js
+      function handleTwitterEmbed(link: HTMLAnchorElement, url: string) {
+        console.log('Handling Twitter embed with Widget.js:', url);
+        
+        // Create Twitter widget container
+        const embedContainer = document.createElement('div');
+        embedContainer.className = 'twitter-embed my-4';
+        
+        // Create blockquote for Twitter widget
+        const blockquote = document.createElement('blockquote');
+        blockquote.className = 'twitter-tweet';
+        blockquote.setAttribute('data-width', '300');
+        
+        // Create link inside blockquote
+        const tweetLink = document.createElement('a');
+        tweetLink.href = url;
+        tweetLink.textContent = 'Tweet';
+        blockquote.appendChild(tweetLink);
+        
+        embedContainer.appendChild(blockquote);
+        
+        // Replace the link
+        const parentP = link.closest('p');
+        if (parentP) {
+          const linkText = link.textContent || '';
+          const parentText = parentP.textContent || '';
+          
+          if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
+            parentP.replaceWith(embedContainer);
+          } else {
+            link.replaceWith(embedContainer);
+          }
+        } else {
+          link.replaceWith(embedContainer);
+        }
+        
+        // Load Twitter Widget.js if not already loaded
+        if (!(window as any).twttr) {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://platform.twitter.com/widgets.js';
+          script.onload = function() {
+            if ((window as any).twttr && (window as any).twttr.widgets) {
+              (window as any).twttr.widgets.load();
+            }
+          };
+          document.head.appendChild(script);
+        } else {
+          // Twitter Widget.js already loaded, just process new widgets
+          if ((window as any).twttr.widgets) {
+            (window as any).twttr.widgets.load();
+          }
+        }
+        
+        console.log('Twitter embed successfully inserted');
+      }
+    });
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "author": {
+      "@type": "Person",
+      "name": authorName
+    },
+    "datePublished": content.data.pubDate.toISOString(),
+    "url": shareUrl || `${SITE.url}/blog/${content.slug}`,
+    "publisher": {
+      "@type": "Organization",
+      "name": SITE.title,
+      "url": SITE.url
+    }
+  })} />
+</Layout>
