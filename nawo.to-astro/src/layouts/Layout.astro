@@ -14,16 +14,14 @@ interface Props {
 const { 
   title, 
   isRootPath = false,
-  description = "nawotoのブログ。主にプログラミングやWeb開発に関する内容を扱っています。",
+  description = SITE.description,
   image
 } = Astro.props;
 
-const siteTitle = title || "nawo.to";
-const siteDescription = description || "nawotoのブログ";
-const siteImage = image || "/default-og-image.png";
-const siteUrl = "https://nawo.to";
-const ogType = "website";
-const siteName = "nawo.to";
+const pageTitle = title || SITE.title;
+const metaDescription = description || SITE.description;
+const ogImageUrl = image ? new URL(image, SITE.url).href : new URL('/images/opengraph-default.png', SITE.url).href;
+const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
 ---
 
 <!DOCTYPE html>
@@ -31,22 +29,52 @@ const siteName = "nawo.to";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{siteTitle}</title>
-    <meta name="description" content={siteDescription} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/images/site-icon.png" />
     
-    <!-- Open Graph -->
-    <meta property={`og:title`} content={siteTitle} />
-    <meta property={`og:description`} content={siteDescription} />
-    <meta property={`og:type`} content={ogType} />
-    <meta property={`og:url`} content={siteUrl} />
-    <meta property={`og:image`} content={siteImage} />
-    <meta property={`og:site_name`} content={siteName} />
+    <!-- Primary Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content={SITE.author.name} />
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:locale" content="ja_JP" />
     
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@nawoto" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={currentUrl} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:image" content={ogImageUrl} />
+    <meta property="twitter:site" content={`@${SITE.social.twitter}`} />
+    <meta property="twitter:creator" content={`@${SITE.social.twitter}`} />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- WebMention and Identity Links -->
+    <link rel="me authn" href={`https://twitter.com/${SITE.social.twitter}`} />
+    <link rel="me" href="https://github.com/nawoto/" />
+    <link rel="me" href="https://speakerdeck.com/nawoto" />
+    <link rel="me" href="https://www.instagram.com/nawoto/" />
+    <link rel="me" href="https://www.facebook.com/nishimura.nawoto" />
+    <link rel="me" href="https://www.amazon.co.jp/~/e/B00B46MLPG" />
+    <link rel="webmention" href="https://webmention.io/nawo.to/webmention" />
+    <link rel="pingback" href="https://webmention.io/nawo.to/xmlrpc" />
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/site-icon.png" />
   </head>
   <body class="mx-auto max-w-screen-xl">
     <header>
