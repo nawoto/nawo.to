@@ -14,9 +14,9 @@
 - [ ] WebMentions対応の実装
 
 ### SEO・構造化データ
-- [ ] Schema.org構造化データの最適化
-- [ ] OGPメタタグの完全移行
-- [ ] Twitter Cardsの設定確認
+- [x] Schema.org構造化データの最適化
+- [x] OGPメタタグの完全移行
+- [x] Twitter Cardsの設定確認
 
 ## 📋 中優先度
 
@@ -24,8 +24,8 @@
 - [ ] Aboutページ(`/about/`)の移行
 - [ ] Contact機能の移行（フォーム等）
 - [ ] 404ページのカスタマイズ
-- [ ] Robot.txtの移行
-- [ ] Sitemapの生成設定
+- [x] Robot.txtの移行
+- [x] Sitemapの生成設定
 
 ### パフォーマンス・技術
 - [ ] 画像最適化の実装（Gatsby Image → Astro Image）
@@ -70,6 +70,10 @@
 - [x] Markdown記事の基本表示
 - [x] 記事メタ情報の表示
 - [x] Bioコンポーネントの実装
+- [x] astro-seo導入によるSEO最適化
+- [x] RSSフィード生成機能
+- [x] XMLサイトマップ自動生成
+- [x] WebMention対応の完全実装
 
 ## 📝 メモ・注意事項
 
