@@ -1,0 +1,33 @@
+---
+import { SEO as AstroSEO } from "astro-seo";
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  charset?: string;
+  openGraph?: any;
+  twitter?: any;
+  extend?: any;
+}
+
+const { 
+  title,
+  description,
+  canonical,
+  charset = "UTF-8",
+  openGraph,
+  twitter,
+  extend
+} = Astro.props;
+---
+
+<AstroSEO
+  title={title}
+  description={description}
+  canonical={canonical}
+  charset={charset}
+  openGraph={openGraph}
+  twitter={twitter}
+  extend={extend}
+/> 

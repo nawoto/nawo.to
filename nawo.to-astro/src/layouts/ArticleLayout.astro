@@ -1,6 +1,8 @@
 ---
+import { SEO } from "astro-seo";
 import Layout from './Layout.astro';
 import { SITE } from '../config';
+import { getCollection } from 'astro:content';
 
 export interface Props {
   title: string;
@@ -17,305 +19,137 @@ const metaDescription = content.data.description || `${title} - ${SITE.descripti
 const publishedTime = content.data.pubDate.toISOString();
 const modifiedTime = content.data.updatedDate?.toISOString();
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
+const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).href : new URL('/images/opengraph-default.png', SITE.url).href;
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
+  <!-- Article specific meta tags in head -->
+  <Fragment slot="head">
+    <meta property="article:published_time" content={publishedTime} />
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    <meta property="article:author" content={authorName} />
+    <meta property="article:section" content="Technology" />
+  </Fragment>
+
   <article
     itemscope
     itemtype="http://schema.org/Article"
-    class="h-entry brutalist-container prose prose-lg mx-auto"
+    class="mb-16 border-t-2 border-black bg-white px-8 py-8"
   >
     <header class="mb-8">
-      <h1 itemprop="headline" class="p-name brutalist-heading">
+      <h1 itemprop="headline" class="mb-4 text-3xl font-bold md:text-5xl">
         {title}
       </h1>
-      <div class="mt-4 text-center text-gray-600">
-        <time datetime={content.data.pubDate.toISOString()} class="dt-published">
-          {content.data.pubDate.toLocaleDateString('ja-JP', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
+      <div class="mb-4 text-sm text-gray-600">
+        <time itemprop="datePublished" datetime={content.data.pubDate.toISOString()}>
+          {content.data.pubDate.toLocaleDateString('ja-JP')}
         </time>
-        {content.data.author && (
-          <span class="mx-2">by</span>
-          <span itemprop="author" class="p-author h-card">{content.data.author}</span>
+        {content.data.updatedDate && (
+          <>
+            {' '} (更新: <time itemprop="dateModified" datetime={content.data.updatedDate.toISOString()}>
+              {content.data.updatedDate.toLocaleDateString('ja-JP')}
+            </time>)
+          </>
         )}
       </div>
     </header>
 
-    <div itemprop="articleBody" class="e-content mt-8">
+    <div itemprop="articleBody" class="prose prose-lg max-w-none">
       <slot />
     </div>
 
-    <footer class="mt-8">
-      {(previousPost || nextPost) && (
-        <nav class="flex justify-between items-center py-4">
-          {previousPost && (
-            <a 
-              href={previousPost.slug} 
-              class="text-sm text-gray-600 hover:text-gray-900"
-            >
-              ← {previousPost.data.title}
-            </a>
-          )}
-          {!previousPost && <div></div>}
-          {nextPost && (
-            <a 
-              href={nextPost.slug} 
-              class="text-sm text-gray-600 hover:text-gray-900"
-            >
-              {nextPost.data.title} →
-            </a>
-          )}
-        </nav>
-      )}
+    <footer class="mt-8 border-t pt-4">
+      <div class="mb-4">
+        <span class="text-sm text-gray-600">著者: </span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">{authorName}</span>
+        </span>
+      </div>
     </footer>
   </article>
 
-  <!-- Instagram Embed and OEmbed Script -->
+  <!-- Navigation -->
+  <nav class="mb-8 flex justify-between">
+    <div class="w-1/2 pr-4">
+      {previousPost && (
+        <a href={`/${previousPost.collection}/${previousPost.slug}/`} class="block border-2 border-black bg-white p-4 transition-colors hover:bg-gray-100">
+          <div class="text-sm text-gray-600">前の記事</div>
+          <div class="font-semibold">{previousPost.data.title}</div>
+        </a>
+      )}
+    </div>
+    <div class="w-1/2 pl-4">
+      {nextPost && (
+        <a href={`/${nextPost.collection}/${nextPost.slug}/`} class="block border-2 border-black bg-white p-4 text-right transition-colors hover:bg-gray-100">
+          <div class="text-sm text-gray-600">次の記事</div>
+          <div class="font-semibold">{nextPost.data.title}</div>
+        </a>
+      )}
+    </div>
+  </nav>
+
+  <!-- Share Buttons -->
+  <div class="mb-8 border-2 border-black bg-white p-6">
+    <h3 class="mb-4 text-lg font-semibold">この記事をシェア</h3>
+    <div class="flex flex-wrap gap-2">
+      <a
+        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(title)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-button bg-blue-500 text-white"
+      >
+        Twitter
+      </a>
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-button bg-blue-600 text-white"
+      >
+        Facebook
+      </a>
+      <a
+        href={`https://b.hatena.ne.jp/add?mode=confirm&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(title)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-button bg-blue-700 text-white"
+      >
+        はてブ
+      </a>
+      <button
+        type="button"
+        class="share-button bg-gray-500 text-white"
+        data-copy-url={currentUrl}
+      >
+        URLコピー
+      </button>
+    </div>
+  </div>
+
   <script>
+    // Add URL copy functionality
     document.addEventListener('DOMContentLoaded', function() {
-      // Check if Instagram embed exists on the page
-      const instagramEmbeds = document.querySelectorAll('.instagram-media');
-      if (instagramEmbeds.length > 0) {
-        // Instagram embed script
-        if ((window as any).instgrm) {
-          (window as any).instgrm.Embeds.process();
-        } else {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.instagram.com/embed.js';
-          script.onload = function() {
-            if ((window as any).instgrm) {
-              (window as any).instgrm.Embeds.process();
-            }
-          };
-          document.head.appendChild(script);
-        }
-      }
-
-      // Process OEmbed for multiple providers (like Gatsby version)
-      const processedUrls = new Set<string>();
-      
-      // OEmbed provider configurations
-      const oembedProviders = [
-        {
-          name: 'YouTube',
-          patterns: [/https:\/\/(www\.)?youtube\.com\/watch\?v=/, /https:\/\/youtu\.be\//],
-          endpoint: 'https://www.youtube.com/oembed'
-        },
-        {
-          name: 'Twitter',
-          patterns: [/https:\/\/(www\.)?twitter\.com\/\w+\/status\/\d+/, /https:\/\/x\.com\/\w+\/status\/\d+/],
-          useWidget: true,
-          maxwidth: 300
-        },
-        {
-          name: 'SpeakerDeck',
-          patterns: [/https:\/\/speakerdeck\.com\//],
-          endpoint: 'https://speakerdeck.com/oembed.json'
-        },
-        {
-          name: 'Spotify',
-          patterns: [/https:\/\/open\.spotify\.com\//],
-          endpoint: 'https://open.spotify.com/oembed'
-        },
-        {
-          name: 'SlideShare',
-          patterns: [/https:\/\/www\.slideshare\.net\//],
-          endpoint: 'https://www.slideshare.net/api/oembed/2'
-        },
-        {
-          name: 'Suzuri',
-          patterns: [/https:\/\/suzuri\.jp\/[^\/]+\/\d+/],
-          endpoint: 'https://suzuri.jp/oembed'
-        }
-      ] as Array<{
-        name: string;
-        patterns: RegExp[];
-        endpoint?: string;
-        useWidget?: boolean;
-        maxwidth?: number;
-      }>;
-
-      // Find all links that might be oembed candidates
-      const allLinks = document.querySelectorAll('a:not([data-oembed-processed])') as NodeListOf<HTMLAnchorElement>;
-      
-      allLinks.forEach(link => {
-        const url = link.href;
-        
-        // Check if this URL matches any oembed provider
-        const provider = oembedProviders.find(p => 
-          p.patterns.some(pattern => pattern.test(url))
-        );
-        
-        if (provider) {
-          console.log(`Found ${provider.name} URL:`, url);
-          
-          // Check if it's a standalone link
-          const isStandalone = isStandaloneLink(link);
-          console.log(`Is standalone link:`, isStandalone);
-          
-          if (!isStandalone) {
-            return; // Skip non-standalone links
+      const copyButtons = document.querySelectorAll('[data-copy-url]');
+      copyButtons.forEach((button) => {
+        button.addEventListener('click', function(this: HTMLElement) {
+          const url = this.getAttribute('data-copy-url');
+          if (url && navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(() => {
+              alert('URLをコピーしました');
+            });
           }
-          
-          // Skip if already processed
-          if (processedUrls.has(url)) {
-            link.style.display = 'none';
-            return;
-          }
-          
-          // Mark as processed
-          link.setAttribute('data-oembed-processed', 'true');
-          processedUrls.add(url);
-          
-          // Handle Twitter with Widget.js
-          if (provider.useWidget && provider.name === 'Twitter') {
-            handleTwitterEmbed(link, url);
-            return;
-          }
-          
-          // Handle other providers with oembed API
-          if (provider.endpoint) {
-            // Build oembed URL
-            const oembedUrl = new URL(provider.endpoint);
-            oembedUrl.searchParams.set('url', url);
-            if (provider.maxwidth) {
-              oembedUrl.searchParams.set('maxwidth', provider.maxwidth.toString());
-            }
-            
-            console.log(`Fetching oembed from:`, oembedUrl.toString());
-            
-            fetch(oembedUrl.toString())
-              .then(response => {
-                console.log(`${provider.name} oembed response status:`, response.status);
-                return response.json();
-              })
-              .then(data => {
-                console.log(`${provider.name} oembed data:`, data);
-                if (data.html) {
-                  const embedContainer = document.createElement('div');
-                  embedContainer.innerHTML = data.html;
-                  embedContainer.className = `${provider.name.toLowerCase()}-embed my-4`;
-                  
-                  // Replace the link
-                  const parentP = link.closest('p');
-                  if (parentP) {
-                    const linkText = link.textContent || '';
-                    const parentText = parentP.textContent || '';
-                    
-                    if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
-                      parentP.replaceWith(embedContainer);
-                    } else {
-                      link.replaceWith(embedContainer);
-                    }
-                  } else {
-                    link.replaceWith(embedContainer);
-                  }
-                  console.log(`${provider.name} embed successfully inserted`);
-                }
-              })
-              .catch(error => {
-                console.log(`${provider.name} oembed failed:`, error);
-              });
-          }
-        }
+        });
       });
-
-      // Check if a link is standalone (same logic as before)
-      function isStandaloneLink(link: HTMLAnchorElement): boolean {
-        const linkText = link.textContent || '';
-        const linkUrl = link.href;
-        
-        // Link text should match URL (standalone link)
-        if (linkText.trim() !== linkUrl) {
-          return false;
-        }
-        
-        // Check if parent p element contains only this link
-        const parentP = link.closest('p');
-        if (parentP) {
-          const parentText = parentP.textContent || '';
-          return parentText.trim() === linkText.trim();
-        }
-        
-        return true;
-      }
-
-      // Handle Twitter embed using Widget.js
-      function handleTwitterEmbed(link: HTMLAnchorElement, url: string) {
-        console.log('Handling Twitter embed with Widget.js:', url);
-        
-        // Create Twitter widget container
-        const embedContainer = document.createElement('div');
-        embedContainer.className = 'twitter-embed my-4';
-        
-        // Create blockquote for Twitter widget
-        const blockquote = document.createElement('blockquote');
-        blockquote.className = 'twitter-tweet';
-        blockquote.setAttribute('data-width', '300');
-        
-        // Create link inside blockquote
-        const tweetLink = document.createElement('a');
-        tweetLink.href = url;
-        tweetLink.textContent = 'Tweet';
-        blockquote.appendChild(tweetLink);
-        
-        embedContainer.appendChild(blockquote);
-        
-        // Replace the link
-        const parentP = link.closest('p');
-        if (parentP) {
-          const linkText = link.textContent || '';
-          const parentText = parentP.textContent || '';
-          
-          if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
-            parentP.replaceWith(embedContainer);
-          } else {
-            link.replaceWith(embedContainer);
-          }
-        } else {
-          link.replaceWith(embedContainer);
-        }
-        
-        // Load Twitter Widget.js if not already loaded
-        if (!(window as any).twttr) {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://platform.twitter.com/widgets.js';
-          script.onload = function() {
-            if ((window as any).twttr && (window as any).twttr.widgets) {
-              (window as any).twttr.widgets.load();
-            }
-          };
-          document.head.appendChild(script);
-        } else {
-          // Twitter Widget.js already loaded, just process new widgets
-          if ((window as any).twttr.widgets) {
-            (window as any).twttr.widgets.load();
-          }
-        }
-        
-        console.log('Twitter embed successfully inserted');
-      }
     });
   </script>
 
-  <!-- Article specific meta tags -->
-  <meta property="article:published_time" content={publishedTime} />
-  {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-  <meta property="article:author" content={authorName} />
-  <meta property="article:section" content="Technology" />
-  
   <!-- Schema.org structured data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": title,
     "description": metaDescription,
-    "image": SITE.url + "/images/opengraph-default.png",
+    "image": ogImageUrl,
     "author": {
       "@type": "Person",
       "name": authorName,

@@ -86,4 +86,8 @@
     .brutalist-heading {
         @apply border-y py-4 text-center text-3xl font-titillium font-bold uppercase tracking-widest;
     }
+    
+    .share-button {
+        @apply px-4 py-2 rounded border-2 border-black transition-colors duration-200 font-semibold hover:scale-105;
+    }
 } 

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Bio from '../components/Bio.astro';
 import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
 import { SITE } from '../config';
 
 interface Props {
@@ -27,54 +28,56 @@ const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>{pageTitle}</title>
-    <meta name="title" content={pageTitle} />
-    <meta name="description" content={metaDescription} />
-    <meta name="author" content={SITE.author.name} />
-    <link rel="canonical" href={currentUrl} />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={currentUrl} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={metaDescription} />
-    <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:site_name" content={SITE.title} />
-    <meta property="og:locale" content="ja_JP" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={currentUrl} />
-    <meta property="twitter:title" content={pageTitle} />
-    <meta property="twitter:description" content={metaDescription} />
-    <meta property="twitter:image" content={ogImageUrl} />
-    <meta property="twitter:site" content={`@${SITE.social.twitter}`} />
-    <meta property="twitter:creator" content={`@${SITE.social.twitter}`} />
-    
-    <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    
-    <!-- WebMention and Identity Links -->
-    <link rel="me authn" href={`https://twitter.com/${SITE.social.twitter}`} />
-    <link rel="me" href="https://github.com/nawoto/" />
-    <link rel="me" href="https://speakerdeck.com/nawoto" />
-    <link rel="me" href="https://www.instagram.com/nawoto/" />
-    <link rel="me" href="https://www.facebook.com/nishimura.nawoto" />
-    <link rel="me" href="https://www.amazon.co.jp/~/e/B00B46MLPG" />
-    <link rel="webmention" href="https://webmention.io/nawo.to/webmention" />
-    <link rel="pingback" href="https://webmention.io/nawo.to/xmlrpc" />
-    
-    <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/images/site-icon.png" />
+    <SEO
+      title={pageTitle}
+      description={metaDescription}
+      canonical={currentUrl}
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          type: "website",
+          title: pageTitle,
+          image: ogImageUrl,
+          url: currentUrl
+        },
+        optional: {
+          description: metaDescription,
+          siteName: SITE.title,
+          locale: "ja_JP"
+        }
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: `@${SITE.social.twitter}`,
+        creator: `@${SITE.social.twitter}`,
+        title: pageTitle,
+        description: metaDescription,
+        image: ogImageUrl
+      }}
+      extend={{
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+          { name: "author", content: SITE.author.name },
+          { name: "robots", content: "index, follow" },
+          { name: "googlebot", content: "index, follow" }
+        ],
+        link: [
+          { rel: "me authn", href: `https://twitter.com/${SITE.social.twitter}` },
+          { rel: "me", href: "https://github.com/nawoto/" },
+          { rel: "me", href: "https://speakerdeck.com/nawoto" },
+          { rel: "me", href: "https://www.instagram.com/nawoto/" },
+          { rel: "me", href: "https://www.facebook.com/nishimura.nawoto" },
+          { rel: "me", href: "https://www.amazon.co.jp/~/e/B00B46MLPG" },
+          { rel: "webmention", href: "https://webmention.io/nawo.to/webmention" },
+          { rel: "pingback", href: "https://webmention.io/nawo.to/xmlrpc" },
+          { rel: "alternate", type: "application/rss+xml", title: SITE.title, href: "/rss.xml" },
+          { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+          { rel: "apple-touch-icon", href: "/images/site-icon.png" }
+        ]
+      }}
+    />
+    <!-- Additional head content from child layouts -->
+    <slot name="head" />
   </head>
   <body class="mx-auto max-w-screen-xl">
     <header>
