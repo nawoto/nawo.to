@@ -10,8 +10,8 @@ interface Props {
 const { className = '', showImage = true } = Astro.props;
 ---
 
-<div class={`p-4 bg-gray-100 ${className}`}>
-  <h3 class="hover-style border-y text-center text-2xl font-semibold uppercase tracking-widest md:hidden">
+<div class={className}>
+  <h3 class="hover-style border-y text-center text-2xl font-medium uppercase tracking-widest md:hidden">
     author
   </h3>
   <div class="hover-style h-card flex md:grid md:grid-cols-1">

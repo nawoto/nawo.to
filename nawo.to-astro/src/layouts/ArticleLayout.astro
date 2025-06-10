@@ -1,6 +1,5 @@
 ---
 import Layout from './Layout.astro';
-import Bio from '../components/Bio.astro';
 import { SITE } from '../config';
 
 export interface Props {
@@ -67,8 +66,6 @@ const authorName = SITE.author.name;
           )}
         </nav>
       )}
-      
-      <Bio className="mt-8" />
     </footer>
   </article>
 

@@ -73,12 +73,14 @@ const siteName = "nawo.to";
       </nav>
     </header>
     
-    <main class="flex flex-row">
-      <aside class="border-r md:basis-1/4 p-4">
-        <Bio />
-      </aside>
-      <div class="p-4 flex-1">
-        <slot />
+    <main>
+      <div class="md:flex md:flex-row">
+        <div class="md:order-last md:basis-3/4">
+          <slot />
+        </div>
+        <div class="border-r md:basis-1/4">
+          <Bio />
+        </div>
       </div>
     </main>
 
