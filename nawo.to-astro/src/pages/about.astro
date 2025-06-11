@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import { SITE } from '../config';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
+import Comments from '../components/Comments.astro';
 
 const pageTitle = `About | ${SITE.title}`;
 const pageDescription = "西村直人（nawoto）のプロフィール。エンジニアリングマネージャー、スクラムマスター、アジャイル開発専門家として活動。";
@@ -588,6 +589,11 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
         <p class="text-sm">ver 2022.06.14</p>
       </div>
     </article>
+
+    <!-- Comments Section -->
+    <div class="mx-5 md:mx-44">
+      <Comments />
+    </div>
 
     <Footer />
   </body>

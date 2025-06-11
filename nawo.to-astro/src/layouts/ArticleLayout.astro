@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import Layout from './Layout.astro';
+import Comments from '../components/Comments.astro';
 import { SITE } from '../config';
 import { getCollection } from 'astro:content';
 
@@ -126,9 +127,13 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
     </div>
   </div>
 
+  <!-- Comments Section -->
+  <Comments />
+
   <script>
-    // Add URL copy functionality
+    // Add URL copy functionality and Instagram embed script
     document.addEventListener('DOMContentLoaded', function() {
+      // URL copy functionality
       const copyButtons = document.querySelectorAll('[data-copy-url]');
       copyButtons.forEach((button) => {
         button.addEventListener('click', function(this: HTMLElement) {
@@ -140,6 +145,16 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
           }
         });
       });
+
+      // Instagram embed script loading
+      const instagramEmbeds = document.querySelectorAll('.instagram-media');
+      if (instagramEmbeds.length > 0 && !document.querySelector('script[src*="instagram.com/embed.js"]')) {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//www.instagram.com/embed.js';
+        script.async = true;
+        document.head.appendChild(script);
+      }
     });
   </script>
 

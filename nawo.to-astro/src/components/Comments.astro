@@ -1,0 +1,49 @@
+---
+// Giscusコメント機能のAstroコンポーネント
+---
+
+<div class="mb-8">
+  <div id="giscus-comments" class="giscus-container">
+    <!-- Giscusがここに読み込まれます -->
+  </div>
+</div>
+
+<script>
+  // GiscusをクライアントサイドでDOMContentLoadedイベント後に読み込み
+  document.addEventListener('DOMContentLoaded', function() {
+    // 既にGiscusがロードされている場合は何もしない
+    if (document.querySelector('#giscus-comments script')) {
+      return;
+    }
+
+    // Giscusスクリプトを動的に作成
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'nawoto/nawo.to');
+    script.setAttribute('data-repo-id', 'R_kgDOHLJkHA');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOHLJkHM4CPjYl');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang', 'ja');
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    // Giscusコンテナに追加
+    const commentsContainer = document.getElementById('giscus-comments');
+    if (commentsContainer) {
+      commentsContainer.appendChild(script);
+    }
+  });
+</script>
+
+<style>
+  .giscus-container {
+    min-height: 200px;
+  }
+</style> 
