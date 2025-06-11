@@ -30,6 +30,10 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
     {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     <meta property="article:author" content={authorName} />
     <meta property="article:section" content="Technology" />
+    
+    <!-- Applause Button CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css" />
+    <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
   </Fragment>
 
   <article
@@ -125,6 +129,16 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
         URLコピー
       </button>
     </div>
+  </div>
+
+  <!-- Like Button (Applause) -->
+  <div class="mb-8 border-2 border-black bg-white p-6 text-center">
+    <h3 class="mb-4 text-lg font-semibold">この記事はいかがでしたか？</h3>
+    <applause-button 
+      style="width: 80px; height: 80px; margin: 0 auto;"
+      api="https://applause.chabouis.fr"
+      url={currentUrl}
+    />
   </div>
 
   <!-- Comments Section -->
