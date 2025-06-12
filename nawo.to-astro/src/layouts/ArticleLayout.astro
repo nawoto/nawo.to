@@ -45,6 +45,7 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
       <h1 itemprop="headline" class="mb-4 text-3xl font-bold md:text-5xl">
         {title}
       </h1>
+      
       <div class="mb-4 text-sm text-gray-600">
         <time itemprop="datePublished" datetime={content.data.pubDate.toISOString()}>
           {content.data.pubDate.toLocaleDateString('ja-JP')}
@@ -56,6 +57,16 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
             </time>)
           </>
         )}
+      </div>
+      
+      <!-- Mini Applause Button -->
+      <div class="mb-4 mt-0">
+        <applause-button 
+          style="width: 24px; height: 24px;"
+          color="#dc3545"
+          api="https://applause.chabouis.fr"
+          url={currentUrl}
+        />
       </div>
     </header>
 
@@ -132,10 +143,11 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
   </div>
 
   <!-- Like Button (Applause) -->
-  <div class="mb-8 border-2 border-black bg-white p-6 text-center">
-    <h3 class="mb-4 text-lg font-semibold">この記事はいかがでしたか？</h3>
+  <div class="mb-8 bg-white p-4 text-center">
+    <h3 class="mb-3 text-base font-semibold">この記事はいかがでしたか？</h3>
     <applause-button 
-      style="width: 80px; height: 80px; margin: 0 auto;"
+      style="width: 32px; height: 32px; margin: 0 auto;"
+      color="#dc3545"
       api="https://applause.chabouis.fr"
       url={currentUrl}
     />
