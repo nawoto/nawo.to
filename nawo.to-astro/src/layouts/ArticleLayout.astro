@@ -6,6 +6,7 @@ import { SITE } from '../config';
 import { getCollection } from 'astro:content';
 import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
 import { SocialShare } from 'astro-social-share';
+import WebMentions from '../components/WebMentions.astro';
 
 export interface Props {
   title: string;
@@ -185,6 +186,11 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
         class="self-end"
       />
     </div>
+  </div>
+
+  <!-- Webmentions Section -->
+  <div class="mx-auto max-w-4xl px-4 mb-8">
+    <WebMentions url={currentUrl} />
   </div>
 
   <!-- Comments Section -->

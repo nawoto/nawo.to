@@ -1,0 +1,57 @@
+---
+// Webmention表示コンポーネント
+// props: url（記事の絶対URL）
+const { url } = Astro.props;
+let mentions: any[] = [];
+if (typeof url === 'string') {
+  try {
+    const res = await fetch(`https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(url)}`);
+    if (res.ok) {
+      const data = await res.json();
+      mentions = data.children || [];
+    }
+  } catch (e) {
+    // エラー時は空配列のまま
+  }
+}
+const likes: any[] = mentions.filter((m: any) => m['wm-property'] === 'like-of' && m.author);
+---
+<div>
+  <h3 class="border-b text-left">Webmentions</h3>
+  <div>
+    {likes.length === 0 ? (
+      <span class="text-gray-500 block text-left">No Webmention</span>
+    ) : null}
+    {likes.map((author: any) => (
+      <div class="py-1 text-lg md:flex">
+        <p class="flex">
+          <a href={author.author.url} target="_blank" rel="noopener noreferrer">
+            <img
+              alt={author.author.name}
+              src={author.author.photo}
+              loading="lazy"
+              class="z-index overflow-hidden rounded-lg"
+              width="30"
+              height="30"
+            />
+          </a>
+          <span class="px-1 underline decoration-gray-400">
+            <a href={author.author.url} target="_blank" rel="noopener noreferrer">
+              {author.author.name}
+            </a>
+          </span>
+        </p>
+        <p>
+          <a
+            href={author['wm-source']}
+            class="underline decoration-gray-400"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            liked this
+          </a>
+        </p>
+      </div>
+    ))}
+  </div>
+</div> 
