@@ -30,17 +30,6 @@
         font-weight: 600 !important;
     }
     
-    /* Ensure Titillium Web font is applied to brutalist-heading with higher specificity */
-    article .brutalist-heading {
-        font-family: 'Titillium Web', sans-serif !important;
-        font-weight: 700 !important;
-    }
-    
-    h1.brutalist-heading {
-        font-family: 'Titillium Web', sans-serif !important;
-        font-weight: 700 !important;
-    }
-    
     /* Instagram embed styling - override prose defaults */
     .prose .instagram-media {
         margin: 1.5rem auto !important;
@@ -83,11 +72,8 @@
             @apply px-2 py-4;
         }
     }
-    .brutalist-heading {
-        @apply border-y py-4 text-center text-3xl font-titillium font-bold uppercase tracking-widest;
-    }
     
     .share-button {
         @apply px-4 py-2 rounded border-2 border-black transition-colors duration-200 font-semibold hover:scale-105;
     }
-} 
+}

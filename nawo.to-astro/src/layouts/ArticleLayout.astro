@@ -4,6 +4,8 @@ import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
 import { SITE } from '../config';
 import { getCollection } from 'astro:content';
+import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
+import { SocialShare } from 'astro-social-share';
 
 export interface Props {
   title: string;
@@ -39,14 +41,14 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
   <article
     itemscope
     itemtype="http://schema.org/Article"
-    class="mb-16 border-t-2 border-black bg-white px-8 py-8"
+    class="prose prose-lg mx-auto max-w-4xl px-4 py-8"
   >
     <header class="mb-8">
-      <h1 itemprop="headline" class="mb-4 text-3xl font-bold md:text-5xl">
+      <h1 itemprop="headline" class="text-3xl font-bold md:text-5xl mb-0">
         {title}
       </h1>
       
-      <div class="mb-4 text-sm text-gray-600">
+      <div class="text-sm text-gray-600 m-0">
         <time itemprop="datePublished" datetime={content.data.pubDate.toISOString()}>
           {content.data.pubDate.toLocaleDateString('ja-JP')}
         </time>
@@ -60,9 +62,9 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
       </div>
       
       <!-- Mini Applause Button -->
-      <div class="mb-4 mt-0">
+      <div class="relative m-0 p-0" style="margin:0;padding:0;">
         <applause-button 
-          style="width: 24px; height: 24px;"
+          style="width: 24px; height: 24px; margin:0; padding:0;"
           color="#dc3545"
           api="https://applause.chabouis.fr"
           url={currentUrl}
@@ -85,76 +87,110 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
   </article>
 
   <!-- Navigation -->
-  <nav class="mb-8 flex justify-between">
-    <div class="w-1/2 pr-4">
-      {previousPost && (
-        <a href={`/${previousPost.collection}/${previousPost.slug}/`} class="block border-2 border-black bg-white p-4 transition-colors hover:bg-gray-100">
-          <div class="text-sm text-gray-600">前の記事</div>
-          <div class="font-semibold">{previousPost.data.title}</div>
-        </a>
-      )}
-    </div>
-    <div class="w-1/2 pl-4">
-      {nextPost && (
-        <a href={`/${nextPost.collection}/${nextPost.slug}/`} class="block border-2 border-black bg-white p-4 text-right transition-colors hover:bg-gray-100">
-          <div class="text-sm text-gray-600">次の記事</div>
-          <div class="font-semibold">{nextPost.data.title}</div>
-        </a>
-      )}
-    </div>
+  <nav class="mx-auto max-w-4xl px-4">
+    <ul class="my-5 grid grid-cols-2 divide-x border-y text-center text-2xl uppercase">
+      <li class="hover-style p-3">
+        {previousPost ? (
+          <a
+            href={`/${previousPost.collection}/${previousPost.slug}/`}
+            title={previousPost.data.title}
+            rel="prev"
+            class="block"
+          >
+            prev
+            <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
+          </a>
+        ) : (
+          <span class="text-gray-400">prev</span>
+        )}
+      </li>
+      <li class="hover-style p-3">
+        {nextPost ? (
+          <a
+            href={`/${nextPost.collection}/${nextPost.slug}/`}
+            title={nextPost.data.title}
+            rel="next"
+            class="block"
+          >
+            next
+            <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
+          </a>
+        ) : (
+          <span class="text-gray-400">next</span>
+        )}
+      </li>
+    </ul>
   </nav>
 
   <!-- Share Buttons -->
-  <div class="mb-8 border-2 border-black bg-white p-6">
-    <h3 class="mb-4 text-lg font-semibold">この記事をシェア</h3>
-    <div class="flex flex-wrap gap-2">
+  <div class="mx-auto max-w-4xl px-4 mb-8">
+    <div class="flex gap-2 my-6 items-end">
+      <!-- X (Twitter) -->
       <a
         href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(title)}`}
         target="_blank"
         rel="noopener noreferrer"
-        class="share-button bg-blue-500 text-white"
+        aria-label="Xでシェア"
+        class="hover:opacity-70 transition"
       >
-        Twitter
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          class="w-6 h-6"
+          style="color: #000;"
+        >
+          <path d={siX.path} />
+        </svg>
       </a>
+      <!-- Facebook -->
       <a
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
         target="_blank"
         rel="noopener noreferrer"
-        class="share-button bg-blue-600 text-white"
+        aria-label="Facebookでシェア"
+        class="hover:opacity-70 transition"
       >
-        Facebook
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          class="w-6 h-6"
+          style="color: #1877F2;"
+        >
+          <path d={siFacebook.path} />
+        </svg>
       </a>
+      <!-- Hatena -->
       <a
         href={`https://b.hatena.ne.jp/add?mode=confirm&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(title)}`}
         target="_blank"
         rel="noopener noreferrer"
-        class="share-button bg-blue-700 text-white"
+        aria-label="はてなブックマークでシェア"
+        class="hover:opacity-70 transition"
       >
-        はてブ
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          class="w-6 h-6"
+          style="color: #00A4DE;"
+        >
+          <path d={siHatenabookmark.path} />
+        </svg>
       </a>
-      <button
-        type="button"
-        class="share-button bg-gray-500 text-white"
-        data-copy-url={currentUrl}
-      >
-        URLコピー
-      </button>
+      <!-- Applause Button（いいねボタン） -->
+      <applause-button 
+        style="width: 28px; height: 28px; margin:0; padding:0;"
+        color="#dc3545"
+        api="https://applause.chabouis.fr"
+        url={currentUrl}
+        class="self-end"
+      />
     </div>
   </div>
 
-  <!-- Like Button (Applause) -->
-  <div class="mb-8 bg-white p-4 text-center">
-    <h3 class="mb-3 text-base font-semibold">この記事はいかがでしたか？</h3>
-    <applause-button 
-      style="width: 32px; height: 32px; margin: 0 auto;"
-      color="#dc3545"
-      api="https://applause.chabouis.fr"
-      url={currentUrl}
-    />
-  </div>
-
   <!-- Comments Section -->
-  <Comments />
+  <div class="mx-auto max-w-4xl px-4">
+    <Comments />
+  </div>
 
   <script>
     // Add URL copy functionality and Instagram embed script
