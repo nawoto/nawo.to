@@ -5,9 +5,14 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   
-  return posts.map((post: CollectionEntry<'blog'>, index: number) => {
-    const previousPost = posts[index + 1] || null;
-    const nextPost = posts[index - 1] || null;
+  // 公開日順にソート（新しい記事が前に来るように）
+  const sortedPosts = posts.sort((a, b) => 
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+  
+  return sortedPosts.map((post: CollectionEntry<'blog'>, index: number) => {
+    const previousPost = sortedPosts[index + 1] || null; // より古い記事
+    const nextPost = sortedPosts[index - 1] || null; // より新しい記事
     
     return {
       params: { slug: post.slug },

@@ -1,74 +1,33 @@
 {
-  "name": "nawo.to",
-  "private": true,
-  "description": "nawo.to",
-  "version": "0.1.0",
-  "author": "NISHIMURA Naoto <nishimura@nawo.to>",
-  "bugs": {
-    "url": "https://github.com/nawoto/nawo.to/issues"
+  "name": "nawo.to-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "node scripts/generate-favicon.js && astro dev",
+    "build": "node scripts/generate-favicon.js && astro build && touch dist/.nojekyll",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate-favicon": "node scripts/generate-favicon.js",
+    "new-article": "node scripts/new-article.js",
+    "deploy": "npm run build && npx gh-pages -d dist --dotfiles"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@giscus/react": "^2.0.5",
-    "@lyket/react": "^1.4.8",
-    "@raae/gatsby-remark-oembed": "^0.3.1",
-    "@tailwindcss/typography": "^0.5.2",
-    "gatsby": "^4.9.0",
-    "gatsby-plugin-canonical-urls": "^4.14.0",
-    "gatsby-plugin-feed": "^4.9.0",
-    "gatsby-plugin-gatsby-cloud": "^4.9.0",
-    "gatsby-plugin-google-gtag": "^4.14.0",
-    "gatsby-plugin-image": "^2.9.0",
-    "gatsby-plugin-manifest": "^4.9.0",
-    "gatsby-plugin-offline": "^5.9.0",
-    "gatsby-plugin-react-helmet": "^5.9.0",
-    "gatsby-plugin-sharp": "^4.9.0",
-    "gatsby-plugin-sitemap": "^5.14.0",
-    "gatsby-plugin-webmention": "^0.2.0",
-    "gatsby-remark-copy-linked-files": "^5.9.0",
-    "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^6.9.0",
-    "gatsby-remark-prismjs": "^6.9.0",
-    "gatsby-remark-responsive-iframe": "^5.9.0",
-    "gatsby-remark-smartypants": "^5.9.0",
-    "gatsby-source-filesystem": "^4.9.0",
-    "gatsby-transformer-remark": "^5.9.0",
-    "gatsby-transformer-sharp": "^4.9.0",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-share": "^4.4.0"
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
+    "@fontsource/titillium-web": "^5.2.6",
+    "astro": "^5.9.0",
+    "astro-seo": "^0.8.4",
+    "date-fns": "^4.1.0",
+    "remark-gfm": "^4.0.1",
+    "simple-icons": "^15.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "gatsby-plugin-postcss": "^5.9.0",
-    "gh-pages": "^3.2.3",
-    "postcss": "^8.4.8",
-    "prettier": "^2.5.1",
-    "prettier-plugin-tailwindcss": "^0.1.8",
-    "tailwindcss": "^3.0.23"
-  },
-  "homepage": "https://nawo.to",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nawoto/nawo.to.git"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public"
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.17",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.33",
+    "sharp": "^0.34.2",
+    "tailwindcss": "^3.4.17"
   }
 }
