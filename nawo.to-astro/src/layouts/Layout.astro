@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+import Bio from '../components/Bio.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import { SITE } from '../config';
+
+interface Props {
+  title: string;
+  isRootPath?: boolean;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  isRootPath = false,
+  description = SITE.description,
+  image
+} = Astro.props;
+
+const pageTitle = title || SITE.title;
+const metaDescription = description || SITE.description;
+const ogImageUrl = image ? new URL(image, SITE.url).href : new URL('/images/opengraph-default.png', SITE.url).href;
+const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <SEO
+      title={pageTitle}
+      description={metaDescription}
+      canonical={currentUrl}
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          type: "website",
+          title: pageTitle,
+          image: ogImageUrl,
+          url: currentUrl
+        },
+        optional: {
+          description: metaDescription,
+          siteName: SITE.title,
+          locale: "ja_JP"
+        }
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: `@${SITE.social.twitter}`,
+        creator: `@${SITE.social.twitter}`,
+        title: pageTitle,
+        description: metaDescription,
+        image: ogImageUrl
+      }}
+      extend={{
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+          { name: "author", content: SITE.author.name },
+          { name: "robots", content: "index, follow" },
+          { name: "googlebot", content: "index, follow" }
+        ],
+        link: [
+          { rel: "me authn", href: `https://twitter.com/${SITE.social.twitter}` },
+          { rel: "me", href: "https://github.com/nawoto/" },
+          { rel: "me", href: "https://speakerdeck.com/nawoto" },
+          { rel: "me", href: "https://www.instagram.com/nawoto/" },
+          { rel: "me", href: "https://www.facebook.com/nishimura.nawoto" },
+          { rel: "me", href: "https://www.amazon.co.jp/~/e/B00B46MLPG" },
+          { rel: "webmention", href: "https://webmention.io/nawo.to/webmention" },
+          { rel: "pingback", href: "https://webmention.io/nawo.to/xmlrpc" },
+          { rel: "alternate", type: "application/rss+xml", title: SITE.title, href: "/rss.xml" },
+          { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+          { rel: "apple-touch-icon", href: "/images/site-icon.png" }
+        ]
+      }}
+    />
+    <!-- Additional head content from child layouts -->
+    <slot name="head" />
+  </head>
+  <body class="mx-auto max-w-screen-xl">
+    <header>
+      <div class="hover-style py-6">
+        <h3 class="text-center text-6xl font-black tracking-widest md:text-8xl">
+          <a href="/">{SITE.title}</a>
+        </h3>
+      </div>
+      <nav>
+        <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase md:grid-cols-4">
+          <li class="hover-style border-y">
+            <a href="/">top</a>
+          </li>
+          <li class="hover-style border-y">
+            <a href="/logs">log</a>
+          </li>
+          <li class="hover-style border-b md:border-y">
+            <a href="/texts">texts</a>
+          </li>
+          <li class="hover-style border-b md:border-y">
+            <a href="/about">about</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="md:flex md:flex-row">
+        <div class="md:order-last md:basis-3/4">
+          <slot />
+        </div>
+        <div class="border-r md:basis-1/4">
+          <Bio />
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html> 

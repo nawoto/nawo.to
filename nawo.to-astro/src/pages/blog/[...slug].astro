@@ -1,0 +1,47 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  // 公開日順にソート（新しい記事が前に来るように）
+  const sortedPosts = posts.sort((a, b) => 
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+  
+  return sortedPosts.map((post: CollectionEntry<'blog'>, index: number) => {
+    const previousPost = sortedPosts[index + 1] || null; // より古い記事
+    const nextPost = sortedPosts[index - 1] || null; // より新しい記事
+    
+    return {
+      params: { slug: post.slug },
+      props: { 
+        post,
+        previousPost: previousPost ? {
+          slug: `/blog/${previousPost.slug}`,
+          data: previousPost.data
+        } : null,
+        nextPost: nextPost ? {
+          slug: `/blog/${nextPost.slug}`,
+          data: nextPost.data
+        } : null
+      },
+    };
+  });
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await post.render();
+const shareUrl = `https://nawo.to/blog/${post.slug}`;
+---
+
+<ArticleLayout 
+  title={post.data.title}
+  content={post}
+  previousPost={previousPost}
+  nextPost={nextPost}
+  shareUrl={shareUrl}
+>
+  <Content />
+</ArticleLayout> 

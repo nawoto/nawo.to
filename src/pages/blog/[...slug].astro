@@ -1,0 +1,42 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  return posts.map((post: CollectionEntry<'blog'>, index: number) => {
+    const previousPost = posts[index + 1] || null;
+    const nextPost = posts[index - 1] || null;
+    
+    return {
+      params: { slug: post.slug },
+      props: { 
+        post,
+        previousPost: previousPost ? {
+          slug: `/blog/${previousPost.slug}`,
+          data: previousPost.data
+        } : null,
+        nextPost: nextPost ? {
+          slug: `/blog/${nextPost.slug}`,
+          data: nextPost.data
+        } : null
+      },
+    };
+  });
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await post.render();
+const shareUrl = `https://nawo.to/blog/${post.slug}`;
+---
+
+<ArticleLayout 
+  title={post.data.title}
+  content={post}
+  previousPost={previousPost}
+  nextPost={nextPost}
+  shareUrl={shareUrl}
+>
+  <Content />
+</ArticleLayout> 
