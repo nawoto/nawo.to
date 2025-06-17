@@ -13,20 +13,31 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-const type = params.type === 'texts' ? 'texts' : 'blog';
+// 短縮オプションの処理
+let type = 'blog';
+if (params.type === 'texts' || params.texts) {
+  type = 'texts';
+} else if (params.blog) {
+  type = 'blog';
+}
+
 const slug = params.slug;
-const date = params.date || new Date().toISOString().slice(0, 10);
+const now = new Date();
+const date = params.date || now.toISOString().slice(0, 10);
+const dateTime = params.date ? `${params.date}T00:00:00+09:00` : now.toISOString().replace('Z', '+09:00');
 
 if (!slug) {
   console.error('エラー: --slug を指定してください');
   process.exit(1);
 }
 
-const dir = path.join('content', type);
+// 日付からディレクトリ構造を作成
+const [year, month, day] = date.split('-');
+const dir = path.join('src/content', type, year, month, day);
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir, { recursive: true });
 }
-const filename = `${date}-${slug}.md`;
+const filename = `${slug}.md`;
 const filepath = path.join(dir, filename);
 
 if (fs.existsSync(filepath)) {
@@ -36,7 +47,7 @@ if (fs.existsSync(filepath)) {
 
 const template = `---
 title: "タイトルを入力"
-date: "${date}"
+pubDate: "${dateTime}"
 description: ""
 tags: []
 ---
