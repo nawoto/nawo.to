@@ -19,11 +19,13 @@ export async function getStaticPaths() {
 			props: { 
 				text,
 				previousPost: previousText ? {
-					slug: `/texts/${previousText.slug}`,
+					slug: previousText.slug,
+					collection: 'texts',
 					data: previousText.data
 				} : null,
 				nextPost: nextText ? {
-					slug: `/texts/${nextText.slug}`,
+					slug: nextText.slug,
+					collection: 'texts',
 					data: nextText.data
 				} : null
 			},
