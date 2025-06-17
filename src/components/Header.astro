@@ -1,29 +1,18 @@
 ---
 interface Props {
-  title: string;
+  isRootPath?: boolean;
 }
 
-const { title } = Astro.props;
+const { isRootPath = false } = Astro.props;
 ---
 
-<div class="hover-style py-6">
-  <h3 class="text-center text-6xl font-black tracking-widest md:text-8xl">
-    <a href="/">{title}</a>
-  </h3>
-</div>
-<nav>
-  <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase md:grid-cols-4">
-    <li class="hover-style border-y">
-      <a href="/">top</a>
-    </li>
-    <li class="hover-style border-y">
-      <a href="/logs">log</a>
-    </li>
-    <li class="hover-style border-b md:border-y">
-      <a href="/texts">texts</a>
-    </li>
-    <li class="hover-style border-b md:border-y">
-      <a href="/about">about</a>
-    </li>
-  </ul>
-</nav> 
+<header class="brutalist-container">
+  <nav class="flex items-center justify-between border-b pb-4">
+    <div class="flex space-x-6">
+      <a href="/" class={`link ${isRootPath ? 'font-bold' : ''}`}>top</a>
+      <a href="/logs" class="link">log</a>
+      <a href="/texts" class="link">texts</a>
+      <a href="/about" class="link">about</a>
+    </div>
+  </nav>
+</header> 

@@ -1,102 +1,145 @@
 ---
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Bio from '../components/Bio.astro';
-import { getCollection } from 'astro:content';
-import { format } from 'date-fns';
 import { SITE } from '../config';
 
-// ブログ記事の取得
-const blogPosts = await getCollection('blog');
-const sortedBlogPosts = blogPosts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 5);
+const posts = (await getCollection('blog')).sort(
+	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
+		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
-// texts記事の取得
-const textsPosts = await getCollection('texts');
-const sortedTextsPosts = textsPosts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 5);
+const texts = (await getCollection('texts')).sort(
+	(a: CollectionEntry<'texts'>, b: CollectionEntry<'texts'>) => 
+		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
-// 抜粋を生成する関数
-function generateExcerpt(content: string, limit: number = 140): string {
-  // コードブロックを[コード]に置換
-  const withoutCodeBlocks = content.replace(/```[\s\S]*?```/g, '[コード]');
-  
-  // HTMLタグを除去
-  const withoutHtml = withoutCodeBlocks.replace(/<[^>]*>/g, '');
-  
-  // 改行や余分な空白を整理
-  const cleaned = withoutHtml.replace(/\s+/g, ' ').trim();
-  
-  // 指定された文字数で切り詰め
-  if (cleaned.length <= limit) {
-    return cleaned;
-  }
-  
-  return cleaned.substring(0, limit) + '...';
+// 記事の抜粋を生成する関数（Gatsbyライク版）
+function generateExcerpt(content: string): string {
+	// 最初の140文字程度を取得（Gatsbyのデフォルト）
+	const plainText = content
+		.replace(/---[\s\S]*?---/g, '') // フロントマターを除去
+		.slice(0, 500) // 最初の500文字から処理開始
+		.replace(/```[\s\S]*?```/g, '[コード]') // コードブロックを[コード]に置換
+		.replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
+		.replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
+		.replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
+		.replace(/\n+/g, ' ') // 改行を空白に変換
+		.replace(/\s+/g, ' ') // 複数の空白を1つに
+		.trim()
+		.slice(0, 140); // 最終的に140文字に制限
+	
+	return plainText + (plainText.length >= 140 ? '...' : '');
 }
+
+// 記事の本文を読み込んで抜粋を生成
+const postsWithExcerpt = await Promise.all(
+	posts.map(async (post) => {
+		const excerpt = generateExcerpt(post.body);
+		return {
+			...post,
+			excerpt
+		};
+	})
+);
+
+const textsWithExcerpt = await Promise.all(
+	texts.map(async (text) => {
+		const excerpt = generateExcerpt(text.body);
+		return {
+			...text,
+			excerpt
+		};
+	})
+);
 ---
 
 <Layout title={SITE.title} isRootPath={true}>
-  <div class="space-y-8">
-    {/* LOGセクション */}
-    <section>
-      <div class="border-b border-gray-300 mb-4">
-        <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-widest">
-          <a href="/logs">LOG</a>
-        </h2>
-      </div>
-      <div class="space-y-4">
-        {sortedBlogPosts.map(post => (
-          <article class="border-b border-gray-200 pb-4">
-            <header>
-              <h3 class="text-lg font-semibold">
-                <a href={`/blog/${post.slug}`} class="hover:underline">
-                  {post.data.title}
-                </a>
-              </h3>
-              <div class="mt-1 text-sm text-gray-500">
-                <time datetime={post.data.date}>
-                  {format(new Date(post.data.date), 'yyyy-MM-dd')}
-                </time>
-              </div>
-            </header>
-            <p class="mt-2 text-gray-600 text-sm">
-              {generateExcerpt(post.body)}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
+	<!-- LOG Section -->
+	<div class="hover-style">
+		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
+			<a href="/logs">log</a>
+		</h1>
+	</div>
+	<ol style="list-style: none;">
+		{postsWithExcerpt.map((post) => {
+			const title = post.data.title || post.slug;
+			return (
+				<li class="hover-style border-y border-solid py-2">
+					<article
+						class="mx-auto w-5/6"
+						itemscope
+						itemtype="http://schema.org/Article"
+					>
+						<header class="py-4">
+							<h2 class="text-2xl font-bold">
+								<a href={`/blog/${post.slug}/`} itemprop="url">
+									<span itemprop="headline">{title}</span>
+								</a>
+							</h2>
+							<small>{post.data.pubDate.toLocaleDateString('ja-JP', {
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit'
+							}).replace(/\//g, '/')}</small>
+						</header>
+						<section>
+							<p
+								itemprop="description"
+								set:html={post.data.description || post.excerpt}
+							>
+							</p>
+							<div class="my-2 border py-2 text-center uppercase">
+								<a href={`/blog/${post.slug}/`}>read more</a>
+							</div>
+						</section>
+					</article>
+				</li>
+			);
+		})}
+	</ol>
 
-    {/* TEXTSセクション */}
-    <section>
-      <div class="border-b border-gray-300 mb-4">
-        <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-widest">
-          <a href="/texts">TEXTS</a>
-        </h2>
-      </div>
-      <div class="space-y-4">
-        {sortedTextsPosts.map(post => (
-          <article class="border-b border-gray-200 pb-4">
-            <header>
-              <h3 class="text-lg font-semibold">
-                <a href={`/texts/${post.slug}`} class="hover:underline">
-                  {post.data.title}
-                </a>
-              </h3>
-              <div class="mt-1 text-sm text-gray-500">
-                <time datetime={post.data.date}>
-                  {format(new Date(post.data.date), 'yyyy-MM-dd')}
-                </time>
-              </div>
-            </header>
-            <p class="mt-2 text-gray-600 text-sm">
-              {generateExcerpt(post.body)}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-  </div>
-</Layout> 
+	<!-- TEXTS Section -->
+	<div class="hover-style">
+		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest">
+			<a href="/texts">texts</a>
+		</h1>
+	</div>
+	<ol style="list-style: none;">
+		{textsWithExcerpt.map((text) => {
+			const title = text.data.title || text.slug;
+			return (
+				<li class="hover-style border-y border-solid py-2">
+					<article
+						class="mx-auto w-5/6"
+						itemscope
+						itemtype="http://schema.org/Article"
+					>
+						<header class="py-4">
+							<h2 class="text-2xl font-bold">
+								<a href={`/texts/${text.slug}/`} itemprop="url">
+									<span itemprop="headline">{title}</span>
+								</a>
+							</h2>
+							<small>{text.data.pubDate.toLocaleDateString('ja-JP', {
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit'
+							}).replace(/\//g, '/')}</small>
+						</header>
+						<section>
+							<p
+								itemprop="description"
+								set:html={text.data.description || text.excerpt}
+							>
+							</p>
+							<div class="my-2 border py-2 text-center uppercase">
+								<a href={`/texts/${text.slug}/`}>read more</a>
+							</div>
+						</section>
+					</article>
+				</li>
+			);
+		})}
+	</ol>
+</Layout>
