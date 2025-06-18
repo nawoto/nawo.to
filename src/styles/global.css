@@ -27,7 +27,7 @@
     
     .prose h1, .prose h3, .prose h4, .prose h5, .prose h6 {
         font-family: 'Titillium Web', sans-serif !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
     }
     
     /* Instagram embed styling - override prose defaults */
