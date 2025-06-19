@@ -45,7 +45,7 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
     class="prose prose-lg mx-auto max-w-4xl px-4 py-8"
   >
     <header class="mb-8">
-      <h1 itemprop="headline" class="text-3xl font-bold md:text-5xl mb-0">
+      <h1 itemprop="headline" class="text-3xl font-bold md:text-5xl mb-0 font-titillium">
         {title}
       </h1>
       
@@ -272,7 +272,11 @@ const ogImageUrl = content.data.image ? new URL(content.data.image, SITE.url).hr
       const allLinks = document.querySelectorAll('a:not([data-oembed-processed])') as NodeListOf<HTMLAnchorElement>;
       
       allLinks.forEach(link => {
-        const url = link.href;
+        let url = link.href;
+        // x.com → twitter.com に自動変換
+        if (url.match(/^https:\/\/x\.com\//)) {
+          url = url.replace(/^https:\/\/x\.com\//, 'https://twitter.com/');
+        }
         
         // Check if this URL matches any oembed provider
         const provider = oembedProviders.find(p => 
