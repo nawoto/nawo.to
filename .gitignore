@@ -68,3 +68,5 @@ yarn-error.log
 .yarn-integrity
 
 dist/ # Astro output files
+
+.astro/data-store.json
