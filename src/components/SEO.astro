@@ -9,6 +9,7 @@ interface Props {
   openGraph?: any;
   twitter?: any;
   extend?: any;
+  ogimage?: string;
 }
 
 const { 
@@ -20,6 +21,10 @@ const {
   twitter,
   extend
 } = Astro.props;
+
+const ogImageUrl = (Astro.props.openGraph?.basic?.image) 
+  || Astro.props.ogimage 
+  || '/images/opengraph-default.png';
 ---
 
 <AstroSEO
@@ -27,7 +32,16 @@ const {
   description={description}
   canonical={canonical}
   charset={charset}
-  openGraph={openGraph}
-  twitter={twitter}
+  openGraph={{
+    ...openGraph,
+    basic: {
+      ...openGraph?.basic,
+      image: ogImageUrl,
+    },
+  }}
+  twitter={{
+    ...twitter,
+    image: ogImageUrl,
+  }}
   extend={extend}
 /> 

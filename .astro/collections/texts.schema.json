@@ -59,6 +59,9 @@
         "heroImage": {
           "type": "string"
         },
+        "ogimage": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

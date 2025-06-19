@@ -9,6 +9,7 @@ const blog = defineCollection({
     updatedDate: z.string().or(z.date()).transform((str) => new Date(str)).optional(),
     heroImage: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    ogimage: z.string().optional(),
   }),
 });
 
@@ -20,6 +21,7 @@ const texts = defineCollection({
     pubDate: z.string().or(z.date()).transform((str) => new Date(str)),
     updatedDate: z.string().or(z.date()).transform((str) => new Date(str)).optional(),
     heroImage: z.string().optional(),
+    ogimage: z.string().optional(),
   }),
 });
 
