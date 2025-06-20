@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 
 const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await post.render();
-const shareUrl = `https://nawo.to/blog/${post.slug}`;
+const shareUrl = `https://nawo.to/${post.slug}`;
 ---
 
 <ArticleLayout 
