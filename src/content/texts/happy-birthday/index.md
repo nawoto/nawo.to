@@ -19,8 +19,6 @@ https://amzn.to/happy_birthday_nawoto
 
 https://nawo.to/2022/05/20/wishlist-isnot-offen-used
 
-[Wish List あまり使わなくなった](https://nawo.to/2022/05/20/wishlist-isnot-offen-used/)
-
 ## 2025-05-24
 
 ふふふ、51 才になりました🎂
@@ -33,7 +31,6 @@ https://nawo.to/2022/05/20/wishlist-isnot-offen-used
 https://nawo.to/2024/07/19/new-family/
 
 今回も育休を 4 ヶ月ほど取ってみた。
-
 現時点で、育児における体力の削り値はエラいことになっている😅
 
 https://nawo.to/2024/11/16/new-home/
