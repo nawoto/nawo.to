@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://nawo.to/sitemap-index.xml
-Sitemap: https://nawo.to/rss.xml
