@@ -33,12 +33,23 @@ if (!slug) {
 
 // 日付からディレクトリ構造を作成
 const [year, month, day] = date.split('-');
-const dir = path.join('src/content', type, year, month, day);
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
+let dir, filepath;
+
+if (type === 'texts') {
+  dir = path.join('src/content', type);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  const filename = `${date}-${slug}.md`;
+  filepath = path.join(dir, filename);
+} else {
+  dir = path.join('src/content', type, year, month, day);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  const filename = `${slug}.md`;
+  filepath = path.join(dir, filename);
 }
-const filename = `${slug}.md`;
-const filepath = path.join(dir, filename);
 
 if (fs.existsSync(filepath)) {
   console.error('エラー: すでに同名の記事が存在します');

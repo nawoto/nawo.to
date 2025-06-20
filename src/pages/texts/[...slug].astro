@@ -14,17 +14,20 @@ export async function getStaticPaths() {
 		const previousText = sortedTexts[index + 1] || null; // より古い記事
 		const nextText = sortedTexts[index - 1] || null; // より新しい記事
 		
+		// slug から日付プレフィックスを削除
+		const slug = text.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+		
 		return {
-			params: { slug: text.slug },
+			params: { slug: slug },
 			props: { 
 				text,
 				previousPost: previousText ? {
-					slug: previousText.slug,
+					slug: previousText.slug.replace(/^\d{4}-\d{2}-\d{2}-/, ''),
 					collection: 'texts',
 					data: previousText.data
 				} : null,
 				nextPost: nextText ? {
-					slug: nextText.slug,
+					slug: nextText.slug.replace(/^\d{4}-\d{2}-\d{2}-/, ''),
 					collection: 'texts',
 					data: nextText.data
 				} : null
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
 
 const { text, previousPost, nextPost } = Astro.props;
 const { Content } = await text.render();
-const shareUrl = `https://nawo.to/texts/${text.slug}`;
+const shareUrl = `https://nawo.to/texts/${Astro.params.slug}`;
 ---
 
 <ArticleLayout 
