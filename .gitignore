@@ -69,4 +69,5 @@ yarn-error.log
 
 dist/ # Astro output files
 
-.astro/data-store.json
+.astro/
+public/remark-link-card-plus/
