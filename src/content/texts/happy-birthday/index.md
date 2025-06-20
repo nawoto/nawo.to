@@ -30,13 +30,13 @@ https://nawo.to/2022/05/20/wishlist-isnot-offen-used
 
 直近のできごとはこんな感じ
 
-https://nawo.to/blog/2024/07/19/new-family/
+https://nawo.to/2024/07/19/new-family/
 
 今回も育休を 4 ヶ月ほど取ってみた。
 
 現時点で、育児における体力の削り値はエラいことになっている😅
 
-https://nawo.to/blog/2024/11/16/new-home/
+https://nawo.to/2024/11/16/new-home/
 
 ## 2024-05-24
 
