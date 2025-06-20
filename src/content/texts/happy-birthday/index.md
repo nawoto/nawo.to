@@ -15,7 +15,10 @@ ogimage: "/images/opengraph-hbd.png"
 Wish List を公開してます 😄  
 https://amzn.to/happy_birthday_nawoto
 
-自分は Wish List が面倒になってきているので、こんな風にお祝いしています。  
+自分は Wish List が面倒になってきているので、こんな風にお祝いしています。
+
+https://nawo.to/2022/05/20/wishlist-isnot-offen-used
+
 [Wish List あまり使わなくなった](https://nawo.to/2022/05/20/wishlist-isnot-offen-used/)
 
 ## 2025-05-24
@@ -27,21 +30,13 @@ https://amzn.to/happy_birthday_nawoto
 
 直近のできごとはこんな感じ
 
-### 2024/07 下の娘が爆誕
-
-4人家族になりました👶
-
-<iframe src="https://platform.x.com/embed/Tweet.html?id=1816025056109334538" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+https://nawo.to/blog/2024/07/19/new-family/
 
 今回も育休を 4 ヶ月ほど取ってみた。
 
-現時点で、育児における体力の削り値はエラいことになっている。
+現時点で、育児における体力の削り値はエラいことになっている😅
 
-### 2024/11 に引越しをした。
-
-浅草周辺が気にいっているので、上野寄りだった前の家から観音裏と呼ばれるあたりに引越しをしました。
-子供が大きくなってきたり、二人目が誕生したのでさすがに家が手狭になったのが理由。
-ランチに行けるお店が大幅に増えたので QoL 向上した！
+https://nawo.to/blog/2024/11/16/new-home/
 
 ## 2024-05-24
 

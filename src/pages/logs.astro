@@ -28,7 +28,7 @@ function generateExcerpt(content: string): string {
 }
 
 // 記事の本文を読み込んで抜粋を生成
-const postsWithExcerpt = await Promise.all(
+const postsWithExcerptRaw = await Promise.all(
 	posts.map(async (post) => {
 		const excerpt = generateExcerpt(post.body);
 		return {
@@ -36,6 +36,11 @@ const postsWithExcerpt = await Promise.all(
 			excerpt
 		};
 	})
+);
+
+// 抜粋生成後に再度ソート
+const postsWithExcerpt = postsWithExcerptRaw.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
