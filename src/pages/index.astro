@@ -73,7 +73,7 @@ const textsWithExcerpt = await Promise.all(
 					>
 						<header class="py-4">
 							<h2 class="text-2xl font-bold font-titillium">
-								<a href={`/blog/${post.slug}/`} itemprop="url">
+								<a href={`/${post.slug}/`} itemprop="url">
 									<span itemprop="headline">{title}</span>
 								</a>
 							</h2>
@@ -90,7 +90,7 @@ const textsWithExcerpt = await Promise.all(
 							>
 							</p>
 							<div class="my-2 border py-2 text-center uppercase">
-								<a href={`/blog/${post.slug}/`}>read more</a>
+								<a href={`/${post.slug}/`}>read more</a>
 							</div>
 						</section>
 					</article>
@@ -108,6 +108,7 @@ const textsWithExcerpt = await Promise.all(
 	<ol style="list-style: none;">
 		{textsWithExcerpt.map((text) => {
 			const title = text.data.title || text.slug;
+			const textSlug = text.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
 			return (
 				<li class="hover-style border-y border-solid py-2">
 					<article
@@ -117,7 +118,7 @@ const textsWithExcerpt = await Promise.all(
 					>
 						<header class="py-4">
 							<h2 class="text-2xl font-bold font-titillium">
-								<a href={`/texts/${text.slug}/`} itemprop="url">
+								<a href={`/texts/${textSlug}/`} itemprop="url">
 									<span itemprop="headline">{title}</span>
 								</a>
 							</h2>
@@ -134,7 +135,7 @@ const textsWithExcerpt = await Promise.all(
 							>
 							</p>
 							<div class="my-2 border py-2 text-center uppercase">
-								<a href={`/texts/${text.slug}/`}>read more</a>
+								<a href={`/texts/${textSlug}/`}>read more</a>
 							</div>
 						</section>
 					</article>
