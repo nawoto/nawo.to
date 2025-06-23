@@ -6,11 +6,8 @@ import partytown from '@astrojs/partytown';
 import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
-
-console.log('Loading astro config...');
-console.log('remarkAmazonCard plugin:', remarkAmazonCard);
-console.log('remarkToc plugin:', remarkToc);
-console.log('rehypeRaw plugin:', rehypeRaw);
+import react from '@astrojs/react';
+import { ogImageGenerator } from './src/integrations/og-image-generator.jsx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +16,11 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     partytown(),
+    react(),
+    ogImageGenerator({
+      blogPath: 'blog/',
+      textPath: 'texts/',
+    }),
   ],
   markdown: {
     remarkPlugins: [

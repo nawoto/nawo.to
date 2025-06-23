@@ -3,16 +3,20 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node scripts/generate-favicon.js && astro dev",
-    "build": "node scripts/generate-favicon.js && astro build && touch dist/.nojekyll",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "generate-favicon": "node scripts/generate-favicon.js",
+    "generate-og-images": "node scripts/generate-og-images-astro.js",
     "new-article": "node scripts/new-article.js",
     "deploy": "npm run build && npx gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource/titillium-web": "^5.2.6",
@@ -23,12 +27,14 @@
     "remark-gfm": "^4.0.1",
     "remark-link-card-plus": "^0.5.0",
     "remark-toc": "^9.0.0",
+    "satori": "^0.15.2",
     "simple-icons": "^15.2.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24.0.3",
     "autoprefixer": "^10.4.17",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.33",
