@@ -16,7 +16,32 @@ export interface Props {
 const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
-const metaDescription = content.data.description || `${title} - ${SITE.description}`;
+
+// 本文からサマリを生成する関数
+function generateDescription(content: any): string {
+  // 既にdescriptionがある場合はそれを使用
+  if (content.data.description && content.data.description.trim() !== '') {
+    return content.data.description;
+  }
+  
+  // 本文からサマリを生成
+  const bodyText = content.body || '';
+  const plainText = bodyText
+    .replace(/---[\s\S]*?---/g, '') // フロントマターを除去
+    .replace(/```[\s\S]*?```/g, '') // コードブロックを除去
+    .replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
+    .replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
+    .replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
+    .replace(/\n+/g, ' ') // 改行を空白に変換
+    .replace(/\s+/g, ' ') // 複数の空白を1つに
+    .trim()
+    .slice(0, 160); // 160文字に制限（SEO推奨）
+  
+  return plainText + (plainText.length >= 160 ? '...' : '');
+}
+
+const metaDescription = generateDescription(content);
 const publishedTime = content.data.pubDate.toISOString();
 const modifiedTime = content.data.updatedDate?.toISOString();
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
@@ -30,6 +55,61 @@ const ogImageUrl = content.data.ogimage ? new URL(content.data.ogimage, SITE.url
     {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     <meta property="article:author" content={authorName} />
     <meta property="article:section" content="Technology" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": metaDescription,
+      "image": ogImageUrl,
+      "author": {
+        "@type": "Person",
+        "name": authorName,
+        "url": SITE.url
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": SITE.title,
+        "logo": {
+          "@type": "ImageObject",
+          "url": new URL('/images/site-icon.png', SITE.url).href
+        }
+      },
+      "datePublished": publishedTime,
+      "dateModified": modifiedTime || publishedTime,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": currentUrl
+      },
+      "url": currentUrl
+    })} />
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": `${SITE.url}/logs`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": title,
+          "item": currentUrl
+        }
+      ]
+    })} />
     
     <!-- Applause Button CSS & JS -->
     <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css" />

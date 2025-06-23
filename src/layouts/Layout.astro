@@ -77,6 +77,49 @@ const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
         ]
       }}
     />
+    
+    <!-- WebSite JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": SITE.title,
+      "description": SITE.description,
+      "url": SITE.url,
+      "author": {
+        "@type": "Person",
+        "name": SITE.author.name,
+        "url": SITE.url
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": SITE.title,
+        "description": SITE.description,
+        "url": SITE.url,
+        "logo": {
+          "@type": "ImageObject",
+          "url": new URL('/images/site-icon.png', SITE.url).href,
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          `https://twitter.com/${SITE.social.twitter}`,
+          "https://github.com/nawoto/",
+          "https://speakerdeck.com/nawoto",
+          "https://www.instagram.com/nawoto/",
+          "https://www.facebook.com/nishimura.nawoto",
+          "https://www.amazon.co.jp/~/e/B00B46MLPG"
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${SITE.url}/search?q={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+    
     <!-- Additional head content from child layouts -->
     <slot name="head" />
   </head>
