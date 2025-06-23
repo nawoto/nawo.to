@@ -1,47 +1,112 @@
-# Astro Starter Kit: Minimal
+<p align="center">
+  <img src="public/images/site-icon.png" alt="nawo.to ロゴ" width="120" />
+</p>
 
-```sh
-npm create astro@latest -- --template minimal
-```
+# nawo.to
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+> **これは「nawoto」の構造化のためのリポジトリです**
+> 
+> 未来の自分が迷子にならないように、運用・設計・コマンド全部ここにメモしておく！
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 これは何？
 
-Inside of your Astro project, you'll see the following folders and files:
+- [https://nawo.to](https://nawo.to) の**本体**。
+- フレームワークは**Astro**。静的サイトなのに、ちょっと未来的。
+- 記事もテキストも、ぜんぶ「構造化」して管理。
+- **ブルータスデザイン**採用。ちょっとオシャレで、ちょっと無骨。
+- **レスポンシブ**対応。スマホでもPCでも、たぶん快適。
+- OGP画像も自動生成。絵文字はサニタイズで豆腐撲滅。
+
+---
+
+## 🏗️ ディレクトリ構成（ざっくり備忘録）
 
 ```text
 /
-├── public/
+├── public/         # 画像やフォントなど静的ファイル
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/ # ヘッダーやフッターなど部品たち
+│   ├── content/    # 記事やテキストの中身（.mdで管理！）
+│   ├── layouts/    # レイアウトテンプレ
+│   ├── pages/      # ルーティングの心臓部
+│   └── styles/     # CSSとか
+├── package.json
+└── ...and more!
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🌐 URLの構成（未来の自分用メモ）
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `/` … トップページ
+- `/yyyy/mm/dd/slug/` … ブログ記事（例: `/2022/04/01/hello-world/`）
+- `/texts/slug/` … テキスト系コンテンツ
+- `/about` … 自己紹介
+- `/privacy` … プライバシーポリシー
+- `/logs` … ちょっとしたログ
+- 404ページもあるよ
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## ✨ このサイトの特徴（自分で自分を褒めておく）
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **超・構造化**：記事もテキストもディレクトリでガッチリ管理。未来の自分も迷わない！
+- **OGP画像自動生成**：記事ごとに自動でOGP画像を生成。しかも絵文字は自動でサニタイズ（豆腐撲滅）。
+- **ブルータスデザイン**：ちょっとオシャレ、ちょっと無骨。唯一無二の雰囲気。
+- **レスポンシブ**：スマホ・タブレット・PC、どこでも快適。
+- **Astro製**：爆速ビルド＆静的配信。だけど拡張性もバッチリ。
+- **npmコマンドで全部完結**：コマンド一発で開発・ビルド・プレビュー！
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🧞 npmコマンド早見表（自分用チートシート）
+
+| コマンド                        | やること                                         |
+|---------------------------------|--------------------------------------------------|
+| `npm install`                   | 依存パッケージをインストール                     |
+| `npm run dev`                   | ローカル開発サーバー起動（localhost:4321）       |
+| `npm run build`                 | 本番用にビルド（`dist/`に出力）                   |
+| `npm run preview`               | ビルド結果をローカルでプレビュー                 |
+| `npm run astro ...`             | Astro CLIコマンドを実行                          |
+| `npm run create-article -- ...` | 新しい記事ファイルを作成（下記オプション参照）   |
+
+---
+
+### `npm run create-article` の使い方（未来の自分へ）
+
+#### 基本形
+```sh
+npm run create-article -- --slug my-article
+```
+- `--slug`（必須）: 記事のスラッグ（ファイル名・URLの一部）
+
+#### オプション
+- `--type texts` または `--texts`  
+  → テキスト系（`src/content/texts/`）に作成。  
+  省略時はブログ記事（`src/content/blog/yyyy/mm/dd/`）に作成。
+- `--date YYYY-MM-DD`  
+  → 日付を指定（省略時は今日の日付）
+
+#### 例
+```sh
+# ブログ記事（今日の日付で作成）
+npm run create-article -- --slug hello-world
+
+# ブログ記事（2024-07-19の日付で作成）
+npm run create-article -- --slug new-family --date 2024-07-19
+
+# テキスト記事（2025-05-24の日付で作成）
+npm run create-article -- --slug happy-birthday --type texts --date 2025-05-24
+```
+
+---
+
+## 📝 さいごに（nawotoへの伝言）
+
+- コードもコンテンツも「迷子にならない」設計を目指してるはず。
+- 未来の自分、もし何か困ったらこのREADMEを見直そう。
+- 何かあれば[Issue](https://github.com/nawoto/nawo.to/issues)や[PR](https://github.com/nawoto/nawo.to/pulls)でセルフツッコミもOK！
+
+---
