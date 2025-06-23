@@ -80,7 +80,7 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 						<section>
 							<p
 								itemprop="description"
-								set:html={post.data.description || post.excerpt}
+								set:html={(post.data.description && post.data.description.trim() !== '') ? post.data.description : post.excerpt}
 							>
 							</p>
 							<div class="my-2 border py-2 text-center uppercase">
