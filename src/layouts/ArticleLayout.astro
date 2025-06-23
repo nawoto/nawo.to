@@ -1,9 +1,12 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+import { SITE } from '../config';
 import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
-import { SITE } from '../config';
 import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
 import WebMentions from '../components/WebMentions.astro';
+// import fs from 'node:fs';
+// import path from 'node:path';
 
 export interface Props {
   title: string;
@@ -45,7 +48,18 @@ const metaDescription = generateDescription(content);
 const publishedTime = content.data.pubDate.toISOString();
 const modifiedTime = content.data.updatedDate?.toISOString();
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
-const ogImageUrl = content.data.ogimage ? new URL(content.data.ogimage, SITE.url).href : new URL('/images/opengraph-default.png', SITE.url).href;
+
+// OGP画像の決定ロジック
+let ogImageUrl;
+
+if (content.data.ogimage) {
+  // 1. 手動設定がある場合はそれを使用
+  ogImageUrl = new URL(content.data.ogimage, SITE.url).href;
+} else {
+  // 2. 自動生成された画像パスを構築
+  const collectionName = content.collection === 'texts' ? 'texts' : 'blog';
+  ogImageUrl = new URL(`/${collectionName}/${content.slug}/og.png`, SITE.url).href;
+}
 ---
 
 <Layout title={pageTitle} description={metaDescription} image={content.data.ogimage}>

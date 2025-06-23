@@ -41,7 +41,7 @@ const { Content } = await post.render();
 const shareUrl = `https://nawo.to/${Astro.params.slug}`;
 ---
 
-<ArticleLayout 
+<ArticleLayout
   title={post.data.title}
   content={post}
   previousPost={previousPost}
