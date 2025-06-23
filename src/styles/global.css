@@ -166,4 +166,34 @@
             aspect-ratio: 1.91 / 1;
         }
     }
+    
+    /* Amazon Product Card Styles */
+    .amazon-product-card {
+        @apply bg-white;
+        transition: all 0.3s ease;
+    }
+    
+    .amazon-product-card img {
+        @apply object-cover;
+    }
+    
+    .amazon-product-card a {
+        @apply no-underline;
+    }
+    
+    .amazon-product-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* About page specific styles for Amazon cards */
+    .about-page .prose .remark-link-card-plus__container {
+        @apply w-full;
+        max-width: none;
+    }
+    
+    .about-page .prose .remark-link-card-plus__card {
+        @apply w-full;
+        max-width: none;
+    }
 }

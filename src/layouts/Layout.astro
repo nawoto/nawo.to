@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Bio from '../components/Bio.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import SEO from '../components/SEO.astro';
 import { SITE } from '../config';
 
@@ -80,29 +81,7 @@ const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
     <slot name="head" />
   </head>
   <body class="mx-auto max-w-screen-xl">
-    <header>
-      <div class="hover-style py-6">
-        <h3 class="text-center text-6xl font-black tracking-widest md:text-8xl">
-          <a href="/">{SITE.title}</a>
-        </h3>
-      </div>
-      <nav>
-        <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase md:grid-cols-4">
-          <li class="hover-style border-y">
-            <a href="/">top</a>
-          </li>
-          <li class="hover-style border-y">
-            <a href="/logs">log</a>
-          </li>
-          <li class="hover-style border-b md:border-y">
-            <a href="/texts">texts</a>
-          </li>
-          <li class="hover-style border-b md:border-y">
-            <a href="/about">about</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     
     <main>
       <div class="md:flex md:flex-row">
@@ -116,5 +95,9 @@ const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
     </main>
 
     <Footer />
+    <div class="mt-2">
+      <a href="/privacy" class="link">Privacy Policy</a>
+    </div>
+    <script is:inline src="/js/amazon-cards.js"></script>
   </body>
 </html> 

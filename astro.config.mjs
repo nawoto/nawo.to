@@ -2,7 +2,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import remarkLinkCard from 'remark-link-card-plus';
+import partytown from '@astrojs/partytown';
+import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
+import remarkToc from 'remark-toc';
+import rehypeRaw from 'rehype-raw';
+
+console.log('Loading astro config...');
+console.log('remarkAmazonCard plugin:', remarkAmazonCard);
+console.log('remarkToc plugin:', remarkToc);
+console.log('rehypeRaw plugin:', rehypeRaw);
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,20 +18,16 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap(),
+    partytown(),
   ],
   markdown: {
     remarkPlugins: [
-      [
-        remarkLinkCard, {
-          cache: true,
-          shortenUrl: true,
-          thumbnailPosition: "right",
-          noThumbnail: false,
-          noFavicon: false,
-          ignoreExtensions: ['.mp4', '.pdf'],
-        },
-      ],
+      remarkToc,
+      [remarkAmazonCard, { affiliateTag: 'nawoto07-22' }],
+    ],
+    rehypePlugins: [
+      rehypeRaw,
     ],
   },
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
 });

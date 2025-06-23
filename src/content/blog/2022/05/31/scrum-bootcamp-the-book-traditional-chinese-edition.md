@@ -23,4 +23,4 @@ http://books.gotop.com.tw/v_ACL061400
 
 Scrum Bootcamp The Book は日本語でも読めるので、興味のある人はぜひ 😆
 
-<a href="https://www.amazon.co.jp/SCRUM-BOOT-CAMP-BOOK%E3%80%90%E5%A2%97%E8%A3%9C%E6%94%B9%E8%A8%82%E7%89%88%E3%80%91-%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA-ebook/dp/B086GBXRN6?crid=360W90O6UXDX0&keywords=scrum+boot+camp+the+book&qid=1653982803&sprefix=scrum+%2Caps%2C255&sr=8-1&linkCode=li3&tag=nawoto07-22&linkId=2ecbea4469db11a2d46ecad33ceed9b3&language=ja_JP&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B086GBXRN6&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=nawoto07-22&language=ja_JP" /></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=nawoto07-22&language=ja_JP&l=li3&o=9&a=B086GBXRN6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+https://www.amazon.co.jp/dp/B086GBXRN6
