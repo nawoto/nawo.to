@@ -14,8 +14,11 @@ export async function getStaticPaths() {
     const previousPost = sortedPosts[index + 1] || null; // より古い記事
     const nextPost = sortedPosts[index - 1] || null; // より新しい記事
     
+    // post.slug をそのままURLとして使用
+    const slug = post.slug.toLowerCase();
+    
     return {
-      params: { slug: post.slug },
+      params: { slug: slug },
       props: { 
         post,
         previousPost: previousPost ? {
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
 
 const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await post.render();
-const shareUrl = `https://nawo.to/${post.slug}`;
+const shareUrl = `https://nawo.to/${Astro.params.slug}`;
 ---
 
 <ArticleLayout 
