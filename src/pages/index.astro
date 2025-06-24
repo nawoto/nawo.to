@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
-import { getTextSlug, getLogsUrl } from '../utils/slug';
+import { getTextSlug, getLogSlug } from '../utils/slug';
 
 const posts = (await getCollection('logs')).sort(
 	(a: CollectionEntry<'logs'>, b: CollectionEntry<'logs'>) => 
@@ -56,16 +56,16 @@ const textsWithExcerpt = await Promise.all(
 ---
 
 <Layout title={SITE.title} isRootPath={true} image={SITE.images.defaultOg}>
-	<!-- LOG Section -->
+	<!-- LOGS Section -->
 	<div class="hover-style">
 		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
-			<a href="/logs">log</a>
+			<a href="/logs">logs</a>
 		</h1>
 	</div>
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
-			const postUrl = getLogsUrl(post.slug);
+			const postUrl = `/${getLogSlug(post.slug)}/`;
 			
 			return (
 				<li class="hover-style border-y border-solid py-2">

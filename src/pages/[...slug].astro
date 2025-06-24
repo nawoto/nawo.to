@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
-import { getLogsUrl } from '../utils/slug';
+import { getLogSlug } from '../utils/slug';
 
 export async function getStaticPaths() {
   const posts = await getCollection('logs');
@@ -27,12 +27,12 @@ export async function getStaticPaths() {
         props: { 
           post,
           previousPost: previousPost ? {
-            slug: getLogsUrl(previousPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+            slug: getLogSlug(previousPost.slug),
             collection: 'logs',
             data: previousPost.data
           } : null,
           nextPost: nextPost ? {
-            slug: getLogsUrl(nextPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+            slug: getLogSlug(nextPost.slug),
             collection: 'logs',
             data: nextPost.data
           } : null
@@ -48,12 +48,12 @@ export async function getStaticPaths() {
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: getLogsUrl(previousPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+          slug: getLogSlug(previousPost.slug),
           collection: 'logs',
           data: previousPost.data
         } : null,
         nextPost: nextPost ? {
-          slug: getLogsUrl(nextPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+          slug: getLogSlug(nextPost.slug),
           collection: 'logs',
           data: nextPost.data
         } : null

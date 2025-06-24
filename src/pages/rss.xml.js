@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE } from '../config';
-import { getTextSlug, getLogsUrl } from '../utils/slug';
+import { getTextSlug, getLogSlug } from '../utils/slug';
 
 export async function GET(context) {
   const posts = await getCollection('logs');
@@ -26,7 +26,7 @@ export async function GET(context) {
     items: allContent.map((item) => {
       let link;
       if (item.type === 'logs') {
-        link = getLogsUrl(item.slug);
+        link = `/${getLogSlug(item.slug)}/`;
       } else {
         const slug = getTextSlug(item.slug);
         link = `/texts/${slug}/`;

@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
-import { getLogsUrl } from '../utils/slug';
+import { getLogSlug } from '../utils/slug';
 
 const posts = (await getCollection('logs')).sort(
 	(a: CollectionEntry<'logs'>, b: CollectionEntry<'logs'>) => 
@@ -45,10 +45,10 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 );
 ---
 
-<Layout title={`LOG | ${SITE.title}`} isRootPath={false}>
+<Layout title={`LOGS | ${SITE.title}`} isRootPath={false}>
 	<div class="hover-style py-4 text-center">
 		<h1 class="text-4xl font-semibold uppercase tracking-widest">
-			log
+			logs
 		</h1>
 		<p class="text-sm text-gray-500">
 			日々のなんとなくを書き留めてます✍️
@@ -57,7 +57,7 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
-			const postUrl = getLogsUrl(post.slug);
+			const postUrl = `/${getLogSlug(post.slug)}/`;
 			
 			return (
 				<li class="hover-style border-y border-solid py-2">
