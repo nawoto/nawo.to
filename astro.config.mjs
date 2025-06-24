@@ -20,7 +20,7 @@ export default defineConfig({
     partytown(),
     react(),
     ogImageGenerator({
-      blogPath: 'blog/',
+      blogPath: 'logs/',
       textPath: 'texts/',
     }),
   ],
