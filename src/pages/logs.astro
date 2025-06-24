@@ -2,10 +2,10 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
-import { getBlogUrl } from '../utils/slug';
+import { getLogsUrl } from '../utils/slug';
 
-const posts = (await getCollection('blog')).sort(
-	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
+const posts = (await getCollection('logs')).sort(
+	(a: CollectionEntry<'logs'>, b: CollectionEntry<'logs'>) => 
 		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ); // 全記事表示
 
@@ -57,7 +57,7 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
-			const postUrl = getBlogUrl(post.slug);
+			const postUrl = getLogsUrl(post.slug);
 			
 			return (
 				<li class="hover-style border-y border-solid py-2">

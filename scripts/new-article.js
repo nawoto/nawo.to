@@ -13,12 +13,12 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-// 短縮オプションの処理
-let type = 'blog';
+// デフォルトをlogsに
+let type = 'logs';
 if (params.type === 'texts' || params.texts) {
   type = 'texts';
 } else if (params.blog) {
-  type = 'blog';
+  type = 'logs'; // logs指定でもlogsに
 }
 
 const slug = params.slug;
@@ -43,11 +43,12 @@ if (type === 'texts') {
   const filename = `${date}-${slug}.md`;
   filepath = path.join(dir, filename);
 } else {
-  dir = path.join('src/content', type, year, month, day);
+  // logs用: 年/年-月-日-スラッグ.md
+  dir = path.join('src/content', type, year);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  const filename = `${slug}.md`;
+  const filename = `${year}-${month}-${day}-${slug}.md`;
   filepath = path.join(dir, filename);
 }
 

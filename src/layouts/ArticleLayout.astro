@@ -53,18 +53,22 @@ const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`
 
 // OGP画像の決定ロジック
 let ogImageUrl;
+let collectionName;
 
 if (content.data.ogimage) {
   // 1. 手動設定がある場合はそれを使用
   ogImageUrl = new URL(content.data.ogimage, SITE.url).href;
 } else {
   // 2. 自動生成された画像パスを構築
-  const collectionName = content.collection === 'texts' ? 'texts' : 'blog';
+  collectionName = content.collection === 'texts' ? 'texts' : 'logs';
   ogImageUrl = new URL(`/${collectionName}/${content.slug}/og.png`, SITE.url).href;
 }
 
 // BlogPosting構造化データを生成
 const blogPostingData = generateBlogPostingStructuredData({
+  ...content,
+  collection: collectionName,
+  url: shareUrl,
   headline: title,
   description: metaDescription,
   image: ogImageUrl,
@@ -83,7 +87,6 @@ const blogPostingData = generateBlogPostingStructuredData({
   },
   datePublished: publishedTime,
   dateModified: modifiedTime || publishedTime,
-  url: currentUrl,
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": currentUrl
@@ -102,7 +105,7 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     {
       "@type": "ListItem",
       position: 2,
-      name: "Blog",
+      name: "Logs",
       item: `${SITE.url}/logs`
     },
     {

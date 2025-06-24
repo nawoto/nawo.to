@@ -1,16 +1,17 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { getLogsUrl } from '../utils/slug';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('logs');
   
   // 公開日順にソート（新しい記事が前に来るように）
   const sortedPosts = posts.sort((a, b) => 
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
   
-  return sortedPosts.map((post: CollectionEntry<'blog'>, index: number) => {
+  return sortedPosts.map((post: CollectionEntry<'logs'>, index: number) => {
     const previousPost = sortedPosts[index + 1] || null; // より古い記事
     const nextPost = sortedPosts[index - 1] || null; // より新しい記事
     
@@ -26,13 +27,13 @@ export async function getStaticPaths() {
         props: { 
           post,
           previousPost: previousPost ? {
-            slug: previousPost.slug.replace(/^\d{4}\//, ''),
-            collection: 'blog',
+            slug: getLogsUrl(previousPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+            collection: 'logs',
             data: previousPost.data
           } : null,
           nextPost: nextPost ? {
-            slug: nextPost.slug.replace(/^\d{4}\//, ''),
-            collection: 'blog',
+            slug: getLogsUrl(nextPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+            collection: 'logs',
             data: nextPost.data
           } : null
         },
@@ -47,13 +48,13 @@ export async function getStaticPaths() {
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: previousPost.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-          collection: 'blog',
+          slug: getLogsUrl(previousPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+          collection: 'logs',
           data: previousPost.data
         } : null,
         nextPost: nextPost ? {
-          slug: nextPost.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-          collection: 'blog',
+          slug: getLogsUrl(nextPost.slug).replace(/^\//, '').replace(/\/$/, ''),
+          collection: 'logs',
           data: nextPost.data
         } : null
       },
@@ -66,7 +67,7 @@ const { Content } = await post.render();
 const shareUrl = `https://nawo.to/${Astro.params.slug}`;
 ---
 
-<ArticleLayout
+<ArticleLayout 
   title={post.data.title}
   content={post}
   previousPost={previousPost}
@@ -74,4 +75,4 @@ const shareUrl = `https://nawo.to/${Astro.params.slug}`;
   shareUrl={shareUrl}
 >
   <Content />
-</ArticleLayout> 
+</ArticleLayout>
