@@ -72,136 +72,140 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
     >
       <div>
         <section class="py-3">
-          <div class="flex flex-row items-start w-full">
-            <div class="flex-shrink-0">
-              <img 
-                class="z-10 overflow-hidden rounded-lg w-[140px] h-[140px] md:w-[200px] md:h-[200px] object-cover mb-2"
-                itemprop="image"
-                src={SITE.images.profilePic}
-                alt="Profile picture"
-              />
-            </div>
-            <div class="flex flex-col w-full items-end ml-4 md:ml-6">
-              <div class="text-right w-full">
-                <h3
-                  class="text-lg font-bold md:text-4xl"
-                  itemprop="name"
-                  lang="en"
-                >
-                  {authorName}
-                </h3>
-                <div class="text-xl" itemprop="name">
-                  西村 直人
-                </div>
-                <div class="text-gray-400">nawoto</div>
-                <div class="text-gray-400">
-                  📍
-                  <span class="pl-px" itemprop="address">
-                    <span>Asakusa, Tokyo</span>,
-                    <span itemprop="nationality">Japan</span>
-                  </span>
-                </div>
-                <div>
-                  <a class="text-gray-400" href="/">
-                    https://nawo.to
-                  </a>
-                  <meta
-                    itemprop="url"
-                    content="https://nawo.to/about"
-                    itemref="my-urls"
-                  />
-                </div>
-                <meta itemprop="gender" content="Male" />
-                <meta itemprop="birthDate" content="1974-05-24" />
-                <meta itemref="my-awards" />
-                <meta itemprop="author" itemref="scrum-bcbook-2020" />
-                <meta itemprop="owns" itemref="scrum-bcbook-2020" />
-                <meta itemprop="author" itemref="scrum-bcbook" />
-                <meta itemprop="owns" itemref="scrum-bcbook" />
-                <meta itemprop="translator" itemref="agile-samurai-ja" />
-                <meta itemprop="owns" itemref="agile-samurai-ja" />
+          <div class="flex flex-col w-full">
+            <div class="flex flex-row items-start w-full">
+              <div class="flex-shrink-0">
+                <img 
+                  class="z-10 overflow-hidden rounded-lg w-[140px] h-[140px] md:w-[200px] md:h-[200px] object-cover mb-2"
+                  itemprop="image"
+                  src={SITE.images.profilePic}
+                  alt="Profile picture"
+                />
               </div>
-              <ul
-                class="flex flex-wrap justify-end pt-2 text-2xl md:text-sm gap-x-2 gap-y-1 w-full"
-                id="my-urls"
-              >
-                <li class="hover-style pr-1">
-                  <a
-                    href={`https://twitter.com/${SITE.social.twitter}`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
+              <div class="flex flex-col w-full items-end ml-4 md:ml-6">
+                <div class="text-right w-full">
+                  <h3
+                    class="text-lg font-bold md:text-4xl"
+                    itemprop="name"
+                    lang="en"
                   >
-                    <Icon name="x" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://github.com/${SITE.social.github}/`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="github" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://speakerdeck.com/${SITE.social.speakerdeck}`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="speakerdeck" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://www.instagram.com/${SITE.social.instagram}/`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="instagram" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://suzuri.jp/${SITE.social.suzuri}/`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="suzuri" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://www.facebook.com/${SITE.social.facebook}/`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="facebook" />
-                  </a>
-                </li>
-                <li class="hover-style px-1">
-                  <a
-                    href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
-                    itemprop="sameas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon name="amazon" />
-                  </a>
-                </li>
-                <li class="hover-style pl-1">
-                  <a href="/rss.xml">
-                    <Icon name="rss" />
-                  </a>
-                </li>
-              </ul>
+                    {authorName}
+                  </h3>
+                  <div class="text-xl" itemprop="name">
+                    西村 直人
+                  </div>
+                  <div class="text-gray-400">nawoto</div>
+                  <div class="text-gray-400">
+                    📍
+                    <span class="pl-px" itemprop="address">
+                      <span>Asakusa, Tokyo</span>,
+                      <span itemprop="nationality">Japan</span>
+                    </span>
+                  </div>
+                  <div>
+                    <a class="text-gray-400" href="/">
+                      https://nawo.to
+                    </a>
+                    <meta
+                      itemprop="url"
+                      content="https://nawo.to/about"
+                      itemref="my-urls"
+                    />
+                  </div>
+                  <meta itemprop="gender" content="Male" />
+                  <meta itemprop="birthDate" content="1974-05-24" />
+                  <meta itemref="my-awards" />
+                  <meta itemprop="author" itemref="scrum-bcbook-2020" />
+                  <meta itemprop="owns" itemref="scrum-bcbook-2020" />
+                  <meta itemprop="author" itemref="scrum-bcbook" />
+                  <meta itemprop="owns" itemref="scrum-bcbook" />
+                  <meta itemprop="translator" itemref="agile-samurai-ja" />
+                  <meta itemprop="owns" itemref="agile-samurai-ja" />
+                </div>
+              </div>
             </div>
+            {/* PC版のみ表示するSocials見出し */}
+            <h3 class="hidden md:block text-xs text-gray-400 mb-1 select-none text-right">/** Socials **/</h3>
+            <ul
+              class="w-full flex flex-wrap justify-end pt-2 text-2xl md:text-sm gap-x-2 gap-y-1 md:justify-end"
+              id="my-urls"
+            >
+              <li class="hover-style pr-1">
+                <a
+                  href={`https://twitter.com/${SITE.social.twitter}`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="x" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://github.com/${SITE.social.github}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="github" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://speakerdeck.com/${SITE.social.speakerdeck}`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="speakerdeck" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://www.instagram.com/${SITE.social.instagram}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="instagram" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://suzuri.jp/${SITE.social.suzuri}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="suzuri" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://www.facebook.com/${SITE.social.facebook}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="facebook" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="amazon" />
+                </a>
+              </li>
+              <li class="hover-style pl-1">
+                <a href="/rss.xml">
+                  <Icon name="rss" />
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -529,8 +533,8 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
       </section>
     </article>
 
-    <Footer />
     <Comments />
+    <Footer />
     <script is:inline src="/js/amazon-cards.js"></script>
   </body>
 </html> 
