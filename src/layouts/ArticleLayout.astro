@@ -186,7 +186,7 @@ const breadcrumbData = generateBreadcrumbStructuredData({
       <li class="hover-style p-3">
         {previousPost ? (
           <a
-            href={`/${previousPost.collection}/${previousPost.slug}/`}
+            href={previousPost.collection === 'texts' ? `/texts/${previousPost.slug}/` : `/${previousPost.slug}/`}
             title={previousPost.data.title}
             rel="prev"
             class="block"
@@ -201,7 +201,7 @@ const breadcrumbData = generateBreadcrumbStructuredData({
       <li class="hover-style p-3">
         {nextPost ? (
           <a
-            href={`/${nextPost.collection}/${nextPost.slug}/`}
+            href={nextPost.collection === 'texts' ? `/texts/${nextPost.slug}/` : `/${nextPost.slug}/`}
             title={nextPost.data.title}
             rel="next"
             class="block"
