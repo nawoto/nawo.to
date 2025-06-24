@@ -4,7 +4,9 @@ import Bio from '../components/Bio.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SEO from '../components/SEO.astro';
+import StructuredData from '../components/StructuredData.astro';
 import { SITE } from '../config';
+import { generateWebSiteStructuredData } from '../data/structured-data.js';
 
 interface Props {
   title: string;
@@ -22,8 +24,21 @@ const {
 
 const pageTitle = title || SITE.title;
 const metaDescription = description || SITE.description;
-const ogImageUrl = image ? new URL(image, SITE.url).href : new URL('/images/opengraph-default.png', SITE.url).href;
+const ogImageUrl = image ? new URL(image, SITE.url).href : new URL(SITE.images.defaultOg, SITE.url).href;
 const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
+
+// SNSリンクの配列を生成
+const socialLinks = [
+  `https://twitter.com/${SITE.social.twitter}`,
+  `https://github.com/${SITE.social.github}/`,
+  `https://speakerdeck.com/${SITE.social.speakerdeck}`,
+  `https://www.instagram.com/${SITE.social.instagram}/`,
+  `https://www.facebook.com/${SITE.social.facebook}`,
+  `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`
+];
+
+// WebSite構造化データを生成
+const websiteStructuredData = generateWebSiteStructuredData();
 ---
 
 <!DOCTYPE html>
@@ -79,46 +94,7 @@ const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
     />
     
     <!-- WebSite JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": SITE.title,
-      "description": SITE.description,
-      "url": SITE.url,
-      "author": {
-        "@type": "Person",
-        "name": SITE.author.name,
-        "url": SITE.url
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": SITE.title,
-        "description": SITE.description,
-        "url": SITE.url,
-        "logo": {
-          "@type": "ImageObject",
-          "url": new URL('/images/site-icon.png', SITE.url).href,
-          "width": 512,
-          "height": 512
-        },
-        "sameAs": [
-          `https://twitter.com/${SITE.social.twitter}`,
-          "https://github.com/nawoto/",
-          "https://speakerdeck.com/nawoto",
-          "https://www.instagram.com/nawoto/",
-          "https://www.facebook.com/nishimura.nawoto",
-          "https://www.amazon.co.jp/~/e/B00B46MLPG"
-        ]
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${SITE.url}/search?q={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
-    })} />
+    <StructuredData data={websiteStructuredData} />
     
     <!-- Additional head content from child layouts -->
     <slot name="head" />

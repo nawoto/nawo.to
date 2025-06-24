@@ -2,16 +2,21 @@
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
-import { SITE } from '../config';
+import { SITE } from '../config.js';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
 import Comments from '../components/Comments.astro';
+import StructuredData from '../components/StructuredData.astro';
+import { generatePersonStructuredData, DEFAULT_PERSON_DATA } from '../data/structured-data.js';
 
 const pageTitle = `About | ${SITE.title}`;
 const pageDescription = "西村直人（nawoto）のプロフィール。エンジニアリングマネージャー、スクラムマスター、アジャイル開発専門家として活動。";
 const shareUrl = `${SITE.url}/about`;
 const authorName = SITE.author.name;
 const profileImage = `${SITE.url}/images/profile-pic.png`;
+
+// Person構造化データを生成
+const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
 ---
 
 <!DOCTYPE html>
@@ -54,63 +59,7 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
     />
 
     <!-- Person Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "西村 直人",
-      "alternateName": ["NISHIMURA Naoto", "nawoto"],
-      "image": profileImage,
-      "url": shareUrl,
-      "jobTitle": ["エンジニアリングマネージャー", "スクラムマスター"],
-      "worksFor": [
-        {
-          "@type": "Organization",
-          "name": "株式会社エス・エム・エス"
-        },
-        {
-          "@type": "Organization", 
-          "name": "一般社団法人アジャイルチームを支える会",
-          "description": "代表理事"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Asakusa, Tokyo",
-        "addressCountry": "JP"
-      },
-      "birthDate": "1974-05-24",
-      "gender": "Male",
-      "nationality": "Japanese",
-      "sameAs": [
-        "https://twitter.com/nawoto",
-        "https://github.com/nawoto/",
-        "https://speakerdeck.com/nawoto",
-        "https://www.instagram.com/nawoto/",
-        "https://suzuri.jp/nawoto/",
-        "https://www.amazon.co.jp/~/e/B00B46MLPG"
-      ],
-      "author": [
-        {
-          "@type": "Book",
-          "name": "SCRUM BOOT CAMP THE BOOK【増補改訂版】",
-          "isbn": "9784798163673",
-          "publisher": "翔泳社",
-          "datePublished": "2020-05-20"
-        },
-        {
-          "@type": "Book", 
-          "name": "SCRUM BOOT CAMP THE BOOK",
-          "isbn": "9784798129716",
-          "publisher": "翔泳社",
-          "datePublished": "2013-02-13"
-        }
-      ],
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "Award",
-        "name": "楽天テクロノロジーアワード 2011 Ruby 賞"
-      }
-    })} />
+    <StructuredData data={personStructuredData} />
   </head>
   <body class="mx-auto max-w-screen-xl">
     <Header title="readme" textColor="uppercase text-gray-500" showLink={false} />
@@ -126,7 +75,7 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
             <img 
               class="z-10 overflow-hidden rounded-lg w-[166px] h-[166px]"
               itemprop="image"
-              src="/images/profile-pic.png"
+              src={SITE.images.profilePic}
               alt="Profile picture"
             />
           </div>
@@ -165,57 +114,77 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
             >
               <li class="hover-style pr-1">
                 <a
-                  href="https://twitter.com/nawoto"
+                  href={`https://twitter.com/${SITE.social.twitter}`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon name="x" class="w-6 h-6" />
+                  <Icon name="x" />
                 </a>
               </li>
               <li class="hover-style px-1">
                 <a
-                  href="https://github.com/nawoto/"
+                  href={`https://github.com/${SITE.social.github}/`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon name="github" class="w-6 h-6" />
+                  <Icon name="github" />
                 </a>
               </li>
               <li class="hover-style px-1">
                 <a
-                  href="https://speakerdeck.com/nawoto"
+                  href={`https://speakerdeck.com/${SITE.social.speakerdeck}`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon name="speaker-deck" class="w-6 h-6" />
+                  <Icon name="speakerdeck" />
                 </a>
               </li>
               <li class="hover-style px-1">
                 <a
-                  href="https://www.instagram.com/nawoto/"
+                  href={`https://www.instagram.com/${SITE.social.instagram}/`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon name="instagram" class="w-6 h-6" />
+                  <Icon name="instagram" />
                 </a>
               </li>
               <li class="hover-style px-1">
                 <a
-                  href="https://suzuri.jp/nawoto/"
+                  href={`https://suzuri.jp/${SITE.social.suzuri}/`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon name="t-shirt" class="w-6 h-6" />
+                  <Icon name="suzuri" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://www.facebook.com/${SITE.social.facebook}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="facebook" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="amazon" />
                 </a>
               </li>
               <li class="hover-style pl-1">
                 <a href="/rss.xml">
-                  <Icon name="rss" class="w-6 h-6" />
+                  <Icon name="rss" />
                 </a>
               </li>
             </ul>
@@ -513,32 +482,32 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
         <div class="space-y-4 prose max-w-none">
           <!-- 手動でAmazonカードのHTMLを記述 -->
           <p>おすすめの本：</p>
-          <div class="amazon-card" data-asin="B086GBXRN6" data-url="https://www.amazon.co.jp/dp/B086GBXRN6?tag=nawoto07-22">
+          <div class="amazon-card" data-asin="B086GBXRN6" data-url={`https://www.amazon.co.jp/dp/B086GBXRN6?tag=${SITE.affiliate.amazon}`}>
             <div class="amazon-card-placeholder">
               <p>Amazon商品カード (ASIN: B086GBXRN6) - 読み込み中...</p>
             </div>
           </div>
-          <div class="amazon-card" data-asin="B00J1XKB6K" data-url="https://www.amazon.co.jp/dp/B00J1XKB6K?tag=nawoto07-22">
+          <div class="amazon-card" data-asin="B00J1XKB6K" data-url={`https://www.amazon.co.jp/dp/B00J1XKB6K?tag=${SITE.affiliate.amazon}`}>
             <div class="amazon-card-placeholder">
               <p>Amazon商品カード (ASIN: B00J1XKB6K) - 読み込み中...</p>
             </div>
           </div>
         </div>
-
-        <div class="mt-4">
-          <a
-            href="https://www.amazon.co.jp/~/e/B00B46MLPG"
-            class="underline"
-            target="_blank"
-          >
-            📚
-            <span class="pl-1">Amazonの著者ページ</span>
-          </a>
-        </div>
       </section>
 
+      <div class="mt-4">
+        <a
+          href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
+          class="underline"
+          target="_blank"
+        >
+          📚
+          <span class="pl-1">Amazonの著者ページ</span>
+        </a>
+      </div>
+
       <section class="py-2" id="my-awards">
-        <h3 class="text-xl">🏆Awards</h3>
+        <h3 class="text-2xl">🏆Awards</h3>
         <span class="text-sm text-gray-400">
           /** 表彰は嬉しいものです 😊 **/
         </span>
@@ -554,22 +523,10 @@ const profileImage = `${SITE.url}/images/profile-pic.png`;
           </a>
         </div>
       </section>
-
-      <div class="py-5 text-gray-400">
-        <p>(🚧More descriptions comes later...)</p>
-        <p class="text-sm">ver 2022.06.14</p>
-      </div>
     </article>
 
-    <!-- Comments Section -->
-    <div class="mx-5 md:mx-44">
-      <Comments />
-    </div>
-
     <Footer />
-    <div class="mt-2">
-      <a href="/privacy" class="link">Privacy Policy</a>
-    </div>
+    <Comments />
     <script is:inline src="/js/amazon-cards.js"></script>
   </body>
 </html> 

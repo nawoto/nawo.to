@@ -26,18 +26,18 @@ const {
   </div>
   <nav>
     <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase md:grid-cols-4">
-      <li class="hover-style border-y">
-        <a href="/">top</a>
-      </li>
-      <li class="hover-style border-y">
-        <a href="/logs">log</a>
-      </li>
-      <li class="hover-style border-b md:border-y">
-        <a href="/texts">texts</a>
-      </li>
-      <li class="hover-style border-b md:border-y">
-        <a href="/about">about</a>
-      </li>
+      {SITE.navigation.items.map((item, index) => {
+        const isFirst = index === 0;
+        const isLast = index === SITE.navigation.items.length - 1;
+        const isSecond = index === 1;
+        const isThird = index === 2;
+        
+        return (
+          <li class={`hover-style ${isFirst || isSecond ? 'border-y' : ''} ${isThird || isLast ? 'border-b md:border-y' : ''}`}>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        );
+      })}
     </ul>
   </nav>
 </header> 

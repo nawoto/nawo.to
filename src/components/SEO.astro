@@ -1,5 +1,6 @@
 ---
 import { SEO as AstroSEO } from "astro-seo";
+import { SITE } from "../config.js";
 
 interface Props {
   title: string;
@@ -24,7 +25,7 @@ const {
 
 const ogImageUrl = (Astro.props.openGraph?.basic?.image) 
   || Astro.props.ogimage 
-  || '/images/opengraph-default.png';
+  || SITE.images.defaultOg;
 ---
 
 <AstroSEO

@@ -7,7 +7,9 @@ import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import react from '@astrojs/react';
-import { ogImageGenerator } from './src/integrations/og-image-generator.jsx';
+import { ogImageGenerator } from './src/integrations/og-image-generator.tsx';
+import remarkLinkCardPlus from 'remark-link-card-plus';
+import { SITE } from './src/config.js';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +27,8 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkToc,
-      [remarkAmazonCard, { affiliateTag: 'nawoto07-22' }],
+      [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
+      remarkLinkCardPlus,
     ],
     rehypePlugins: [
       rehypeRaw,

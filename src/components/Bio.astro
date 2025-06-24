@@ -19,7 +19,7 @@ const { className = '', showImage = true } = Astro.props;
       {showImage && (
         <img
           class="z-10 overflow-hidden rounded-full u-photo"
-          src="/images/profile-pic.png"
+          src={SITE.images.profilePic}
           width="138"
           height="138"
           alt="Profile picture"
@@ -70,7 +70,7 @@ const { className = '', showImage = true } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon name="speaker-deck" class="w-6 h-6" />
+            <Icon name="speakerdeck" class="w-6 h-6" />
           </a>
         </li>
         <li class="hover-style px-1">
@@ -90,7 +90,7 @@ const { className = '', showImage = true } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon name="t-shirt" class="w-6 h-6" />
+            <Icon name="suzuri" class="w-6 h-6" />
           </a>
         </li>
         <li class="hover-style pl-1">
