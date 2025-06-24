@@ -15,8 +15,12 @@ tags: ["Astro", "Gatsby", "AI", "Cursor", "移行"]
 
 ということで、再構築しようと思いたち、調べると [Astro](https://astro.build) が良さそうな気になってきた。
 
+https://astro.build/
+
 あとは、Astro を学習して、移行する方法を調べて…
 だと、一生やらないので、ここは「AI の出番では!?」ということで [Cursor](https://cursor.sh)（AI搭載のコードエディタ。VSCodeをベースにしたIDEで、コードの生成や修正をAIと一緒に行える）の練習も兼ねて、ほぼほぼ AI に実装させてみた。
+
+https://cursor.sh
 
 ## 所感というなの備忘録
 
