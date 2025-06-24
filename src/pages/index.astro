@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
+import { getTextSlug, getBlogUrl } from '../utils/slug';
 
 const posts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
@@ -64,6 +65,8 @@ const textsWithExcerpt = await Promise.all(
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
+			const postUrl = getBlogUrl(post.slug);
+			
 			return (
 				<li class="hover-style border-y border-solid py-2">
 					<article
@@ -73,7 +76,7 @@ const textsWithExcerpt = await Promise.all(
 					>
 						<header class="py-4">
 							<h2 class="text-2xl font-bold font-titillium">
-								<a href={`/${post.slug}/`} itemprop="url">
+								<a href={postUrl} itemprop="url">
 									<span itemprop="headline">{title}</span>
 								</a>
 							</h2>
@@ -90,7 +93,7 @@ const textsWithExcerpt = await Promise.all(
 							>
 							</p>
 							<div class="my-2 border py-2 text-center uppercase">
-								<a href={`/${post.slug}/`}>read more</a>
+								<a href={postUrl}>read more</a>
 							</div>
 						</section>
 					</article>
@@ -108,7 +111,7 @@ const textsWithExcerpt = await Promise.all(
 	<ol style="list-style: none;">
 		{textsWithExcerpt.map((text) => {
 			const title = text.data.title || text.slug;
-			const textSlug = text.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+			const textSlug = getTextSlug(text.slug);
 			return (
 				<li class="hover-style border-y border-solid py-2">
 					<article

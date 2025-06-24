@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
+import { getTextSlug } from '../utils/slug';
 
 const texts = (await getCollection('texts')).sort(
 	(a: CollectionEntry<'texts'>, b: CollectionEntry<'texts'>) => 
@@ -51,7 +52,7 @@ const textsWithExcerpt = await Promise.all(
 	<ol style="list-style: none;">
 		{textsWithExcerpt.map((text) => {
 			const title = text.data.title || text.slug;
-			const textSlug = text.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+			const textSlug = getTextSlug(text.slug);
 			return (
 				<li class="hover-style border-y border-solid py-2">
 					<article

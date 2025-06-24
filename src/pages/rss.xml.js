@@ -1,6 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE } from '../config';
+import { getTextSlug, getBlogUrl } from '../utils/slug';
 
 export async function GET(context) {
   const posts = await getCollection('blog');
@@ -22,11 +23,21 @@ export async function GET(context) {
     title: SITE.title,
     description: SITE.description,
     site: context.site,
-    items: allContent.map((item) => ({
-      title: item.data.title,
-      pubDate: item.data.pubDate,
-      description: item.data.description,
-      link: `/${item.type}/${item.slug}/`,
-    })),
+    items: allContent.map((item) => {
+      let link;
+      if (item.type === 'blog') {
+        link = getBlogUrl(item.slug);
+      } else {
+        const slug = getTextSlug(item.slug);
+        link = `/texts/${slug}/`;
+      }
+      
+      return {
+        title: item.data.title,
+        pubDate: item.data.pubDate,
+        description: item.data.description,
+        link: link,
+      };
+    }),
   });
 } 

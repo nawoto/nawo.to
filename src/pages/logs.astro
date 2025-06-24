@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
+import { getBlogUrl } from '../utils/slug';
 
 const posts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
@@ -56,8 +57,8 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
 			const title = post.data.title || post.slug;
-			// post.slug をそのままURLとして使用
-			const postUrl = `/${post.slug.toLowerCase()}/`;
+			const postUrl = getBlogUrl(post.slug);
+			
 			return (
 				<li class="hover-style border-y border-solid py-2">
 					<article

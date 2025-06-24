@@ -14,20 +14,45 @@ export async function getStaticPaths() {
     const previousPost = sortedPosts[index + 1] || null; // より古い記事
     const nextPost = sortedPosts[index - 1] || null; // より新しい記事
     
-    // post.slug をそのままURLとして使用
-    const slug = post.slug.toLowerCase();
+    // ファイル名から日付とslugを抽出して /yyyy/mm/dd/slug/ 形式のURLを生成
+    const fileName = post.slug.replace(/^\d{4}\//, ''); // 年別ディレクトリを除去
+    const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+    
+    if (!dateMatch) {
+      // 日付プレフィックスがない場合はそのまま使用
+      const slug = fileName.toLowerCase();
+      return {
+        params: { slug: slug },
+        props: { 
+          post,
+          previousPost: previousPost ? {
+            slug: previousPost.slug.replace(/^\d{4}\//, ''),
+            collection: 'blog',
+            data: previousPost.data
+          } : null,
+          nextPost: nextPost ? {
+            slug: nextPost.slug.replace(/^\d{4}\//, ''),
+            collection: 'blog',
+            data: nextPost.data
+          } : null
+        },
+      };
+    }
+    
+    const [, year, month, day, slug] = dateMatch;
+    const urlSlug = `${year}/${month}/${day}/${slug}`;
     
     return {
-      params: { slug: slug },
+      params: { slug: urlSlug },
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: previousPost.slug,
+          slug: previousPost.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
           collection: 'blog',
           data: previousPost.data
         } : null,
         nextPost: nextPost ? {
-          slug: nextPost.slug,
+          slug: nextPost.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
           collection: 'blog',
           data: nextPost.data
         } : null

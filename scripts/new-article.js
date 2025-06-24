@@ -36,7 +36,7 @@ const [year, month, day] = date.split('-');
 let dir, filepath;
 
 if (type === 'texts') {
-  dir = path.join('src/content', type);
+  dir = path.join('src/content', type, year);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }

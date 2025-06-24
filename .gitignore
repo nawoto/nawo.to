@@ -71,3 +71,4 @@ dist/ # Astro output files
 
 .astro/
 public/remark-link-card-plus/
+/public/remark-link-card-plus/
