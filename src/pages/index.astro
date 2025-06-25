@@ -61,6 +61,9 @@ const textsWithExcerpt = await Promise.all(
 		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
 			<a href="/logs">logs</a>
 		</h1>
+		<p class="text-sm text-gray-500 text-center">
+			日々のなんとなくを書き留めてます✍️
+		</p>
 	</div>
 	<ol style="list-style: none;">
 		{postsWithExcerpt.map((post) => {
@@ -104,9 +107,12 @@ const textsWithExcerpt = await Promise.all(
 
 	<!-- TEXTS Section -->
 	<div class="hover-style">
-		<h1 class="border-y py-4 text-center text-4xl font-semibold uppercase tracking-widest">
+		<h1 class="py-4 text-center text-4xl font-semibold uppercase tracking-widest">
 			<a href="/texts">texts</a>
 		</h1>
+		<p class="text-sm text-gray-500 text-center">
+			不定期に思いついたことなどを文章にまとめています✍️
+		</p>
 	</div>
 	<ol style="list-style: none;">
 		{textsWithExcerpt.map((text) => {
