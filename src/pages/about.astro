@@ -59,6 +59,12 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
       }}
     />
 
+    <!-- Google Fonts preload & stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;900&display=swap" />
+
     <!-- Person Schema.org JSON-LD -->
     <StructuredData data={personStructuredData} />
   </head>
