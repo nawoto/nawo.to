@@ -68,7 +68,8 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-dist/ # Astro output files
+# Astro output files
+dist/
 
 .astro/
 public/remark-link-card-plus/
