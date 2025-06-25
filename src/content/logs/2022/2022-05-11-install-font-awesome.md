@@ -58,3 +58,55 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 ```
 
 無事にアイコンが表示できたはず 🎉
+
+## 2025年追記: 現在のアイコン実装
+
+2025年にGatsbyからAstroに移行した際、アイコン実装も見直しました。
+
+https://nawo.to/2025/06/17/migrate-to-astro-by-ai/
+
+### 現在の実装
+
+**Font Awesome → Simple Icons + カスタムSVG**
+
+- **Simple Icons**: 主要ブランド（X, GitHub, Instagram等）
+- **カスタムSVG**: マイナーなブランド（Suzuri, SpeakerDeck等）
+- **Font Awesome**: 使用していない
+
+https://simpleicons.org/
+
+### 変更理由
+
+1. **バンドルサイズ削減**: Font Awesomeは重い
+2. **パフォーマンス向上**: SVGは軽量
+3. **依存関係簡素化**: 必要なアイコンのみ実装
+
+### 現在の実装例
+
+```typescript
+// src/data/icons.ts
+import { siX } from 'simple-icons';
+
+export const iconData = {
+  // Simple Icons使用
+  x: {
+    viewBox: '0 0 24 24',
+    path: siX.path
+  },
+  // カスタムSVG
+  suzuri: {
+    viewBox: '0 0 640 512',
+    path: 'M211.8 0c7.8 0 14.3 5.7 16.7 13.2...'
+  }
+}
+```
+
+### 使用例
+
+```astro
+<!-- src/components/Icon.astro -->
+<Icon name="x" class="w-6 h-6" />
+<Icon name="suzuri" class="w-6 h-6" />
+```
+
+より効率的で軽量な実装になりました！

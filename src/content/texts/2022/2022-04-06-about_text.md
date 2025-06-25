@@ -26,3 +26,9 @@ LOG の方はいつごろ書いたが分かりやすい and ファイルをデ�
 - [How to create multiple types of markdown content in GatsbyJS](https://codeforheaven.com/posts/how-to-create-markdown-blog-posts-and-pages-in-gatsbyjs)
 - [Gatsby JS - Multiple pages pulling in markdown files with different categorys](https://stackoverflow.com/questions/51578264/gatsby-js-multiple-pages-pulling-in-markdown-files-with-different-categorys)
 - [GatsbyJS で記事の URL をカスタマイズする](https://zenn.dev/anozon/articles/gatsby-customize-slug)
+
+## 追記
+
+URL などの構造はそのままに Gatsby から Astro に移行した🚀
+
+http://nawo.to/2025/06/17/migrate-to-astro-by-ai/
