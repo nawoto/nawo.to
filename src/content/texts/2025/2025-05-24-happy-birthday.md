@@ -28,13 +28,16 @@ https://nawo.to/2022/05/20/wishlist-isnot-offen-used
 
 直近のできごとはこんな感じ
 
-<iframe src="https://platform.x.com/embed/Tweet.html?id=1816025056109334538" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
-
+ - 2024-07-19
 
 https://nawo.to/2024/07/19/new-family/
 
+<iframe src="https://platform.x.com/embed/Tweet.html?id=1816025056109334538" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+
 今回も育休を 4 ヶ月ほど取ってみた。
 現時点で、育児における体力の削り値はエラいことになっている😅
+
+ - 2024-11-16
 
 https://nawo.to/2024/11/16/new-home/
 
