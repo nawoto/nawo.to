@@ -17,13 +17,17 @@ const { className = '', showImage = true } = Astro.props;
   <div class="hover-style h-card flex md:grid md:grid-cols-1">
     <div class="md:mx-auto md:border-none md:pt-1">
       {showImage && (
-        <img
-          class="z-10 overflow-hidden rounded-full u-photo"
-          src={SITE.images.profilePic}
-          width="138"
-          height="138"
-          alt="Profile picture"
-        />
+        <picture>
+          <source srcset="/images/profile-pic.webp" type="image/webp" />
+          <img
+            class="z-10 overflow-hidden rounded-full u-photo"
+            src={SITE.images.profilePic}
+            width="138"
+            height="138"
+            alt="Profile picture"
+            loading="lazy"
+          />
+        </picture>
       )}
     </div>
     <div class="w-full md:border-b p-1 md:text-center">
