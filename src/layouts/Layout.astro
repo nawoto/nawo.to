@@ -78,6 +78,10 @@ const websiteStructuredData = generateWebSiteStructuredData();
           { name: "googlebot", content: "index, follow" }
         ],
         link: [
+          { rel: "preconnect", href: "https://fonts.googleapis.com" },
+          { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+          { rel: "preload", as: "style", href: "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;900&display=swap" },
+          { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;900&display=swap" },
           { rel: "me authn", href: `https://twitter.com/${SITE.social.twitter}` },
           { rel: "me", href: "https://github.com/nawoto/" },
           { rel: "me", href: "https://speakerdeck.com/nawoto" },
