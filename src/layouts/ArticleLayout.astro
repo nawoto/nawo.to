@@ -221,7 +221,8 @@ const breadcrumbData = generateBreadcrumbStructuredData({
 
   <!-- Share Buttons -->
   <div class="mx-auto max-w-4xl px-4 mb-8">
-    <div class="flex gap-2 my-6 items-end">
+    <h3 class="text-sm text-gray-400 -mb-10">/** Share **/</h3>
+    <div class="flex gap-2 items-end">
       <!-- X (Twitter) -->
       <a
         href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(title)}`}
@@ -286,11 +287,13 @@ const breadcrumbData = generateBreadcrumbStructuredData({
 
   <!-- Webmentions Section -->
   <div class="mx-auto max-w-4xl px-4 mb-8">
+    <h3 class="text-sm text-gray-400">/** Webmentions **/</h3>
     <WebMentions url={currentUrl} />
   </div>
 
   <!-- Comments Section -->
   <div class="mx-auto max-w-4xl px-4">
+    <h3 class="text-sm text-gray-400">/** Comments **/</h3>
     <Comments />
   </div>
 

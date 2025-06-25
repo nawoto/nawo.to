@@ -17,7 +17,6 @@ if (typeof url === 'string') {
 const likes: any[] = mentions.filter((m: any) => m['wm-property'] === 'like-of' && m.author);
 ---
 <div>
-  <h3 class="border-b text-left">Webmentions</h3>
   <div>
     {likes.length === 0 ? (
       <span class="text-gray-500 block text-left">No Webmention</span>
