@@ -14,14 +14,22 @@ https://www.gundam.info/feature/gquuuuuux/
 映画からテレビ本編をリアルタイムで視聴するなんて、いつぶりだろう🤔
 
 それくらい毎週楽しみにしていたし、最終回まで一気に駆け抜けた感じだった。
-毎回、元ネタやオマージュ（悪ノリ？）がこれでもかと詰め込まれていて、「また入れてきたな！」と目が離せなかった。
-いろいろと「やり過ぎだろw」と思いながら観てたけど、カラーっぽい(前身のガイ◯ックスぽい?)感じでとても良かった。
+毎回、元ネタやオマージュ（悪ノリ？）がこれでもかと詰め込まれていて、いろいろと「やり過ぎだろw」と思いながら目が離せずに観てたけど、カラーっぽい(前身のガイ◯ックスぽい?)感じでとても良かった。
 
 12話しかなかったけど、逆に展開が早くてテンポも良く、最後まで飽きずに夢中で観てしまった。
 
 あと、カラーらしいデザインと、映像としての圧倒的なかっこよさで描かれるモビルスーツ戦が見れただけで大満足。
 
-https://www.youtube.com/watch?v=PvWIy8ABEOs
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+  <iframe 
+    src="https://www.youtube.com/embed/PvWIy8ABEOs" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
 
 個人的にはサイコガンダムのシーンが良かったな。
 デザインも良いし、フィギュア出たら欲しいな(なぜかこれまでもサイコガンダムのフィギュアは買いがち)。
