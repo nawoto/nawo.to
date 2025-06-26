@@ -26,7 +26,7 @@ https://www.gundam.info/feature/gquuuuuux/
 
 https://www.gundam.info/feature/gquuuuuux/mecha/29/
 
-これは何回も見直したい作品だったなー
+これは何回も見直したい作品だなー！
 
 残念ながら、来週から観れないし、ちゃんとラストまで描き切ったので続編も無さそうだな😓
 
