@@ -10,7 +10,7 @@ interface Props {
 const { className = '', showImage = true } = Astro.props;
 ---
 
-<div class={className}>
+<div class={className} itemprop="author" itemscope itemtype="http://schema.org/Person">
   <h3 class="hover-style border-y text-center text-2xl font-medium uppercase tracking-widest md:hidden">
     author
   </h3>
