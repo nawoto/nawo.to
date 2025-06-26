@@ -118,7 +118,8 @@ export function generateWebSiteStructuredData(): BaseStructuredData & {
     `https://speakerdeck.com/${SITE.social.speakerdeck}`,
     `https://www.instagram.com/${SITE.social.instagram}/`,
     `https://www.facebook.com/${SITE.social.facebook}`,
-    `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`
+    `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`,
+    `https://bsky.app/profile/nawo.to`
   ];
 
   return {
@@ -221,7 +222,8 @@ export const DEFAULT_PERSON_DATA: PersonData = {
     "https://speakerdeck.com/nawoto",
     "https://www.instagram.com/nawoto/",
     "https://suzuri.jp/nawoto/",
-    "https://www.amazon.co.jp/~/e/B00B46MLPG"
+    "https://www.amazon.co.jp/~/e/B00B46MLPG",
+    "https://bsky.app/profile/nawo.to"
   ],
   author: [
     {

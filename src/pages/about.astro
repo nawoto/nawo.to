@@ -142,6 +142,16 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
               class="w-full flex flex-wrap justify-end pt-2 text-2xl md:text-sm gap-x-2 gap-y-1 md:justify-end"
               id="my-urls"
             >
+              <li class="hover-style px-1">
+                <a
+                  href={`https://bsky.app/profile/${SITE.social.bluesky}`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="bluesky" />
+                </a>
+              </li>
               <li class="hover-style pr-1">
                 <a
                   href={`https://twitter.com/${SITE.social.twitter}`}
@@ -184,22 +194,22 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
               </li>
               <li class="hover-style px-1">
                 <a
-                  href={`https://suzuri.jp/${SITE.social.suzuri}/`}
-                  itemprop="sameas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name="suzuri" />
-                </a>
-              </li>
-              <li class="hover-style px-1">
-                <a
                   href={`https://www.facebook.com/${SITE.social.facebook}/`}
                   itemprop="sameas"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Icon name="facebook" />
+                </a>
+              </li>
+              <li class="hover-style px-1">
+                <a
+                  href={`https://suzuri.jp/${SITE.social.suzuri}/`}
+                  itemprop="sameas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="suzuri" />
                 </a>
               </li>
               <li class="hover-style px-1">

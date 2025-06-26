@@ -14,6 +14,7 @@ export const SITE = {
     facebook: 'nishimura.nawoto',
     amazon: 'B00B46MLPG',
     suzuri: 'nawoto',
+    bluesky: 'nawo.to',
   },
   // --- ナビゲーション設定 ---
   navigation: {
