@@ -4,10 +4,77 @@ import { SITE } from '../config';
 ---
 
 <Layout title={`404: Not Found | ${SITE.title}`} showBio={false}>
-  <main class="container mx-auto px-4 py-16 max-w-4xl text-center">
+  {/* 星空背景（CSSのみ・流れ星付き） */}
+  <div class="star-bg">
+    <span class="star" style="top:10%;left:20%;animation-delay:0s;"></span>
+    <span class="star" style="top:30%;left:70%;animation-delay:0.5s;"></span>
+    <span class="star" style="top:60%;left:40%;animation-delay:1s;"></span>
+    <span class="star" style="top:80%;left:80%;animation-delay:1.5s;"></span>
+    <span class="star" style="top:50%;left:10%;animation-delay:0.8s;"></span>
+    <span class="star" style="top:20%;left:60%;animation-delay:1.2s;"></span>
+    <span class="star" style="top:75%;left:25%;animation-delay:0.3s;"></span>
+    <span class="star" style="top:40%;left:85%;animation-delay:0.7s;"></span>
+    <span class="star" style="top:65%;left:55%;animation-delay:1.7s;"></span>
+    <span class="star" style="top:15%;left:80%;animation-delay:0.9s;"></span>
+    {/* 流れ星 */}
+    <span class="shooting-star" style="top:22%;left:5%;animation-delay:0.7s;"></span>
+    <span class="shooting-star" style="top:65%;left:15%;animation-delay:1.8s;"></span>
+  </div>
+  <style>
+    .star-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      background: #111;
+    }
+    .star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.95;
+      box-shadow: 0 0 16px 8px #fff, 0 0 32px 16px #fff4;
+      animation: twinkle 2.5s infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .shooting-star {
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, #fff, transparent);
+      opacity: 0.8;
+      border-radius: 2px;
+      transform: rotate(-20deg);
+      animation: shooting 1.2s linear infinite;
+    }
+    @keyframes shooting {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-20deg) scaleX(0.5);
+      }
+      10% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-20deg) scaleX(1);
+      }
+      80% {
+        opacity: 1;
+        transform: translate(220px, 60px) rotate(-20deg) scaleX(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(300px, 80px) rotate(-20deg) scaleX(0.5);
+      }
+    }
+  </style>
+  <main class="container mx-auto px-4 py-16 max-w-4xl text-center relative z-20">
     <div class="text-7xl md:text-9xl mb-6">🧑‍🚀 404 🪐</div>
     <div class="text-4xl md:text-6xl font-bold mb-2">Mission failed... Page not found</div>
-    <div class="text-lg text-gray-600 mb-4">You just hit a route that doesn't exist... the sadness.</div>
+    <div class="text-lg text-gray-300 mb-4">You just hit a route that doesn't exist... the sadness.</div>
     <a href="/" class="mt-8 inline-block px-12 py-6 bg-white text-black border border-gray-300 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition text-4xl font-semibold">
       Return to TOP 🚀
     </a>

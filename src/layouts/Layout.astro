@@ -13,13 +13,15 @@ interface Props {
   isRootPath?: boolean;
   description?: string;
   image?: string;
+  showBio?: boolean;
 }
 
 const { 
   title, 
   isRootPath = false,
   description = SITE.description,
-  image
+  image,
+  showBio = true
 } = Astro.props;
 
 const pageTitle = title || SITE.title;
@@ -39,6 +41,9 @@ const socialLinks = [
 
 // WebSite構造化データを生成
 const websiteStructuredData = generateWebSiteStructuredData();
+
+// Bio表示の判定（デフォルトはtrue、明示的にfalseが渡された場合のみ非表示）
+const shouldShowBio = showBio !== false;
 ---
 
 <!DOCTYPE html>
@@ -107,13 +112,24 @@ const websiteStructuredData = generateWebSiteStructuredData();
     <Header />
     
     <main>
+      {/* 
+        Bio表示の制御:
+        - showBioがtrue（デフォルト）または未指定の場合: Bioを表示
+        - showBioが明示的にfalseの場合: Bioを非表示
+        - 404ページなど、Bioを表示したくないページで使用
+      */}
       <div class="md:flex md:flex-row">
-        <div class="md:order-last md:basis-3/4">
+        {/* メインコンテンツエリア */}
+        <div class={shouldShowBio ? "md:order-last md:basis-3/4" : "w-full"}>
           <slot />
         </div>
-        <div class="border-r md:basis-1/4">
-          <Bio />
-        </div>
+        
+        {/* Bioサイドバー（showBioがfalseでない場合のみ表示） */}
+        {shouldShowBio && (
+          <div class="border-r md:basis-1/4">
+            <Bio />
+          </div>
+        )}
       </div>
     </main>
 
