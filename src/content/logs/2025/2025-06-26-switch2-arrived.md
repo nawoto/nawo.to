@@ -2,7 +2,6 @@
 title: "Switch 2 が我が家にやってきた📺🎮"
 pubDate: 2025-06-26T07:03:28.916+09:00
 description: "Switch2 の抽選にやっと当選した🎉"
-tags: []
 ---
 
 抽選に申し込んでいた Nintendo Switch 2 が、第3次抽選で当選しました🎉

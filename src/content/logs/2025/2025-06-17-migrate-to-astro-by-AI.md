@@ -2,7 +2,6 @@
 title: GatsbyからAstroへの移行を(ほぼ)AIにやってもらった🎉
 description: ""
 pubDate: 2025-06-17T07:29:48.304Z
-tags: ["Astro", "Gatsby", "AI", "Cursor", "移行"]
 ---
 
 数年ごとに訪れるサイト作り直したい欲が、今年もやってきました！

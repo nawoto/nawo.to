@@ -61,7 +61,6 @@ const template = `---
 title: "タイトルを入力"
 pubDate: "${dateTime}"
 description: ""
-tags: []
 ---
 
 ここに本文を書いてください。
