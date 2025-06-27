@@ -1,7 +1,7 @@
 ---
-interface Props {
-  data: any;
-}
+import type { StructuredDataProps } from '../types/index.js';
+
+interface Props extends StructuredDataProps {}
 
 const { data } = Astro.props;
 ---

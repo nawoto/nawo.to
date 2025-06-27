@@ -1,8 +1,12 @@
 ---
+import type { WebMention, WebMentionsProps } from '../types/index.js';
+
 // Webmention表示コンポーネント
 // props: url（記事の絶対URL）
+interface Props extends WebMentionsProps {}
+
 const { url } = Astro.props;
-let mentions: any[] = [];
+let mentions: WebMention[] = [];
 if (typeof url === 'string') {
   try {
     const res = await fetch(`https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(url)}`);
@@ -14,20 +18,20 @@ if (typeof url === 'string') {
     // エラー時は空配列のまま
   }
 }
-const likes: any[] = mentions.filter((m: any) => m['wm-property'] === 'like-of' && m.author);
+const likes: WebMention[] = mentions.filter((m: WebMention) => m['wm-property'] === 'like-of' && m.author);
 ---
 <div>
   <div>
     {likes.length === 0 ? (
       <span class="text-gray-500 block text-left">No Webmention</span>
     ) : null}
-    {likes.map((author: any) => (
+    {likes.map((author: WebMention) => (
       <div class="py-1 text-lg md:flex">
         <p class="flex">
-          <a href={author.author.url} target="_blank" rel="noopener noreferrer">
+          <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
             <img
-              alt={author.author.name}
-              src={author.author.photo}
+              alt={author.author?.name}
+              src={author.author?.photo}
               loading="lazy"
               class="z-index overflow-hidden rounded-lg"
               width="30"
@@ -35,8 +39,8 @@ const likes: any[] = mentions.filter((m: any) => m['wm-property'] === 'like-of' 
             />
           </a>
           <span class="px-1 underline decoration-gray-400">
-            <a href={author.author.url} target="_blank" rel="noopener noreferrer">
-              {author.author.name}
+            <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
+              {author.author?.name}
             </a>
           </span>
         </p>

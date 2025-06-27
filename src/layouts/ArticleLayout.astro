@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import type { ArticleLayoutProps, ArticleContent } from '../types/index.js';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
@@ -10,20 +11,14 @@ import StructuredData from '../components/StructuredData.astro';
 // import fs from 'node:fs';
 // import path from 'node:path';
 
-export interface Props {
-  title: string;
-  content: any;
-  previousPost?: any;
-  nextPost?: any;
-  shareUrl?: string;
-}
+export interface Props extends ArticleLayoutProps {}
 
 const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
 
 // 本文からサマリを生成する関数
-function generateDescription(content: any): string {
+function generateDescription(content: ArticleContent): string {
   // 既にdescriptionがある場合はそれを使用
   if (content.data.description && content.data.description.trim() !== '') {
     return content.data.description;
