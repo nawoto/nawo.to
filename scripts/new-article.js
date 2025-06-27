@@ -13,6 +13,42 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
+// ヘルプ表示
+if (params.help || args.length === 0) {
+  console.log(`
+記事作成スクリプト
+
+使用方法:
+  node scripts/new-article.js --slug <スラッグ> [オプション]
+
+オプション:
+  --type <logs|texts>    記事タイプ (デフォルト: logs)
+  --date <YYYY-MM-DD>    日付 (デフォルト: 今日)
+  --title <タイトル>     記事タイトル
+  --description <説明>   記事の説明
+  --template <テンプレート> テンプレート名
+  --idea                 ネタストック一覧表示
+  --help                 このヘルプを表示
+
+例:
+  node scripts/new-article.js --slug switch2-unboxing --type logs --title "Switch2開封記"
+  node scripts/new-article.js --idea
+`);
+  process.exit(0);
+}
+
+// ネタストック一覧表示
+if (params.idea) {
+  const ideasPath = path.join(process.cwd(), 'docs', 'content-ideas.md');
+  if (fs.existsSync(ideasPath)) {
+    console.log('📝 ネタストック一覧:');
+    console.log(fs.readFileSync(ideasPath, 'utf8'));
+  } else {
+    console.log('❌ docs/content-ideas.md が見つかりません');
+  }
+  process.exit(0);
+}
+
 // デフォルトをlogsに
 let type = 'logs';
 if (params.type === 'texts' || params.texts) {
@@ -28,6 +64,7 @@ const dateTime = params.date ? `${params.date}T00:00:00+09:00` : now.toISOString
 
 if (!slug) {
   console.error('エラー: --slug を指定してください');
+  console.error('ヘルプを表示するには: node scripts/new-article.js --help');
   process.exit(1);
 }
 
@@ -57,14 +94,53 @@ if (fs.existsSync(filepath)) {
   process.exit(1);
 }
 
-const template = `---
-title: "タイトルを入力"
+// テンプレート選択
+const title = params.title || "タイトルを入力";
+const description = params.description || "";
+
+let template = '';
+if (type === 'texts') {
+  template = `---
+title: "${title}"
 pubDate: "${dateTime}"
-description: ""
+description: "${description}"
+---
+
+## はじめに
+
+ここに記事の導入を書いてください。
+
+## 本文
+
+ここに本文を書いてください。
+
+## まとめ
+
+ここにまとめを書いてください。
+
+## 参考リンク
+
+- [参考リンク1](URL)
+- [参考リンク2](URL)
+`;
+} else {
+  template = `---
+title: "${title}"
+pubDate: "${dateTime}"
+description: "${description}"
 ---
 
 ここに本文を書いてください。
+
+## まとめ
+
+ここにまとめを書いてください。
 `;
+}
 
 fs.writeFileSync(filepath, template, 'utf8');
-console.log(`✅ 記事ファイルを作成しました: ${filepath}`); 
+console.log(`✅ 記事ファイルを作成しました: ${filepath}`);
+
+// ネタストックの更新提案
+console.log('\n💡 ネタストックを更新することをお忘れなく！');
+console.log('docs/content-ideas.md で完了したネタにチェックを入れてください。'); 

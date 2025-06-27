@@ -32,6 +32,9 @@
 │   ├── layouts/    # レイアウトテンプレ
 │   ├── pages/      # ルーティングの心臓部
 │   └── styles/     # CSSとか
+├── docs/           # プロジェクトドキュメント
+│   ├── TODO.md     # タスク管理
+│   └── content-ideas.md # 記事ネタストック
 ├── package.json
 └── ...and more!
 ```
@@ -70,35 +73,49 @@
 | `npm run build`                 | 本番用にビルド（`dist/`に出力）                   |
 | `npm run preview`               | ビルド結果をローカルでプレビュー                 |
 | `npm run astro ...`             | Astro CLIコマンドを実行                          |
-| `npm run create-article -- ...` | 新しい記事ファイルを作成（下記オプション参照）   |
+| `node scripts/new-article.js`   | 新しい記事ファイルを作成（下記オプション参照）   |
 
 ---
 
-### `npm run create-article` の使い方（未来の自分へ）
+### 記事作成スクリプトの使い方（未来の自分へ）
 
 #### 基本形
 ```sh
-npm run create-article -- --slug my-article
+node scripts/new-article.js --slug my-article
 ```
 - `--slug`（必須）: 記事のスラッグ（ファイル名・URLの一部）
 
 #### オプション
-- `--type texts` または `--texts`  
+- `--type <logs|texts>` または `--texts`  
   → テキスト系（`src/content/texts/`）に作成。  
-  省略時はブログ記事（`src/content/blog/yyyy/mm/dd/`）に作成。
+  省略時はブログ記事（`src/content/logs/`）に作成。
 - `--date YYYY-MM-DD`  
   → 日付を指定（省略時は今日の日付）
+- `--title "タイトル"`  
+  → 記事のタイトルを指定
+- `--description "説明"`  
+  → 記事の説明を指定
+- `--idea`  
+  → ネタストック一覧を表示
+- `--help`  
+  → ヘルプを表示
 
 #### 例
 ```sh
+# ネタストック一覧表示
+node scripts/new-article.js --idea
+
 # ブログ記事（今日の日付で作成）
-npm run create-article -- --slug hello-world
+node scripts/new-article.js --slug hello-world
+
+# ブログ記事（タイトルと説明付き）
+node scripts/new-article.js --slug switch2-unboxing --title "Switch2開封記" --description "Switch2の開封と初期設定の詳細"
 
 # ブログ記事（2024-07-19の日付で作成）
-npm run create-article -- --slug new-family --date 2024-07-19
+node scripts/new-article.js --slug new-family --date 2024-07-19
 
-# テキスト記事（2025-05-24の日付で作成）
-npm run create-article -- --slug happy-birthday --type texts --date 2025-05-24
+# テキスト記事（タイトルと説明付き）
+node scripts/new-article.js --slug agile-ai-coaching --type texts --title "アジャイルコーチと生成AI" --description "アジャイルコーチが生成AIをどう活用しているか"
 ```
 
 ---
