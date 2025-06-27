@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
+import { remarkYoutubeEmbed } from './scripts/remark-youtube-embed.js';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import react from '@astrojs/react';
@@ -28,7 +29,10 @@ export default defineConfig({
     remarkPlugins: [
       remarkToc,
       [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
-      remarkLinkCardPlus,
+      remarkYoutubeEmbed,
+      [remarkLinkCardPlus, { 
+        excludeDomains: ['youtube.com', 'www.youtube.com', 'youtu.be']
+      }],
     ],
     rehypePlugins: [
       rehypeRaw,

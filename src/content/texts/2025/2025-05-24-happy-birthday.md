@@ -90,13 +90,4 @@ https://nawo.to/2022/06/09/thx-hbd-gifts/
 
 以前に アジャイルサムライ横浜道場でお祝いしてもらった動画を見つけたので貼っておこう 😄 
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
-  <iframe 
-    src="https://www.youtube.com/embed/nDBxZ7ZbtlA" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-  </iframe>
-</div>
+https://www.youtube.com/watch?v=nDBxZ7ZbtlA

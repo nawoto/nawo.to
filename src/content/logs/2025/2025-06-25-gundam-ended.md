@@ -20,16 +20,7 @@ https://www.gundam.info/feature/gquuuuuux/
 
 あと、カラーらしいデザインと、映像としての圧倒的なかっこよさで描かれるモビルスーツ戦が見れただけで大満足。
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
-  <iframe 
-    src="https://www.youtube.com/embed/PvWIy8ABEOs" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-  </iframe>
-</div>
+https://www.youtube.com/watch?v=PvWIy8ABEOs
 
 個人的にはサイコガンダムのシーンが良かったな。
 デザインも良いし、フィギュア出たら欲しいな(なぜかこれまでもサイコガンダムのフィギュアは買いがち)。
