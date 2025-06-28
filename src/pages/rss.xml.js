@@ -36,6 +36,7 @@ export async function GET(context) {
         title: item.data.title,
         pubDate: item.data.pubDate,
         description: item.data.description,
+        content: item.body,
         link: link,
       };
     }),
