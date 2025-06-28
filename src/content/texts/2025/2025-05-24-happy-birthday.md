@@ -57,7 +57,7 @@ https://nawo.to/2024/11/16/new-home/
 
 (平田のおじさんと元気に遊んでいる様子)
 
-<iframe src="https://www.instagram.com/p/CsvdrEpPuCK/embed" width="100%" height="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+https://www.instagram.com/p/CsvdrEpPuCK/
 
 それに比例して、親の体力はゴリゴリ削られているのが最近の悩み🙂
 

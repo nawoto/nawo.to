@@ -25,4 +25,4 @@ https://www.nintendo.com/jp/games/switch2/a7hla/index.html
 
 ### 開封の儀
 
-<iframe src="https://www.instagram.com/p/DLSZzhZvpy7/embed" width="50%" height="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+https://www.instagram.com/p/DLSZzhZvpy7/

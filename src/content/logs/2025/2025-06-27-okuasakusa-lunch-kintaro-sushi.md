@@ -27,7 +27,7 @@ https://maps.google.com/?q=金太郎寿司+馬道店
 上ランチ寿司 1 人前で 1500 円、1.5 人前でも 2000 円程度だったので、よくある町のお寿司屋のランチ価格。
 観光地価格じゃなくて助かる。
 
-<iframe src="https://www.instagram.com/p/DLZa7NuPMxF/embed" width="100%" height="700" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+https://www.instagram.com/p/DLZa7NuPMxF/
 
 今日初めて行ったけど、お店は 100 年ぐらいやっている老舗の支店なので、味もちゃんとしてて満足。
 席数も多そうなので、ランチ難民にはなりにくそう。

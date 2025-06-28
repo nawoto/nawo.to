@@ -7,9 +7,7 @@ pubDate: 2022-05-31T07:25:43.458Z
 Scrum Boot Camp The Book が台湾でも出版された！！ (実際に出版されたのは 3 月)  
 献本してもらった繁体字版の実物が届いたので記念。めでたい 🎉🎉🎉
 
-<div style="display: flex; justify-content: center;">
-  <iframe src="https://www.instagram.com/p/CeNpYJKvkQE/embed" width="400" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-</div>
+https://www.instagram.com/p/CeNpYJKvkQE/
 
 自分たちの本が海外で翻訳されるという貴重な経験と実績解除ができて、正直とても嬉しい。
 
