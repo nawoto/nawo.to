@@ -21,4 +21,19 @@ http://books.gotop.com.tw/v_ACL061400
 
 Scrum Bootcamp The Book は日本語でも読めるので、興味のある人はぜひ 😆
 
-https://www.amazon.co.jp/dp/B086GBXRN6
+<div class="book-card">
+  <div class="book-cover">
+    <picture>
+      <source srcset="/images/books/scrum-bootcamp-the-book-cover.webp" type="image/webp" />
+      <img src="/images/books/scrum-bootcamp-the-book-cover.png" alt="SCRUM BOOT CAMP THE BOOK【増補改訂版】の表紙" />
+    </picture>
+  </div>
+  <div class="book-info">
+    <h3 class="book-title">📚 SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発</h3>
+    <p class="book-author"><strong>西村 直人</strong> (著)・永瀬 美穂 (著)・吉羽 龍太郎 (著)</p>
+    <p class="book-description">スクラム開発の基礎から実践まで、体系的に学べる実践的なガイドブック。</p>
+    <a href="https://www.amazon.co.jp/dp/B00J1XKB6K?tag=nawoto07-22" class="amazon-link" target="_blank" rel="noopener noreferrer">
+      📖 Amazonで見る
+    </a>
+  </div>
+</div>

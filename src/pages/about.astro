@@ -8,6 +8,7 @@ import Icon from '../components/Icon.astro';
 import Comments from '../components/Comments.astro';
 import StructuredData from '../components/StructuredData.astro';
 import { generatePersonStructuredData, DEFAULT_PERSON_DATA } from '../data/structured-data.js';
+import BookCard from '../components/BookCard.astro';
 
 const pageTitle = `About | ${SITE.title}`;
 const pageDescription = "西村直人（nawoto）のプロフィール。エンジニアリングマネージャー、スクラムマスター、アジャイル開発専門家として活動。";
@@ -505,36 +506,28 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
           </li>
         </ul>
 
-        <span class="pt-5 text-sm text-gray-400">
-          /** Amazon へのリンク **/
-        </span>
+        <div class="mt-4 flex flex-col gap-2">
+          <span class="text-sm text-gray-400">
+            /** Amazon へのリンク **/
+          </span>
+          <a
+            href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
+            class="underline"
+            target="_blank"
+          >
+            📚
+            <span class="pl-1">Amazonの著者ページ</span>
+          </a>
+        </div>
 
-        <div class="space-y-4 prose max-w-none">
-          <!-- 手動でAmazonカードのHTMLを記述 -->
-          <p>おすすめの本：</p>
-          <div class="amazon-card" data-asin="B086GBXRN6" data-url={`https://www.amazon.co.jp/dp/B086GBXRN6?tag=${SITE.affiliate.amazon}`}>
-            <div class="amazon-card-placeholder">
-              <p>Amazon商品カード (ASIN: B086GBXRN6) - 読み込み中...</p>
-            </div>
-          </div>
-          <div class="amazon-card" data-asin="B00J1XKB6K" data-url={`https://www.amazon.co.jp/dp/B00J1XKB6K?tag=${SITE.affiliate.amazon}`}>
-            <div class="amazon-card-placeholder">
-              <p>Amazon商品カード (ASIN: B00J1XKB6K) - 読み込み中...</p>
-            </div>
+        <!-- 自作書籍カード -->
+        <div class="mt-8">
+          <div class="space-y-4">
+            <BookCard asin="B086GBXRN6" />
+            <BookCard asin="B00J1XKB6K" />
           </div>
         </div>
       </section>
-
-      <div class="mt-4">
-        <a
-          href={`https://www.amazon.co.jp/~/e/${SITE.social.amazon}`}
-          class="underline"
-          target="_blank"
-        >
-          📚
-          <span class="pl-1">Amazonの著者ページ</span>
-        </a>
-      </div>
 
       <section class="py-2" id="my-awards">
         <h3 class="text-2xl">🏆Awards</h3>
