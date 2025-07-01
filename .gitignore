@@ -74,3 +74,5 @@ dist/
 .astro/
 public/remark-link-card-plus/
 /public/remark-link-card-plus/
+
+docs/amazon-paapi-scratchpad-memo.md
