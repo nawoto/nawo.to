@@ -10,17 +10,14 @@ interface Props {
 const { className = '', showImage = true } = Astro.props;
 ---
 
-<div class={className} itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <h3 class="hover-style border-y text-center text-2xl font-medium uppercase tracking-widest md:hidden">
-    author
-  </h3>
+<aside aria-label="著者情報" class={"mt-4 md:mt-0 " + className} itemprop="author" itemscope itemtype="http://schema.org/Person">
   <div class="hover-style h-card flex md:grid md:grid-cols-1">
     <div class="md:mx-auto md:border-none md:pt-1">
       {showImage && (
         <picture>
           <source srcset="/images/profile-pic.webp" type="image/webp" />
           <img
-            class="z-10 overflow-hidden rounded-full u-photo"
+            class="z-10 overflow-hidden rounded-full u-photo mb-2 mt-2 md:mb-0 md:mt-0"
             src={SITE.images.profilePic}
             width="138"
             height="138"
@@ -30,23 +27,20 @@ const { className = '', showImage = true } = Astro.props;
         </picture>
       )}
     </div>
-    <div class="w-full p-1 md:text-center">
-      <p class="text-lg font-bold">
-        <a href="/" class="p-name u-url">
-          {SITE.author.name}
+    <div class="w-full p-1 md:text-center md:mt-2 mb-2 text-right md:text-center">
+      <div class="mb-2 flex flex-row items-end gap-2 text-left md:block md:text-center">
+        <div class="font-extrabold text-xl md:text-3xl">西村直人</div>
+        <div class="font-extrabold text-xl text-gray-400 md:font-normal md:text-sm md:text-gray-400">NISHIMURA Naoto</div>
+      </div>
+      <div class="text-sm md:px-10 md:text-left mb-3 md:mb-2 text-left md:text-center">
+        nawoto という名前でアジャイルな開発についていろいろやっていたら、気づけば本も書いてました。
+      </div>
+      <div class="mb-2 text-right md:text-center">
+        <a href="/about" class="uppercase underline text-lg md:text-xl">
+          &gt;&gt; READ ME
         </a>
-      </p>
-      <p class="text-sm md:px-10 md:text-left">
-        <span class="p-name">西村直人</span>。 おもに
-        <span class="p-nickname">nawoto</span> という名前で
-        <span class="p-note">いろいろしています</span>
-      </p>
-      <p class="text-right text-sm md:text-center">
-        <a href="/about" class="uppercase underline">
-          read me
-        </a>
-      </p>
-      <ul class="flex flex-row justify-end pt-2 text-2xl md:justify-center">
+      </div>
+      <ul class="flex flex-row justify-end md:justify-center pt-2 text-2xl">
         <li class="hover-style px-1">
           <a
             href="https://bsky.app/profile/nawo.to"
@@ -115,4 +109,4 @@ const { className = '', showImage = true } = Astro.props;
       </ul>
     </div>
   </div>
-</div> 
+</aside> 
