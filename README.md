@@ -127,3 +127,18 @@ node scripts/new-article.js --slug agile-ai-coaching --type texts --title "ア�
 - 何かあれば[Issue](https://github.com/nawoto/nawo.to/issues)や[PR](https://github.com/nawoto/nawo.to/pulls)でセルフツッコミもOK！
 
 ---
+
+## 📄 ライセンス
+
+### サイトコード
+- **ライセンス**: [MIT License](https://opensource.org/licenses/MIT)
+
+### 記事コンテンツ
+- **ライセンス**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **条件**: 帰属表示（nawo.toへのリンク）が必要
+
+### 画像
+- **プロフィール写真、サイトアイコン、OpenGraph画像**: [MIT License](https://opensource.org/licenses/MIT)
+- **書籍カバー画像**: 著者/出版社の許可による利用
+
+---
