@@ -2,25 +2,14 @@
 import { getBookByAsin } from '../data/books';
 import { SITE } from '../config';
 
-interface Props {
-  asin: string;
-}
-
 const { asin } = Astro.props;
 const book = getBookByAsin(asin);
-
-if (!book) {
-  throw new Error(`Book with ASIN ${asin} not found`);
-}
-
-// 西村直人の名前を太字にする関数
-function formatAuthorName(author: string): string {
+if (!book) throw new Error(`Book with ASIN ${asin} not found`);
+function formatAuthorName(author: string) {
   return author.replace(/西村\s*直人/g, '<strong>西村 直人</strong>');
 }
-
 const amazonUrl = `https://www.amazon.co.jp/dp/${book.asin}?tag=${SITE.affiliate.amazon}`;
 ---
-
 <div class="book-card">
   <div class="book-cover">
     <picture>
@@ -28,12 +17,10 @@ const amazonUrl = `https://www.amazon.co.jp/dp/${book.asin}?tag=${SITE.affiliate
       <img src={book.coverImage} alt={`${book.title} の表紙`} />
     </picture>
   </div>
-  <div class="book-info">
+  <div class="book-content">
     <h3 class="book-title">📚 {book.title}</h3>
     <p class="book-author" set:html={formatAuthorName(book.author)}></p>
     <p class="book-description">{book.description}</p>
-    <a href={amazonUrl} class="amazon-link" target="_blank" rel="noopener noreferrer">
-      📖 Amazonで見る
-    </a>
+    <a href={amazonUrl} class="amazon-link" target="_blank" rel="noopener noreferrer">📖 Amazonで見る</a>
   </div>
 </div> 
