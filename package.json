@@ -2,6 +2,9 @@
   "name": "nawo.to",
   "type": "module",
   "version": "1.2.0",
+  "license": "MIT",
+  "author": "西村直人 (Naoto Nishimura)",
+  "homepage": "https://nawo.to",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
