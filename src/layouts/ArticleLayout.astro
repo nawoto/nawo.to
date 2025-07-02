@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+
 import type { ArticleLayoutProps, ArticleContent } from '../types/index.js';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
@@ -61,9 +61,7 @@ if (content.data.ogimage) {
 
 // BlogPosting構造化データを生成
 const blogPostingData = generateBlogPostingStructuredData({
-  ...content,
-  collection: collectionName,
-  url: shareUrl,
+  url: currentUrl,
   headline: title,
   description: metaDescription,
   image: ogImageUrl,

@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import type { NavigationPost } from '../../types/index.js';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
@@ -17,20 +18,25 @@ export async function getStaticPaths() {
 		// slug から年別ディレクトリと日付プレフィックスを削除
 		const slug = text.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
 		
+		// NavigationPost型に合わせて構造を修正
+		const previousPost: NavigationPost | undefined = previousText ? {
+			slug: previousText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+			collection: 'texts',
+			data: previousText.data
+		} : undefined;
+		
+		const nextPost: NavigationPost | undefined = nextText ? {
+			slug: nextText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+			collection: 'texts',
+			data: nextText.data
+		} : undefined;
+		
 		return {
 			params: { slug },
 			props: { 
 				text,
-				previousPost: previousText ? {
-					slug: previousText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-					collection: 'texts',
-					data: previousText.data
-				} : null,
-				nextPost: nextText ? {
-					slug: nextText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-					collection: 'texts',
-					data: nextText.data
-				} : null
+				previousPost,
+				nextPost
 			},
 		};
 	});

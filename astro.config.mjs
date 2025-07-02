@@ -21,10 +21,7 @@ export default defineConfig({
     sitemap(),
     partytown(),
     react(),
-    ogImageGenerator({
-      blogPath: 'logs/',
-      textPath: 'texts/',
-    }),
+    ogImageGenerator(),
   ],
   markdown: {
     remarkPlugins: [

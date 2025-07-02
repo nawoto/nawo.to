@@ -34,7 +34,6 @@ export interface ArticleContent {
 
 // 前後の記事の型定義
 export interface NavigationPost {
-  id: string;
   slug: string;
   collection: string;
   data: {
@@ -66,11 +65,10 @@ export interface SEOConfig {
   extend?: Record<string, unknown>;
 }
 
-// 構造化データの型定義
-export interface StructuredData {
-  '@context': string;
-  '@type': string;
-  [key: string]: unknown;
+// 構造化データの基本型定義（structured-data.tsと統一）
+export interface BaseStructuredData {
+  "@context": "https://schema.org";
+  "@type": string;
 }
 
 // 記事レイアウトのProps型定義
@@ -94,7 +92,7 @@ export interface SEOProps {
 
 // 構造化データコンポーネントのProps型定義
 export interface StructuredDataProps {
-  data: StructuredData;
+  data: BaseStructuredData & Record<string, any>;
 }
 
 // WebMentionsコンポーネントのProps型定義

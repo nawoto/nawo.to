@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return !invalidPatterns.some(pattern => pattern.test(url));
   }
 
-  amazonCards.forEach((card, index) => {
+  amazonCards.forEach((card, _index) => {
     const productUrl = card.dataset.url;
     if (!productUrl) return;
 

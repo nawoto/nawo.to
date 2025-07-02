@@ -49,11 +49,9 @@ const generateOgImage = async ({ title, fontData, iconBase64 }: GenerateOgImageP
     return sharp(Buffer.from(svg)).png().toBuffer();
 };
 
-interface OgImageGeneratorOptions {
-  // 必要に応じてオプションを追加
-}
 
-export const ogImageGenerator = (options?: OgImageGeneratorOptions): AstroIntegration => {
+
+export const ogImageGenerator = (): AstroIntegration => {
   return {
     name: 'og-image-generator',
     hooks: {

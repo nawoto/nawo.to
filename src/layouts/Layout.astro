@@ -10,7 +10,6 @@ import { generateWebSiteStructuredData } from '../data/structured-data.js';
 
 interface Props {
   title: string;
-  isRootPath?: boolean;
   description?: string;
   image?: string;
   showBio?: boolean;
@@ -18,7 +17,6 @@ interface Props {
 
 const { 
   title, 
-  isRootPath = false,
   description = SITE.description,
   image,
   showBio = true
@@ -29,15 +27,7 @@ const metaDescription = description || SITE.description;
 const ogImageUrl = image ? new URL(image, SITE.url).href : new URL(SITE.images.defaultOg, SITE.url).href;
 const currentUrl = new URL(Astro.url.pathname, SITE.url).href;
 
-// SNSリンクの配列を生成
-const socialLinks = [
-  `https://twitter.com/${SITE.social.twitter}`,
-  `https://github.com/${SITE.social.github}/`,
-  `https://speakerdeck.com/${SITE.social.speakerdeck}`,
-  `https://www.instagram.com/${SITE.social.instagram}/`,
-  `https://www.facebook.com/${SITE.social.facebook}`,
-  `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`
-];
+
 
 // WebSite構造化データを生成
 const websiteStructuredData = generateWebSiteStructuredData();

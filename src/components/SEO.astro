@@ -23,9 +23,28 @@ const {
   extend
 } = Astro.props;
 
-const ogImageUrl = (Astro.props.openGraph?.basic?.image) 
+// openGraphが存在しない場合のデフォルト値
+const defaultOpenGraph = {
+  basic: {
+    type: "website",
+    title: title,
+    image: SITE.images.defaultOg,
+  }
+};
+
+const ogImageUrl = (openGraph?.basic?.image) 
   || Astro.props.ogimage 
   || SITE.images.defaultOg;
+
+// openGraphが存在しない場合はデフォルト値を使用
+const finalOpenGraph = openGraph ? {
+  ...openGraph,
+  basic: {
+    ...defaultOpenGraph.basic,
+    ...openGraph?.basic,
+    image: ogImageUrl,
+  },
+} : defaultOpenGraph;
 ---
 
 <AstroSEO
@@ -33,13 +52,7 @@ const ogImageUrl = (Astro.props.openGraph?.basic?.image)
   description={description}
   canonical={canonical}
   charset={charset}
-  openGraph={{
-    ...openGraph,
-    basic: {
-      ...openGraph?.basic,
-      image: ogImageUrl,
-    },
-  }}
+  openGraph={finalOpenGraph}
   twitter={{
     ...twitter,
     image: ogImageUrl,
