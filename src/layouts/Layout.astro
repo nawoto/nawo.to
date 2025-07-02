@@ -109,15 +109,15 @@ const shouldShowBio = showBio !== false;
         - showBioが明示的にfalseの場合: Bioを非表示
         - 404ページなど、Bioを表示したくないページで使用
       */}
-      <div class="md:flex md:flex-row">
+      <div class="flex flex-col md:flex-row">
         {/* メインコンテンツエリア */}
-        <div class={shouldShowBio ? "md:order-last md:basis-3/4" : "w-full"}>
+        <div class={shouldShowBio ? "order-2 md:order-last md:basis-3/4" : "w-full"}>
           <slot />
         </div>
         
         {/* Bioサイドバー（showBioがfalseでない場合のみ表示） */}
         {shouldShowBio && (
-          <div class="border-r md:basis-1/4">
+          <div class="order-1 border-r md:order-none md:basis-1/4">
             <Bio />
           </div>
         )}
