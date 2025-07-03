@@ -20,8 +20,6 @@ export const SITE = {
   navigation: {
     items: [
       { href: '/', label: 'top' },
-      { href: '/logs', label: 'logs' },
-      { href: '/texts', label: 'texts' },
       { href: '/about', label: 'about' }
     ]
   },

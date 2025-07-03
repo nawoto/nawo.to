@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
-import { getTextSlug, getLogSlug } from '../utils/slug';
+import { getLogSlug, getTextSlug } from '../utils/slug';
 
 const posts = (await getCollection('logs')).sort(
 	(a: CollectionEntry<'logs'>, b: CollectionEntry<'logs'>) => 
@@ -56,12 +56,13 @@ const textsWithExcerpt = await Promise.all(
 ---
 
 <Layout title={SITE.title} image={SITE.images.defaultOg}>
-	<!-- LOGS Section -->
-	<div class="hover-style border-t mt-4">
-		<h1 class="py-4 text-center text-4xl font-semibold uppercase tracking-widest md:border-none">
-			<a href="/logs">logs</a>
-		</h1>
-		<p class="text-sm text-gray-500 text-center">
+	<!-- Tab Navigation -->
+	<div class="mt-4">
+		<div class="tab-container">
+			<a href="/" class="tab active">LOGS</a>
+			<a href="/texts" class="tab">TEXTS</a>
+		</div>
+		<p class="text-sm text-gray-500 text-left pl-4 mt-2">
 			日々のなんとなくを書き留めてます✍️
 		</p>
 	</div>
@@ -97,54 +98,6 @@ const textsWithExcerpt = await Promise.all(
 							</p>
 							<div class="my-2 border py-2 text-center uppercase">
 								<a href={postUrl}>read more</a>
-							</div>
-						</section>
-					</article>
-				</li>
-			);
-		})}
-	</ol>
-
-	<!-- TEXTS Section -->
-	<div class="hover-style">
-		<h1 class="py-4 text-center text-4xl font-semibold uppercase tracking-widest">
-			<a href="/texts">texts</a>
-		</h1>
-		<p class="text-sm text-gray-500 text-center">
-			不定期に思いついたことなどを文章にまとめています✍️
-		</p>
-	</div>
-	<ol style="list-style: none;">
-		{textsWithExcerpt.map((text) => {
-			const title = text.data.title || text.slug;
-			const textSlug = getTextSlug(text.slug);
-			return (
-				<li class="hover-style border-y border-solid py-2 last:border-b-0">
-					<article
-						class="mx-auto w-5/6"
-						itemscope
-						itemtype="http://schema.org/Article"
-					>
-						<header class="py-4">
-							<h2 class="text-2xl font-bold font-titillium">
-								<a href={`/texts/${textSlug}/`} itemprop="url">
-									<span itemprop="headline">{title}</span>
-								</a>
-							</h2>
-							<small>{text.data.pubDate.toLocaleDateString('ja-JP', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit'
-							}).replace(/\//g, '/')}</small>
-						</header>
-						<section>
-							<p
-								itemprop="description"
-								set:html={text.data.description || text.excerpt}
-							>
-							</p>
-							<div class="my-2 border py-2 text-center uppercase">
-								<a href={`/texts/${textSlug}/`}>read more</a>
 							</div>
 						</section>
 					</article>

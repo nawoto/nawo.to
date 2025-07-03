@@ -46,11 +46,13 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 ---
 
 <Layout title={`LOGS | ${SITE.title}`}>
-	<div class="hover-style py-4 text-center">
-		<h1 class="text-4xl font-semibold uppercase tracking-widest">
-			logs
-		</h1>
-		<p class="text-sm text-gray-500">
+	<!-- Tab Navigation -->
+	<div class="mt-4">
+		<div class="tab-container">
+			<a href="/logs" class="tab active">LOGS</a>
+			<a href="/texts" class="tab">TEXTS</a>
+		</div>
+		<p class="text-sm text-gray-500 text-left pl-4 mt-2">
 			日々のなんとなくを書き留めてます✍️
 		</p>
 	</div>

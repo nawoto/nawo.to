@@ -264,3 +264,55 @@
     align-self: stretch;
   }
 }
+
+/* Tab Navigation Styles */
+.tab-container {
+  display: flex;
+  border-bottom: 2px solid #000;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.tab {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid #d1d5db;
+  border-bottom: none;
+  background: #fff;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tab:hover {
+  background: #f3f4f6;
+}
+
+.tab.active {
+  border: 2px solid #000;
+  border-bottom: none;
+  z-index: 2;
+}
+
+.tab.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: #fff;
+  z-index: 3;
+}
+
+.tab:not(.active):hover {
+  background: #f3f4f6;
+  border-color: #a3a3a3;
+}
