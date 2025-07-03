@@ -56,7 +56,7 @@ const textsWithExcerpt = await Promise.all(
 			const title = text.data.title || text.slug;
 			const textSlug = getTextSlug(text.slug);
 			return (
-				<li class="hover-style border-y border-solid py-2">
+				<li class="hover-style border-y border-solid py-2 group">
 					<article
 						class="mx-auto w-5/6"
 						itemscope
@@ -80,8 +80,8 @@ const textsWithExcerpt = await Promise.all(
 								set:html={text.data.description || text.excerpt}
 							>
 							</p>
-							<div class="my-2 border py-2 text-center uppercase">
-								<a href={`/texts/${textSlug}/`}>read more</a>
+							<div class="my-2 py-2">
+								<a href={`/texts/${textSlug}/`} class="read-more text-lg font-mono text-black underline hover:text-white focus:text-white transition-colors duration-200 group-hover:text-green-400 group-focus:text-green-400">$ READ MORE &gt;&gt;</a>
 							</div>
 						</section>
 					</article>
@@ -89,4 +89,4 @@ const textsWithExcerpt = await Promise.all(
 			);
 		})}
 	</ol>
-</Layout> 
+</Layout>

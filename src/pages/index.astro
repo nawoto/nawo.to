@@ -72,7 +72,7 @@ const textsWithExcerpt = await Promise.all(
 			const postUrl = `/${getLogSlug(post.slug)}/`;
 			
 			return (
-				<li class="hover-style border-y border-solid py-2 last:border-b-0">
+				<li class="hover-style border-y border-solid py-2 last:border-b-0 group">
 					<article
 						class="mx-auto w-5/6"
 						itemscope
@@ -96,8 +96,8 @@ const textsWithExcerpt = await Promise.all(
 								set:html={post.data.description || post.excerpt}
 							>
 							</p>
-							<div class="my-2 border py-2 text-center uppercase">
-								<a href={postUrl}>read more</a>
+							<div class="my-2 py-2">
+								<a href={postUrl} class="read-more text-lg font-mono text-black underline hover:text-white focus:text-white transition-colors duration-200 group-hover:text-green-400 group-focus:text-green-400">$ READ MORE &gt;&gt;</a>
 							</div>
 						</section>
 					</article>

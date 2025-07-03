@@ -316,3 +316,16 @@
   background: #f3f4f6;
   border-color: #a3a3a3;
 }
+
+a.read-more:hover {
+  color: #00ff00; /* CLI感のあるグリーン */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background-color: #111;       /* 背景でフォーカス感を演出 */
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+  outline: none;                /* デフォルトのoutlineを消す */
+  box-shadow: 0 0 4px #0f0;     /* 緑の発光感でアクセシビリティ確保 */
+  transition: all 0.15s ease-in-out;
+}
