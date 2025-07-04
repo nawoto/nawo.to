@@ -10,7 +10,7 @@ interface Props {
 const { className = '', showImage = true } = Astro.props;
 ---
 
-<aside aria-label="著者情報" class={"mt-4 md:mt-0 " + className} itemprop="author" itemscope itemtype="http://schema.org/Person">
+<aside aria-label="著者情報" class={"mt-4 md:mt-0 group " + className} itemprop="author" itemscope itemtype="http://schema.org/Person">
   <div class="hover-style h-card flex md:grid md:grid-cols-1">
     <div class="md:mx-auto md:border-none md:pt-1">
       {showImage && (
@@ -36,15 +36,13 @@ const { className = '', showImage = true } = Astro.props;
         nawoto という名前でアジャイルな開発についていろいろやっていたら、気づけば本も書いてました。
       </div>
       <div class="mb-2 text-right md:text-center">
-        <a href="/about" class="uppercase underline text-lg md:text-xl">
-          &gt;&gt; READ ME
-        </a>
+        <a href="/about" class="uppercase underline text-lg md:text-xl transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ ME</a>
       </div>
       <ul class="flex flex-row justify-end md:justify-center pt-2 text-2xl">
         <li class="hover-style px-1">
           <a
             href="https://bsky.app/profile/nawo.to"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -54,7 +52,7 @@ const { className = '', showImage = true } = Astro.props;
         <li class="hover-style px-1">
           <a
             href="https://twitter.com/nawoto"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -64,7 +62,7 @@ const { className = '', showImage = true } = Astro.props;
         <li class="hover-style px-1">
           <a
             href="https://github.com/nawoto/"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -74,7 +72,7 @@ const { className = '', showImage = true } = Astro.props;
         <li class="hover-style px-1">
           <a
             href="https://speakerdeck.com/nawoto"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -84,7 +82,7 @@ const { className = '', showImage = true } = Astro.props;
         <li class="hover-style px-1">
           <a
             href="https://www.instagram.com/nawoto/"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -94,7 +92,7 @@ const { className = '', showImage = true } = Astro.props;
         <li class="hover-style px-1">
           <a
             href="https://suzuri.jp/nawoto/"
-            class="u-url"
+            class="u-url transition-colors duration-200 group-hover:text-green-400"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -102,7 +100,7 @@ const { className = '', showImage = true } = Astro.props;
           </a>
         </li>
         <li class="hover-style pl-1">
-          <a href="/rss.xml">
+          <a href="/rss.xml" class="transition-colors duration-200 group-hover:text-green-400">
             <Icon name="rss" class="w-6 h-6" />
           </a>
         </li>
