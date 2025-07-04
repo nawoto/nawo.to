@@ -12,21 +12,13 @@
     }
     
     /* Ensure all headings use Titillium Web by default - like Gatsby version */
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
         font-family: 'Titillium Web', sans-serif !important;
     }
     
     /* Article content headings - match Gatsby version exactly */
-    .prose :where(h2):not(:where([class~=not-prose] *)) {
-        font-family: 'Titillium Web', sans-serif !important;
-        font-size: 1.5em !important;
-        font-weight: 700 !important;
-        line-height: 1.3333333 !important;
-        margin-bottom: 1em !important;
-        margin-top: 2em !important;
-    }
     
-    .prose h1, .prose h3, .prose h4, .prose h5, .prose h6 {
+    .prose h1, .prose h3 {
         font-family: 'Titillium Web', sans-serif !important;
         font-weight: 700 !important;
     }
@@ -82,101 +74,16 @@
      * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
      * original: https://sur33.com/notes/2023/astro-remark-link-card
     */
-    .prose .remark-link-card-plus__container {
-        @apply w-full mb-5;
-    }
-
-    .prose .remark-link-card-plus__card {
-        --card-border-radius: calc(0.5rem - 1px);
-        @apply no-underline grid gap-4 transition-colors duration-150 border border-gray-300;
-        border-radius: calc(var(--card-border-radius) + 1px);
-        /* Default to a single column layout */
-        grid-template-columns: 1fr;
-    }
 
     /* Switch to 2 columns ONLY if a thumbnail exists */
-    .prose .remark-link-card-plus__card:has(.remark-link-card-plus__thumbnail) {
-        grid-template-columns: 1fr 116px;
-    }
-
-    .prose .remark-link-card-plus__card:hover {
-        @apply bg-gray-50;
-    }
-
-    .prose .remark-link-card-plus__main {
-        @apply flex flex-col justify-center font-normal p-0;
-        grid-column: 1;
-        padding: 0.7rem 1rem;
-        max-width: 100%;
-        min-width: 100%;
-        border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
-    }
 
     /* If there's no thumbnail, round all corners */
-    .prose .remark-link-card-plus__card:not(:has(.remark-link-card-plus__thumbnail)) .remark-link-card-plus__main {
-        border-radius: var(--card-border-radius);
-    }
-
-    .prose .remark-link-card-plus__title {
-        @apply text-xl font-bold text-gray-800;
-        line-height: 1.3;
-        overflow: hidden;
-        display: -webkit-box;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-    }
-
-    .prose .remark-link-card-plus__description {
-        @apply text-sm text-gray-600 mb-2 overflow-hidden text-ellipsis whitespace-nowrap;
-        -webkit-line-clamp: 1;
-    }
-
-    .prose .remark-link-card-plus__meta {
-        @apply flex items-center gap-2;
-    }
-
-    .prose .remark-link-card-plus__favicon {
-        @apply mt-1 mb-0;
-        /* Hide broken image icon and alt text */
-        display: none !important;
-    }
-
-    .prose .remark-link-card-plus__url {
-        @apply text-sm text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap;
-        -webkit-line-clamp: 1;
-    }
-
-    .prose .remark-link-card-plus__thumbnail {
-        grid-column: 2;
-        aspect-ratio: 1 / 1;
-    }
-
-    .prose .remark-link-card-plus__image {
-        @apply object-cover h-full w-full m-0;
-        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
-    }
 
     @media (min-width: 60ch) {
         /* Switch to 2 columns ONLY if a thumbnail exists */
-        .prose .remark-link-card-plus__card:has(.remark-link-card-plus__thumbnail) {
-            grid-template-columns: 1fr 220px;
-        }
-        .prose .remark-link-card-plus__thumbnail {
-            aspect-ratio: 1.91 / 1;
-        }
     }
     
     /* About page specific styles for Amazon cards */
-    .about-page .prose .remark-link-card-plus__container {
-        @apply w-full;
-        max-width: none;
-    }
-    
-    .about-page .prose .remark-link-card-plus__card {
-        @apply w-full;
-        max-width: none;
-    }
 }
 
 /* =========================
@@ -354,7 +261,7 @@
   min-width: 100%;
   border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
 }
-.prose .remark-link-card-plus__card:not(:has(.remark-link-card-plus__thumbnail)) .remark-link-card-plus__main {
+.prose .remark-link-card-plus__card:not(:has(.remark-link-card-plus__thumbnail)) .prose .remark-link-card-plus__main {
   border-radius: var(--card-border-radius);
 }
 .prose .remark-link-card-plus__title {
