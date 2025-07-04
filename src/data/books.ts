@@ -9,7 +9,7 @@ export interface Book {
 
 export const books: Book[] = [
   {
-    asin: "B086GBXRN6",
+    asin: "B00J1XKB6K",
     title: "アジャイルサムライ−達人開発者への道",
     author: "Jonathan Rasmusson (著)・西村 直人 (監訳)・角谷 信太郎 (監訳)・近藤 修平 (訳)・角掛 拓未 (訳)",
     coverImage: "/images/books/agile-samurai-cover.png",
@@ -17,7 +17,7 @@ export const books: Book[] = [
     publishedDate: "2011-07-16"
   },
   {
-    asin: "B00J1XKB6K",
+    asin: "B086GBXRN6",
     title: "SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発",
     author: "西村 直人 (著)・永瀬 美穂 (著)・吉羽 龍太郎 (著)",
     coverImage: "/images/books/scrum-bootcamp-the-book-cover.png",
