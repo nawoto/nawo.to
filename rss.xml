@@ -647,36 +647,4 @@ http://nawo.to/2025/06/17/migrate-to-astro-by-ai/</content:encoded></item><item>
 1. Markdown で書いた記事の見た目を省エネで整えるのに [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)を設定。→ [この記事](https://portground.net/dev/tailwind-markdown-tailwindcss-typography) を参考
 1. Favicon を設定 → シュっと [favicon.io](https://favicon.io/) で Text から作成した。フォントを [Google Fonts](https://fonts.google.com/) から選べるので、[おすすめフォント](https://photoshopvip.net/131206)を見つつ[デラゴシック](https://fonts.google.com/specimen/Dela++Gothic+One)で作成。
 
-文章を書くつもりが、ひさびさのサイト作りの方が楽しくなっている感じはする 😄</content:encoded></item><item><title>Scrum Boot Camp The Book が増刷になりました！ #scrumbcbook</title><link>https://nawo.to/2014/09/12/hatena-1410507039/</link><guid isPermaLink="true">https://nawo.to/2014/09/12/hatena-1410507039/</guid><pubDate>Fri, 12 Sep 2014 07:30:39 GMT</pubDate><content:encoded>みなさまのおかげで [Scrum Boot Camp The Book](http://www.amazon.co.jp/gp/product/4798129712?ie=UTF8&amp;camp=1207&amp;creative=8411&amp;creativeASIN=4798129712&amp;linkCode=shr&amp;tag=nawoto07-22&amp;qid=1410506437&amp;sr=8-1&amp;keywords=scrum+boot+camp+the+book) の増刷が決定しました！ 今回で第3刷となります。
-
-＃個人的にもかなり嬉しいw
-
-もし、本書の中の誤植を見つけた方がいましたら、修正したいと思いますので **9/14** までに連絡くださーい。ここのコメントに書いてもらえると助かります。現在、把握している誤植は
-
-&gt; ・p116　1つめの見出し
-&gt;
-&gt; 【誤】ミーディング
-&gt;
-&gt; 【正】ミーティング
-&gt;
-&gt; ・p140　「スクラムチームで見つけていくんだな」見出しから6行目
-&gt;
-&gt; 【誤】プロダクバックログ
-&gt;
-&gt; 【正】プロダク「ト」バックログ
-&gt;
-
-15日には編集の方に連絡しないといけないので、時間がありませんがご協力いただけると助かります！
-
----
-**元コメント:**
-
-```
-AUTHOR: PoohSunny
-DATE: 09/12/2014 22:39:21
-誤植というかは微妙なところな気がしますが一応書いときます。
-・P124 「デイリースクラムは、スプリントの目標（スプリントゴール）」と書いてある次の行で「スプリントのゴールを達成するのは」と書いてあるので、「スプリントゴール」にするか、「スプリントのゴール」にするかをあわせた方がいいと思いました。
-・P118 一つ目と二つ目の段落にそれぞれ「PO」って単語が出てきますが、これ以外の多くは「プロダクトオーナー」って表記になってる（P143,P157など）。漫画はPOって表記が多い。説明部分の表記はそろえた方がいいかと思いました（どっちでもわかるんだけど）
-```
-
----</content:encoded></item></channel></rss>
+文章を書くつもりが、ひさびさのサイト作りの方が楽しくなっている感じはする 😄</content:encoded></item></channel></rss>
