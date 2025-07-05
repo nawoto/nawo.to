@@ -22,9 +22,9 @@ const entries = content.split(/^-{8}$/m).filter(entry => entry.trim());
 
 console.log(`Found ${entries.length} entries`);
 
-// 最新の1件のみ処理（テスト用）
-const latestEntry = entries[0];
-console.log('Processing latest entry...');
+// 最新の5件を処理
+const entriesToProcess = entries.slice(0, 5);
+console.log(`Processing ${entriesToProcess.length} entries...`);
 
 // 記事のメタ情報を抽出（参考実装＋コメント抽出）
 const extractMeta = (entry) => {
@@ -67,23 +67,6 @@ const extractMeta = (entry) => {
   meta.comments = comments;
   return meta;
 };
-
-const meta = extractMeta(latestEntry);
-
-// エラーハンドリング
-if (!meta.title || !meta.basename || !meta.date) {
-  console.error('記事情報の抽出に失敗しました');
-  console.error('meta:', meta);
-  process.exit(1);
-}
-
-console.log('Extracted meta:', {
-  title: meta.title,
-  basename: meta.basename,
-  date: meta.date,
-  category: meta.category,
-  bodyLength: meta.body?.length
-});
 
 // 本文をMarkdownに変換
 const convertBody = (body) => {
@@ -128,6 +111,10 @@ const convertBody = (body) => {
     .replace(/<\/p>/g, '\n\n')
     // brタグを改行に変換
     .replace(/<br\s*\/?>/g, '\n')
+    // imgタグをMarkdown画像に変換
+    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*\/?>/gi, '![$2]($1)')
+    .replace(/<img\s+[^>]*alt="([^"]*)"[^>]*src="([^"]+)"[^>]*\/?>/gi, '![$1]($2)')
+    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*\/?>/gi, '![]($1)')
     // aタグをMarkdownリンクに変換
     .replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '[$2]($1)')
     // その他のHTMLタグを除去
@@ -136,16 +123,19 @@ const convertBody = (body) => {
     .replace(/\n{3,}/g, '\n\n')
     .trim();
   
+  // HTMLエンティティを日本語に変換
+  markdown = markdown
+    // 16進数のHTMLエンティティを変換
+    .replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => {
+      return String.fromCodePoint(parseInt(hex, 16));
+    })
+    // 10進数のHTMLエンティティを変換
+    .replace(/&#(\d+);/g, (match, dec) => {
+      return String.fromCodePoint(parseInt(dec, 10));
+    });
+  
   return markdown;
 };
-
-const markdownBody = convertBody(meta.body);
-
-// コメントをMarkdown形式で追記
-let markdownComments = '';
-if (meta.comments && meta.comments.length > 0) {
-  markdownComments = '\n\n---\n**元コメント:**\n\n```\n' + meta.comments.map(c => c.replace(/<br\s*\/?>/g, '\n').replace(/<[^>]*>/g, '').trim()).join('\n\n---\n**元コメント:**\n\n```\n') + '\n```\n\n---';
-}
 
 // タイトルからハッシュタグを抽出する関数
 const extractHashtags = (title) => {
@@ -163,11 +153,40 @@ const removeHashtags = (title) => {
   return title.replace(/\s*#\w+/g, '').trim();
 };
 
-// フロントマターを生成
-const hashtags = extractHashtags(meta.title);
-const cleanTitle = removeHashtags(meta.title);
-const tags = hashtags.length > 0 ? hashtags : [];
-const frontmatter = `---
+// 各記事を処理
+entriesToProcess.forEach((entry, index) => {
+  console.log(`\n--- Processing entry ${index + 1} ---`);
+  
+  const meta = extractMeta(entry);
+
+  // エラーハンドリング
+  if (!meta.title || !meta.basename || !meta.date) {
+    console.error('記事情報の抽出に失敗しました');
+    console.error('meta:', meta);
+    return; // この記事をスキップして次へ
+  }
+
+  console.log('Extracted meta:', {
+    title: meta.title,
+    basename: meta.basename,
+    date: meta.date,
+    category: meta.category,
+    bodyLength: meta.body?.length
+  });
+
+  const markdownBody = convertBody(meta.body);
+
+  // コメントをMarkdown形式で追記
+  let markdownComments = '';
+  if (meta.comments && meta.comments.length > 0) {
+    markdownComments = '\n\n---\n**元コメント:**\n\n```\n' + meta.comments.map(c => c.replace(/<br\s*\/?>/g, '\n').replace(/<[^>]*>/g, '').trim()).join('\n\n---\n**元コメント:**\n\n```\n') + '\n```\n\n---';
+  }
+
+  // フロントマターを生成
+  const hashtags = extractHashtags(meta.title);
+  const cleanTitle = removeHashtags(meta.title);
+  const tags = hashtags.length > 0 ? hashtags : [];
+  const frontmatter = `---
 title: "${cleanTitle}"
 pubDate: ${meta.date.toISOString()}
 description: ""
@@ -176,23 +195,24 @@ tags: ${JSON.stringify(tags)}
 
 `;
 
-// ファイル名を生成（記事の実際の日付に基づく）
-const basenameNumber = meta.basename.split('/')[1] || 'unknown';
-const dateStr = meta.date.toISOString().split('T')[0]; // YYYY-MM-DD形式
-const filename = `${dateStr}-hatena-${basenameNumber}.md`;
+  // ファイル名を生成（記事の実際の日付に基づく）
+  const basenameNumber = meta.basename.split('/')[1] || 'unknown';
+  const dateStr = meta.date.toISOString().split('T')[0]; // YYYY-MM-DD形式
+  const filename = `${dateStr}-hatena-${basenameNumber}.md`;
 
-// 出力ディレクトリを取得
-const outputDir = getOutputDir(meta.date);
+  // 出力ディレクトリを取得
+  const outputDir = getOutputDir(meta.date);
 
-// 出力ディレクトリが存在しない場合は作成
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
+  // 出力ディレクトリが存在しない場合は作成
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
 
-// ファイルに書き込み
-const outputPath = path.join(outputDir, filename);
-const fullContent = frontmatter + markdownBody + markdownComments;
+  // ファイルに書き込み
+  const outputPath = path.join(outputDir, filename);
+  const fullContent = frontmatter + markdownBody + markdownComments;
 
-fs.writeFileSync(outputPath, fullContent, 'utf8');
-console.log(`Created: ${outputPath}`);
-console.log(`Content length: ${fullContent.length} characters`); 
+  fs.writeFileSync(outputPath, fullContent, 'utf8');
+  console.log(`Created: ${outputPath}`);
+  console.log(`Content length: ${fullContent.length} characters`);
+}); 
