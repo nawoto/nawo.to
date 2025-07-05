@@ -11,7 +11,7 @@ const exportFile = path.join(__dirname, '../tmp/nawoto.hatenadiary.org.export.tx
 // 出力ディレクトリ（記事の年に基づいて動的に決定）
 const getOutputDir = (date) => {
   const year = date.getFullYear();
-  return path.join(__dirname, `../src/content/logs/${year}`);
+  return path.join(__dirname, `../src/content/backtrace/${year}`);
 };
 
 // エクスポートファイルを読み込み
@@ -147,12 +147,31 @@ if (meta.comments && meta.comments.length > 0) {
   markdownComments = '\n\n---\n**元コメント:**\n\n```\n' + meta.comments.map(c => c.replace(/<br\s*\/?>/g, '\n').replace(/<[^>]*>/g, '').trim()).join('\n\n---\n**元コメント:**\n\n```\n') + '\n```\n\n---';
 }
 
+// タイトルからハッシュタグを抽出する関数
+const extractHashtags = (title) => {
+  const hashtagRegex = /#(\w+)/g;
+  const hashtags = [];
+  let match;
+  while ((match = hashtagRegex.exec(title)) !== null) {
+    hashtags.push(`#${match[1]}`);
+  }
+  return hashtags;
+};
+
+// タイトルからハッシュタグを削除する関数
+const removeHashtags = (title) => {
+  return title.replace(/\s*#\w+/g, '').trim();
+};
+
 // フロントマターを生成
+const hashtags = extractHashtags(meta.title);
+const cleanTitle = removeHashtags(meta.title);
+const tags = hashtags.length > 0 ? hashtags : [];
 const frontmatter = `---
-title: "${meta.title}"
+title: "${cleanTitle}"
 pubDate: ${meta.date.toISOString()}
 description: ""
-tags: ["hatena"]
+tags: ${JSON.stringify(tags)}
 ---
 
 `;

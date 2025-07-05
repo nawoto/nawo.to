@@ -4,36 +4,45 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { getLogSlug } from '../utils/slug';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('logs');
+  const logsPosts = await getCollection('logs');
+  const backtracePosts = await getCollection('backtrace');
+  
+  // 両方のコレクションを結合
+  const allPosts = [
+    ...logsPosts.map(post => ({ ...post, collection: 'logs' as const })),
+    ...backtracePosts.map(post => ({ ...post, collection: 'backtrace' as const }))
+  ];
   
   // 公開日順にソート（新しい記事が前に来るように）
-  const sortedPosts = posts.sort((a, b) => 
+  const sortedPosts = allPosts.sort((a, b) => 
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
   
-  return sortedPosts.map((post: CollectionEntry<'logs'>, index: number) => {
+  return sortedPosts.map((post, index: number) => {
     const previousPost = sortedPosts[index + 1] || undefined; // より古い記事
     const nextPost = sortedPosts[index - 1] || undefined; // より新しい記事
     
-    // ファイル名から日付とslugを抽出して /yyyy/mm/dd/slug/ 形式のURLを生成
+    // ファイル名から日付とslugを抽出して適切なURLを生成
     const fileName = post.slug.replace(/^\d{4}\//, ''); // 年別ディレクトリを除去
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
     
     if (!dateMatch) {
       // 日付プレフィックスがない場合はそのまま使用
       const slug = fileName.toLowerCase();
+      const urlPath = post.collection === 'backtrace' ? `backtrace/${slug}` : slug;
+      
       return {
-        params: { slug: slug },
+        params: { slug: urlPath },
         props: { 
           post,
           previousPost: previousPost ? {
-            slug: getLogSlug(previousPost.slug),
-            collection: 'logs',
+            slug: previousPost.collection === 'backtrace' ? `backtrace/${previousPost.slug}` : getLogSlug(previousPost.slug),
+            collection: previousPost.collection,
             data: previousPost.data
           } : undefined,
           nextPost: nextPost ? {
-            slug: getLogSlug(nextPost.slug),
-            collection: 'logs',
+            slug: nextPost.collection === 'backtrace' ? `backtrace/${nextPost.slug}` : getLogSlug(nextPost.slug),
+            collection: nextPost.collection,
             data: nextPost.data
           } : undefined
         },
@@ -41,20 +50,22 @@ export async function getStaticPaths() {
     }
     
     const [, year, month, day, slug] = dateMatch;
-    const urlSlug = `${year}/${month}/${day}/${slug}`;
+    const urlSlug = post.collection === 'backtrace' 
+      ? `backtrace/${year}/${month}/${day}/${slug}`
+      : `${year}/${month}/${day}/${slug}`;
     
     return {
       params: { slug: urlSlug },
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: getLogSlug(previousPost.slug),
-          collection: 'logs',
+          slug: previousPost.collection === 'backtrace' ? `backtrace/${previousPost.slug}` : getLogSlug(previousPost.slug),
+          collection: previousPost.collection,
           data: previousPost.data
         } : undefined,
         nextPost: nextPost ? {
-          slug: getLogSlug(nextPost.slug),
-          collection: 'logs',
+          slug: nextPost.collection === 'backtrace' ? `backtrace/${nextPost.slug}` : getLogSlug(nextPost.slug),
+          collection: nextPost.collection,
           data: nextPost.data
         } : undefined
       },
