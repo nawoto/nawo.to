@@ -7,42 +7,32 @@ export async function getStaticPaths() {
   const logsPosts = await getCollection('logs');
   const backtracePosts = await getCollection('backtrace');
   
-  // 両方のコレクションを結合
-  const allPosts = [
-    ...logsPosts.map(post => ({ ...post, collection: 'logs' as const })),
-    ...backtracePosts.map(post => ({ ...post, collection: 'backtrace' as const }))
-  ];
-  
-  // 公開日順にソート（新しい記事が前に来るように）
-  const sortedPosts = allPosts.sort((a, b) => 
+  // logsコレクションのパス生成
+  const sortedLogsPosts = logsPosts.sort((a, b) => 
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
   
-  return sortedPosts.map((post, index: number) => {
-    const previousPost = sortedPosts[index + 1] || undefined; // より古い記事
-    const nextPost = sortedPosts[index - 1] || undefined; // より新しい記事
+  const logsPaths = sortedLogsPosts.map((post, index: number) => {
+    const previousPost = sortedLogsPosts[index + 1] || undefined;
+    const nextPost = sortedLogsPosts[index - 1] || undefined;
     
-    // ファイル名から日付とslugを抽出して適切なURLを生成
-    const fileName = post.slug.replace(/^\d{4}\//, ''); // 年別ディレクトリを除去
+    const fileName = post.slug.replace(/^\d{4}\//, '');
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
     
     if (!dateMatch) {
-      // 日付プレフィックスがない場合はそのまま使用
       const slug = fileName.toLowerCase();
-      const urlPath = post.collection === 'backtrace' ? `backtrace/${slug}` : slug;
-      
       return {
-        params: { slug: urlPath },
+        params: { slug: slug },
         props: { 
           post,
           previousPost: previousPost ? {
-            slug: previousPost.collection === 'backtrace' ? `backtrace/${previousPost.slug}` : getLogSlug(previousPost.slug),
-            collection: previousPost.collection,
+            slug: getLogSlug(previousPost.slug),
+            collection: 'logs',
             data: previousPost.data
           } : undefined,
           nextPost: nextPost ? {
-            slug: nextPost.collection === 'backtrace' ? `backtrace/${nextPost.slug}` : getLogSlug(nextPost.slug),
-            collection: nextPost.collection,
+            slug: getLogSlug(nextPost.slug),
+            collection: 'logs',
             data: nextPost.data
           } : undefined
         },
@@ -50,27 +40,80 @@ export async function getStaticPaths() {
     }
     
     const [, year, month, day, slug] = dateMatch;
-    const urlSlug = post.collection === 'backtrace' 
-      ? `backtrace/${year}/${month}/${day}/${slug}`
-      : `${year}/${month}/${day}/${slug}`;
+    const urlSlug = `${year}/${month}/${day}/${slug}`;
     
     return {
       params: { slug: urlSlug },
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: previousPost.collection === 'backtrace' ? `backtrace/${previousPost.slug}` : getLogSlug(previousPost.slug),
-          collection: previousPost.collection,
+          slug: getLogSlug(previousPost.slug),
+          collection: 'logs',
           data: previousPost.data
         } : undefined,
         nextPost: nextPost ? {
-          slug: nextPost.collection === 'backtrace' ? `backtrace/${nextPost.slug}` : getLogSlug(nextPost.slug),
-          collection: nextPost.collection,
+          slug: getLogSlug(nextPost.slug),
+          collection: 'logs',
           data: nextPost.data
         } : undefined
       },
     };
   });
+
+  // backtraceコレクションのパス生成
+  const sortedBacktracePosts = backtracePosts.sort((a, b) => 
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+  
+  const backtracePaths = sortedBacktracePosts.map((post, index: number) => {
+    const previousPost = sortedBacktracePosts[index + 1] || undefined;
+    const nextPost = sortedBacktracePosts[index - 1] || undefined;
+    
+    const fileName = post.slug.replace(/^\d{4}\//, '');
+    const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+    
+    if (!dateMatch) {
+      const slug = fileName.toLowerCase();
+      return {
+        params: { slug: `backtrace/${slug}` },
+        props: { 
+          post,
+          previousPost: previousPost ? {
+            slug: `backtrace/${previousPost.slug}`,
+            collection: 'backtrace',
+            data: previousPost.data
+          } : undefined,
+          nextPost: nextPost ? {
+            slug: `backtrace/${nextPost.slug}`,
+            collection: 'backtrace',
+            data: nextPost.data
+          } : undefined
+        },
+      };
+    }
+    
+    const [, year, month, day, slug] = dateMatch;
+    const urlSlug = `backtrace/${year}/${month}/${day}/${slug}`;
+    
+    return {
+      params: { slug: urlSlug },
+      props: { 
+        post,
+        previousPost: previousPost ? {
+          slug: `backtrace/${previousPost.slug}`,
+          collection: 'backtrace',
+          data: previousPost.data
+        } : undefined,
+        nextPost: nextPost ? {
+          slug: `backtrace/${nextPost.slug}`,
+          collection: 'backtrace',
+          data: nextPost.data
+        } : undefined
+      },
+    };
+  });
+
+  return [...logsPaths, ...backtracePaths];
 }
 
 const { post, previousPost, nextPost } = Astro.props;
