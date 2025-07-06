@@ -1,0 +1,89 @@
+
+AUTHOR: nawoto
+TITLE:  パタン・ランゲージ強化月間
+BASENAME: 20101220/1292821115
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 12/20/2010 13:58:35
+-----
+BODY:
+<p>なぜか 12 月の前半にパタン・ランゲージを学べる<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーが、ほぼ同時期に二つあった。</p>
+
+<ul>
+<li><a href="http://kokucheese.com/event/index/5479/">&#x53C2;&#x52A0;&#x306E;&#x307E;&#x3061;&#x3065;&#x304F;&#x308A;&#x6F14;&#x7FD2;(&#x4E2D;&#x7D1A;&#x7DE8;)</a></li>
+</ul>
+    <blockquote>
+        <p>アレグザンダーの概念を理論と体験を通じて身につけられる貴重な機会です。<br />
+本物のパタン・ランゲージを身につけませんか。</p>
+
+    </blockquote>
+
+<ul>
+<li><a href="http://scrumtraininginstitute.com/classes/show/279">Scrum Fine-Tuning using Organizational Patterns</a></li>
+</ul>
+    <blockquote>
+        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーの終わりには、あなたはパターンをつかってどうやって実際のScrumプロジェクトの弱点を見つけ、<br />
+改善していけばよいかがわかるようになる。</p>
+
+    </blockquote>
+<p><br />
+どちらも超豪華な先生から直接学べる貴重な機会だったのですが、幸運に両方とも参加できた。<br />
+それぞの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーの詳しいレポートや解説は、以下が参考になります。<br />
+<br />
+</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/haru01/20101204">http://d.hatena.ne.jp/haru01/20101204</a></li>
+<li><a href="http://d.hatena.ne.jp/haru01/20101205">http://d.hatena.ne.jp/haru01/20101205</a></li>
+<li><a href="http://d.hatena.ne.jp/wayaguchi/20101212/1292118782">http://d.hatena.ne.jp/wayaguchi/20101212/1292118782</a></li>
+<li><a href="http://qooh0-tec.blogspot.com/2010/12/cope.html">http://qooh0-tec.blogspot.com/2010/12/cope.html</a></li>
+<li><a href="http://kakutani.com/20101203.html#p01">http://kakutani.com/20101203.html#p01</a></li>
+</ul><p><br />
+バタンとは、経験から得らえた上手くいくコツのようなもので、良い何かにくり返し見られる事を簡潔に書いたものです。<br />
+先生方の言葉を借りると、パタンは (1)ある問題を解決する (2)なにかを作りだす (3)人の生活に貢献する ものでないといけません。<br />
+また、書かれている内容を読むと、みんなが「あー!!」っと同意できるものになっているはずです。<br />
+これらのパタンを複数重ねて一つのストーリや計画を作る事で、みんなが同意しやすくなります。これをパタン・ランゲージと呼ぶ。<br />
+そして、パタン・ランゲージ自体も重ねる事で、より大きなパタン・ランゲージになります。</p><br />
+<p>＃ふー、素人がパタンについて書くのはしんどいなw 全体性についてはいつか書くw<br />
+＃上の解釈は僕個人の解釈なので、間違ってたらゴメンなさいw</p><br />
+<p>まちづくりの募集ページにも書いてあるのですが、パタンを用いながら計画を作っていくプロセスと腑に落ちる体験は他の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C9%A5%E1%A5%A4%A5%F3">ドメイン</a>にも利用できます。<br />
+実際に、僕も<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>コーチとして現場や組織にどのプ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティス(プ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスもパタンの一種)を導入するかといった時にこのパタン・ランゲージの考え方を参考にしていて、もう少し上手くなりたいってのが今回の参加の目的の一つでした。</p><br />
+<p>今回は実際に実施可能なプロジェクトとしてパタンを重ねていき計画を作るプロセスを学んできたつもり。<br />
+この計画をプロジェクト・ランゲージと呼ぶそうで、パタン・ランゲージと同じなのだが、より現実で実施するにはという意味合いが強いので、別の名前にしているのかな?</p><br />
+<p>偶然にも、この二つの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーはこんな連続性のある流れになっていて、非常に分かりやすかったww</p>
+
+<ol>
+<li>まちづくり中級編初日で、プロジェクト・ランゲージという考え方と事前の準備としてパタンの特徴(良さ、問題、前提、妥協点、ジャンプ)を列挙する</li>
+<li>Fine-tuning で、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>の文脈でパタンを見てみる。Scrum を組織パターン(良い組織に繰り返しみられる良い行動)の観点で分解する。実際に組織パターンを利用してより良い Scrum を実践するステップを体感する</li>
+<li>まちづくり中級編二日目で、自分達で見つけたパタンからプロジェクト・ランゲージを作ってみる</li>
+</ol><p><br />
+今回も色々と学べて個人的には非常に良かったので、もし興味のある方は次の機会があれば、ぜひ。</p><br />
+<p>個人的に良かった点としては、Cope が Scrum を組織パターンで表現していたのだけれど、これはプロジェクト・ランゲージに近いと思った。また、プ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティス以外の観点で Scrum がパタンで語れる事を知れた。<br />
+＃けど、彼は「これは Red Pill Scrum だから気をつけろ!!」って言ってたけどww<br />
+あと、あいかわらず中埜先生からはパタン以外にも学ぶ事(仕事の意義とか<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D5%A5%A1%A5%B7%A5%EA%A5%C6%A1%BC%A5%B7%A5%E7%A5%F3">ファシリテーション</a>スキルとか)が多いなー。</p><br />
+<p>最後に、今回の場を開催してくれた関係者の皆さん、ありがとうございました。</p><br />
+<p>以下は、個人的なメモ。</p>
+
+<ul>
+<li>自分でコン<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A5%ED%A1%BC%A5%EB">トロール</a>できない事もある。しかし、その偶発性から生れる良さもある (<- 今回の二つの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーの日程とかは正にそうかもww)</li>
+<li>可視化しないと分からない</li>
+<li>第<a class="keyword" href="http://d.hatena.ne.jp/keyword/%BB%B0%BC%D4">三者</a>を入れる事で、自分達に気付かない事を知れる</li>
+<li>シェアするとは、情報だけでなく目的や不安も共有する事</li>
+<li>ジャンプするためには、新しい価値観、第<a class="keyword" href="http://d.hatena.ne.jp/keyword/%BB%B0%BC%D4">三者</a>を持ち込む、創造的ア<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%C7%A5%A2">イデア</a>のどれかが必要</li>
+<li>修復とは、良いものを守り、良くないところを直す</li>
+<li>風水は形骸化したパタンかも</li>
+<li>ワークショップの体験をまとめるには 3 倍の時間が必要</li>
+<li>Whole</li>
+<li>ジョークは文化を伝えるのでパタンかもね</li>
+<li>3 回以上見つけるとパタン。春の演習だと、みんなで見つけた良い事の共通点??(重なりの多い箇所)もパタン</li>
+<li>パタンは Force を違う力に変換するから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%E7%B5%A4%C6%BB">合気道</a>に近い</li>
+<li>You change rule of Game.</li>
+<li>プロジェクト・ランゲージには色々な視点(子供、高齢者など)が必要</li>
+<li>現場によって変更し、最終的な形を決める。(たぶん、これが制約とセンタリングの関係なんだろな)</li>
+<li>横のつながりが強いものは、結合しやすい</li>
+<li>ストーリがあると学習が生れ、合意が形成される</li>
+<li>パタンはチェックリストに使える</li>
+<li>and more (あとで補完する)</li>
+</ul>
+-----

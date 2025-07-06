@@ -1,0 +1,59 @@
+
+AUTHOR: nawoto
+TITLE:  降伏宣言
+BASENAME: 20080524/1211569178
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/24/2008 03:59:38
+-----
+BODY:
+<p><br />
+今日は、ここ一年ほど色んな仕事をやらしてもらって感じてた事をふりかえるのに、丁度良いタイミングなのでダラダラ書いてみます。</p><br />
+<p>ここ数年、自分が良いと思っている道具(<a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a>とか<a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a>とか)をちゃんとビジネスに生かす事ができないかって事に興味を持っていた。<br />
+自分が現在利用している道具が良いという自負はあり、それにはビジネス的にも価値があると思っている。<br />
+なので、それを理解してもらえば、ビジネスにも繋がるのではっと思って試行錯誤してきたけど、やっぱりなかなか難しい。</p><br />
+<p>受託開発の場合、どうしても顧客の協力が必要な部分があるので、初めての顧客に対してでも、こうすれば確実に十分な価値を提供できるみたいな分かりやすいビジネス価値にまで落とせなかった。<br />
+もちろん、どんな顧客にも提供できるってのは対象とはしてないが、一番ターゲットとしたい初めての顧客に対して、魅力的な提案ができない。<br />
+提案だけならできるかもしれないが、携帯電話の広告みたいに色々と条件が書かざるえない。<br />
+それって道具を使いたいだけじゃないのか??</p><br />
+<p>なので、ここはきっぱり降伏宣言したいと思う。<br />
+業界がどうこうじゃなくて、自分の中では道具だけでビジネスに結びつく答えは出せそうにない。</p><br />
+<p>じゃ、今、確実に提供できる価値に +α できたら、初めての顧客にも選んでもらえる??<br />
+それで継続して続ける事ができれば、さらに価値は増やしていくことができるのでは??</p><br />
+<p>幸いな事に +α になりそうなア<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%C7%A5%A2">イデア</a>はある。<br />
+「人」ってのはどうだろうか??<br />
+ちょうど会社には魅力的な価値を提供できそうな仲間がたくさんいてる。</p><br />
+<p>例えると、今、僕の道具だけだと、こんな感じ。</p>
+
+<pre> <a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a> * <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> <= 顧客の要望
+ >> true
+</pre><p>僕の力では、顧客の要望をなんとか必要十分に満たすのがやっとって感じ。完全に力不足。</p><br />
+<p>そこに、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発のノウハウを勝手に撒き散らかす<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>厨、淡々と提案や矛盾点を指摘して問題を解決するモヒカンなどのラインアップから、顧客の抱える問題に応じた「人」が担当したら、こうならないか??</p>
+
+<pre>  <a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a> * <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> + モヒカン > 顧客の要望
+  >> true
+</pre><p>これで、なんとか顧客がまあまま満足し、次もう一度仕事してみたいと思ってもらえれば、次はこうなれる気がする。</p>
+
+<pre> (<a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a> * <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> + α) * 前回のふりかえり * 顧客からのフィードバック == priceless
+ >> true
+</pre><p>一緒に何度も仕事をすれば、相互に理解が進み、成長する。<br />
+その結果、その顧客の組織という範囲だけかもしれないが、当初は想像もしてなかった価値(<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%CE%A5%D9%A1%BC%A5%B7%A5%E7%A5%F3">イノベーション</a>は言い杉かな)を提供できるのでは??</p><br />
+<p>幸いなことに、受託開発の主なターゲットである業務システムの場合、対象とするユーザは B2C と違い、限定されたユーザしか利用しない。なので、ユーザが抱える問題を特定しやすい。</p><p>加えて、ユーザは現在の業務に特化した知識がある反面、それが足枷になって新しいア<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%C7%A5%A2">イデア</a>や技術を受けいれるのが難しくなっている。<br />
+それは当然だと思う。現在のやり方で業務はまわせているので、何かを取り入れる事で生じる変化や捨てる事への<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%F3%A5%C6%A5%A3%A5%D6">インセンティブ</a>が無いからだ。<br />
+こういった所こそ何度も一緒に開発している開発チームが提案できる所じゃないだろうか??<br />
+流行っているからではなく、こうだから今まで以上に業務が楽になりますよと言えるのでは??</p><br />
+<p>もちろん、初めての顧客に提供できる価値を増やすための努力は今まで以上に取り組むが、+α になれる努力をもっとしたいなと思う。</p><br />
+<p>と、<a href="http://blogs.itmedia.co.jp/hiranabe/2008/05/42-6719.html">&#x526F;&#x793E;&#x9577;&#x306E;42&#x6B73;&#x306E;&#x62B1;&#x8CA0;</a>ではないが、僕も今日一つ年を取った記念の妄想を酔った勢いで書いてみたww</p>
+
+-----
+COMMENT:
+AUTHOR: nawoto
+DATE: 05/24/2008 22:29:42
+ぎゃ、ありがとうです。<br>なおしました。
+-----
+COMMENT:
+AUTHOR: ursm
+DATE: 05/24/2008 18:10:47
+痛いほど同意なんですが、3つ目の式が代入になってますよ!
+-----

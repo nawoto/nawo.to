@@ -1,0 +1,32 @@
+
+AUTHOR: nawoto
+TITLE:  「アジャイル開発基本のキ リターンズ 完全版」#agilesamurai #横浜道場
+BASENAME: 20120528/1338181063
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/28/2012 13:57:43
+-----
+BODY:
+<p><br />
+5/25 に開催された<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ読書会 横浜道場で話しをさせてもらいました。<br />
+当日の資料は以下になります。</p><br />
+<p><script src="http://speakerdeck.com/embed/4fb9ea9a9d60b902f7004248.js"></script></p><br />
+<p>この資料は、今年開催された AgileJapan2012 の時の資料に、時間の都合上割愛した部分と現場に何か持って帰る切っ掛け作りのワークショップを足したものになります。<br />
+＃タイトルは半分悪ふざけですww</p><br />
+<p>これは普段の仕事で、これから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を始めたい人向けの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーに利用しているものなので、今回の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ読書会の参加者には物足りないんじゃないかと心配でした。<br />
+また、仕事あがりの時間帯から約 2 時間ぐらいの仕事っぽい<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーとかやってゴメンなさいww</p><br />
+<p>でも、少なくともワークショップ部分はみなさん楽しそうだったので、何とか喜んでもらえたんじゃないかと、ひと安心しました。<br />
+それよりも、後半は僕の方が体力フラフラな感じになって、質疑応答とかだいぶ言葉足らずになってしまい反省しております。<br />
+＃いつかリベンジさせてください</p><br />
+<p>あと、当日の様子は以下の方がまとまっています。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/absj31/20120525/1337976374">http://d.hatena.ne.jp/absj31/20120525/1337976374</a></li>
+<li><a href="http://d.hatena.ne.jp/y_sumida/20120526/1338030740">http://d.hatena.ne.jp/y_sumida/20120526/1338030740</a></li>
+<li><a href="http://grimrose.blogspot.jp/2012/05/agilesamurai_26.html">http://grimrose.blogspot.jp/2012/05/agilesamurai_26.html</a></li>
+</ul><p><br />
+最後に、誕生日ケーキありがとうございました!!</p><br />
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

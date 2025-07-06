@@ -1,0 +1,18 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Day 4 で話します
+BASENAME: 20101203/1291351633
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 12/03/2010 13:47:13
+-----
+BODY:
+<p>12/10 に開催される<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DE%A5%A4%A5%AF%A5%ED%A5%BD%A5%D5%A5%C8">マイクロソフト</a>主催の「<a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Day 4」でお話をさせていただくことになりました。</p><br />
+<p><a href="https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032468582&Culture=ja-JP">https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032468582&Culture=ja-JP</a></p><br />
+<p>今回は、「やさしい<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>の始め方」というタイトルで、現場で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>手法を始めるのは難しいのか? って事を切っ掛けに始める際のポイントなどを簡単に紹介する予定です。</p><br />
+<p>仕事がらよく「うちの現場では<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>なんて始められないよ」って声を聞く事が多く、その事を今回の講演のネタ出しに付き合ってくれた [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@Qooh0] と [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq] に話したら、「まずはやってみればいいのに」や「こういう時は @nawoto はどうしているの?」といった話題で盛り上がりました。<br />
+なので、こういう事を少しまとめてみると、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DC%A5%C8%A5%E0%A5%A2%A5%C3%A5%D7">ボトムアップ</a>で始めようという人の助けになるかもと思い、今回のテーマにしてみました。</p><br />
+<p>当日は、懇親会までいる予定なので、見かけたら気軽に質問とか声をかけていただければと思います。</p>
+
+-----

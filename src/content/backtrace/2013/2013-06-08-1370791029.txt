@@ -1,0 +1,43 @@
+
+AUTHOR: nawoto
+TITLE:  6/21 にScrum Boot Camp The Talk 増刊号やります!! #scrumdo #scrumbcbook
+BASENAME: 20130609/1370791029
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 06/09/2013 00:17:09
+-----
+BODY:
+<p>またまた「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The Book」のイベントをやります...w 今度は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道の提供でお送りします。</p><br />
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20130609233422" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20130609/20130609233422.jpg" alt="f:id:nawoto:20130609233422j:image" title="f:id:nawoto:20130609233422j:image" class="hatena-fotolife" itemprop="image"></a></span></p><br />
+<p>申し込みはこちら → <a href="http://bit.ly/TheTalkSpecial">http://bit.ly/TheTalkSpecial</a></p><br />
+<p>本のイベントはしばらく企画できないかもしれないので、その前にパーっとやりたいと思ったのでいろいろと頑張ってみました!!<br />
+会場はもちろん<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道フルバーストでおなじみのファンシアターでやります。今回も<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%C0%A5%A4%A5%CA%A5%E0%A5%B3%A5%B9%A5%BF%A5%B8%A5%AA">バンダイナムコスタジオ</a>様のご厚意により提供していただきました。<br />
+会場の雰囲気が気になる方は以下をご覧ください。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/absj31/20120511/1336753150">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;&#x30D5;&#x30EB;&#x30D6;&#x30FC;&#x30B9;&#x30C8;&#x306B;&#x53C2;&#x52A0;&#x3057;&#x3066;&#x304D;&#x305F;</a>  by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@shinyaa31]</li>
+<li><a href="http://modalsoul.github.io/report/2012/05/11/scrumdo-full-boost/">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053; Full Boost &#x300C;&#x9752;&#x7269;&#x6A2A;&#x4E01;&#x5236;&#x5727;&#x4F5C;&#x6226;&#x300D;#scrumdo&#x306B;&#x53C2;&#x52A0;&#x3057;&#x307E;&#x3057;&#x305F;</a>   by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@modal_soul]</li>
+</ul><p><br />
+肝心の内容ですが、本についてなんでも聞いたり相談できるようにします!! たとえば、本の制作時の裏話なんかも聞けるように編集の方にも声を掛けてたりw<br />
+そして、参加してくださった方が聞きたいと思ったときにいつでも聞けるようにするために、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道Expoでやった No-Bull Know-How 形式の予定です!!<br />
+No Bull Know How は自分の聞きたいことをリアルタイム形式で相談するセッション形式です。詳しく知りたい方は以下がすごく参考になります。</p>
+
+<ul>
+<li><a href="http://bit.ly/OL2sVF">http://bit.ly/OL2sVF</a> by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@daipresents]</li>
+</ul><p>今回の相談員は以下を予定。</p>
+
+<ul>
+<li>主に本の内容について聞ける著者陣 (業務都合に全員が参加できない可能性があります...w)</li>
+<li>本の制作時の裏話や売上、次回作などなど生々しい話担当の編集陣 (現在説得中ww 本出版の本当の主役なのでぜひ登壇させたいなー)</li>
+<li>いろんな会社では実際に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>とかどうなの? 担当の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道スタッフ (百戦錬磨の強者がでるよー。最大の敵は業務都合ww)</li>
+</ul><p><br />
+もし都合がつかないけど、ぜひ質問したいという方は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>ページにて質問を募集してますので、ぜひ活用してみてください。<br />
+＃ もしかすると「いいね」しないとできないかも...そのときは<a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>で「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道」を検索してみてください 謝</p>
+
+<ul>
+<li><a href="https://www.facebook.com/questions/516496788412196/">https://www.facebook.com/questions/516496788412196/</a></li>
+</ul><p><br />
+こんなイベントですが、他では絶対聞けない話に溢れた90分にしたいと思っていますので、よろしくお願いします。残席もたくさんありますので...汗</p>
+
+-----

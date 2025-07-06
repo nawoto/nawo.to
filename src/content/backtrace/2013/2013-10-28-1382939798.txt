@@ -1,0 +1,31 @@
+
+AUTHOR: nawoto
+TITLE: 11/25からアジャイルアカデミーの第3期やります！
+BASENAME: 20131028/1382939798
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/28/2013 14:56:38
+-----
+BODY:
+<p><a href="http://event.shoeisha.jp/aa/">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;</a>は、おもにこれから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を導入したいと考えている企業などに向けた<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を学ぶための研修コースです。自社の組織に新しいやり方を導入していくための最初の一歩は正しく理解することです。現在、ひとことで<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を導入するといっても現場や組織によって何から始めるのが適切かは異なってきます。そのため本コースでは自分たちが始めやすいところから学べるように各種研修を用意しました。どこから始めるのが分からない場合にも対応しますので気軽にご相談ください。もちろん、たくさんの研修を用意しただけでは現場の様々な悩みは解消せずに導入は進みません。そのため、本コースでは実戦経験が豊富で書籍なども手掛けている講師陣が、みなさんに本当に必要なことを教えたり、相談に乗ります。</p>
+
+<ul>
+<li><a href="http://event.shoeisha.jp/aa/">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;</a></li>
+</ul><p>そんな<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>アカデミーですが、みなさんのおかげで無事に第3期を迎えることができました。ありがとうございます！<br />
+また、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>アカデミーに申し込みたいけど、どういった雰囲気の研修なのか分からないという声もよく聞きますので、最近公開されたインタビューなのが参考になると思いますので列挙しておきます。</p>
+
+<ul>
+<li><a href="http://event.shoeisha.jp/aa/voice/">&#x53D7;&#x8B1B;&#x751F;&#x306E;&#x58F0;</a> 実際に参加した方にインタビューした内容が記事になりました！</li>
+<li><a href="http://codezine.jp/article/detail/7462">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;&#x300C;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B5;&#x30E0;&#x30E9;&#x30A4;&#x306E;&#x898B;&#x7A4D;&#x308A;&#x3068;&#x8A08;&#x753B;&#x3065;&#x304F;&#x308A;&#x300D;&#x306F;&#x3069;&#x3046;&#x3084;&#x3063;&#x3066;&#x3046;&#x307E;&#x308C;&#x305F;&#x306E;&#x304B;&#xFF1F;</a></li>
+<li><a href="http://enterprisezine.jp/bizgene/detail/5050/">&#x958B;&#x767A;&#x8005;&#x4EE5;&#x5916;&#x3067;&#x3082;&#x300C;&#x3044;&#x3044;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x308A;&#x305F;&#x3044;&#x300D;&#x4EBA;&#x306B;&#x6709;&#x52B9;&#x306A;&#x300C;&#x30EA;&#x30FC;&#x30F3;&#xFF0B;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x300D;&#x306A;&#x958B;&#x767A;&#x3068;&#x306F;&#xFF1F;</a></li>
+<li><a href="http://codezine.jp/article/detail/7182">&#x300C;&#x66F8;&#x304F;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x81EA;&#x4FE1;&#x3068;&#x8CAC;&#x4EFB;&#x3092;&#x6301;&#x3063;&#x305F;&#x30D7;&#x30ED;&#x30D5;&#x30A7;&#x30C3;&#x30B7;&#x30E7;&#x30CA;&#x30EB;&#x306B;&#x306A;&#x308B;&#x305F;&#x3081;&#x306B;&#x300D; &#x301C;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;&#x958B;&#x8B1B;&#x8A18;&#x5FF5;&#x30A4;&#x30F3;&#x30BF;&#x30D3;&#x30E5;&#x30FC;</a></li>
+</ul><p><br />
+あと、インタビューだけでは伝わりにくいかもしれないので、もう少し雰囲気が伝わるようにちょっとした写真と動画も公開しておきます。</p><p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20131014185028" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20131014/20131014185028.jpg" alt="f:id:nawoto:20131014185028j:image:w360" title="f:id:nawoto:20131014185028j:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span><br />
+＃ Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> Premium 開催時にいただいた参加者からのコメント</p><p><iframe width="420" height="315" src="https://www.youtube.com/embed/WGGcJ-4UTmw?wmode=transparent" frameborder="0" allowfullscreen></iframe></p><p>もう少し長いバージョンは<a href="http://youtu.be/ynecQTUsW3Q">&#x3053;&#x3061;&#x3089;</a></p><br />
+<p>11月25日〜29日に開催する第3期は秋の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AD%A5%EB%A5%A2%A5%C3%A5%D7">スキルアップ</a>キャンペーンということで全講座が期間限定価格で参加できます。僕の <a href="http://event.shoeisha.jp/aa/20131125/">Scrum Boot Camp Premium</a> も早くも半分ぐらい埋まっているそうなんで、参加をご検討されている方はお早めに！</p><p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20131029133022" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20131029/20131029133022.jpg" alt="f:id:nawoto:20131029133022j:image" title="f:id:nawoto:20131029133022j:image" class="hatena-fotolife" itemprop="image"></a></span></p>
+
+<ul>
+<li><a href="http://event.shoeisha.jp/aa/20131125/">&#x7533;&#x3057;&#x8FBC;&#x307F;&#x306F;&#x3053;&#x3061;&#x3089;</a></li>
+</ul>
+-----

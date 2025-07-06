@@ -1,0 +1,22 @@
+
+AUTHOR: nawoto
+TITLE:  「よく書けたインセプションデッキとは」 #scrumdo #agilesamurai
+BASENAME: 20120412/1334219020
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/12/2012 17:23:40
+-----
+BODY:
+<p>先日開催した<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道のイベント「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場.09」の資料を公開しました。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場は、まず俺の体験した話を聞いてくれ、詳しくは後でみんなで話そうという進め方をしているので、資料だけでは分かりにくいかもしれませんが。<br />
+＃資料の最後は俺が聞きたい事とか書いてあるしw</p><br />
+<p><script src="http://speakerdeck.com/embed/4f83f2b121350f002200342e.js"></script></p><br />
+<p>今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキがテーマでした。<br />
+私自身は、デッキは作る過程とその後のメンテナンスの方を重要視しています。<br />
+けれど、今回はあえて書きあげたスライドの方に注目し、自分の現場で書いたデッキの良し悪しを判断できる事ができたらいいなーと思い、良い特徴や例などを自分なりにまとめてみました。<br />
+どこかの現場で何かの参考になれば幸いです。</p><br />
+<p>あと、約一年振りに<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場でやってきたネタの再演 and 大規模イベントを5/11にやります。詳細は追ってなんで、それまでは資料の最後の宣伝で我慢よろしくです。</p><br />
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798122971/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/61JW%2BUp%2B6jL._SL160_.jpg" class="hatena-asin-detail-image" alt="ビジネスモデル・ジェネレーション ビジネスモデル設計書" title="ビジネスモデル・ジェネレーション ビジネスモデル設計書"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798122971/nawoto07-22/">ビジネスモデル・ジェネレーション ビジネスモデル設計書</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> アレックス・オスターワルダー,イヴ・ピニュール,小山龍介</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2012/02/10</li><li><span class="hatena-asin-detail-label">メディア:</span> 大型本</li><li><span class="hatena-asin-detail-label">購入</span>: 29人 <span class="hatena-asin-detail-label">クリック</span>: 473回</li><li><a href="http://d.hatena.ne.jp/asin/4798122971/nawoto07-22" target="_blank">この商品を含むブログ (68件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

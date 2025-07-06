@@ -1,0 +1,152 @@
+
+AUTHOR: nawoto
+TITLE:  Rake で設定ファイルを一括管理
+BASENAME: 20060811/1155311976
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/11/2006 00:59:36
+-----
+BODY:
+<p>「<a href="http://playrecord.org/archive/config-files-on-Unix/myconf.html">&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x7BA1;&#x7406;&#x3059;&#x308B;</a>」にインスパイアされて、自分の環境でもやってみた。<br />
+ただ、今更、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Makefile">Makefile</a> を書くのもイヤだったので Rake で書いてみた。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Rakefile">Rakefile</a> はこんな感じ</p>
+
+<pre>#
+# <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rakefile">Rakefile</a> for Config Files
+#
+
+require 'rake'
+require 'date'
+require 'fileutils'
+
+task :default => [:list]
+
+NOW = DateTime.now.strftime("%Y-%m-%d-%H%M")
+
+desc "list configuration files"
+task :list do
+   puts "src\t\tdest\t\t\t\tupdatable?"
+
+   configs_each do |conf|
+      puts conf
+   end
+end
+
+desc "show diff between two files"
+task :diff do
+   configs_each do |conf|
+      puts conf.diff if conf.updatable?
+   end
+end
+
+desc "update config files"
+task :update do
+   count = 0
+   configs_each do |conf|
+      next unless conf.updatable?
+      next unless confirm_update? conf
+      backup(conf)
+      update(conf)
+
+      puts "update #{conf.dest_name} done."
+      count += 1
+   end
+
+   puts "update #{count} files"
+end
+
+def configs_each(&block)
+   Dir.glob("*/**").each do |f|
+      next if File.directory?(f) or f.include?("sample") or f.include?("backup")
+      conf = ConfigFile.new(f)
+      yield conf
+   end
+end
+
+def confirm_update?(conf)
+   while true
+      puts conf.diff
+      print "update #{conf.dest_name}? (Y/N) :: "
+      s = STDIN.gets.chomp.upcase
+      return true if s == "Y"
+      return false if s == "N"
+   end
+end
+
+def backup(config)
+   FileUtils.cp("#{config.dest_name}", "backup/#{config.basename}.#{NOW}")
+end
+
+def update(config)
+   FileUtils.cp("#{config.file}", "#{config.dest_name}")
+end
+
+
+class ConfigFile
+   attr_accessor :file, :dirname, :basename, :dest_name
+   
+   def initialize(file)
+      @file = file
+      @dirname = File.dirname(file)
+      @basename = File.basename(file)
+      
+      @dest_name = "/"
+      @dest_name << @dirname.split(".").each{|s| s.sub!(/^dot/,".")}.join("/")
+      @dest_name << "/#{@basename.sub(/^dot/,'')}"
+   end
+
+   def diff
+      `diff -u #{@dest_name} #{@file} `
+   end
+   
+   def updatable?
+      return false unless File.exists?(dest_name);
+      a = (File.new(file).mtime.to_i > File.new(dest_name).mtime.to_i)
+      b = diff.chomp.length != 0
+      return (a and b)
+   end
+
+   def to_s
+      "#{basename}\t#{dest_name}\t\t#{updatable?}"
+   end
+end
+</pre><p>こんな感じの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リ構成で設定ファイルを配置して</p>
+
+<pre>Configs
+<table>
+    <tr>
+    <td>-- <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rakefile">Rakefile</a></td>
+    </tr>
+    <tr>
+    <td>-- Users.xxxx</td>
+    </tr>
+    <tr>
+    <td>   </td>
+    <td>-- dot<a class="keyword" href="http://d.hatena.ne.jp/keyword/.emacs">.emacs</a>.el</td>
+    </tr>
+    <tr>
+    <td>   </td>
+    <td>-- dot.<a class="keyword" href="http://d.hatena.ne.jp/keyword/mew">mew</a>.el</td>
+    </tr>
+    <tr>
+    <td>   `-- dot.zshrc</td>
+    </tr>
+    <tr>
+    <td>-- Users.xxxx.dotmlterm</td>
+    </tr>
+    <tr>
+    <td>   `-- key</td>
+    </tr>
+    <tr>
+    <td>-- backup</td>
+    </tr>
+</table>`-- sample
+</pre><p>以下のタスクを実行すればいい。</p>
+
+<pre>% rake list      # 管理している設定ファイルの一覧を表示
+% rake diff      # 変更箇所を表示
+% rake update    # 設定ファイルを更新する
+</pre><p>また、コピー先には空でも構わないのでファイルが存在しないと更新しないようにした。</p><p>一応、手元の環境(Mac OSX 10.4)では動作してます。</p>
+
+-----

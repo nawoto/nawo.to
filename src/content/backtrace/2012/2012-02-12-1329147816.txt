@@ -1,0 +1,29 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Japan 2012 に来ませんか!! #aj12 #agilesamurai
+BASENAME: 20120213/1329147816
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/13/2012 00:43:36
+-----
+BODY:
+<p><br />
+いよいよ早期割引申し込みが今週末で終了する <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Japan 2012 ですが、僕が監訳に携わった<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの原著者のジョナサン・ラスマセンさんが基調講演をします。<br />
+「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>リーダーシップの背後にある驚くべき科学について」と題して、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>なリーダーシップについてたっぷりと語ってもらいます。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの第二章「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>チームのご紹介」で述べられているチームは、無秩序に見えながら高い遂行能力を持った自律したチームです。こういった自律したチームを活用する方がずっと良くなる事については、実は科学的な裏付けがあるそうです。<br />
+そして、それを築くためのリーダーシップとは何か、どう機能させるのか、あなたの組織に与える影響とは何かといった<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライには書かれていない背景の話をしてもらいます。<br />
+＃ジョナサンによる<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発とは何かを解説する<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C1%A5%E5%A1%BC%A5%C8%A5%EA%A5%A2%A5%EB">チュートリアル</a>セッションもありますよ。たぶん Ust はされないはずww</p>
+
+<ul>
+<li><a href="http://www.agilejapan.org/index.html">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B8;&#x30E3;&#x30D1;&#x30F3;&#x516C;&#x5F0F;&#x30B5;&#x30A4;&#x30C8;</a></li>
+<li><a href="http://www.agilejapan.org/program_keynote_1.html">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30EA;&#x30FC;&#x30C0;&#x30FC;&#x30B7;&#x30C3;&#x30D7;&#x306E;&#x80CC;&#x5F8C;&#x306B;&#x3042;&#x308B;&#x9A5A;&#x304F;&#x3079;&#x304D;&#x79D1;&#x5B66;&#x306B;&#x3064;&#x3044;&#x3066; &#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x7D39;&#x4ECB;</a></li>
+</ul><p>また、当日は僕も「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発 基本のキ」と題して、以前紹介した資料を 2012年度版にアップデートして、ワークショップも交えて<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の概要や考え方を学べるセッションをします。<br />
+あと、各地で開催されている<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ道場の各道場主に登壇していただく Change セッション「現場に続く<a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a>の道を語ろう」の方もお手伝いに行きます。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/nawoto/20110323/1300896863">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x958B;&#x767A; &#x57FA;&#x672C;&#x306E;&#x30AD; 2011&#x5E74;&#x7248;</a></li>
+<li><a href="http://www.agilejapan.org/program_change_2.html">&#x73FE;&#x5834;&#x306B;&#x7D9A;&#x304F;Agile&#x306E;&#x9053;&#x3092;&#x8A9E;&#x308D;&#x3046;&#x301C;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B5;&#x30E0;&#x30E9;&#x30A4;&#x8AAD;&#x66F8;&#x4F1A;&#x304C;&#x5909;&#x3048;&#x3066;&#x304D;&#x305F;&#x3053;&#x3068;&#x301C; &#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x7D39;&#x4ECB;</a></li>
+</ul><p>今回は大阪開催ですが、ぜひご参加ください!!</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

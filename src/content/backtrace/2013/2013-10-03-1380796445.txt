@@ -1,0 +1,29 @@
+
+AUTHOR: nawoto
+TITLE:  秋深き となりは何する Scrum Boot Camp ぞ！ #scrumbc
+BASENAME: 20131003/1380796445
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/03/2013 19:34:05
+-----
+BODY:
+<p>Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> はコミュニティでの開催に軸足を置いている Scrum を広く教えていくための活動です。<br />
+先日、僕が主催している<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道ではなく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道関西が主催して Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> が開催されました！<br />
+# 個人的にはかなり嬉しい</p>
+
+<ul>
+<li><a href="http://scrumdo-kansai.doorkeeper.jp/events/4971">Scrum Boot Camp(&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;&#x95A2;&#x897F;presents)</a></li>
+</ul><p><br />
+大阪での開催をスタートを皮切りになぜかあちこちで Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> が開催されます。<br />
+開催状況をまとめてみたので。ぜひ自分にあった Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> を見つけて参加してみませんか?</p>
+
+<ul>
+<li>10/5 開催  <a href="http://devlove-nagoya.doorkeeper.jp/events/5085">Scrum Boot Camp in &#x540D;&#x53E4;&#x5C4B;</a></li>
+<li>10/19 開催  <a href="http://atnd.org/event/E0020080">Scrum Boot Camp in &#x30B0;&#x30EA;&#x30FC;</a></li>
+<li>10/14 開催  <a href="http://agilesapporo.doorkeeper.jp/events/5807">Scrum Boot Camp Premium in &#x672D;&#x5E4C;</a></li>
+<li>11/25 開催  <a href="http://event.shoeisha.jp/aa/20131125/">Scrum Boot Camp Premium (Agile Academy Edition)</a></li>
+</ul><p>とくに 11/25 に開催されるは、こうした草の根的な教育活動が認められて、企業向けの有料研修にまでなりました。<br />
+期間限定で大幅値下げで受講できるので、ぜひ参加してくださーい。</p>
+
+-----

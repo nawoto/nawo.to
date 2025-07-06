@@ -1,0 +1,39 @@
+
+AUTHOR: nawoto
+TITLE:  Rail なプロジェクトが燃える理由 - 画面がリッチだと燃える??
+BASENAME: 20070410/1176222607
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/10/2007 01:30:07
+-----
+BODY:
+<p>まず、まとめ</p>
+
+<ul>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> でも View にかかる<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>はあまり変わらない。</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/web%202.0">web 2.0</a> っぽいリッチな画面は技術リスクが高いので、思ったより高くつく</li>
+</ul><p>どうも、上記ふたつの点で計画との乖離が大きくて、失敗するケースが多い。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> なプロジェクトの場合、俗に言う <a class="keyword" href="http://d.hatena.ne.jp/keyword/web%202.0">web 2.0</a> の文脈からか従来よりリッチな画面を要求されがちである。<br />
+確かに、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> はそういうアプリケーションの作成には、非常に向いていると思う。</p><br />
+<p>しかし、どうして向いているのかを考えてみると、大きな理由として、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> では従来 Model と Controller に必要だった<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>を大幅に削減できるため、その分の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>を View に回せるからだと僕は思っています。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/prototype.js">prototype.js</a> や <a class="keyword" href="http://d.hatena.ne.jp/keyword/script.aculo.us">script.aculo.us</a> などの有用なライブラリや Try and Error のしやすい環境で View の開発ができるというメリットもありますが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> だからといって昔と比べて劇的に開発効率が高くはなってない気がする。<a href="#f-6f77890f" name="fn-6f77890f" title="さすがに deploy に数分かかって、画面を確認するなんて時代には戻れないけど ;-p">*1</a><br />
+実際に、Model, Controller を瞬殺できるけど、どうしても View は <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> での開発の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DC%A5%C8%A5%EB%A5%CD%A5%C3%A5%AF">ボトルネック</a>になっていると思う。</p><br />
+<p>なので、バックエンドの処理で色々と要求されるプロジェクトの場合は、View に回せる<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>は必然的に少なくなるので、そういったプロジェクトの場合は無理せず、web 1.0 っぽい画面でやるべきでしょう。</p><br />
+<p>また、リッチな画面が必要な場合にもリスクを正しく認識すべきだと思っています。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/Flash">Flash</a> はあまり経験が無いので対象外としますが、リッチな画面を HTML + <a class="keyword" href="http://d.hatena.ne.jp/keyword/CSS">CSS</a> + <a class="keyword" href="http://d.hatena.ne.jp/keyword/Javascript">Javascript</a> で提供する場合、僕のようなフツウの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DE">プログラマ</a>では結構大変だったりします。<br />
+その理由としては、こんな感じ</p>
+
+<ul>
+<li>Developer Testing できない</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/IE">IE</a> ではデバックすら困難</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AF%A5%ED%A5%B9%A5%D6%A5%E9%A5%A6%A5%B6">クロスブラウザ</a>対応は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%C3%A5%C9%A5%CE%A5%A6%A5%CF%A5%A6">バッドノウハウ</a>の宝庫</li>
+</ul><p>これまでサーバ側で実装していたようなロジックが View 側に寄ってきている気がしています。<br />
+しかし、View 側での開発ではサーバ側のように xUnit で簡単にテストという訳にはいかず、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D0%A5%C3%A5%B0">デバッグ</a>すら困難という状況です。<br />
+また、開発しやすい設計パターンのようなものもそんなに浸透していません。<br />
+そういった状況では、僕のようなフツウの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DE">プログラマ</a>では結構厳しいと思っています。</p><br />
+<p>確かに Effect やちょっとした部分に <a class="keyword" href="http://d.hatena.ne.jp/keyword/Ajax">Ajax</a> などを使うといった事はすごく簡単にできるようになりましたが、実案件ではやはりその程度で ok という訳にはいきません。</p><p>なので、 <a class="keyword" href="http://d.hatena.ne.jp/keyword/web%202.0">web 2.0</a> っぽい画面は思っている以上に高価なものという認識が必要だと思いますし、そういう認識が発注側に無い場合は気をつけた方が良いと思います。</p>
+<div class="footnote">
+<p class="footnote"><a href="#fn-6f77890f" name="f-6f77890f" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">さすがに deploy に数分かかって、画面を確認するなんて時代には戻れないけど ;-p</span></p>
+</div>
+-----

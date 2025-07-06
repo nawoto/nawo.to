@@ -1,0 +1,30 @@
+
+AUTHOR: nawoto
+TITLE:  レッツゴーデベロッパー2011で「アジャイル開発の中心にあるもの」って話をしました #5000dai
+BASENAME: 20110530/1306777040
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/30/2011 02:37:20
+-----
+BODY:
+<p>先月に引き続き、仙台にお邪魔してきました。<br />
+今回は、「レッツゴー<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D9%A5%ED%A5%C3%A5%D1">デベロッパ</a>ー2011」に呼んでもらって、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の中心にあるもの」というお話をしました。</p><br />
+<p><a href="http://tohoku-dev.jp/modules/eguide/event.php?eid=67">http://tohoku-dev.jp/modules/eguide/event.php?eid=67</a></p><br />
+<p>当日の資料を置いておきます。</p><p><div style="width:625px" id="__ss_8152760"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/first-and-important-thing-in-agile" title="First and important thing in agile">「アジャイル開発の中心にあるもの」</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/8152760" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/nawoto">Nishimura Naoto</a> </div> </div></p><p>また、当日の様子は togetter と <a class="keyword" href="http://d.hatena.ne.jp/keyword/Ustream">Ustream</a> で見れます。</p>
+
+<ul>
+<li><a href="http://togetter.com/li/141632">&#x30EC;&#x30C3;&#x30C4;&#x30B4;&#x30FC;&#x30C7;&#x30D9;&#x30ED;&#x30C3;&#x30D1;&#x30FC;2011 #5000dai</a></li>
+<li><a href="http://tohoku-dev.jp/modules/news/article.php?storyid=80">&#x300C;&#x30EC;&#x30C3;&#x30C4;&#x30B4;&#x30FC;&#x30C7;&#x30D9;&#x30ED;&#x30C3;&#x30D1;&#x30FC;2011&#x300D;UST&#x9332;&#x753B;&#x6620;&#x50CF;&#x3067;&#x3059;</a></li>
+</ul><p>今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道推薦図書である「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ」の 1.1 章の話を元に現場に求められている事をお話ししてみました。<br />
+また、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道スタッフ([<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@takaesu0]と[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq])で質疑応答をやってみました。楽しんでいただけたかな??<br />
+あと、講演中に紹介した「東北ITコミュニティ支援<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B4%F0%B6%E2">基金</a>(仮)」は現在、鋭意準備中ですのでもう少しお待ち下さい。</p>
+
+<ul>
+<li><a href="http://amzn.to/ieWbRP">&#39;The Agile Samurai: How Agile Masters Deliver Great Software&#39;</a></li>
+</ul><p>私個人としては、他の方の発表を普通に楽しんで聞いていたり、前回同様に逆に仙台の人たちのパワーに圧倒されて少々飲み過ぎましたw<br />
+また、近々仙台方面にはお邪魔したいと思いますので、よろしくお願いします。</p><br />
+<p>参加してくださった方々、運営のみなさん、ありがとうございました。<br />
+あー、楽しかった。</p>
+
+-----

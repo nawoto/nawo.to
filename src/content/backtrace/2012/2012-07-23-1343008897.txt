@@ -1,0 +1,37 @@
+
+AUTHOR: nawoto
+TITLE: Scrum Boot Camp の講師をやりました!! #scrumdo #scrumbc
+BASENAME: 20120723/1343008897
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 07/23/2012 11:01:37
+-----
+BODY:
+<p>日記書くのが遅くなったけど、6/16 の大阪・東京同時開催した Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> の大阪側と 7/11 の Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> Premium のメイン講師をやってきました。<br />
+どちらも開催前は人が集まるかが不安でしたけど、当日はたくさんの人に来ていただき、本当にありがとうございました。</p>
+
+<ul>
+<li><a href="http://www.taoofscrum.org/contents/post/235">http://www.taoofscrum.org/contents/post/235</a></li>
+<li><a href="http://enterprisezine.jp/pma/special/01">http://enterprisezine.jp/pma/special/01</a></li>
+</ul><p>＃あー、参加者のブログのまとめとか欲しくなってきたw</p><br />
+<p>それぞれで若干資料の構成は変えてるのですが、元になった資料は以下においてありますので、参加された方は思いだすためとかにでも使ってください。<br />
+＃時間のある時に今回のバージョンに差し替えてやる....ぞ...</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/u/nawoto/p/summary-of-scrum-guide">Scrum &#x57FA;&#x672C;&#x306E;&#x30AD;</a></li>
+<li><a href="https://speakerdeck.com/u/nawoto/p/agile-estimating-and-planning-in-your-drawing-paper">&#x4ECA;&#x65E5;&#x304B;&#x3089;&#x59CB;&#x3081;&#x308B;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x306A;&#x8A08;&#x753B;&#x3068;&#x898B;&#x7A4D;&#x308A;&#x3065;&#x304F;&#x308A;</a></li>
+<li><a href="https://speakerdeck.com/u/nawoto/p/ways-and-means-of-spending-your-sprints">&#x30B9;&#x30D7;&#x30EA;&#x30F3;&#x30C8;&#x306E;&#x4E0A;&#x624B;&#x306A;&#x904E;&#x3054;&#x3057;&#x65B9;</a></li>
+</ul><p><br />
+当日いただいたフィードバックは少しづつですが取り込んでいくので、いつかリベンジさせてくださいw<br />
+またおかげ様で今度は私がメイン講師では無いですが、9月に Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> Premium を開催する方向で話が進んでいます。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a>さんか [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@tao_of_scrum] などで告知されると思いますので、気になる方はチェックしてください。</p><br />
+<p>あと、最後にちょっと先だけど告知。<br />
+<span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20120723003639" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20120723/20120723003639.jpg" alt="f:id:nawoto:20120723003639j:image:w360" title="f:id:nawoto:20120723003639j:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span><br />
+この画像のオリジナルは以下からダウンロードできるので、ぜひ皆さんのプレゼンの一枚に加えて宣伝してくださいww</p>
+
+<ul>
+<li><a href="https://dl.dropbox.com/u/107854/ScrumBootCampBook.tiff">https://dl.dropbox.com/u/107854/ScrumBootCampBook.tiff</a></li>
+</ul><p>というわけで、お楽しみにー。</p>
+
+-----

@@ -1,0 +1,20 @@
+
+AUTHOR: nawoto
+TITLE:  2/14 に出版記念 Scrum Boot Camp Premium やります!! #scrumdo #scrumbc #devsumi
+BASENAME: 20130204/1359962909
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/04/2013 16:28:29
+-----
+BODY:
+<p>2/14 に <a href="http://event.shoeisha.jp/detail/1/">Developers Summit 2013</a> に併設する形で Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> Premium を開催します。</p>
+
+<ul>
+<li><a href="http://enterprisezine.jp/pma/special/04">http://enterprisezine.jp/pma/special/04</a></li>
+</ul><p>今回は 2/13 に発売される僕たちの本の発売記念も兼ねているので著者陣全員集合でお送りします。<br />
+それも今回に限り、僕か [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@ryuzee] か好きな講師を選べます。</p><br />
+<p>締切間近なので、ぜひ参加を考えている方はお早めに!!<br />
+もれなく僕たちの本「 Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The Book」もついてきますww</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51q3GMM3rjL._SL160_.jpg" class="hatena-asin-detail-image" alt="SCRUM BOOT CAMP THE BOOK" title="SCRUM BOOT CAMP THE BOOK"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/">SCRUM BOOT CAMP THE BOOK</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> 西村直人,永瀬美穂,吉羽龍太郎</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2013/02/13</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 5人 <span class="hatena-asin-detail-label">クリック</span>: 13回</li><li><a href="http://d.hatena.ne.jp/asin/4798129712/nawoto07-22" target="_blank">この商品を含むブログ (33件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  アジャイルサムライ他流試合で「日本の読者の皆さんへ」という話をしました #agilesamurai #他流試合
+BASENAME: 20110920/1316500311
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/20/2011 15:31:51
+-----
+BODY:
+<p>まず、参加していただいた皆さんと今回の企画、運営をしてくださったスタッフの皆さん、ありがとうございました。</p>
+
+<ul>
+<li><a href="http://atnd.org/events/19733">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B5;&#x30E0;&#x30E9;&#x30A4;&#x4ED6;&#x6D41;&#x8A66;&#x5408;</a></li>
+</ul><p>当日の資料を公開しました。</p><p><div style="width:425px" id="__ss_9331407"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/we-are-apprentices" title="We are apprentices" target="_blank">We are apprentices</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9331407" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><p>一晩たって思いかえしてみると、ただただとにかく熱い集まりだったという事を鮮明に覚えてますww # だいぶ変なイベントだったよねww?<br />
+けれど、自分のやってきた事とかをふりかえる切っ掛けにもなり、とてもとても楽しく特別な時間を過す事ができました。</p><br />
+<p>そして、当日もお話ししましたが、これにてマスター・センセイ(イベント限定w)からまた熱心な弟子の一人に戻ります。<br />
+僕も含めて各自それぞれの場所で切磋琢磨し、またいつかぜひ集まりしょう!! その来たるべき日に恥かしくないように、僕も負けないように頑張りまーす。ただし、楽しみながらねw</p><br />
+<p>以上だ、諸君!!</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

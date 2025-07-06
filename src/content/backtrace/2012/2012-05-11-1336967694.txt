@@ -1,0 +1,50 @@
+
+AUTHOR: nawoto
+TITLE:  スクラム道フルブーストを開催しました #scrumdo
+BASENAME: 20120511/1336967694
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/11/2012 12:54:54
+-----
+BODY:
+<p>5/11に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道で「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道フルブースト」というイベントを開催しました。</p>
+
+<ul>
+<li><a href="http://www.taoofscrum.org/contents/post/240">http://www.taoofscrum.org/contents/post/240</a></li>
+</ul><p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道は、「もっと<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を上手になりたい」をコンセプトに色々なイベントを開催しています。<br />
+普段は、少人数のイベントを中心に開催していますが、今回は100人規模のイベントに二度目の挑戦をしてみました。<br />
+当初は人が集まるか心配だったのですが、結果はとても多くの方に来場していただき、本当にありがとうございます。</p><br />
+<p>フルブーストでは、これまで開催した<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場の再演をしました。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場は、一つのテーマ(プ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスなど)について 30 分ほど経験などを話してもらったのち、そのテーマについて議論するというスタイルでやっています。<br />
+本などでは詳しく学べないプ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスの良い実践の仕方やその背景にある大事な事を、みんなそれぞれの経験(大事だと感じている事、工夫、悩み)を持ち寄って見つけていこうとしています。</p><br />
+<p>当日の雰囲気はこんな感じでした。<br />
+あと、あまり公開しても意味なさそうだけど、雰囲気が伝わればいいなと思うので、当日の司会用の資料も公開しておきます。</p>
+
+<ul>
+<li><a href="http://togetter.com/li/301183">&#x5F53;&#x65E5;&#x306E;&#x3064;&#x3076;&#x3084;&#x304D;(Togetter)</a></li>
+</ul><p><script src="http://speakerdeck.com/embed/4fb07ecb200fcc001f00feeb.js"></script></p><br />
+<p>ぜひ、当日の感想や写真は <a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a> ページにあげてもらえると嬉しいです。<br />
+＃イベントの告知と感想がセットなページにしたいんですよww</p>
+
+<ul>
+<li><a href="https://www.facebook.com/TaoOfScrum">https://www.facebook.com/TaoOfScrum</a></li>
+</ul><p>参加者のアンケートなどから、多くの参加者の方に喜んでいただけたみたいで本当に良かったです。<br />
+＃いつもと違う参加者層で議論をするという事で不安だったのですがww</p><br />
+<p>Scrumに代表される<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発はシンプルだけど習得が難しいものです。<br />
+前で繰り広げられた議論の中から盗めるテクニックや自分だけでは気づかなかった事が見つかれば幸いです。<br />
+また、あの意見には賛成できないぞ!! や、みんなの話に共通している大事な事はこれかも? と深く学ぶ切っ掛けになれば、本当に嬉しいです。</p><br />
+<p>最後に当日参加してくださった皆さんと会場提供や当日の運営まで協力していただいた<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%C0%A5%A4%A5%CA%A5%E0%A5%B3%A5%B9%A5%BF%A5%B8%A5%AA">バンダイナムコスタジオ</a>様のおかげです。ありがとー!!<br />
+それと色々と支えてくれた<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道スタッフにも感謝!!<br />
+もっと、こういう規模のイベントをやってほしいという声も数多くいただいたので、またやりたいっすね。(再演落選組で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道リベンジとかどうやww!!)<br />
+で、それをやるには<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道は深刻なリソース不足なので、ぜひ手伝うぜって方を絶賛募集してますww</p>
+
+<ul>
+<li><a href="http://qwik.jp/taoofscrum/JoinUs.html">&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;&#x30DA;&#x30FC;&#x30B8;</a></li>
+</ul><p>(余談) </p>
+
+<ul>
+<li>飲み会での思いつきの #nawoto ユーザーグループ女子部 (#nawoto_girls)がこんな形で公開されたけど、俺のイメージは大丈夫かww?</li>
+<li>フルブースト形式だと俺が意見言えなくて悶々するぞww</li>
+</ul>
+-----

@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  連休中のでき事
+BASENAME: 20060108/1136742210
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/08/2006 02:43:30
+-----
+BODY:
+
+<ol>
+<li>「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA">はてな</a>」はじめた</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Firefox">Firefox</a> を 1.5 に上げた</li>
+<li><a href="http://instantrails.rubyforge.org/wiki/wiki.pl?Instant_Rails">Instant Rails</a>入れた</li>
+<li>一年ぶりぐらいにマイミク増えた</li>
+<li>散髪した</li>
+<li>本気で <a class="keyword" href="http://d.hatena.ne.jp/keyword/Mac%20mini">Mac mini</a> が欲しくなった</li>
+<li>よく寝た</li>
+</ol>
+-----

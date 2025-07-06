@@ -1,0 +1,45 @@
+
+AUTHOR: nawoto
+TITLE:  参加のまちづくり入門演習 春に参加してきた
+BASENAME: 20100417/1271654882
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/17/2010 14:28:02
+-----
+BODY:
+<p><br />
+<a href="http://kokucheese.com/event/index/1610/">http://kokucheese.com/event/index/1610/</a><br />
+</p>
+
+    <blockquote>
+        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AF%A5%EA%A5%B9%A5%C8%A5%D5%A5%A1%A1%BC%A1%A6%A5%A2%A5%EC%A5%B0%A5%B6%A5%F3%A5%C0%A1%BC">クリストファー・アレグザンダー</a>によるまちづくりの理論と実践に興味がある方<br />
+ユーザー参加型、漸進的<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%AB%C8%AF%A5%D7%A5%ED%A5%BB%A5%B9">開発プロセス</a>に興味がある方</p>
+
+    </blockquote>
+<p><br />
+という言葉に誘われて参加してきました。</p><br />
+<p>羽生田さんの似顔絵を書いたり、町を散策してクレヨンで絵を書いたら幼稚園児(??)が覗きこんできて、「うわ、下手くそww」って顔されたり、段ボールを切り過ぎて筋肉痛になったりと色々と充実した一日でした。<br />
+詳しい<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーの内容は、<a href="http://blog.hatena.ne.jp/haru01/">id:haru01</a> の <a href="http://d.hatena.ne.jp/haru01/20100417/1271514039">&#x30EC;&#x30DD;&#x30FC;&#x30C8;</a>が良い感じです。</p><br />
+<p>初日の自分用のメモをつらつらと書いてみます。</p>
+
+<ul>
+<li>観察重要</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DC%A5%C8%A5%E0%A5%A2%A5%C3%A5%D7">ボトムアップ</a>重要
+<ul>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DC%A5%C8%A5%E0%A5%A2%A5%C3%A5%D7">ボトムアップ</a>でもちゃんと大中小に区分できたり</li>
+<li>全体性がでてくる</li>
+</ul></li>
+<li>パタンは重なりを持つ</li>
+<li>パタンは区別するため</li>
+<li>他人と共有</li>
+<li>状況、問題、解決策</li>
+<li>小さなパタンを組み合わて物語をかたる</li>
+</ul><p><br />
+あと、懇親会で出た「最近のコンサルは現実の課題ばかり語るから、その上には絶対に行けないんだよぉ」って話は耳が痛かった。<br />
+自分なりの考えがあるんだけど、ここは分野の違いとかは関係なくもう少しチャレンジしていこう。</p><br />
+<p>また、どうしても自分の仕事に合わせて考えてしまうが、今はソフトウェアよりプ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスとチームビルディングの関係で今回の演習はしっくりきた。<br />
+いつかこの話はまとめていきたい。</p><br />
+<p>よし、来週も楽しみだ。</p>
+
+-----

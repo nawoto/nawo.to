@@ -1,0 +1,23 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Boot Camp 冬の一斉開催せまる!! #scrumdo #scrumbc
+BASENAME: 20121113/1352776498
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 11/13/2012 12:14:58
+-----
+BODY:
+<p>12月に僕が講師の Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> が連続で開催されます。<br />
+おそらく年内最後の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道のScrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a>のはずなので、奮ってご参加ください。</p><br />
+<p>最初は、12/1 に「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> in 札幌」があります。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道初の札幌開催なので、色んな人にお会いできるのを楽しみにしています。<br />
+僕たちの交通費などをカンパのため有料になっておりますが、宜しくお願い致します。<br />
+＃参加者少ないと行けないかもwww</p><br />
+<p><a href="http://agilesapporo.doorkeeper.jp/events/1852">http://agilesapporo.doorkeeper.jp/events/1852</a></p><br />
+<p>そして、12/12 には恒例の Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> Premium 第四回が<a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a>で開催されます!! まだ若干、席があるはずのでこちらも宜しくお願い致します。<br />
+こちらはPDUがもらえたり、僕の資料のハンズアウトがもらえたりします!!</p><br />
+<p><a href="http://enterprisezine.jp/pma/special/03">http://enterprisezine.jp/pma/special/03</a></p><br />
+<p>で、僕の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナー資料は一年ごとに刷新するので、僕の研修の2012年バージョンを受けてみたい方は最後の機会かもしれないなので、ぜひ!!<br />
+みなさんのたくさんのご参加をお待ちしております!!</p>
+
+-----

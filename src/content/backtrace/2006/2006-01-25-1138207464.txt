@@ -1,0 +1,95 @@
+
+AUTHOR: nawoto
+TITLE:  WebSphere で WS-Security
+BASENAME: 20060126/1138207464
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/26/2006 01:44:24
+-----
+BODY:
+<p>どっぷりハマってしまったんで, さっさとダンプして忘れてしまおう.<br />
+環境は Rational Application Developer v6.0(以下, RAD) と Websphere Application Server v6.0(以下, WAS).</p><br />
+<p>とりあえず, 記憶が残ってるうちに書き殴ったレベルなので, 後で修正する予定.<br />
+<br />
+</p>
+
+<div class="section">
+    <h4>サーバ側を実装</h4>
+    
+<ol>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/POJO">POJO</a> な Web Service を実装<a href="#f-6bd7fbb2" name="fn-6bd7fbb2" title="RemoteException を throw する事">*1</a></li>
+<li>オプションで Interface を定義</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Servlet">Servlet</a> を定義していない war 作成</li>
+<li>上記実装クラス<a href="#f-4277ff67" name="fn-4277ff67" title="jar に含めた">*2</a>と web モジュールを含む ear 作成</li>
+<li>Rational Application Developer(以下 RAD) にインポート</li>
+<li>"ファイル" -> "新規" -> "その他" で web service wizard を起動</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> Bean?? を指定して, 上記の実装クラスを指定<a href="#f-0344c466" name="fn-0344c466" title="クライアントの作成は後回し">*3</a></li>
+<li>既存の Service Endpoint Interface を指定する場合は上記の Interface を指定</li>
+<li>セキュリティの指定なしの部分を 署名とか暗号化とか好きなやつに変更</li>
+<li>web モジュールの指定を上記の web モジュールに設定して終了??</li>
+<li>待つ</li>
+<li>しばらく待つ</li>
+<li>一服する</li>
+<li>なんか色々と出力される. web サービスのサーバーに <a class="keyword" href="http://d.hatena.ne.jp/keyword/wsdl">wsdl</a> ファイルとか見えてれば成功<a href="#f-92016827" name="fn-92016827" title="失敗したら, プロジェクトごと削除して, ear のインポートからやった方が良さげ.">*4</a></li>
+<li>ハンドラーの設定とかしちゃったり</li>
+</ol>
+</div>
+<div class="section">
+    <h4>で, クライアント側.</h4>
+    
+<ol>
+<li>web サービスのサービス名からメニューを表示してクライアント作成<a href="#f-336f3738" name="fn-336f3738" title="今回は クライアント・アプリケーションを選択">*5</a></li>
+<li>セキュリティの指定をサーバーの設定と同様にして, WS-Security を有効にする</li>
+<li>面倒なんで, 上記の <a class="keyword" href="http://d.hatena.ne.jp/keyword/J2EE">J2EE</a> プロジェクトを指定</li>
+<li>少々, 待つ.</li>
+<li>クライアント用に色々と出力される</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/ibm">ibm</a>-webservicesclient-bnd.xmi の中にセキュリティ関連の設定ができていれば成功</li>
+<li>こんなのが出力されてるはず
+<ol>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/wsdl">wsdl</a>/XXXXXXXXX.<a class="keyword" href="http://d.hatena.ne.jp/keyword/wsdl">wsdl</a></li>
+<li>各種 sutb</li>
+<li>application-client.<a class="keyword" href="http://d.hatena.ne.jp/keyword/xml">xml</a></li>
+<li>and more....</li>
+</ol></li>
+<li>で, まとめて <a class="keyword" href="http://d.hatena.ne.jp/keyword/J2EE">J2EE</a> プロジェクトを ear で export</li>
+</ol>
+</div>
+<div class="section">
+    <h4>次は WAS の設定</h4>
+    
+<ol>
+<li>管理コンソールを起動</li>
+<li>上記まで上手くいってればデポロイされてるはず</li>
+<li>グローバルセキュリティの項を表示</li>
+<li>"グローバルセキュリティを有効にする" を設定</li>
+<li>"<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> セキュリティを有効にする" は無効にする</li>
+<li>コンソールユーザを設定する??
+<ol>
+<li>停止時にユーザとパスワードが必要になる</li>
+</ol></li>
+<li>変更を保存する</li>
+<li>サーバーを停止する</li>
+<li>RAD から起動できなくてボヤく</li>
+<li>適当にコンソールから起動</li>
+</ol>
+</div>
+<div class="section">
+    <h4>最後にクライアントを実行</h4>
+    <p>WAS に付属の launchClient(.bat) を利用して, 上記のクライアントを含む ear を実行する<br />
+<br />
+</p>
+
+</div>
+<div class="section">
+    <h4>参考リンク</h4>
+    <p>ほとんど, 下記の tutorial の通り.</p><p><a href="http://www-06.ibm.com/jp/software/websphere/developer/wv5/ise/1.html">&#x300C;J2EE&#xFF06;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#xFF1A;JavaBeans&#x3092;SOAP&#x3067;&#x8EE2;&#x9001;&#x305B;&#x3088;&#xFF01;&#x300D;</a></p>
+
+</div><div class="footnote">
+<p class="footnote"><a href="#fn-6bd7fbb2" name="f-6bd7fbb2" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">RemoteException を throw する事</span></p>
+<p class="footnote"><a href="#fn-4277ff67" name="f-4277ff67" class="footnote-number">*2</a><span class="footnote-delimiter">:</span><span class="footnote-text">jar に含めた</span></p>
+<p class="footnote"><a href="#fn-0344c466" name="f-0344c466" class="footnote-number">*3</a><span class="footnote-delimiter">:</span><span class="footnote-text">クライアントの作成は後回し</span></p>
+<p class="footnote"><a href="#fn-92016827" name="f-92016827" class="footnote-number">*4</a><span class="footnote-delimiter">:</span><span class="footnote-text">失敗したら, プロジェクトごと削除して, ear のインポートからやった方が良さげ.</span></p>
+<p class="footnote"><a href="#fn-336f3738" name="f-336f3738" class="footnote-number">*5</a><span class="footnote-delimiter">:</span><span class="footnote-text">今回は クライアント・アプリケーションを選択</span></p>
+</div>
+-----

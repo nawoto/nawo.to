@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  デブサミ関西で Scrum Boot Camp やります #devsumi #scrumdo #scrumbc
+BASENAME: 20110907/1315360804
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/07/2011 11:00:04
+-----
+BODY:
+<p>もう今から始まるのですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>関西で<a href="http://www.facebook.com/TaoOfScrum">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;</a> で Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> やりますw<br />
+<br />
+</p>
+
+<ul>
+<li><a href="http://codezine.jp/devsumi/2011/kansai/special">Scrum Boot Camp &#x95A2;&#x897F;</a></li>
+</ul><p><br />
+今日は、僕はサポート側ですが、色んな人と話せるのを楽しみにしてるので、見掛けたらお気軽に声を掛けてください。<br />
+ちなみに、実は関西出身にもかかわらず関西のイベントは初だったりしますw</p>
+
+-----

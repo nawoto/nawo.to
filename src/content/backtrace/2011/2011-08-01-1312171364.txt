@@ -1,0 +1,22 @@
+
+AUTHOR: nawoto
+TITLE:  スクラム道の ML を引越しました #scrumdo
+BASENAME: 20110801/1312171364
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/01/2011 13:02:44
+-----
+BODY:
+<p>実は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道には ML があったりします。<br />
+これまで <a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a> グループ上の ML を利用していたのですが、段々と機能が削減されて使いにくくなってきたので、この度引越ししました。<br />
+と言っても、参加者とのやり取りや情報交換は <a class="keyword" href="http://d.hatena.ne.jp/keyword/Twitter">Twitter</a> 上でやっているので、いわゆるコミュニティ参加者向けの ML は元々ありません。<br />
+あるのは、スタッフが運営のやり取り(次回の日程や会場確保など)用の運営 ML です。<br />
+運営のやり取りは基本的には公開していますので、興味のある人はご覧ください。<br />
+# 古い方は気が向いた時に消える予定</p><br />
+<p><a href="http://qwik.jp/taoofscrum/FrontPage.html">http://qwik.jp/taoofscrum/FrontPage.html</a></p><br />
+<p>また、引越しした際に、これまでたまに聞かれていた「スタッフにはどうなればいいんですか?」について記載してみました。</p><br />
+<p><a href="http://qwik.jp/taoofscrum/JoinUs.html">http://qwik.jp/taoofscrum/JoinUs.html</a></p><br />
+<p>もし、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道の運営を手伝いたいという奇特な方のご参加をお待ちしておりますww</p>
+
+-----

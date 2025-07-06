@@ -1,0 +1,25 @@
+
+AUTHOR: nawoto
+TITLE:  アジャイルアカデミーという研修コースをはじめました!!
+BASENAME: 20130428/1367159424
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/28/2013 23:30:24
+-----
+BODY:
+
+<ul>
+<li><a href="http://event.shoeisha.jp/aa">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;</a></li>
+<li><a href="https://www.facebook.com/AgileAcademy.jp">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30A2;&#x30AB;&#x30C7;&#x30DF;&#x30FC;Facebook&#x30DA;&#x30FC;&#x30B8;</a> #最新情報を配信してます</li>
+</ul><p>これまで<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道で <a href="http://enterprisezine.jp/pma/special/01">Scrum Boot Camp Premium</a> という研修をやってきました。これは、これから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を始めたいと考えている会社といった組織をコミュニティで支えたいっという活動でした。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道のスタッフのおかげで形になった実感がでてきた一方で、組織を支えるにはまだまだ不十分だなーと感じることもありました。</p><br />
+<p>その理由は単純で、組織によって<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>にしていくところや強くしていきたいところは違うからです。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>で成果を出すためのスタート地点は<a href="http://www.amazon.co.jp/gp/product/4798129712/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4798129712&linkCode=as2&tag=nawoto07-22">Scrum Boot Camp</a>や<a href="http://www.amazon.co.jp/gp/product/4274068560/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4274068560&linkCode=as2&tag=nawoto07-22">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B5;&#x30E0;&#x30E9;&#x30A4;</a>だけじゃない!!<br />
+もちろんScrumから始めたい会社もあるでしょう。まずは全員が<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの考えに慣れるところから始める組織もあるでしょう。けど、企画力で勝負したい会社や発注する能力を強くしたい組織では「Running Lean」のようなところから始めたいでしょうし、エンジニアが組織の肝の組織であれば TDD から始めるべきです。</p><br />
+<p>ずっとそうした受け皿を作りたいと思っていて、ようやくやりたかったことを形にできました。それが今回、立ちあげた「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>アカデミー」という研修コースです。もっといろんな人が学べる場にしたいというのがコンセプトです。もちろん、たくさんのことをより深く学べるように飛びっきりの講師陣に参加してもらいました!!(こうした人脈ができたのは永和のおかげです。多謝)</p><br />
+<p>立ち上げたばかりなので、まだまだな部分も多いですが宜しくお願い致します > all<br />
+これからもっともっと良くしていくので、辛辣な意見も含め様々なフィードバックをお待ちしています。</p><br />
+<p>という学長(なりゆき上ですがww)の挨拶でしたwww</p><p><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" class="asin"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−" width="50" class="asin"></a><br />
+<a href="http://d.hatena.ne.jp/asin/4798129712/nawoto07-22" class="asin"><img src="https://images-fe.ssl-images-amazon.com/images/I/51q3GMM3rjL._SL160_.jpg" alt="SCRUM BOOT CAMP THE BOOK" title="SCRUM BOOT CAMP THE BOOK" width="50" class="asin"></a><br />
+<a href="http://d.hatena.ne.jp/asin/4873115914/nawoto07-22" class="asin"><img src="https://images-fe.ssl-images-amazon.com/images/I/41n0JPz%2BDrL._SL160_.jpg" alt="Running Lean ―実践リーンスタートアップ (THE LEAN SERIES)" title="Running Lean ―実践リーンスタートアップ (THE LEAN SERIES)" width="50" class="asin"></a></p>
+
+-----

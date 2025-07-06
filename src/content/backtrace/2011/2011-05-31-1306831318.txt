@@ -1,0 +1,36 @@
+
+AUTHOR: nawoto
+TITLE:  6/24 にスクラム道バーストをやります #scrumdo
+BASENAME: 20110531/1306831318
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/31/2011 17:41:58
+-----
+BODY:
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20110531171346" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20110531/20110531171346.jpg" alt="f:id:nawoto:20110531171346j:image:w360" title="f:id:nawoto:20110531171346j:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span></p><br />
+<p>諸事情で延期になっていました<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道バーストですが、6/24 に開催する事になりました。会場は、前回お借りする予定だった<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%C0%A5%A4%A5%CA%A5%E0%A5%B3%A5%B2%A1%BC%A5%E0%A5%B9">バンダイナムコゲームス</a>様の 220 名の大会場を再びお借りする事ができました。<br />
+内容は、これまで少人数開催でやってきた事の再演を予定しています。テーマは当日みなさんにどれか一つ決めてもらいますが、候補は以下になっています(現在、調整中のものも含んでいます)。</p>
+
+<ul>
+<li>ふりかえり</li>
+<li>スプリントバーンダウンチャート</li>
+<li>スプリント計画ミーティング</li>
+<li>スプリント0</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>マスター</li>
+</ul><p>申し込みは以下からできます。</p><br />
+<p><a href="http://bit.ly/scrumdo-burst-again">http://bit.ly/scrumdo-burst-again</a></p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発は、どうしても本を読むだけでは上手く実践できない部分が多いと思います。実際に現場で実践してみると色々と不安や疑問点が出てきます。<br />
+例えば、ふりかえりはやってみたが誰も発言しないんだけど....とか、朝会が一時間以上かかるなぁー等々。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道は、参加者全員でこうした疑問点を僕の現場ではこうやってるけど、他の現場ではどうですか?といった具合に各々のノウハウを共有したり、悩みを相談したりする事に主眼を置いています。<br />
+こうした実践的な話から<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発って何なのかを各々探究していくスタンスでやっています。<br />
+そのため、講演者が各テーマについて時間一杯使って発表し、一から説明するというスタンスではなく、参加者と一緒に議論する事に重きを置いてます。<br />
+そういった議論の中から各々が何かを持ち帰ってもらうようなスタンスでやっています。<br />
+手前味噌ですが、これまで開催してきて色々と良い話が出来ていると思っているので、もっと色んな人に一度は聞いてもらいたいと思い、今回はじめて大会場での開催に至りました。<br />
+もし、本では読んだけど実際にどうやってるの? っとか、やり始めてみたが色々の悩んでいる方はぜひ奮ってご参加下さい。</p><br />
+<p>また、身の丈以上に大きな開場を借りてしまって困っているので、各方面で宣伝していただけると助かります。<br />
+宣伝用の画像を用意しましたので、こそっと壁紙として宣伝したり、どこかの発表スライドに混ぜてくださいww<br />
+画像は以下から期間限定でダウンロードできます。</p><br />
+<p><a href="http://dl.dropbox.com/u/107854/scrumdo-burst-again.tiff">http://dl.dropbox.com/u/107854/scrumdo-burst-again.tiff</a></p>
+
+-----

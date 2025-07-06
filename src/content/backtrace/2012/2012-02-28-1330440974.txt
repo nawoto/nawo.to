@@ -1,0 +1,37 @@
+
+AUTHOR: nawoto
+TITLE:  すくすくスクラムでインセプションデッキの話をしました #suc3rum #agilesamurai
+BASENAME: 20120228/1330440974
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/28/2012 23:56:14
+-----
+BODY:
+<p>先日(2/22)に第30回すくすく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>で [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@kakutani] と一緒に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキのワークショップをやってきました。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキは、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライで紹介されているプ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスです。<br />
+プロジェクトの関係者一人一人がプロジェクトの進む方向について、きちんと対話して合意して迷わないようにする事を目的としています。<br />
+当日もお話ししましたが、デッキは対話して合意する事に意味があり、それを促す手軽な方法です。ついスライドを完成させる事に意識が向きがちになりますが、そうならないためのポイントについてワークショップを交えてお話ししました。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキは、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発に関係無くどこの現場でも実践できると思っています。<br />
+デッキ作りを通じて、もっとプロジェクトの方向性が気軽に話せる現場が増えるといいなー。<br />
+＃個人的にもデッキ作りは非常に気に入っていて、自分が経験した事を今回とは違う話でやりたいな。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道あたりかなぁ</p><br />
+<p>内容は、以前に <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Tour Osaka 2011 で話した内容の再演で、資料は以下で公開しています。何かの参考になれば幸いです。<br />
+＃当日のは少し修正したんだけど再アップロードの仕方が分からないので放置w</p><br />
+<p><a href="http://d.hatena.ne.jp/nawoto/20111011/1318303619">Head First &#x30A4;&#x30F3;&#x30BB;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x30C7;&#x30C3;&#x30AD;</a>(以前の記事)</p><br />
+<p><div style="width:425px" id="__ss_9638253"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/head-first-inception-deck" title="Head First Inception Deck" target="_blank">Head First Inception Deck</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9638253" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><p>久しぶりに(<a href="http://d.hatena.ne.jp/nawoto/20100611/1276222826">&#x7B2C;14&#x56DE;</a>目以来二度目)すくすく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>で話させてもらったんだけんど、相変わらず活気がありますね。<br />
+当日はとても多くの方に来てもらい、スタッフの皆さんにも色々とサポートしていただき、僕もとても楽しかったです。<br />
+本当にありがとうございました。> 参加者のみなさん、スタッフのみなさん</p><br />
+<p>あと、当日告知させてもらったのですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの原著者であるジョナサンが直接<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキについて教えてくれる<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナー(デッキ以外の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナーもあるよ)が 3 月に開催されます。<br />
+僕は 2 時間ぐらいの枠で話す事が多いので、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキのスライド全般に関係するポイントにフォーカスしましたが、こっちは丸一日掛けて細かいポイントから教えてもらえる内容になっています。<br />
+今日??(2/29)で早期割引が終了してしまうので、もっと<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキについて学びたいと思っている方はお急ぎを。</p>
+
+<ul>
+<li><a href="http://agile-samurai-ja.github.com/training/">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30B5;&#x30E0;&#x30E9;&#x30A4;&#x30C8;&#x30EC;&#x30FC;&#x30CB;&#x30F3;&#x30B0;</a></li>
+</ul><p>そして、同じ週にジョナサンによる基調講演(他のイベントとは違う話をする予定)と各地の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ道場(読書会)に参加してきた人たちによる現場での実践の話を持ち寄って発表したり議論したりするイベント「<a href="http://agile-samurai-ja.github.com/dojo-gathering/2012/index.html">Agile Samurai Dojo Gathering</a>」が開催されます。<br />
+こちらも宜しくお願い致します。</p>
+
+<ul>
+<li><a href="http://agile-samurai-ja.github.com/dojo-gathering/2012/index.html">Agile Samurai Dojo Gathering</a></li>
+</ul><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

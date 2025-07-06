@@ -1,0 +1,35 @@
+
+AUTHOR: nawoto
+TITLE:  「Head First インセプションデッキ」を再演してきました!! #agilesamurai
+BASENAME: 20121113/1352835640
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 11/13/2012 04:40:40
+-----
+BODY:
+<p>10/31に開催された横浜道場・DevLOVE道場・埼玉道場の共催イベントで「Head First <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキ」を再演しました。<br />
+出版から一年以上経っても各地で活発に道場という勉強会が開催され、こうして呼んでもらえたのはとても嬉しかったです。<br />
+また、少々生意気な答え方もしちゃいましたが、色々と面白い質問が出た質疑応答はとても印象に残ってます。<br />
+＃どんな答え方をしたかは参加した人だけの秘密ということでww</p><br />
+<p>資料自体は昔に公開したのですが、ちょろちょろとアップデートしているので久々にSpeakerDeckの方にだけ反映してみました。<br />
+<br />
+</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/nawoto/head-first-inception-deck">https://speakerdeck.com/nawoto/head-first-inception-deck</a></li>
+</ul><p><script async class="speakerdeck-embed" data-id="4e93ac3d36dd7d0051007313" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script></p><br />
+<p>用語やスライドの僕なりの解釈で難点か変わっているので、以前の資料をダウンロードしている方は変更箇所を探してみてください!!<br />
+あと、現バージョンの見所は豪華なCMですww<br />
+残念ながら出版が一ヶ月伸びてしまった某Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a>本のチラ見せなどを入れてみました。<br />
+あと、1/15,16 に開催される日本最大の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>のイベントである Scrum Alliance Regional Gathering Tokyo 2013 の宣伝スライドを使わさせてもらいました!!</p>
+
+<ul>
+<li><a href="http://scrumgatheringtokyo.org/2013/">http://scrumgatheringtokyo.org/2013/</a></li>
+</ul><p>あと、企画から運営まで色々とやってくれた道場のみなさん、ありがとうございました!!<br />
+また一緒に何かやりましょう!!</p><br />
+<p>最後に、僕は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキ自体はとても良い道具だと思っていて、朝会やふりかえりぐらいに当たり前の存在になればいいなーと思っています。<br />
+そのため、もっと色々なことを伝えたくて、こういう<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>ナー形式でやっています。けど、やっぱり90分じゃ全然伝え切れないっすねww<br />
+くやしいので、いつか終日の <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> 形式を妄想中です。</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

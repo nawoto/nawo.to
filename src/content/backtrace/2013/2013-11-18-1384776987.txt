@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Boot Camp The Book の読書会が札幌で開催されます！ #scrumbcbook
+BASENAME: 20131118/1384776987
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 11/18/2013 21:16:27
+-----
+BODY:
+<p>今年の頭に出版した「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The Book」の読書会が 11/20 に第一回が開催されます。ありがたやーありがたやー。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>ページの方には以前、NTTソフトウェアさんで開催されていた社内読書会については報告させていただいたのですが、今回はどなたでも申し込めるオープンな読書会です。</p><br />
+<p><a href="http://agilesapporo.doorkeeper.jp/events/7003">Scrum Boot Camp The Book &#x8AAD;&#x66F8;&#x4F1A; in &#x672D;&#x5E4C;</a></p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの読書会には何度かお邪魔したことがあるので雰囲気が分かるのですが、この本はどんな感じで読書会を進めていくのかとても興味があります。<br />
+ただ、読書会は読者のみなさんのものなので、自分たちのやりやすいようにやっていただけると嬉しいです。<br />
+で、いつか本の感想を聞いたりもしたいので、１度ぐらいお邪魔できれば嬉しいなーと思っています。</p><br />
+<p>ぜひぜひ、どんな様子かや集客の宣伝には<a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>ページも使ってくださーい。他の地域や会社などでも読書会をやっていると情報もお待ちしてまーす。</p><br />
+<p><a href="https://www.facebook.com/ScrumBootCampTheBook">Scrum Boot Camp The Book &#x306E;Facebook&#x30DA;&#x30FC;&#x30B8;</a></p><p><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" class="asin"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−" width="50" class="asin"></a><br />
+<a href="http://d.hatena.ne.jp/asin/4798129712/nawoto07-22" class="asin"><img src="https://images-fe.ssl-images-amazon.com/images/I/51q3GMM3rjL._SL160_.jpg" alt="SCRUM BOOT CAMP THE BOOK" title="SCRUM BOOT CAMP THE BOOK" width="50" class="asin"></a></p>
+
+-----

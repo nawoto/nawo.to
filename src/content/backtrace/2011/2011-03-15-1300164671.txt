@@ -1,0 +1,18 @@
+
+AUTHOR: nawoto
+TITLE:  3/18 開催予定のスクラム道バーストは中止とさせていただきます #scrumdo
+BASENAME: 20110315/1300164671
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 03/15/2011 13:51:11
+-----
+BODY:
+<p><br />
+<a href="http://bit.ly/scrumdo-burst">http://bit.ly/scrumdo-burst</a></p><br />
+<p>今週金曜日に開催予定でした<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道バーストですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C5%EC%C6%FC%CB%DC%C2%E7%BF%CC%BA%D2">東日本大震災</a>の影響により参加者の皆さんの安全及び帰宅のリスクがあると判断したため、中止とさせていただきます。<br />
+直前の案内で申し訳ありませんが、ご理解のほどよろしくお願いいたします。</p><br />
+<p>次回、開催日などは現時点で未定ですが、状況が落ち着き次第、再度企画したいと考えております。<br />
+その時は、みなさんが全員無事で参加され、一緒に心から議論が楽しめるようになっている事を切に願っております。</p>
+
+-----

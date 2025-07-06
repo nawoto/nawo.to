@@ -1,0 +1,16 @@
+
+AUTHOR: nawoto
+TITLE:  思えば遠くに来たもんだ
+BASENAME: 20100409/1270828846
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/09/2010 01:00:46
+-----
+BODY:
+<p><br />
+今の会社に来た時は幼稚園にも行ってなかった息子が、とうとう小学生になったww</p><br />
+<p>当時を思い出すと、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a> でも<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>でも仕事はしてないし、直接お客様と話す事自体が珍しかった。<br />
+開発環境ももちろん <a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a> で <a class="keyword" href="http://d.hatena.ne.jp/keyword/Cygwin">Cygwin</a> 入れるのが精一杯だったなぁ〜っとふっと思い出した。</p>
+
+-----

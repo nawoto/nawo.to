@@ -1,0 +1,17 @@
+
+AUTHOR: nawoto
+TITLE:  デブサミ2011で「今そこにあるScrum」という話をしました #devsumi
+BASENAME: 20110218/1297997391
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/18/2011 11:49:51
+-----
+BODY:
+<p>2/17 に <a class="keyword" href="http://d.hatena.ne.jp/keyword/Developers%20Summit">Developers Summit</a> 2011 で講演させていただきました。「今そこにあるScrum」と題し、僕の目から見た国内の Scrum の状況とこれから取り組む際に開発者の皆さんに知っておいてほしい事を簡単ではありますが話をさせていただきました。以下は当日の講演資料です。</p><p><div style="width:425px" id="__ss_6963258"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/clear-and-present-scrum-on-devlopers-summit-2011-6963258" title="Clear and Present Scrum on Devlopers Summit 2011">[デブサミ2011]今そこにあるScrum</a></strong><object id="__sse6963258" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=clearandpresentscrum-110217120121-phpapp02&stripped_title=clear-and-present-scrum-on-devlopers-summit-2011-6963258&userName=nawoto" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse6963258" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=clearandpresentscrum-110217120121-phpapp02&stripped_title=clear-and-present-scrum-on-devlopers-summit-2011-6963258&userName=nawoto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/nawoto">Nishimura Naoto</a>.</div></div></p><p>当日の様子は、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@suginoy] さんが <a class="keyword" href="http://d.hatena.ne.jp/keyword/Twitter">Twitter</a> のつぶやきをまとめていただいたので、そちらをご覧ください。<br />
+僕もみなさんの感想などをぜひ知りたいので、上記のまとめに追記してくださるか、この記事にコメントなど付けてくださると嬉しいです。</p><br />
+<p><a href="http://togetter.com/li/102139">&#x30C7;&#x30D6;&#x30B5;&#x30DF;2011&#x3010;17-B-5&#x3011;&#x4ECA;&#x305D;&#x3053;&#x306B;&#x3042;&#x308B;Scrum &#x897F;&#x6751;&#x76F4;&#x4EBA; &#x6C0F;</a></p><br />
+<p>[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@t_wada] さんと [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@kohsei] さんには今回貴重な機会をいただきありがとうございました。また、参加していただいた方とスタッフのみなさんのおかげで、私もとても楽しめました。ありがとうございます。<br />
+あと、会場の方からも色んな質問をいただき、私も大変勉強になりました。</p>
+
+-----

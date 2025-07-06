@@ -7,6 +7,10 @@ let targetYear = null;
 let startIndex = 0;
 let count = 10; // デフォルト10件
 let autoYes = false;
+let allMode = false;
+let txtOnly = false; // txtファイルのみ分割するオプション
+let forceMode = false; // 強制再変換モード
+let targetDate = null; // 特定日付指定
 
 for (let i = 0; i < args.length; i++) {
   const arg = args[i];
@@ -14,9 +18,71 @@ for (let i = 0; i < args.length; i++) {
   else if (arg === '--year' && args[i + 1]) targetYear = parseInt(args[++i]);
   else if (arg === '--start' && args[i + 1]) startIndex = parseInt(args[++i]);
   else if (arg === '--count' && args[i + 1]) count = parseInt(args[++i]);
+  else if (arg === '--all') allMode = true;
+  else if (arg === '--txt-only') txtOnly = true;
+  else if (arg === '--force') forceMode = true;
+  else if (arg === '--date' && args[i + 1]) {
+    const dateStr = args[++i];
+    // YYYY-MM-DD形式をパース
+    const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (dateMatch) {
+      targetDate = new Date(parseInt(dateMatch[1]), parseInt(dateMatch[2]) - 1, parseInt(dateMatch[3]));
+    } else {
+      console.error('❌ 日付形式が正しくありません。YYYY-MM-DD形式で指定してください。例: --date 2012-03-26');
+      process.exit(1);
+    }
+  }
 }
 
 console.log(`🎯 はてなブログ移行スクリプト（統合版）`);
+
+// ヘルプ表示
+if (args.includes('--help') || args.includes('-h')) {
+  console.log(`
+📖 使用方法:
+  node scripts/hatena-export-to-md.js [オプション]
+
+🔧 オプション:
+  --year <年>          指定年の記事を変換（例: --year 2012）
+  --start <開始位置>    開始位置を指定（デフォルト: 0）
+  --count <件数>       変換件数を指定（デフォルト: 10）
+  --all                全記事から未変換分を範囲指定変換
+  --txt-only           txtファイルのみ分割（mdファイルは作成しない）
+  --force              強制再変換モード（変換済みも再変換）
+  --date <YYYY-MM-DD>  特定日付の記事のみ変換（例: --date 2012-03-26）
+  --yes, -y            確認プロンプトをスキップして自動実行
+  --help, -h           このヘルプを表示
+
+📝 使用例:
+  # 2012年の最新10件を変換
+  node scripts/hatena-export-to-md.js --year 2012
+
+  # 2012年3月26日の記事を強制再変換
+  node scripts/hatena-export-to-md.js --year 2012 --date 2012-03-26 --force --yes
+
+  # 全記事から2012年3月26日の記事を変換
+  node scripts/hatena-export-to-md.js --all --date 2012-03-26 --yes
+
+  # txtファイルのみ分割
+  node scripts/hatena-export-to-md.js --txt-only --yes
+`);
+  process.exit(0);
+}
+
+// txtファイルのみ分割する場合の処理
+if (txtOnly) {
+  console.log(`📄 txtファイルのみ分割モード`);
+  processTxtOnly();
+  process.exit(0);
+}
+
+// 変換済み記録ファイル
+const convertedFile = 'converted.txt';
+let convertedSet = new Set();
+if (fs.existsSync(convertedFile)) {
+  const lines = fs.readFileSync(convertedFile, 'utf8').split(/\r?\n/).filter(Boolean);
+  lines.forEach(line => convertedSet.add(line.trim()));
+}
 
 // エクスポートファイルを読み込み
 const exportFile = 'tmp/nawoto.hatenadiary.org.export.txt';
@@ -29,6 +95,56 @@ const content = fs.readFileSync(exportFile, 'utf8');
 // エントリを抽出
 const entries = content.split('--------').filter(entry => entry.trim());
 console.log(`📊 総記事数: ${entries.length}件`);
+
+if (allMode) {
+  // 全記事から範囲指定
+  let filtered = entries
+    .map(entry => ({ entry, meta: extractMeta(entry) }))
+    .filter(({ meta }) => meta && meta.basename);
+  
+  // 日付指定がある場合はフィルタリング
+  if (targetDate) {
+    filtered = filtered.filter(({ meta }) => {
+      const entryYear = meta.date.getFullYear();
+      const entryMonth = meta.date.getMonth() + 1;
+      const entryDay = meta.date.getDate();
+      const targetYear = targetDate.getFullYear();
+      const targetMonth = targetDate.getMonth() + 1;
+      const targetDay = targetDate.getDate();
+      return entryYear === targetYear && entryMonth === targetMonth && entryDay === targetDay;
+    });
+    console.log(`📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`);
+  }
+  
+  // 強制モードでない場合は変換済みを除外
+  if (!forceMode) {
+    filtered = filtered.filter(({ meta }) => !convertedSet.has(meta.basename));
+  }
+  
+  // --allモードではcountが指定されていない場合は全件処理
+  const actualCount = count === 10 && !process.argv.includes('--count') ? filtered.length : count;
+  const endIndex = Math.min(startIndex + actualCount, filtered.length);
+  const targetEntries = filtered.slice(startIndex, endIndex);
+  console.log(`🔢 全記事から変換対象: ${startIndex + 1}件目 〜 ${endIndex}件目（${targetEntries.length}件）`);
+  if (targetEntries.length === 0) {
+    console.log('⚠️  指定範囲に記事がありません');
+    process.exit(0);
+  }
+  if (autoYes) {
+    processEntries(targetEntries, null, startIndex);
+  } else {
+    console.log(`\n🚀 変換を実行しますか？ (y/N)`);
+    process.stdin.once('data', (data) => {
+      const answer = data.toString().trim().toLowerCase();
+      if (answer === 'y' || answer === 'yes') {
+        processEntries(targetEntries, null, startIndex);
+      } else {
+        console.log('❌ 処理をキャンセルしました');
+        process.exit(0);
+      }
+    });
+  }
+}
 
 // 年別に記事を分類
 const entriesByYear = {};
@@ -56,8 +172,29 @@ if (!entriesByYear[targetYear]) {
   process.exit(1);
 }
 
-const yearEntries = entriesByYear[targetYear];
-console.log(`📝 ${targetYear}年の記事数: ${yearEntries.length}件`);
+let yearEntries = entriesByYear[targetYear];
+
+  // 日付指定がある場合はフィルタリング
+  if (targetDate) {
+    yearEntries = yearEntries.filter(({ meta }) => {
+      const entryYear = meta.date.getFullYear();
+      const entryMonth = meta.date.getMonth() + 1;
+      const entryDay = meta.date.getDate();
+      const targetYear = targetDate.getFullYear();
+      const targetMonth = targetDate.getMonth() + 1;
+      const targetDay = targetDate.getDate();
+      return entryYear === targetYear && entryMonth === targetMonth && entryDay === targetDay;
+    });
+    console.log(`📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`);
+  }
+
+// 強制モードでない場合は変換済みを除外
+if (!forceMode) {
+  yearEntries = yearEntries.filter(({ meta }) => !convertedSet.has(meta.basename));
+  console.log(`📝 ${targetYear}年の記事数: ${yearEntries.length}件（未変換のみ）`);
+} else {
+  console.log(`📝 ${targetYear}年の記事数: ${yearEntries.length}件（強制再変換モード）`);
+}
 
 // 範囲指定
 const endIndex = Math.min(startIndex + count, yearEntries.length);
@@ -104,14 +241,16 @@ function extractMeta(entry) {
 }
 
 function processEntries(entries, year, startIndex) {
-  console.log(`\n🔄 ${year}年の記事を処理中...`);
+  console.log(`\n🔄 ${year ? year + '年' : '全記事'}の記事を処理中...`);
   let successCount = 0;
   let errorCount = 0;
+  let convertedList = [];
   entries.forEach(({ entry, meta }, i) => {
     try {
       const result = convertToMarkdown(entry, meta, year);
       if (result) {
         successCount++;
+        convertedList.push(meta.basename);
         console.log(`✅ [${startIndex + i + 1}] ${meta.title}`);
       } else {
         errorCount++;
@@ -122,12 +261,21 @@ function processEntries(entries, year, startIndex) {
       console.log(`❌ [${startIndex + i + 1}] エラー: ${meta.title} - ${error.message}`);
     }
   });
+  // 変換済みを記録
+  if (convertedList.length > 0) {
+    fs.appendFileSync(convertedFile, convertedList.join('\n') + '\n');
+  }
   console.log(`\n📊 処理完了:`);
   console.log(`   ✅ 成功: ${successCount}件`);
   console.log(`   ❌ 失敗: ${errorCount}件`);
-  console.log(`   📁 出力先: src/content/backtrace/${year}/`);
+  if (year) {
+    console.log(`   📁 出力先: src/content/backtrace/${year}/`);
+  } else {
+    console.log(`   📁 出力先: src/content/backtrace/`);
+  }
+  console.log(`   📄 元ファイル: 各mdファイルと同じディレクトリに.txtファイルとして保存`);
   if (errorCount === 0) {
-    console.log(`\n🎉 ${year}年の記事移行が完了しました！`);
+    console.log(`\n🎉 記事移行が完了しました！`);
   } else {
     console.log(`\n⚠️  ${errorCount}件の記事でエラーが発生しました`);
   }
@@ -136,6 +284,10 @@ function processEntries(entries, year, startIndex) {
 function convertToMarkdown(entry, meta, year) {
   if (!meta) return null;
   let markdown = meta.body;
+  // SpeakerDeckの埋め込みスクリプトをURLのみに変換（最初に実行）
+  markdown = markdown.replace(/<script src="http:\/\/speakerdeck\.com\/embed\/([a-zA-Z0-9]+)\.js"><\/script>/g, (match, slideId) => {
+    return `\n\nhttps://speakerdeck.com/embed/${slideId}\n\n`;
+  });
   // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
   markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
     let cleanContent = content
@@ -161,7 +313,7 @@ function convertToMarkdown(entry, meta, year) {
       .replace(/<\/p>/g, '\n')
       .replace(/<br\s*\/?>/gi, '\n\n')
       .replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '[$2]($1)')
-      .replace(/<(?!br\s*\/?)\/?[^>]*>/gi, '')
+      .replace(/<(?!br\s*\/?)[^>]*>/gi, '')
       .replace(/\n{3,}/g, '\n\n');
     const lines = cleanContent.split('\n');
     const quotedLines = lines.map(line => {
@@ -189,9 +341,9 @@ function convertToMarkdown(entry, meta, year) {
       });
       return markdownItems.join('\n') + '\n\n';
     })
-    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*\/?>/gi, '![$2]($1)')
-    .replace(/<img\s+[^>]*alt="([^"]*)"[^>]*src="([^"]+)"[^>]*\/?>/gi, '![$1]($2)')
-    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*\/?>/gi, '[]($1)')
+    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*\/?>(?!\))/gi, '![$2]($1)')
+    .replace(/<img\s+[^>]*alt="([^"]*)"[^>]*src="([^"]+)"[^>]*\/?>(?!\))/gi, '![$1]($2)')
+    .replace(/<img\s+[^>]*src="([^"]+)"[^>]*\/?>(?!\))/gi, '![]($1)')
     .replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '[$2]($1)')
     .replace(/<[^>]*>/g, '')
     .replace(/\n{3,}/g, '\n\n')
@@ -206,11 +358,75 @@ function convertToMarkdown(entry, meta, year) {
   if (hashtagMatch) tags.push(...hashtagMatch);
   const cleanTitle = meta.title.replace(/＃[^\s]+/g, '').trim();
   const dateStr = meta.date.toISOString().split('T')[0];
-  const fileName = `${dateStr}-${meta.basename}.md`;
-  const yearDir = `src/content/backtrace/${year}`;
+  const cleanBasename = meta.basename.split('/').pop();
+  const fileName = `${dateStr}-${cleanBasename}.md`;
+  const yearDir = `src/content/backtrace/${year ? year : meta.date.getFullYear()}`;
   if (!fs.existsSync(yearDir)) fs.mkdirSync(yearDir, { recursive: true });
   const frontmatter = `---\ntitle: "${cleanTitle}"\npubDate: ${meta.date.toISOString()}\ntags: ${tags.length > 0 ? JSON.stringify(tags) : '[]'}\n---\n\n`;
   const filePath = path.join(yearDir, fileName);
   fs.writeFileSync(filePath, frontmatter + markdown);
-  return { title: cleanTitle, date: meta.date, tags, filePath };
+  
+  // 元のエクスポートファイルの内容をtxtファイルとして保存
+  const originalFileName = `${dateStr}-${cleanBasename}.txt`;
+  const originalFilePath = path.join(yearDir, originalFileName);
+  fs.writeFileSync(originalFilePath, entry);
+  
+  return { title: cleanTitle, date: meta.date, tags, filePath, originalFilePath };
+}
+
+function processTxtOnly() {
+  // エクスポートファイルを読み込み
+  const exportFile = 'tmp/nawoto.hatenadiary.org.export.txt';
+  if (!fs.existsSync(exportFile)) {
+    console.error('❌ エクスポートファイルが見つかりません:', exportFile);
+    process.exit(1);
+  }
+  const content = fs.readFileSync(exportFile, 'utf8');
+
+  // エントリを抽出
+  const entries = content.split('--------').filter(entry => entry.trim());
+  console.log(`📊 総記事数: ${entries.length}件`);
+
+  let successCount = 0;
+  let errorCount = 0;
+
+  entries.forEach((entry, i) => {
+    try {
+      const meta = extractMeta(entry);
+      if (meta && meta.date) {
+        const year = meta.date.getFullYear();
+        const dateStr = meta.date.toISOString().split('T')[0];
+        const cleanBasename = meta.basename.split('/').pop();
+        const fileName = `${dateStr}-${cleanBasename}.txt`;
+        const yearDir = `src/content/backtrace/${year}`;
+        
+        if (!fs.existsSync(yearDir)) {
+          fs.mkdirSync(yearDir, { recursive: true });
+        }
+        
+        const filePath = path.join(yearDir, fileName);
+        fs.writeFileSync(filePath, entry);
+        
+        successCount++;
+        console.log(`✅ [${i + 1}] ${meta.title}`);
+      } else {
+        errorCount++;
+        console.log(`❌ [${i + 1}] メタデータ抽出失敗`);
+      }
+    } catch (error) {
+      errorCount++;
+      console.log(`❌ [${i + 1}] エラー: ${error.message}`);
+    }
+  });
+
+  console.log(`\n📊 処理完了:`);
+  console.log(`   ✅ 成功: ${successCount}件`);
+  console.log(`   ❌ 失敗: ${errorCount}件`);
+  console.log(`   📁 出力先: src/content/backtrace/（年別ディレクトリ）`);
+  
+  if (errorCount === 0) {
+    console.log(`\n🎉 txtファイル分割が完了しました！`);
+  } else {
+    console.log(`\n⚠️  ${errorCount}件のファイルでエラーが発生しました`);
+  }
 } 

@@ -1,0 +1,22 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Tour Osaka 2011 でインセプションデッキのワークショップをやります #agileto2011
+BASENAME: 20111005/1317798713
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/05/2011 16:11:53
+-----
+BODY:
+<p>10/8 に開催される <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Tour Osaka 2011 で「Head First <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキ」というタイトルでデッキの作り方を学ぼうというセッションをやります。<br />
+詳細はこちら。</p><br />
+<p><a href="http://kokucheese.com/event/index/16868/">http://kokucheese.com/event/index/16868/</a></p><br />
+<p>他にも @Ryuzee とか色んな方が講演される見所満載のイベントです。まだ残席があるそうなんで、興味のある人はぜひ。</p><br />
+<p><a href="http://pub.ne.jp/Under_the_Bridge/?entry_id=3884773">Agile Tour Osaka 2011 &#x306E;&#x898B;&#x6240;&amp;&#x4E88;&#x7FD2;&#x30AC;&#x30A4;&#x30C9;</a></p><br />
+<p>ちなみに、今回は僕の好きな本である「Head First ソフトウェア開発」のような感じで、あの手この手でインセショプンデッキの基本について学べるような内容を目指しています。どんな感じになるかは当日のお楽しみにー。<br />
+いまのところ表紙は完コピできたww</p><p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20111005160303" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20111005/20111005160303.png" alt="f:id:nawoto:20111005160303p:image:w360" title="f:id:nawoto:20111005160303p:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span><br />
+<span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20111005160304" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20111005/20111005160304.png" alt="f:id:nawoto:20111005160304p:image:w360" title="f:id:nawoto:20111005160304p:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span></p><br />
+<p>(10/11)資料公開しました。=> <a href="http://d.hatena.ne.jp/nawoto/20111011/1318303619">&#x3053;&#x3061;&#x3089;</a></p><br />
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/487311392X/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51YxaQry0KL._SL160_.jpg" class="hatena-asin-detail-image" alt="Head Firstソフトウェア開発 ―頭とからだで覚えるソフトウェア開発の基本" title="Head Firstソフトウェア開発 ―頭とからだで覚えるソフトウェア開発の基本"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/487311392X/nawoto07-22/">Head Firstソフトウェア開発 ―頭とからだで覚えるソフトウェア開発の基本</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Dan Pilone,Russ Miles,木下哲也(監訳),有限会社福龍興業</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A5%E9%A5%A4%A5%EA%A1%BC%A5%B8%A5%E3%A5%D1%A5%F3">オライリージャパン</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2009/01/22</li><li><span class="hatena-asin-detail-label">メディア:</span> 大型本</li><li><span class="hatena-asin-detail-label">購入</span>: 3人 <span class="hatena-asin-detail-label">クリック</span>: 31回</li><li><a href="http://d.hatena.ne.jp/asin/487311392X/nawoto07-22" target="_blank">この商品を含むブログ (31件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

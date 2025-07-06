@@ -1,0 +1,20 @@
+
+AUTHOR: nawoto
+TITLE:  スプリントの上手な過ごし方 #sgt2011 #scrumdo #scrumbc
+BASENAME: 20111027/1319684915
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/27/2011 12:08:35
+-----
+BODY:
+<p>遅くなりましたが、10/22 にやった Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> で使った最後の資料です。</p><br />
+<p>Scrum の要はスプリントです。スプリントを上手く安定して過ごす事ができれば、プロジェクト自体も安定して順調に進んでいきます。<br />
+そのためには<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>イベントを上手く活用するや次の準備をちゃんとやっていくなど色々とやらなければならない事があります。<br />
+この資料は、そのスプリントにフォーカスをあてて、やらなければならない事や注意しないといけない事などを解説した内容になっています。<br />
+もしかすると誰かの役に立つかもしれないので、参加者以外にも見れるように公開しておきます。</p><p><div style="width:425px" id="__ss_9897890"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/ways-and-means-of-spending-your-sprints" title="Ways and Means of Spending Your Sprints" target="_blank">Ways and Means of Spending Your Sprints</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9897890" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><br />
+<p>個人的には、内容として若干詰め込み過ぎな気もしましたが、どうでしたか? > 参加者のみなさん<br />
+あと、<a href="http://d.hatena.ne.jp/nawoto/20110911/1315766860">&#x30EF;&#x30FC;&#x30AF;&#x30B7;&#x30E7;&#x30C3;&#x30D7;&#x5927;&#x6226;</a>からアップデートしたんだけど、今回も不発気味になった平仮名ワークショップは自戒を込めてそのまま掲載していますww<br />
+次の機会までには、ちゃんとバージョンアップするぞー!!</p>
+
+-----

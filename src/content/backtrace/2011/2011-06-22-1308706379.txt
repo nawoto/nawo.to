@@ -1,0 +1,19 @@
+
+AUTHOR: nawoto
+TITLE:  7/2 開催のデブサミ仙台でワークショップをやります #devsumi
+BASENAME: 20110622/1308706379
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 06/22/2011 10:32:59
+-----
+BODY:
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>初の地方凱旋イベントである<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>東北でワークショップをさせてもらう事になりました。<br />
+詳しくはこちらをご覧ください。</p><br />
+<p><a href="http://codezine.jp/devsumi/2011/tohoku">http://codezine.jp/devsumi/2011/tohoku</a></p><br />
+<p>ここ最近、<a href="http://d.hatena.ne.jp/nawoto/20110418/1303110531">Agile Japan 2011 &#x4ED9;&#x53F0;&#x30B5;&#x30C6;&#x30E9;&#x30A4;&#x30C8;</a>と<a href="http://d.hatena.ne.jp/nawoto/20110530/1306777040">&#x30EC;&#x30C3;&#x30C4;&#x30B4;&#x30FC;&#x30C7;&#x30A3;&#x30D9;&#x30ED;&#x30C3;&#x30D1;&#x30FC;2011</a>でほぼ毎月仙台にお邪魔させてもらっているので、今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の概要ではなく、実際にすぐに現場で使える<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発ってテーマで色々とお伝えしようと考えています。</p><br />
+<p>個人的には、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発のプ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティスを現場で始めるのは難しくないと思っています。<br />
+当日は、見積りを題材に実際のやり方から目的や現場でどう始めると良いのかをワークショップで体感しながら、参加者のみなさんと一緒に考えていきます。</p><br />
+<p>僕のセッションは、まだまだ席に余裕があるみたいなので、お時間のある方はぜひ。</p>
+
+-----

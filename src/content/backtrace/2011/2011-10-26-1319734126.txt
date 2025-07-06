@@ -1,0 +1,35 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Gathering Tokyo 2011 の御礼を言わなくちゃ #sgt2011
+BASENAME: 20111027/1319734126
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/27/2011 01:48:46
+-----
+BODY:
+<p>まずは Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> について書こう。</p><br />
+<p>長時間の研修形式の内容にも関わらず多数ご参加くださって、ありがとうございます。<br />
+当日の資料は全て公開しました。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/nawoto/20111024/1319428775">Scrum &#x57FA;&#x672C;&#x306E;&#x30AD;</a></li>
+<li><a href="http://d.hatena.ne.jp/nawoto/20111026/1319602905">&#x4ECA;&#x65E5;&#x304B;&#x3089;&#x59CB;&#x3081;&#x308B;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x306A;&#x898B;&#x7A4D;&#x308A;&#x3068;&#x8A08;&#x753B;&#x3065;&#x304F;&#x308A;</a></li>
+<li><a href="http://d.hatena.ne.jp/nawoto/20111027/1319684915">&#x30B9;&#x30D7;&#x30EA;&#x30F3;&#x30C8;&#x306E;&#x4E0A;&#x624B;&#x306A;&#x904E;&#x3054;&#x3057;&#x65B9;</a></li>
+</ul><p>Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> では当日の資料を公開の有無や方法は、講師側で自由に選べるようになっています。<br />
+今回の資料は、普段僕が仕事で説明や研修用に使っている資料をまとめた直したものです。よく「西村さんに研修をお願いするとどんな感じなのですか?」って聞かれる事が多いので、良い機会なので公開してみました。こんな研修を自社でもやってほしいという方がいらっしゃいましたらご連絡くださいww<br />
+＃実際は今回用に少し修正するつもりが、原型をとどめないぐらいに加筆・アップデートした....</p><br />
+<p>それはさておき、今回は裏番組が非常に強力過ぎたので「あーあ、裏番組に出た方が良かった」と言われないようにと頑張りましたが、どうでしたかww?<br />
+普段は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道スタッフが一杯サポートに来るのですが、今回はほとんどがイベントのスタッフだったりで完全に人手不足な状況でした。<br />
+そういう状況もあって、なるべく僕一人でやろうと思ってましたが、やっぱり無理でしたww<br />
+当日は [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@teyamagu]、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@Ryuzee]、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@Imagire]のサポートと参加者の皆さんのおかげで無事に開催できました。本当にありがとうございました。</p><br />
+<p>あと、実行委員の端くれとして御礼を。</p><br />
+<p>まずは二日間にわたり多くの方に来ていただき、ありがとうございました。<br />
+無事に大きなトラブルも無く、両日を終える事ができました。<br />
+そして、色々な方から「あのセッションは面白かった」や「あれは勉強になった」など言っていただき、自分達がア<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%C7%A5%A2">イデア</a>を出しあって形にしたものが喜んでもらえたり、何か役立ったんじゃないかと実感でき、嬉しく思っています。<br />
+＃ お客様から僕にコーチに来てもらって良かったという発表は個人的にグっと来た</p><br />
+<p>そんな場が実現できたのは、スポンサー様であったり、急な依頼を快く引き受けくださった多くの講師の皆さんだったりと非常に多くの人の支えがあったからだと思います。<br />
+そして、僕は Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> やら何やらで全然動けてなかったのですが、最後まで影で支えつづけたスタッフの皆さんのおかげです。エライ!!</p><br />
+<p>本当にありがとうありがとう!! 僕はとても貴重な経験ができ、そして、とても楽しかったです。</p>
+
+-----

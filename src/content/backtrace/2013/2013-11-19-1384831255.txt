@@ -1,0 +1,25 @@
+
+AUTHOR: nawoto
+TITLE:  「Beyond アジャイルサムライ 〜本を読んだあとに何をしようか？〜」 #agilesamurai #javafesta
+BASENAME: 20131119/1384831255
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 11/19/2013 12:20:55
+-----
+BODY:
+<p>少し前ですが 10/15 に開催された <a href="http://www.javafesta.jp/">Java Festa 2013 in &#x672D;&#x5E4C;</a>で「Beyond <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライ」という話をしてきました。<br />
+当日の資料は以下で公開しています。<br />
+<br />
+</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/nawoto/beyond-the-agile-samurai">https://speakerdeck.com/nawoto/beyond-the-agile-samurai</a></li>
+</ul><p><script async class="speakerdeck-embed" data-id="7de7eb001eb20131f0222283c2a7f08a" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script></p><br />
+<p>今回は <a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> Festa の 10 周年かつ最後の開催という折角の機会だったので、僕もふだんしない話をしよーと関東では普段しない話をしてみました。<br />
+そのため公開している資料も抜粋なので、完全版は参加した人のみのお楽しみにさせてください。<br />
+＃そのうちどっかで再演できたらしまーす</p><br />
+<p>あと、当日のレポートをアットウェア 函館ラボの高橋さんが公開されているので、詳しくはそちらをご覧ください。</p><br />
+<p><a href="http://www.atware.co.jp/2013/11/07/javafesta2013/">&#x300C;&#x672D;&#x5E4C;JavaFesta2013&#x300D;&#x53C2;&#x52A0;&#x30EC;&#x30DD;</a></p>
+
+-----

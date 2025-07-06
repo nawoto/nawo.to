@@ -1,0 +1,23 @@
+
+AUTHOR: nawoto
+TITLE:  「アジャイル開発の中心にあるもの ぼくとオブラブ編」 - オブラブ2011夏イベント #oblove
+BASENAME: 20110705/1309882462
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 07/05/2011 01:14:22
+-----
+BODY:
+<p>7/4に開催されたオブラブ2011夏イベントで上記のタイトルで講演させてもらいました。<br />
+当日の資料を公開しておきます。</p><br />
+<p><div style="width:425px" id="__ss_8503789"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/first-and-important-thing-in-agile-20110704" title="First and Important thing in agile 20110704" target="_blank">アジャイル開発の中心にあるもの ぼくとオブラブ編</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/8503789" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><br />
+<p>今回は、昔、僕がオブラブのレポートを楽しみにしていた頃の話を題材に、自分のちょっとした経験を参加者の皆さんにお話ししました。<br />
+資料では上手く伝わらないかもしれませんが、参加してくださった皆さんのちょっとした何かの切っ掛けになれば幸いです。</p>
+
+-----
+COMMENT:
+AUTHOR: 平鍋
+EMAIL: kenji.hiranabe@change-vision.com
+DATE: 07/06/2011 18:36:22
+ぱちぱち！！
+-----

@@ -1,0 +1,14 @@
+
+AUTHOR: nawoto
+TITLE:  Web 日記勉強会に参加した
+BASENAME: 20100407/1270655903
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/07/2010 00:58:23
+-----
+BODY:
+<p><br />
+弊社が誇るカリスマブロガー陣から日記を書く秘訣を伝授してもらったので、明日こそ <a href="http://www.agilejapan.org/2010/03/19105141.html">Agile Japan 2010 &#x3067;&#x8A71;&#x3057;&#x307E;&#x3059;</a>という告知を書こうと思う。</p>
+
+-----

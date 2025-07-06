@@ -1,0 +1,20 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Gathering Tokyo 2011 で Scrum Boot Camp やります #sgt2011 #scrumdo
+BASENAME: 20111021/1319161454
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/21/2011 10:44:14
+-----
+BODY:
+<p>いよいよ明日(10/22)に迫った Day2 ですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道で Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> をやります。</p>
+
+<ul>
+<li><a href="http://www.scrumgatheringtokyo.org/sgt2011/index.php?id=3#scrumbc">Scrum Gathering Tokyo 2011 Day2</a></li>
+</ul><p>Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> は、これから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>を始める人向けに本とかだけではなかなか分かりにくい事を丸々一日かけて学んでいく内容です。<br />
+今回は、普段の事前申し込み方式ではなく、当日先着順で受付しますので、興味のある方はぜひ。<br />
+ただし、Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> に参加すると裏番組には一切参加できなくなるので、ご注意ください。</p><br />
+<p>で、今回の講師は僕が担当で、参加者のみなさんと丸一日色んな話ができるのを楽しみにしてます。</p>
+
+-----

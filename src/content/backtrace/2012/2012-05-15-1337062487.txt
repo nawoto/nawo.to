@@ -1,0 +1,19 @@
+
+AUTHOR: nawoto
+TITLE:  アジャイルサムライ横浜道場 特別編に遊びに行きます #agilesamurai
+BASENAME: 20120515/1337062487
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/15/2012 15:14:47
+-----
+BODY:
+<p>5/25 に開催される横浜道場 特別編で AgileJapan2012 でやった「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発基本のキ」の再演をさせてもらう事になりました。<br />
+募集サイトは以下になりますので奮ってご参加ください。</p><br />
+<p><a href="http://kokucheese.com/event/index/33598/">http://kokucheese.com/event/index/33598/</a></p><br />
+<p>ちなみに募集サイトの参考資料で掲載させれている「基本のキ」の最初のバージョンなんで、現在は全く異なっているのでご了承ください。<br />
+あと、最新版は2時間近い内容なんで、みんな終電無くなったらゴメンなさいww</p><br />
+<p>最後に大事な告知があります。<br />
+前日は僕の誕生日です!!</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

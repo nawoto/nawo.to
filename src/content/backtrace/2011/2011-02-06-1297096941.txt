@@ -1,0 +1,43 @@
+
+AUTHOR: nawoto
+TITLE:  スクラム道.03 と 04 とこの後について #scrumdo
+BASENAME: 20110207/1297096941
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/07/2011 01:42:21
+-----
+BODY:
+<p>最近サボリ気味だった<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道情報です。</p><br />
+<p>少し前になりますが、1/7 に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道.03をやりました。<br />
+読み手に [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq] さんをむかえて、「スプリントプランニングミーティング」をテーマに参加者と一緒に考えました。<br />
+なぜか当日は Scrum Alliance の会長(でいいんだよね??) Donna Farmer さんが遊びに来るというサプライズ付きでした。<br />
+当日の資料は公開されていますので、ぜひご覧下さい。</p><p><div style="width:425px" id="__ss_6492194"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/MihoNagase/ss-6492194" title="スプリント計画ミーティング">スプリント計画ミーティング</a></strong><object id="__sse6492194" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=scrumdo-03-sprint-planning-meeting-110109004217-phpapp02&stripped_title=ss-6492194&userName=MihoNagase" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse6492194" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=scrumdo-03-sprint-planning-meeting-110109004217-phpapp02&stripped_title=ss-6492194&userName=MihoNagase" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/MihoNagase">Miho Nagase</a>.</div></div></p><p>当日は、読み手から本では「スプリントプランニングミーティング」はどう述べられているか、こういうものがあると便利だった、こういう問題にぶち当りましたという話をしてもらいました。<br />
+みなさん、スプリント計画には悩んでる事が多かったみたいで、様々な話題が出ました。あまりにも出過ぎて、途中でテーマをまとめるのを諦めましたww<br />
+その中で僕自身が興味深かったのは、スプリントプランニングミーティングのタイムボックスの長さです。通常はスプリントの期間の 5%(二週間のスプリントなら4時間) とされていますが、チームが安心できるまでやるのは悪くないのではという話がありました。実際に 20% ぐらいやったぜという話もありました。僕は、5% に収まるぐらいに計画の準備ができているかや、ストーリを分割できているかをチームの成長の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%ED%A5%E1%A1%BC%A5%BF">バロメータ</a>として見ていたりしてたのですが、これって実はチームに無理させていただけかもって反省しました。</p><br />
+<p>他にも色んな方がレポートを書いてもらってますので、そちらもぜひ。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/takubon/20110111/p2">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;.03&#x306B;&#x884C;&#x3063;&#x3066;&#x304D;&#x307E;&#x3057;&#x305F;</a></li>
+<li><a href="http://blog.callas1900.net/2011/01/blog-post.html">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;.03 &#x30B9;&#x30D7;&#x30EA;&#x30F3;&#x30C8;&#x8A08;&#x753B;&#x30DF;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;</a></li>
+<li><a href="http://www.ilinx-studio.jp/blog/?p=19">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;.03</a></li>
+</ul><p>あと、当日の板書</p>
+
+<ul>
+<li><a href="http://plixi.com/p/68638150">http://plixi.com/p/68638150</a></li>
+<li><a href="http://plixi.com/p/68638375">http://plixi.com/p/68638375</a></li>
+</ul><p>そして、次回は 2/10 に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道.04をやります。今回の読み手はすくすく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>でお馴染の [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@essence_s] さんと [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@yodack] さんの師弟コンビをお迎えして、「スプリント0」をテーマに参加者の皆さんと考えていきます。申し込みサイトは以下なのですが、すでに定員一杯となっています。多数の申し込みありがとうございます。</p>
+
+<ul>
+<li><a href="http://atnd.org/events/11978">http://atnd.org/events/11978</a></li>
+</ul><p>最近、色んな方に宣伝していただいていたおかげで受付開始直後から非常に多数の申し込みをいただけるようになりました。<br />
+一方で、募集人数が毎回 20 人と少数なため、議論した話が多くの人にシェアできないや、そもそも実践的な話ってどういう事をやってるのを知っていただけない等の運営上の課題も出てきました。<br />
+そこで、次回 3/18 に予定している<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道.05 では記念すべき 5 回目という事もあり、より多くの人に参加できるようしようを目標にスタッフが一生懸命企画しております。<br />
+なぜか詳細は、2/16,17 開催される<a href="http://d.hatena.ne.jp/nawoto/20110117/1295280489">&#x30C7;&#x30D6;&#x30B5;&#x30DF;&#x306E;&#x50D5;&#x306E;&#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;</a>中に発表する予定ですので、お楽しみにw<br />
+＃なぜかは単に僕のワガママなんだけどww</p><br />
+<p>あと、最近 <a class="keyword" href="http://d.hatena.ne.jp/keyword/Twitter">Twitter</a> 上でバーチャル<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道と題して Scrum の話が盛り上ったので、そちらも紹介しておきます。</p>
+
+<ul>
+<li><a href="http://togetter.com/li/91182">&#x30D0;&#x30FC;&#x30C1;&#x30E3;&#x30EB;&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;#1</a></li>
+</ul>
+-----

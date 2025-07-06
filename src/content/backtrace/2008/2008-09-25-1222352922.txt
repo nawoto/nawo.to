@@ -1,0 +1,14 @@
+
+AUTHOR: nawoto
+TITLE:  とすると
+BASENAME: 20080925/1222352922
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/25/2008 23:28:42
+-----
+BODY:
+<p><br />
+これからは成果物に、リソース定義書と <a class="keyword" href="http://d.hatena.ne.jp/keyword/CRUD">CRUD</a>表が必要になるのだなwww</p>
+
+-----

@@ -1,0 +1,20 @@
+
+AUTHOR: nawoto
+TITLE:  すくすくスクラムで話します
+BASENAME: 20100416/1271424157
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/16/2010 22:22:37
+-----
+BODY:
+<p><br />
+少し先の話ですが、次回(5/27)のすくすく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>で <a href="http://blog.hatena.ne.jp/yach/">id:yach</a> と一緒に「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>の落とし穴」というテーマで話します。<br />
+興味のある方はぜひ。</p><br />
+<p><a href="http://kokucheese.com/event/index/2195/">http://kokucheese.com/event/index/2195/</a></p><br />
+<p>ちょっとテーマについて補足しておくと、先日、ネタ出しのミーティングに呼ばれた。<br />
+その時に、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>って良い事だらけに聞こえるんですが、本当なんですか?」ってのを経験者に聞きたいって話になりました。</p><br />
+<p>多少は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>でやってきた経験は長いし、やっとむ(<a href="http://blog.hatena.ne.jp/yach/">id:yach</a>)は僕以上に経験者なんで、「いや、注意点は色々あるよ」「そこをちゃんと注意すれば大丈夫」って事を何か楽しいワークを交えて、体験してもらえればと考えています。</p><br />
+<p>ってネタが、あと一ヶ月で思いつくはずww</p>
+
+-----

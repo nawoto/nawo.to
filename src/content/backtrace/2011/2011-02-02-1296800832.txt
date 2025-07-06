@@ -1,0 +1,17 @@
+
+AUTHOR: nawoto
+TITLE:  富士通TPSコミュニティ勉強会(草の根活動)で「Scrumのススメ」というお話をしてきました
+BASENAME: 20110202/1296800832
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/02/2011 15:27:12
+-----
+BODY:
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%C9%D9%BB%CE%C4%CC">富士通</a>TPSコミュニティ(草の根活動)は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C9%D9%BB%CE%C4%CC">富士通</a>内で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>や<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AB%A5%A4%A5%BC%A5%F3">カイゼン</a>について草の根的に活動をされているコミュニティです。今回、声を掛けていただいて「Scrumのススメ」というお話をしてきました。<br />
+当日の資料(あいかわらず資料的価値は少ないですが...)は以下です。</p><p><div style="width:425px" id="__ss_6799590"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/lets-start-with-scrum-for-tps-community" title="Let&#39;s start with Scrum for TPS community">Let&#39;s start with Scrum for TPS community</a></strong><object id="__sse6799590" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=letsstartwithscrumfortpscommunity20110202-110203085706-phpapp01&stripped_title=lets-start-with-scrum-for-tps-community&userName=nawoto" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse6799590" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=letsstartwithscrumfortpscommunity20110202-110203085706-phpapp01&stripped_title=lets-start-with-scrum-for-tps-community&userName=nawoto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/nawoto">Nishimura Naoto</a>.</div></div></p><br />
+<p>今回は、Scrum をプロジェクトの進め方の点でどういう特徴があるのかという話を中心に、この前の <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Day の時の前半部分をプロジェクト全体を見る人向けに再編集版みたいな感じにしたつもりです。発表自体は 30 分で、後半は以前、すくすく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>でやった [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@yattom] 考案のトランプを使った<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>ゲームをやってみました。その後に、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道や<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>無料相談でやっているような約一時間の質疑応答という形式にしてみました。</p><br />
+<p>みなさん、積極的にゲームに参加してくださったり、ガンガン質問していただいたりと私個人としても色んな気付きがあり、非常に楽しかったです。その中で印象的だったのが、今回は非常に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>マスターのロールに興味が強い印象を受けました。もう少し上手く説明できれば良かったなーと後悔......いつか、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道でリベンジしよww</p><br />
+<p>最後に、参加者のみなさん、スタッフのみなさん、本当にありがとうございました。</p>
+
+-----

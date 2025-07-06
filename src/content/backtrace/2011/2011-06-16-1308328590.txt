@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  アローズ・システムズさまにて講演してきました
+BASENAME: 20110617/1308328590
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 06/17/2011 01:36:30
+-----
+BODY:
+<p>少し前にコーチとしてメインでお手伝いをしていたチームのメンバーとのご縁からアローズ・システムズさまにて講演させていただきました。<br />
+今回も「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の中心にあるもの」という題ですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の概要から僕たちが受託開発の枠の中でどう取り組み始めたか、という流れに変更して話をしてきました。<br />
+当日の資料を置いておきます。</p><p><div style="width:425px" id="__ss_8338351"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/first-and-important-thing-in-agile-20110617" title="First and important thing in agile 2011.06.17">アジャイル開発の中心にあるもの 桜木町編</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/8338351" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/nawoto">Nishimura Naoto</a> </div> </div></p><p>また、いつものように質疑応答の時間を多めにとったのですが、色んな質問が飛びかい僕自身も非常に楽しかったです。ありがとうございました。<br />
+特に、最初の方にチームメンバーが質問をして盛り上げてもらって、非常に助かりましたww</p><br />
+<p>今回は、<a href="http://d.hatena.ne.jp/nawoto/20110530/1306777040">&#x30EC;&#x30C3;&#x30C4;&#x30B4;&#x30FC;&#x30C7;&#x30D9;&#x30ED;&#x30C3;&#x30D1;&#x30FC;2011</a>の時と同じタイトルを使ってみました。<br />
+これから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発に取り組みたい方へ伝えたい事が固まってきた気がしてきたのが理由です。ようやくかよって感じですが....w<br />
+なので、しばらくは同じタイトルで中身をブラッシュアップしていく方向もアリなんじゃないかなっと思って、今回実験的にやってみました。<br />
+もちろん、講演依頼時のリク<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%B9">エス</a>トは盛り込んでいき、今回もたぶん出来たはずww<br />
+もう一回ぐらいこの方法を試そうかな? 次はたぶんオブラブかな。</p>
+
+-----

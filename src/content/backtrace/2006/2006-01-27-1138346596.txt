@@ -1,0 +1,44 @@
+
+AUTHOR: nawoto
+TITLE:  「Javaの生みの親」に聞く「AJAX、LAMP、Ruby on Rails」を読んで
+BASENAME: 20060127/1138346596
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/27/2006 16:23:16
+-----
+BODY:
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/CNET%20Japan">CNET Japan</a> の <a href="http://japan.cnet.com/interview/story/0,2000050154,20094959,00.htm">&#x3053;&#x306E;&#x8A18;&#x4E8B;</a>を読んだ.<br />
+色々と思うところがあるので, 気になった部分をメモしておこう.</p>
+
+    <blockquote>
+        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>は昔から、単純な処理もうまくこなしてきています。ただし、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A5%EC%A1%BC%A5%C9%A5%AA%A5%D5">トレードオフ</a>のような関係は存在します。とても単純な処理をごく簡単に行えるものを作ったとしても、複雑で大規模な目的に利用しようとすれば、うまくいかなくなる傾向があるのです。</p><p>　これは<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>の設計におけるここ数年の一般的な傾向ともなっていることですが、われわれは極度にハイエンドな開発に力を入れてきました。</p>
+
+    </blockquote>
+<p>と</p>
+
+    <blockquote>
+        <p> -- 人々はなぜ, <a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>にそのような(<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> のような)生産性が備わることをいまだに待ち続けているのでしょうか</p><p>実際にはハイエンドな<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>ツールをまったく使用したことがないのだと思います。<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java%20Studio">Java Studio</a> <a class="keyword" href="http://d.hatena.ne.jp/keyword/Creator">Creator</a>のようなツールをじっくり試してみる必要があるでしょう。</p>
+
+    </blockquote>
+<p>少し作為的に切り出したけど, この部分にはかなり違和感を感じる.<br />
+"ハイエンド" に特化して生じた複雑さを "ツール" で隠蔽する事は良い部分もあるだろうが, 様々な問題を生む原因になっているんだよな.</p><p>この部分は, もう少し書きたいので, 結論だけ書いておこう.</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> はハイエンドに特化しているので副作用がある.<br />
+それは単純なる開発面ではツールで "ある程度" 解決されているが, <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B7%A5%B9%A5%C6%A5%E0%B3%AB%C8%AF">システム開発</a>や運用等も含めて考えた場合, その副作用を理解した上で服用しましょう.</p><br />
+<p>それを Gosling に言っても仕方ないんだけど, <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0%B8%C0%B8%EC">プログラミング言語</a>が論点の記事だし.<br />
+<br />
+</p>
+
+<div class="section">
+    <h4>あと</h4>
+    
+    <blockquote>
+        <p>　真に革新的かつ興味深いことを行える広大な領域があるのに、人々は表面的な違いだけを求めているようにわたしには思えると言いたかったのです</p>
+
+    </blockquote>
+<p>この部分については宿題<a href="#f-973eb1d5" name="fn-973eb1d5" title="人生の">*1</a>だな.</p>
+
+</div><div class="footnote">
+<p class="footnote"><a href="#fn-973eb1d5" name="f-973eb1d5" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">人生の</span></p>
+</div>
+-----

@@ -1,0 +1,30 @@
+
+AUTHOR: nawoto
+TITLE: Squareを早速試したい人集まれ!! Techフリーマーケットやります
+BASENAME: 20130530/1369895153
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/30/2013 15:25:53
+-----
+BODY:
+<p>先日、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Japan 福岡サテライトで開催した Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> の休憩時間のとき、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq] と「Squareって面白そうだねー」、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道とかで使ってみたいねー」、「使うなら練習ぐらいしたいかもかも」と。どんどん話は盛りあがって、Square の紹介記事にあったフリマの話題になり、「IT関連の人っていらない本たくさん持ってるね」、「あと使っていないガジェットもww」、「どっかのイベントのグッズとかも家に大量に...」とかとか。</p><br />
+<p>じゃ、それをやってみればということで、「<a href="http://connpass.com/event/2557/">Tech &#x30D5;&#x30EA;&#x30FC;&#x30DE;&#x30FC;&#x30B1;&#x30C3;&#x30C8;</a>」というイベントを6/12に試しにやってみます。会場提供してくださった<a href="http://classmethod.jp/">&#x30AF;&#x30E9;&#x30B9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x682A;&#x5F0F;&#x4F1A;&#x793E;</a>様、ありがとうございます!!<br />
+＃ビビりなので 20人規模ですが...</p><br />
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20130530152502" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20130530/20130530152502.jpg" alt="f:id:nawoto:20130530152502j:image" title="f:id:nawoto:20130530152502j:image" class="hatena-fotolife" itemprop="image"></a></span><br />
+<a href="http://connpass.com/event/2557/">&#x7533;&#x3057;&#x8FBC;&#x307F;&#x306F;&#x3053;&#x3061;&#x3089;</a></p><br />
+<p>たぶん僕ら以外にも Square を試してみたい、触ってみたい、ついでにちょっとしたものを買ってみたいという人がいると信じていますので、ぜひご参加ください!!</p><br />
+<p>ちなみに現状、このイベントが抱えている課題は以下です。</p>
+
+<ul>
+<li>誰も来なかったらどうしよう...</li>
+<li>全員売りたい人ばかりだったらどうしよう...</li>
+<li>主催者2人が Square アカウントが承認されなかったり、リーダーが送られてこなかったらどうしよう...</li>
+</ul><p><br />
+参考リンク</p>
+
+<ul>
+<li><a href="https://squareup.com/jp">Square&#x672C;&#x5BB6;</a></li>
+<li><a href="http://gigazine.net/news/20130523-square/">Square&#x7D39;&#x4ECB;&#x8A18;&#x4E8B;@Gigazine</a></li>
+</ul>
+-----

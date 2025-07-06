@@ -1,0 +1,41 @@
+
+AUTHOR: nawoto
+TITLE:  Rails なプロジェクトが燃える理由
+BASENAME: 20070409/1176108817
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/09/2007 17:53:37
+-----
+BODY:
+<p>最近、自社のプロジェクトだけでなく、他社の <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> な仕事でも燃えていて、どうにかしてほしいみたいなことを頼まれることが多い。</p><br />
+<p>それらのプロジェクトを見てみると、幾つか共通した燃えてる理由みたいなのがあったのでまとめてみた。</p>
+
+<ul>
+<li>画面がかなりリッチ</li>
+<li>要件や仕様が口伝化している</li>
+<li>技術スキルが足りない</li>
+<li>そもそも<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>が足らない(ww</li>
+</ul><p>結論を先に書いておくと、「いくら <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> だろうとちゃんと見積りとプロジェクト管理しないと燃えるものは燃える」。</p><br />
+<p>当たり前の話なんだけど、これが一番多い理由だと思う。</p><br />
+<p>もう少し詳しく考えてみると、見積りに関しては、現時点で、発注側も受注側も <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> を採用すれば、どの部分の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>は短縮できて、どの部分の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>は短縮できないかを把握できていない気がする。<br />
+また、教育コストをきちんと計画に盛り込めていない気がする。<br />
+そのため、見積りの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>と実<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B9%A9%BF%F4">工数</a>の乖離が大きくなり、結果、悲しい結果になっていることが多い気がする。</p><br />
+<p>この事は、これまでの <a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> な仕事の時でも、採用する<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D5%A5%EC%A1%BC%A5%E0%A5%EF%A1%BC%A5%AF">フレームワーク</a>の特性の分析や教育コスト等は考えてきたはずなので、それをそのまま実行すれば良いと思う。<br />
+確かに、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a> な仕事が主だった場合、言語自体が変わるので教育コストがどれくらいかを考えるのは難しい気はしますが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>の発表で聞いた<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D1%A5%A4%A5%ED">パイロ</a>ット開発みたいな事を行なえば、ある程度は計測できる気はするなぁ〜。</p><br />
+<p>また、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%AB%C8%AF%A5%D7%A5%ED%A5%BB%A5%B9">開発プロセス</a>の方でも、ゆるい仕様や口伝ベースで進めるのはリスクが高いと思う。確かに、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> なプロジェクトの場合、そういった方向に行きやすかったり、タスクの分け方とかも若干影響したりしますが、基本は今まで通り当たり前の事をすれば回避できると思う。</p><br />
+<p>とは言え、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> を採用した事で、色々と試行錯誤しているので、どうしてもそういった基本的な所が抜けてしまうのは、私もやった間違いなので非常に良く分かったりもする。</p><br />
+<p>とりあえず、ここまで。</p><br />
+<p>上で書いた項目の詳細とかは、要望があれば追々解説していく予定。</p>
+
+-----
+COMMENT:
+AUTHOR: nawoto
+DATE: 02/08/2010 13:53:31
+そうです。<br>当時の思いとして良い道具(技術)だからといって、それらの利点や前提を知らずに採用すれば失敗します。技術面とリスクをきちんと分析するといったプロジェクトの運営面の両方が大事ですって事が伝えたかった事でした
+-----
+COMMENT:
+AUTHOR: babydaemons
+DATE: 12/13/2009 00:39:48
+Railsも魔法ではないということですね。格言的にいえば銀の弾丸などないとか言うやつですか。<br>とはいうものの、RESTなサイトを作るときに実装に関していえば私が使える技術の中では<br>Railsが一番の近道なのは確かです。<br>性能とか運用とか未経験なのでわかりません。orz
+-----

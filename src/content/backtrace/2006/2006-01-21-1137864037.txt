@@ -1,0 +1,23 @@
+
+AUTHOR: nawoto
+TITLE:  ようやく
+BASENAME: 20060122/1137864037
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/22/2006 02:20:37
+-----
+BODY:
+<p>自宅の開発マシンがお亡くなりのため中断していた Under the table プロジェクト(以降 UTT)<a href="#f-d50b0b2b" name="fn-d50b0b2b" title="スカンクワークって言うんだっけ??">*1</a>だけど, とりあえず会社から支給されてる note PC に開発環境を構築してみた.<br />
+ちょっと, 開発環境には貧弱すぎる環境(<a class="keyword" href="http://d.hatena.ne.jp/keyword/WinXP">WinXP</a> on <a class="keyword" href="http://d.hatena.ne.jp/keyword/ThinkPad">ThinkPad</a> X24)だけど, 何も無いよりかはマシだろう. とりあえず, 少しづつでも進めていこう.</p><br />
+<p>とりあえず, インストールログがわりにメモ.</p>
+
+<ul>
+<li><a href="http://instantrails.rubyforge.org/wiki/wiki.pl?Instant_Rails">InstantRails</a> 1.0</li>
+<li><a href="http://hyperestraier.sourceforge.net">Hyper Estraier</a> 1.1.2 on <a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a></li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/ruby">ruby</a>-mode</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Subversion">Subversion</a></li>
+</ul><div class="footnote">
+<p class="footnote"><a href="#fn-d50b0b2b" name="f-d50b0b2b" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">スカンクワークって言うんだっけ??</span></p>
+</div>
+-----

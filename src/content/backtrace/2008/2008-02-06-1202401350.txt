@@ -1,0 +1,21 @@
+
+AUTHOR: nawoto
+TITLE:  問題を解決していくには
+BASENAME: 20080207/1202401350
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/07/2008 01:22:30
+-----
+BODY:
+
+<ol>
+<li>ビジョンを持つ</li>
+<li>今できている事を整理する (Keep)</li>
+<li>現状を認識して問題点を明らかにする (Problem)</li>
+<li>問題を解決するための投資を行なう (Try)</li>
+<li>フィードバックを得る</li>
+</ol><p>というステップが重要なんだなっと会社の仲間と話していて再認識できた。</p><br />
+<p>最近、安易に <a class="keyword" href="http://d.hatena.ne.jp/keyword/KPT">KPT</a> とか言ってるが、問題の大小(ビジネスっぽい話やプロジェクト云々)とか関係無く、きちんと意識しているか? > オレ</p>
+
+-----

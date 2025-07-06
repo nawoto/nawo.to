@@ -1,0 +1,18 @@
+
+AUTHOR: nawoto
+TITLE:  Development Enveironment Conference 行ってきた
+BASENAME: 20060908/1157816537
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/08/2006 00:42:17
+-----
+BODY:
+<p>非常に楽しい時間を過してきました。<br />
+基本的には <a class="keyword" href="http://d.hatena.ne.jp/keyword/zsh">zsh</a> + screen + (<a class="keyword" href="http://d.hatena.ne.jp/keyword/emacs">emacs</a> or <a class="keyword" href="http://d.hatena.ne.jp/keyword/vim">vim</a>) という王道な話が多かったけど、色々と収穫がありました。</p><br />
+<p>その中でも mala さんの Try and Error な環境を構築せよ!! 一秒以上かかるのはどうよってのは個人的にはヒットでした。<br />
+もう少し自分の環境も見直してみよう。<br />
+特に最近、terminal と browser の作業的な距離が気になってたし。<br />
+# <a class="keyword" href="http://d.hatena.ne.jp/keyword/w3m">w3m</a> では限界かな??</p>
+
+-----

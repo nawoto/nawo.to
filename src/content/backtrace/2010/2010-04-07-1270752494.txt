@@ -1,0 +1,19 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Japan 2010 で講演いたします
+BASENAME: 20100408/1270752494
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/08/2010 03:48:14
+-----
+BODY:
+<p><br />
+4/9,10 に開催される <a href="http://www.agilejapan.org/2010/02/09175518.html">Agile Japan 2010</a>でお話をさせていただくことになりました。<br />
+出番は二日目(4/10)の 13:45からのセッションで「<a href="http://www.agilejapan.org/2010/03/19105141.html">&#x5909;&#x5316;&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x306A;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30DE;&#x30CD;&#x30B8;&#x30E1;&#x30F3;&#x30C8;&#x3068;&#x73FE;&#x5834; (&#x7D44;&#x7E54;&#x3001;&#x610F;&#x8B58;&#x6539;&#x9769;&#x7DE8;)</a>」というお題でやります。</p><br />
+<p>「組織、意識改革編」というスゴそうなタイトルなのですが、最近、私がやっている<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>コーチ業(他社さんの組織に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>手法を導入する)の経験を中心に、これから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>手法を導入しようと考えていらっしゃる開発者や管理者に知っておいてほしい事や導入時の注意点等を話そうと思っています。</p><br />
+<p>一応、スポンサー枠で事前登録は不要みたいなので、もし興味のある方は聞いてみて下さい。<br />
+また、4/10 は会場をウロウロしている予定なので、気軽に質問と声やらかけてくださればと思います。</p><br />
+<p>以下、応援のコメントのはずww</p>
+
+-----

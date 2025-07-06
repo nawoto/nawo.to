@@ -1,0 +1,38 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Japan 2011 仙台サテライトでお話させてもらいます #aj11 #aj11sendai
+BASENAME: 20110406/1302055294
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/06/2011 11:01:34
+-----
+BODY:
+<p><br />
+4/15 に開催される <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Japan 2011 は、今回初の地方と連携したサテライト開催をします。<br />
+現在、日本永和化計画(今、適当に名前をつけたw)と題して弊社メンバーが各サテライト会場で登壇予定です。</p><br />
+<p><a href="http://ruby.agile.esm.co.jp/articles/58">http://ruby.agile.esm.co.jp/articles/58</a></p><br />
+<p>で、私は仙台サテライトの方に声を掛けていただいたので、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発が上手くなるための4つのステップ」と題して、以下の内容を予定しています。</p>
+
+    <blockquote>
+        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発に取り組んで成果を出すためには、<br />
+現場が上手く<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発を実践できなければなりません。<br />
+しかし、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発は本を読んだだけでは肝心の部分は<br />
+分からないと良く言われます。<br />
+では、どうやって上手くなるのか？という話をワークショップを<br />
+交えてお伝えします。<br />
+今回は、こういう時期だからこそ普段通りの話を<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>コーチの<br />
+経験を踏まえてお話しして、少しでも東北の技術者の人のお力になれ<br />
+ればと思います。</p>
+
+    </blockquote>
+<p><br />
+<a href="http://tohoku-dev.jp/modules/eguide/event.php?eid=66">http://tohoku-dev.jp/modules/eguide/event.php?eid=66</a></p><br />
+<p>現在、仙台サテライトの運営の方々は、直面している大変な状況に負けず、自分達から東北の技術者を元気づけようと一生懸命努力されています。<br />
+僕も僅かながらでも力になれたらと思い参加してきます。話す内容は悩んだのですが、講演内容に書いた通り期待されている事と一番バリューが出せそうな事を考えて、フツウの話をフツウにしてくる事にしました。<br />
+もちろん、いつも以上にちゃんと準備して、ちゃんと寝ていく予定ww</p><br />
+<p>また、折角むこうの技術者と直接お会いできる機会なので、もしこの記事を読んだ方で東北の技術者が元気になるような伝言がありましたら、この記事のコメントにでも書いてもらえれば責任を持って伝えてきます。<br />
+例えば、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道だけど、近いうちにそっちに遊びに行くから予定空けとけよw」みたいな感じでww</p><br />
+<p>よーし、仙台覚悟しておけよ!!</p>
+
+-----

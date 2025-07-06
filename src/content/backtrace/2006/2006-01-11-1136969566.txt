@@ -1,0 +1,22 @@
+
+AUTHOR: nawoto
+TITLE:  重さをどかしたのが軽さ
+BASENAME: 20060111/1136969566
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/11/2006 17:52:46
+-----
+BODY:
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%BE%F0%C7%AE%C2%E7%CE%A6">情熱大陸</a>「笑福亭昇太」の回で, <a class="keyword" href="http://d.hatena.ne.jp/keyword/%BB%E5%B0%E6%BD%C5%CE%A4">糸井重里</a>がこんな感じの事を言っていた.<br />
+昇太の落語を評して「軽いっての本当は難しい. 重さをどかしたのが軽さなんで」.</p><br />
+<p>個人的には, ソフトウェア開発においては, <a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%AB%C8%AF%A5%D7%A5%ED%A5%BB%A5%B9">開発プロセス</a>から採用する<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A1%BC%A5%AD%A5%C6%A5%AF%A5%C1%A5%E3">アーキテクチャ</a><a href="#f-206c667d" name="fn-206c667d" title="フレームワークや言語など含む">*1</a>まで, 基本的には軽い方が有利だと思っています.<br />
+しかし, その優位性を正確に説明するには, "何をどかした" って事を伝えるのが, 当たり前だけど大事だなっと再認識.<br />
+言いかえると, 従来に比べて, どの部分を省略し, それによるメリットとデメリットを正確に伝える事が大切だなと.</p><br />
+<p>あと, <a class="keyword" href="http://d.hatena.ne.jp/keyword/Ruby">Ruby</a> Enterprise<a href="#f-a20ac4a4" name="fn-a20ac4a4" title="他の LL での開発もそうだろうけど">*2</a> が本格化した時には, 実際の開発においても "重さをどかす" 難しさってのはあるんだろうなっとテレビを見ながら妄想した.</p><br />
+<p>そのうち, 上手くまとまったら続きを書きたいなぁ.</p>
+<div class="footnote">
+<p class="footnote"><a href="#fn-206c667d" name="f-206c667d" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text"><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D5%A5%EC%A1%BC%A5%E0%A5%EF%A1%BC%A5%AF">フレームワーク</a>や言語など含む</span></p>
+<p class="footnote"><a href="#fn-a20ac4a4" name="f-a20ac4a4" class="footnote-number">*2</a><span class="footnote-delimiter">:</span><span class="footnote-text">他の LL での開発もそうだろうけど</span></p>
+</div>
+-----

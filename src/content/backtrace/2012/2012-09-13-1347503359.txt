@@ -1,0 +1,34 @@
+
+AUTHOR: nawoto
+TITLE: 10/28 にスクラム道 EXPO 2012 を開催します!! #scrumdo
+BASENAME: 20120913/1347503359
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/13/2012 11:29:19
+-----
+BODY:
+<p>10/28にオ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ル青山センターをお借りして、イベントを開催します!!<br />
+＃ そろそろ定員と早期割引が終わりそうですが...</p><br />
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20120912141210" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20120912/20120912141210.png" alt="f:id:nawoto:20120912141210p:image:w400" title="f:id:nawoto:20120912141210p:image:w400" class="hatena-fotolife" style="width:400px" itemprop="image"></a></span></p><br />
+<p><a href="http://bit.ly/scrumdo-expo2012">http://bit.ly/scrumdo-expo2012</a></p><br />
+<p>「そろそろ飽きるまで Scrum の話をしようか」と銘打って、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道初の終日イベントです。<br />
+コンセプトは、これまで一つのテーマを徹底的に議論して深掘りして理解を深める<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場を丸一日、色んなテーマと色んな人とやれば、もっと色々と学べるはずっとして開催します。<br />
+そして、今回のために色々なテーマで話してくれる人が、ようやく決まりました。<br />
+＃ 遅くなってすいません....</p>
+
+<ul>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DA%A5%A2%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0">ペアプログラミング</a> by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@t_wada]</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BB%A5%D7%A5%B7%A5%E7%A5%F3">インセプション</a>デッキ by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@papanda]</li>
+<li>分散<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a> by 岩崎さん(株式会社<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%E0%A5%C6%A5%A3%A1%BC%A5%A2%A5%A4">エムティーアイ</a>)</li>
+<li>自己組織化 by [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@uedayo]</li>
+</ul><p>これに加えて、これまでの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道場で扱ったテーマをリファインして再演する予定です。<br />
+どのテーマが再演されるかは、現在早期申し込み特典として投票を受け付けています!!<br />
+ぜひ、これらの話を切っ掛けに、話してくれた人を質問攻めや色々な話をしましょう!!</p><br />
+<p>また、議論に参加するのはちょっと怖いって人向けに、今年の夏に行ってきた <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> 2012 でやってた No Bull Know How というお悩み相談みたいなセッションもやってみようと思っていますので、こちらもお楽しみにww タイムテーブルは近日更新する予定です。</p><br />
+<p>あと、色々な人に実践して得た知見を長時間も議論してもらってシェアしてもらえ、夜中にイベントの準備を進めてくれているスタッフに何か感謝の気持ちを伝えたいなーと考えていました。<br />
+そのため、今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道としてのチャレンジとして有料イベントにして、感謝の気持ちを安直にお金としてしてみることにしました。</p><br />
+<p>9月一杯で早期割引が終了してしまいますので、検討されている方はお早めに。<br />
+当日、みなさんと「もう<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>とかお腹一杯...」と言えるほど楽しく議論できるのを楽しみにしています。</p>
+
+-----

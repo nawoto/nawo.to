@@ -1,0 +1,45 @@
+
+AUTHOR: nawoto
+TITLE:  w3m 0.5.2 for Leopard and MacPorts
+BASENAME: 20080108/1199758572
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/08/2008 11:16:12
+-----
+BODY:
+<p>とりあえずログしておこう。</p><br />
+<p>ネタ元は <a href="http://kimuraw.txt-nifty.com/d/2007/10/leopard_note.html">http://kimuraw.txt-nifty.com/d/2007/10/leopard_note.html</a></p><br />
+<p>まず boehmgc6.8 を取ってきて、こんな感じでビルド。</p>
+
+<pre>% ./configure CFLAGS="-D__<a class="keyword" href="http://d.hatena.ne.jp/keyword/DARWIN">DARWIN</a>_UNIX03=0" --enable-threads=<a class="keyword" href="http://d.hatena.ne.jp/keyword/posix">posix</a> \
+                      --enable-parallel-mark \
+                      --enable-cplusplus \
+                      --disable-shared \
+                      --enable-static
+% make
+% DESTDIR=~/dest make install
+</pre><p><br />
+で、あとはこれを static link してビルドするだけ。</p><br />
+<p>でも、なるべく <a class="keyword" href="http://d.hatena.ne.jp/keyword/MacPorts">MacPorts</a> の管理下に置きたいので、</p>
+
+<pre> % diff -u /opt/local/var/<a class="keyword" href="http://d.hatena.ne.jp/keyword/macports">macports</a>/sources/<a class="keyword" href="http://d.hatena.ne.jp/keyword/rsync">rsync</a>.macports.org/release/<a class="keyword" href="http://d.hatena.ne.jp/keyword/ports">ports</a>/www/<a class="keyword" href="http://d.hatena.ne.jp/keyword/w3m">w3m</a>/Portfile ~/<a class="keyword" href="http://d.hatena.ne.jp/keyword/Ports">Ports</a>/www/<a class="keyword" href="http://d.hatena.ne.jp/keyword/w3m">w3m</a>/Portfile
+</pre><pre class="code" data-lang="" data-unlink>@@ -15,12 +15,14 @@
+ platforms           darwin
+ master_sites        sourceforge
+ checksums           md5 ba06992d3207666ed1bf2dcf7c72bf58
+-depends_lib         lib:libgccpp.1:boehmgc
++#depends_lib         lib:libgccpp.1:boehmgc
+ patchfiles          gc_init.patch
+-configure.args      --with-gc=${prefix} --with-ssl=${prefix} \
+-                        --enable-keymap=w3m --enable-image=x11 \
++configure.args      --with-gc=/Users/naoto/dest/usr/local \
++                    --with-ssl=${prefix} \
++                    --enable-migemo=/opt/local/bin/cmigemo \ # migemo がいる人 only
++                    --enable-keymap=w3m --enable-image=no \
+                     --with-termlib=curses --mandir=${prefix}/share/man
+ # libwc will not find gc unless ..
+-configure.cflags-append &#34;-I${prefix}/include/&#34;
++configure.cflags-append &#34;-I/Users/naoto/dest/usr/local/include/&#34;</pre><p>ほとんど<a class="keyword" href="http://d.hatena.ne.jp/keyword/%CC%EE%CE%C9%A5%D3%A5%EB%A5%C9">野良ビルド</a>だけど、しばらくこれで我慢しよう</p>
+
+-----

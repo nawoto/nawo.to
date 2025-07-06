@@ -1,0 +1,50 @@
+
+AUTHOR: nawoto
+TITLE: プロダクトオーナーを見つけてみよう!! #scrumbcbook
+BASENAME: 20130318/1363625849
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 03/18/2013 01:57:29
+-----
+BODY:
+<p>最近、再びあちこちの会社さんに遊びにいかせていただく機会が多くありました。<br />
+＃ あちこち遊びにいきたいので呼んでいただけるところを随時募集してますのでお気軽に!!</p><br />
+<p>そこでいろいろと話していると、拙著「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The Book」の感想や質問をもらえたりして、嬉しいなーと実感してたりしますww<br />
+けれど、そのなかで「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>チームからプロダクトオーナーを話しあって選ぶのは良いと思うのですが、やっぱり誰が適任か判断するのが難しい」と何回か聞かれました。<br />
+そこで本を読んでくれた人向けにプロダクトオーナーを見つけるためのちょっとしたアクティビティを考えてみました。</p><br />
+<p>名づけて「プロダクトオーナーは誰だ!?エクササイズ」です。<br />
+以下のような紙に書かれた質問にこれから<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>チームになるプロジェクト関係者が答えていって、プロダクトオーナーを決めていきます。</p><br />
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20130319014622" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20130319/20130319014622.png" alt="f:id:nawoto:20130319014622p:image:w270" title="f:id:nawoto:20130319014622p:image:w270" class="hatena-fotolife" style="width:270px" itemprop="image"></a></span></p><br />
+<p>これらの質問は、僕が仕事でScrumを現場に導入するときにプロダクトオーナーに尋ねている質問などを元にしました。<br />
+たとえば、こういったものです。</p>
+
+<ul>
+<li>プロジェクトをうまく進めていくのに大切だと思うことは何ですか?</li>
+<li>今回のプロジェクトで最低限達成すべきことは何ですか?</li>
+<li>最も使ってくれそうなユーザーは誰ですか?</li>
+<li>などなど</li>
+</ul><p>やり方は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>チームとなるプロジェクト関係者が全員集まって、質問に答えていくだけです。<br />
+具体的な進め方は、まずは質問に回答します。事前にプロジェクト関係者全員が回答を書いてくるか、全部で質問の紙が3ページあるので1ページずつその場で考えて書きます。その場でやっていく場合は1ページごとに15分から30分ぐらいがいいかもしれません。どっちの場合にも無理に回答を書こうとせずに、あまり悩まずに短時間で書くのがコツです。</p><br />
+<p>回答が書けたら、全員の回答を眺めましょう。その場で書く場合には1ページごとに全員で眺めましょう。<br />
+他の人の回答を見て「これは具体的だ」とか「自分には無い視点があるなー」とか感じた回答に"いいね!!"してください。用紙に"いいね!!"を書ける欄として星印を用意したのに、そこに点を打つなりシールを貼るなりしてみてください。</p><p>全員の回答を見て"いいね!!"を書いたら、次は回答ごとの点数を求めます。ルールはとても簡単で以下です。</p>
+
+<ul>
+<li>回答が書けていないものは1点</li>
+<li>なんでもいいので書いていれば3点</li>
+<li>誰か1人でも"いいね!!"をしてくれていたら5点。"いいね!!"してくれた人数は関係ありませんので、各質問ごとの最高点は5点になります</li>
+</ul><p>もし、このやり方に慣れてきたら全員で話しあいながら1から5まで点数を決めてもいいです。</p><br />
+<p>全員の採点が終わったら、各ページごとの合計点を求めます。<br />
+その場で1ページごとに回答を書いていく場合はページごと合計して、また次のページの回答を書いていくってのをくり返してください。</p><br />
+<p>あとは各ページの合計点が最も高い人か、もしくは全ページの合計点の多い順トップ3とかにして、プロダクトオーナーの候補を絞ります。その中から全員で話しあいながらプロダクトオーナーを決めます。<br />
+最終的な決め方はみなさんで考えてください。たとえば、その人たちの回答について詳しく聞いてみたり、その人どうしに話しあってもらうのを観察したりしてみるのもいいでしょう。大事なのは全員が合意することなので、なんでもいいですww</p><br />
+<p>質問を書いた用紙は「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The Book」の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>ページの上のほうにある"Docs"というところにある WhoIsProductOwnerExercise というドキュメントからダウンロードできます。改変や商用利用も大丈夫なCCライセンスにしましたので、ぜひみなさんの現場で使ってみてください。<br />
+まだまだ荒削りなアクティビティなので、実際にやってみた感想やこうした方がいいというご意見などをお待ちしております。質問内容に対するツッコミも大歓迎です。<br />
+＃ ライセンスの明記の仕方のアド<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>も求むww</p>
+
+<ul>
+<li><a href="https://www.facebook.com/ScrumBootCampTheBook">https://www.facebook.com/ScrumBootCampTheBook</a></li>
+</ul><p>注意点としては、これはあくまでプロダクトオーナーを見つける目安を僕なりに考えただけです。良いプロダクトオーナーだからプロジェクトが成功するわけではありませんし、プロジェクト関係者全員がビジョンや何をつくるかを誤解しているかもしれません。その部分もぜひ全員で一度考えてみてください。</p><br />
+<p>最後に質問のレビューをしてくれた[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@yattom]、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@haru01]、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq] ありがとうございました!!</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51q3GMM3rjL._SL160_.jpg" class="hatena-asin-detail-image" alt="SCRUM BOOT CAMP THE BOOK" title="SCRUM BOOT CAMP THE BOOK"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/">SCRUM BOOT CAMP THE BOOK</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> 西村直人,永瀬美穂,吉羽龍太郎</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2013/02/13</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 5人 <span class="hatena-asin-detail-label">クリック</span>: 13回</li><li><a href="http://d.hatena.ne.jp/asin/4798129712/nawoto07-22" target="_blank">この商品を含むブログ (33件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

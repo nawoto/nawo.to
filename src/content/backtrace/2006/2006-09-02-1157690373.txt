@@ -1,0 +1,33 @@
+
+AUTHOR: nawoto
+TITLE:  XP 祭り 2006
+BASENAME: 20060902/1157690373
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/02/2006 13:39:33
+-----
+BODY:
+<p><br />
+はじめて参加さしていただきました。<br />
+本当に良いイベントでスタッフのみなさんお疲れ様でした。</p><p>とりあえず、自分のメモをダンプ。<br />
+<br />
+</p>
+
+<ul>
+<li>KPTP = <a class="keyword" href="http://d.hatena.ne.jp/keyword/KPT">KPT</a> + プ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>ティス</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Trac">Trac</a> のチケットは作業を記す。網羅する事が重要</li>
+<li>開発環境を <a class="keyword" href="http://d.hatena.ne.jp/keyword/VMWare">VMWare</a> でシェアする</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/KPT">KPT</a> は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DE%A5%A4%A5%F3%A5%C9%A5%DE%A5%C3%A5%D7">マインドマップ</a>で</li>
+<li>残業チケット</li>
+<li>もしも、僕が平鍋さんだったら</li>
+<li>RJSTemplate ヤバイ</li>
+<li>かんばんで TODO 以前のモヤモヤをメモしておく。(兆しかな??)</li>
+</ul><p>あと、<a class="keyword" href="http://d.hatena.ne.jp/keyword/dRuby">dRuby</a> 本を賞品として貰えて嬉しかったです。</p>
+
+-----
+COMMENT:
+AUTHOR: m_seki
+DATE: 09/30/2006 23:15:58
+おめでとうございます &gt; 賞品
+-----

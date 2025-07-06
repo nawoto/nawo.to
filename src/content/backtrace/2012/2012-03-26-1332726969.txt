@@ -1,0 +1,41 @@
+
+AUTHOR: nawoto
+TITLE:  「アジャイルサムライになるための方法」 #agilesamurai dojo gathering
+BASENAME: 20120326/1332726969
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 03/26/2012 10:56:09
+-----
+BODY:
+<p>3/24 に開催された AgileSamurai <a class="keyword" href="http://d.hatena.ne.jp/keyword/Dojo">Dojo</a> Gathering でトリを務めさせていただきました。<br />
+当日の資料は以下になります。<br />
+＃とりあえず broken English な字幕もそのままにしていますw</p>
+
+<ul>
+<li><a href="http://agile-samurai-ja.github.com/dojo-gathering/2012/">http://agile-samurai-ja.github.com/dojo-gathering/2012/</a></li>
+</ul><p><script src="http://speakerdeck.com/embed/4f6f3c3a933f080022024d03.js"></script></p><p>時間の無い人はこのセリフだけ覚えておいてくださいww</p>
+
+    <blockquote>
+        <p>お前らの暴力をみんな黙って見てる<br />
+それが許せないんだ<br />
+僕は死んでも構わない<br />
+かかって来いよ</p>
+
+    </blockquote>
+<p><br />
+今回は普段やっているような<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の説明とかは一切せずに、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライの 15章(15.8)のこの先どこへ向かえばいいのか? にジョナサンが書いてくれている「君の働き方や仕事の質を選んでいるのは他の誰でもない、君自身なんだ。」というメッセージと僕自身が最近感じている現状とかを僕なりに伝えてみました。<br />
+だいぶ暴言で青臭い内容だと思ったんだけど、ジョナサンのツアー最終日と<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライを気に入ってくれているたくさんの熱心な弟子がいるという圧倒的なホームなので、ちゃんと受けてとめてもらえると思って、こんな話をしました。<br />
+いかがでしたか?</p><br />
+<p>終わった後にジョナサンに「Great Presentation!! きっと<a href="http://headrush.typepad.com/about.html">&#x30AD;&#x30E3;&#x30B7;&#x30FC;&#x30FB;&#x30B7;&#x30A8;&#x30E9;</a>も気に入るよ(たぶん、知らんけどww)」みたいな感じで褒めてもらえ、[<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@kopanista] や [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@shinyaa31] にも「良かった」と直接言ってもらえて、一人安堵してました。<br />
+惜しむべくは講演でセイヤーしすぎて抜け殻状態だったので、あんまり会話できなかった....w すいません、今度ゆっくり話したいっす。</p><br />
+<p>はー、今回の <a class="keyword" href="http://d.hatena.ne.jp/keyword/Dojo">Dojo</a> Gathering も凄く楽しかったなー。<br />
+開催する時は前回の<a href="http://d.hatena.ne.jp/nawoto/20110920/1316500311">&#x4ED6;&#x6D41;&#x8A66;&#x5408;</a>のような熱気がもう一度生まれるか心配だったんだけど、全然心配する必要無かったね。<br />
+僕が中の人なので贔屓目なのかもしれないが、他のイベントとは違う何かがあったイベントだと確信しております。<br />
+これもそれも参加してくださった皆さんと必死に支えてくれたスタッフの皆さんのおかげです。</p><br />
+<p>折角こういうイベントが開催できたので、今から何か変えていきましょう!! 俺も頑張るしww<br />
+で、また集まって今度は「僕はこれを変えた」「私はこれに挑戦した」と大自慢大会をして盛大にお祝いをしましょう!!その日はそんなに遠くないはずだ。</p><br />
+<p>See you Next #agilesamurai <a class="keyword" href="http://d.hatena.ne.jp/keyword/Dojo">Dojo</a> Gathering!!<br />
+ご武運を!!</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51flKufOVUL._SL160_.jpg" class="hatena-asin-detail-image" alt="アジャイルサムライ−達人開発者への道−" title="アジャイルサムライ−達人開発者への道−"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/nawoto07-22/">アジャイルサムライ−達人開発者への道−</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> Jonathan Rasmusson,西村直人,角谷信太郎,近藤修平,角掛拓未</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A1%BC%A5%E0%BC%D2">オーム社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/07/16</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 42人 <span class="hatena-asin-detail-label">クリック</span>: 1,991回</li><li><a href="http://d.hatena.ne.jp/asin/4274068560/nawoto07-22" target="_blank">この商品を含むブログ (257件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B004IEAZ18/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/513mqGzAUqL._SL160_.jpg" class="hatena-asin-detail-image" alt="キック・アス Blu-ray(特典DVD付2枚組)" title="キック・アス Blu-ray(特典DVD付2枚組)"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B004IEAZ18/nawoto07-22/">キック・アス Blu-ray(特典DVD付2枚組)</a></p><ul><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%C5%EC%CA%F5">東宝</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2011/03/18</li><li><span class="hatena-asin-detail-label">メディア:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/Blu-ray">Blu-ray</a></li><li><span class="hatena-asin-detail-label">購入</span>: 15人 <span class="hatena-asin-detail-label">クリック</span>: 265回</li><li><a href="http://d.hatena.ne.jp/asin/B004IEAZ18/nawoto07-22" target="_blank">この商品を含むブログ (134件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

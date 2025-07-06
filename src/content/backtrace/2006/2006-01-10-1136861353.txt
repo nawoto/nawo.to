@@ -1,0 +1,27 @@
+
+AUTHOR: nawoto
+TITLE:  もし市長になったなら
+BASENAME: 20060110/1136861353
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/10/2006 11:49:13
+-----
+BODY:
+<p>昨日, どっかの市長になった夢を見た. それも今の仕事と兼任して.<br />
+で, 以下のような案を叫んでた.</p>
+
+<ol>
+<li>小さい子供を持つ家庭だけが入居できるアパート等の運営・建設補助</li>
+<li>託児施設付きの会社への税金の優遇措置や運営補助</li>
+<li>日々の市長の仕事の状況と問題点をブログでぐちぐち報告</li>
+<li>市民から困った事を直接メイルで受けつける</li>
+<li>受けつけた問題を <a class="keyword" href="http://d.hatena.ne.jp/keyword/BTS">BTS</a> みたいなので状況を一般公開</li>
+<li>今の仕事と兼任しているので, 市長の給料は返還</li>
+</ol><p>(1) と (2) は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C0%F8%BA%DF%C5%AA">潜在的</a>な悩みを表現してて, ちょっとアレな感じ.</p><br />
+<p>市長の権限として, こんな事ができるかまったく分かんないけど, こんな事を推進してる市があれば, すぐにそこに引っ越したいなぁ.</p><br />
+<p>で, この夢には続きがあって, 市の職員から猛反発くらいまくりで, 「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A5%E8%A5%BF">トヨタ</a>式」がどうこうって反論してた. 加えて, 給料はいらないと言ったものの, 年金<a href="#f-e9ecc3b0" name="fn-e9ecc3b0" title="議員年金みたいなものが貰える設定になってた">*1</a>まで返還するかで迷ってたのが少しリアルww</p>
+<div class="footnote">
+<p class="footnote"><a href="#fn-e9ecc3b0" name="f-e9ecc3b0" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">議員年金みたいなものが貰える設定になってた</span></p>
+</div>
+-----

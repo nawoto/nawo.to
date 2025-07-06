@@ -1,0 +1,27 @@
+
+AUTHOR: nawoto
+TITLE:  社内で認定スクラムマスター研修のレポートをしてきた
+BASENAME: 20090718/1247894421
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 07/18/2009 14:20:21
+-----
+BODY:
+<p><br />
+先月受けた CSM 研修の内容を本社でレポートする事になった。<br />
+けれど、2 日間の内容を 1 時間で話すのは無理なので、自分が感じている Scrum の特徴や利点について(変化球気味に?)発表してきました。</p><p><div style="width:425px;text-align:left" id="__ss_1736990"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/nawoto/how-to-eliminate-the-waste-of-software-development-v01" title="How to eliminate the  waste of software development v0.1">How to eliminate the  waste of software development v0.1</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=howtoeliminatethewasteofsoftwaredevelopmentv0-1-090717220012-phpapp01&stripped_title=how-to-eliminate-the-waste-of-software-development-v01" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=howtoeliminatethewasteofsoftwaredevelopmentv0-1-090717220012-phpapp01&stripped_title=how-to-eliminate-the-waste-of-software-development-v01" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">documents</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/nawoto">nawoto</a>.</div></div></p><br />
+<p>自分でもまだ上手く咀嚼できてなく <a class="keyword" href="http://d.hatena.ne.jp/keyword/gdgd">gdgd</a> な感じだったのですが、「問題を明確にしやすくし、問題に向き合う方に力が働きやすい」という自分が興味を持った Scrum  の特徴は何とか伝えれたかな??</p><br />
+<p>このネタはもう少しちゃんと説明できるようにしたいなぁ〜</p>
+
+-----
+COMMENT:
+AUTHOR: nawoto
+DATE: 02/08/2010 13:47:02
+id:babydaemons さん、<br>そう言ってもらえると拙い資料ですが公開して良かったです。<br>すくすくスクラムにも参加されたみたいですが、私もすくすくには良く顔を出しているので、機会があれば直接情報交換とかさして下さい。
+-----
+COMMENT:
+AUTHOR: babydaemons
+DATE: 12/13/2009 00:59:57
+Scrumは全然知りませんでしたが、このスライドのおかげで取っ掛かりができました。<br>ありがとうございます。m(_ _)m
+-----

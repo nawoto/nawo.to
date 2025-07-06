@@ -1,0 +1,22 @@
+
+AUTHOR: nawoto
+TITLE:  「アジャイル開発 基本のキ リターンズ」- Agile Japan 2012 #aj12
+BASENAME: 20120319/1332127848
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 03/19/2012 12:30:48
+-----
+BODY:
+<p>3/16 に大阪で開催された <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Japan 2012 で上記のタイトルで講演させていただきました。<br />
+当日の資料は以下になります。</p><p><div style="width:425px" id="__ss_12059417"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/basic-of-basics-of-agile-development-returns" title="Basic of Basics of Agile Development Returns" target="_blank">アジャイル開発 基本のキ リターンズ</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/12059417" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><p>以前に<a href="http://d.hatena.ne.jp/nawoto/20110323/1300896863">&#x540C;&#x540D;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x306E;&#x8CC7;&#x6599;</a>は公開していて普段の仕事でやっている研修でも利用してきました。<br />
+今回は研修で得たフィードバックもたまってきたので、えいやっと作り直してみました。</p><br />
+<p>当日は部屋の都合もあり、ワークショップに全員参加できない方もいてすいませんでした。<br />
+その中でも大阪のスタッフの皆さんには、なるべく多くの方に参加できるように取り計らってもらい、とても助かりました。<br />
+僕自身も多くの人に参加していただいて、大阪のスタッフの皆さんに色々と助けてもらい、とても有意義な時間を過す事ができました。本当にありがとうございました。</p><br />
+<p>そう言えば、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Japan 2010 で初めて大きな会場で発表させていただいてから早二年。<br />
+気がつけば、今回は実行委員の末席として参加する事になっていました。<br />
+大阪を離れてしばらく経ちましたがその間に色々あったなーと、会場で色々な人と話しながら思いかえしていました。<br />
+そういう意味でも個人的に感慨深いイベントでした。</p>
+
+-----

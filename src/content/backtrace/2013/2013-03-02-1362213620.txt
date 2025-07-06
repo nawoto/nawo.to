@@ -1,0 +1,45 @@
+
+AUTHOR: nawoto
+TITLE: Scrum Boot Camp The Book について聞きたいことありますか? #scrumbcbook
+BASENAME: 20130302/1362213620
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 03/02/2013 17:40:20
+-----
+BODY:
+<p>3/7 に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A5%E5%A5%F3%A5%AF%C6%B2">ジュンク堂</a>池袋本店で「Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> The <a class="keyword" href="http://d.hatena.ne.jp/keyword/Talk">Talk</a> 〜ブートキャンプ本はなぜ書かれのたか〜」と題して刊行記念<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A1%BC%A5%AF%A5%B7%A5%E7%A1%BC">トークショー</a>を開催してもらえることになりました。</p>
+
+<ul>
+<li><a href="http://www.junkudo.co.jp/tenpo/evtalk.html">http://www.junkudo.co.jp/tenpo/evtalk.html</a></li>
+</ul>
+<pre>■日時：2013年3月7日（木）19時30分 〜 
+■会場　<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A5%E5%A5%F3%A5%AF%C6%B2%BD%F1%C5%B9">ジュンク堂書店</a>池袋本店　4階カフェにて
+■定員　40名（お電話又はご来店にてお申し込み先着順）
+■入場料　1000円　（ドリンク付）
+■受付　お電話又はご来店（1Ｆサービスカウンター）にて先着順に受付。
+お問い合わせ　池袋本店　TEL03-5956-6111
+</pre><p>当日は岩切さん([<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@kohsei])に司会をお願いして、僕たち著者陣に直接いろんなことを質問していく内容を予定しています。<br />
+執筆時の裏話やそもそもなんでScrumなのかなどなど聞きにくいこともガシガシ聞いてください。<br />
+当日は、以下のテーマについての質問を次々を答えていくのですが、現在 <a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a> ページで事前に質問を募集しています。</p><br />
+<p><a href="http://bit.ly/ScrumBootCampTheBook">http://bit.ly/ScrumBootCampTheBook</a></p><p></p>
+
+<ul>
+<li>本について
+<ul>
+<li>どうして本を書いたのか? これはどういう本ですか? などなど</li>
+<li>やっぱり残業とかするんですか? あの章がよくわからない? などなど</li>
+</ul></li>
+<li>Scrumの導入や実践
+<ul>
+<li>向かないプロジェクトってありますか? 本に書いてないけど成果を出すために必要なことは? などなど</li>
+</ul></li>
+<li>著者に直接聞いてみたいことなんでも</li>
+</ul><p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Facebook">Facebook</a>ページにこのようにテーマ名と質問(例: <本について>続編は出るのですか?)を書いていただけると助かります。<br />
+たくさんのご質問をお待ちしています。</p><br />
+<p>また、イベントの最後にはサイン会を予定していますので、買った人はぜひ持ってきてください。<br />
+もちろん<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライも大歓迎です。</p><br />
+<p>と言いながら、出版記念で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A5%E5%A5%F3%A5%AF%C6%B2">ジュンク堂</a>で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A1%BC%A5%AF%A5%B7%A5%E7%A1%BC">トークショー</a>なんて夢のようなことなので今からドキドキしてたりするww<br />
+当日は舞い上がってちゃんと回答できるか今からかなり不安...w</p><p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/51q3GMM3rjL._SL160_.jpg" class="hatena-asin-detail-image" alt="SCRUM BOOT CAMP THE BOOK" title="SCRUM BOOT CAMP THE BOOK"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798129712/nawoto07-22/">SCRUM BOOT CAMP THE BOOK</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> 西村直人,永瀬美穂,吉羽龍太郎</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%E6%C6%B1%CB%BC%D2">翔泳社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2013/02/13</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><span class="hatena-asin-detail-label">購入</span>: 5人 <span class="hatena-asin-detail-label">クリック</span>: 13回</li><li><a href="http://d.hatena.ne.jp/asin/4798129712/nawoto07-22" target="_blank">この商品を含むブログ (33件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+-----

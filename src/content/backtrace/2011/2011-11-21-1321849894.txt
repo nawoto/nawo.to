@@ -1,0 +1,29 @@
+
+AUTHOR: nawoto
+TITLE:  「失敗しないアジャイルの導入の仕方」 - 楽天テクノロジーカンファレンス2011 #rakutentech
+BASENAME: 20111121/1321849894
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 11/21/2011 13:31:34
+-----
+BODY:
+<p>11/19 に開催された<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%DA%C5%B7">楽天</a>テク<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%CE%A5%ED">ノロ</a><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A1%BC">ジー</a>カンファレンスで上記のタイトルで講演させていただきました。<br />
+当日の資料を公開しておきます。</p><br />
+<p><div style="width:425px" id="__ss_10247743"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/how-to-not-fail-at-adapting-agile-software-delopment" title="How to not fail at adapting agile software delopment" target="_blank">How to not fail at adapting agile software delopment</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/10247743" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/nawoto" target="_blank">Nishimura Naoto</a> </div> </div></p><br />
+<p>今回は、僕があちこちでお手伝いしている<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>の導入で気をつけている事ややり方などを中心にお話ししました。<br />
+もちろん、このやり方だけが正解では無いですし、みなさんなりの導入の仕方のヒントになれば幸いです。</p><br />
+<p>そして、参加していただいた皆さん、サポートしてくださったスタッフの皆さん、本当にありがとうございました。<br />
+また、一緒に土壌作りとかお手伝いしてよって方がいましたら、お気軽にご連絡下さいww</p>
+
+-----
+COMMENT:
+AUTHOR: nawoto
+DATE: 11/25/2011 11:02:32
+そう言ってもらえて嬉しいっすw
+-----
+COMMENT:
+AUTHOR: iR3
+DATE: 11/22/2011 03:15:39
+3つのステップという切り口は、必須ですね。勉強になりました♪
+-----

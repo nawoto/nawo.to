@@ -1,0 +1,28 @@
+
+AUTHOR: nawoto
+TITLE:  またまたオブラブで  LT やります
+BASENAME: 20090627/1246124325
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 06/27/2009 02:38:45
+-----
+BODY:
+<p><br />
+<a href="http://www.objectclub.jp/event/2009summer/">http://www.objectclub.jp/event/2009summer/</a></p><br />
+<p>今回は、以前にやった <a href="http://d.hatena.ne.jp/nawoto/20071225/1198547820">&#x300C;Rails &#x3060;&#x3068;&#x5B9A;&#x6642;&#x3067;&#x5E30;&#x308C;&#x308B;&#x3063;&#x3066;&#x8A00;&#x3063;&#x305F;&#x30E4;&#x30C4;&#x306F;&#x8AB0;&#x3060;ww&#x300D;</a>で、来年こそは定時だなっと発言してから約 1 年半が過ぎたので、それからどうなったのか?? という経過報告をしようと思います。</p><br />
+<p>タイトルは、「<a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> で定時近くには帰れるようになったけど...」になる予定です。</p><br />
+<p>そんな話を聞いてみたいとか、<a href="http://blog.hatena.ne.jp/nawoto/">id:nawoto</a> と飲みたいという方はぜひぜひ遊びに来てください。<br />
+申し込みの締切は、月曜日(6/28)までなのでお早めに。</p><br />
+<p>ついでに、今回のイベントの個人的な見所を紹介しておきます。</p><p>一つは、うちのチームメンバー(<a href="http://blog.hatena.ne.jp/ursm/">id:ursm</a> <a href="http://blog.hatena.ne.jp/nsgc/">id:nsgc</a>)が全員話します。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/ursm/20090610/1244652508">http://d.hatena.ne.jp/ursm/20090610/1244652508</a></li>
+<li><a href="http://d.hatena.ne.jp/nsgc/20090614/1244983825">http://d.hatena.ne.jp/nsgc/20090614/1244983825</a></li>
+</ul><p><br />
+あと、<a href="http://blog.hatena.ne.jp/kompiro/">id:kompiro</a> が担当する「<a href="http://ObjectClub.jp/event/2009summer/session.html#session_kondou">HELP ME!</a>」というワークショップの素振りに参加したんですが、良い意味で大変なことになってます。</p><br />
+<p><a href="http://d.hatena.ne.jp/amapyon/20090627">http://d.hatena.ne.jp/amapyon/20090627</a></p><br />
+<p>モヤモヤしたものが上手く消化できてないや、周りに自分の悩みを上手く話せてないという人(特に 30 歳以上の人w)は、ぜひぜひ。</p><br />
+<p>みなさんの参加をお待ちしております。</p>
+
+-----

@@ -1,0 +1,57 @@
+
+AUTHOR: nawoto
+TITLE:  Agile 2012 の報告会をやります #oblove
+BASENAME: 20121002/1349157443
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/02/2012 14:57:23
+-----
+BODY:
+<p>少し前の話ですが、今年の八月に <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> 2012 に参加してきました。<br />
+<br />
+</p>
+
+<ul>
+<li><a href="http://agile2012.agilealliance.org">http://agile2012.agilealliance.org</a></li>
+</ul><p><br />
+むこうで同じく日本から参加している人達に、「今年で何回目ですか?」と何回も聞かれましたが、人生初の海外カンファレンスでした。<br />
+そんなこんなでだいぶ珍道中だったのですが、そんな僕が何をしに何を見てきたかを同じく会社から一緒にいった [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@yattom] と [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@papanda] とで報告する会をやります。<br />
+<br />
+</p>
+
+<ul>
+<li><a href="http://esminc.doorkeeper.jp/events/1708">http://esminc.doorkeeper.jp/events/1708</a></li>
+</ul><p><br />
+すでに定員のためこれからの申し込みはできませんが、当日は参加する人とこんな話を切っ掛けに色々と話せればと思っています。<br />
+<br />
+</p>
+
+<ul>
+<li>それぞれが <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> 2012 でやってきたこと</li>
+<li>見聞きしたこと</li>
+<li>思ったこと</li>
+</ul><p>当日は、この質問にそれぞれが答えていく予定なのですが、僕のはカンペ兼備忘録として先に書いときます。<br />
+<br />
+</p>
+
+<div class="section">
+    <h4>Q. やってきたこと</h4>
+    <p>折角、テキサスまで行くので、ちょっとした腕試しに発表してこようと思ってました。<br />
+とは言っても、OpenJam で簡単なワークショップをやって、むこうの人の優しさもあって喜んでもらえたみたいですww</p><p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20121002144443" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20121002/20121002144443.jpg" alt="f:id:nawoto:20121002144443j:image:w200:left" title="f:id:nawoto:20121002144443j:image:w200:left" class="hatena-fotolife hatena-image-left" style="width:200px" itemprop="image"></a></span><br />
+<span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20121002144444" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20121002/20121002144444.jpg" alt="f:id:nawoto:20121002144444j:image:w200" title="f:id:nawoto:20121002144444j:image:w200" class="hatena-fotolife" style="width:200px" itemprop="image"></a></span></p><p></p>
+
+</div>
+<div class="section">
+    <h4>Q. 見聞きして思ったこと</h4>
+    <p>あと、今回は日本の事情とどこが違うのかなーってのは気になっていたので、そこを中心にセッションとかを聞いていました。<br />
+あまり行く前の印象とは違っていなかったのですが、別に海外で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AD%A5%E3%A5%BA%A5%E0">キャズム</a>を越えたといっても特に日本と何か決定的に違うわけじゃなかったと思いました。<br />
+たまに国民性や商習慣とか色々いわれますが、やっぱりそれはあんまり関係なかったですねww</p><br />
+<p>ただ、やっぱり<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発に取り組んでいる人数と年数による違いはあるなーと思いました。<br />
+たとえば、日本ではあまり扱われていないテーマを中堅ぐらいの世代の人がわりと話していたりと色々と興味深かったです。<br />
+たぶん、うまくいけば日本でも数年後はそういった感じになるかもなーっと思ったり思わなかったりしました。<br />
+そういった話を当日色々とできればと思います。<br />
+お楽しみにー。</p>
+
+</div>
+-----

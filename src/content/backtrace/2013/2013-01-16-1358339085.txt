@@ -1,0 +1,28 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Alliance Regional Gathering Tokyo 2013 で講演しました #sgt2013 #agilesamurai
+BASENAME: 20130116/1358339085
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/16/2013 21:24:45
+-----
+BODY:
+<p>1/15、16に開催された #sgt2013 で「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>サムライって当たり前になるのかな?」というタイトルで発表させていただきました。<br />
+参加していただいた方、ありがとうございます!!</p>
+
+<ul>
+<li><a href="http://scrumgatheringtokyo.org/2013/">http://scrumgatheringtokyo.org/2013/</a></li>
+</ul><p>ふだんはすぐに資料は公開するのですが、今回の講演は 2/14、15 に開催される<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>2013でアレンジして再演するために後日公開とさせてください。<br />
+2/15 に以下の URL で公開予定です。</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/nawoto/implementing-agilesamurai">https://speakerdeck.com/nawoto/implementing-agilesamurai</a></li>
+</ul><p><script async class="speakerdeck-embed" data-id="9400f970420301300d14123138093583" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script></p><br />
+<p>もし直に聞いてみたいという方は、ぜひ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D6%A5%B5%A5%DF">デブサミ</a>の方に足を運んでいただけると幸いです。</p>
+
+<ul>
+<li><a href="http://event.shoeisha.jp/detail/1/">http://event.shoeisha.jp/detail/1/</a></li>
+</ul><p>最後に、運営スタッフのみなさん、色々とサポートありがとうございました。お疲れ様でした。</p>
+
+-----

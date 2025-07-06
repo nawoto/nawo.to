@@ -1,0 +1,25 @@
+
+AUTHOR: nawoto
+TITLE:  夏サミにスクラム道がブースをだします #devsumi #scrumdo
+BASENAME: 20120725/1343203773
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 07/25/2012 17:09:33
+-----
+BODY:
+<p>今週の金曜日(7/27)に開催されるDevelopers [Social Enterprise] Summit 2012(通称:夏サミ)に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道(<a href="http://www.taoofscrum.org">http://www.taoofscrum.org</a>)が公式コミュニティ(だっけ?)としてブースを出します。</p>
+
+<ul>
+<li><a href="http://codezine.jp/devsumi/2012/social">http://codezine.jp/devsumi/2012/social</a></li>
+</ul><p>色々と興味深い講演が目白押しですが、その合間にでもブースに遊びに来ていただけると嬉しいです。<br />
+ブースでは「Scrum To Go」というScrumに関するお悩み相談をしようと企画していますでの、なんかちょっと話を聞いてほしいという方はぜひ。相談に来てもらった方には、先着でプレゼントも用意していますので、お楽しみに。<br />
+＃ 何かは当日ブースに来るまで秘密</p><br />
+<p>Scrum To Go については、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道のサイトの「 <a href="http://www.taoofscrum.org/contents/post/285">&#x30B9;&#x30AF;&#x30E9;&#x30E0;&#x9053;&#x306F;&#x590F;&#x30B5;&#x30DF;&#x3092;&#x5FDC;&#x63F4;&#x3057;&#x307E;&#x3059;!!</a>」のエントリをご覧ください。</p><br />
+<p>残念ながら、僕は仕事の都合でいけないのですが、道スタッフが暖かく相手するはずです!!</p><br />
+<p>あと、当日用に宣伝用スライドを1つつくってみたので、誰か宣伝よろしくお願いします。</p><p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/nawoto/20120725165932" class="hatena-fotolife" itemprop="url"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20120725/20120725165932.jpg" alt="f:id:nawoto:20120725165932j:image:w360" title="f:id:nawoto:20120725165932j:image:w360" class="hatena-fotolife" style="width:360px" itemprop="image"></a></span></p><p>このスライドのオリジナルは以下に置いてありますので、ぜひ、皆様のプレゼンの一枚にでも加えてもらって Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a>本(<a href="http://blog.hatena.ne.jp/nawoto/">id:nawoto</a>:20120723)と一緒に宣伝してもらえると嬉しいです。</p>
+
+<ul>
+<li><a href="https://dl.dropbox.com/u/107854/ScrumdoAutumnEvent.tiff">https://dl.dropbox.com/u/107854/ScrumdoAutumnEvent.tiff</a></li>
+</ul>
+-----

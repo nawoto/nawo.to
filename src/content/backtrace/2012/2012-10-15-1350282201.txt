@@ -1,0 +1,33 @@
+
+AUTHOR: nawoto
+TITLE:  ICT ERA+ABC2012東北でちょっと話しまーす #abc2012t
+BASENAME: 20121015/1350282201
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 10/15/2012 15:23:21
+-----
+BODY:
+<p>ありがたいことに <a href="http://d.hatena.ne.jp/nawoto/20110406/1302055294">Agile Japan 2011 &#x4ED9;&#x53F0;&#x30B5;&#x30C6;&#x30E9;&#x30A4;&#x30C8;</a>から続いている縁で、今週の土曜日(10/20)に開催される ICT ERA+ABC2012東北に呼んでいただきました。</p>
+
+<ul>
+<li><a href="http://www.android-group.jp/conference/ictera-abc/">http://www.android-group.jp/conference/ictera-abc/</a></li>
+</ul><p>東北最大のITイベントだけあって、色んな講演などが目白押しです!! ボクは、その中でLTトラックでLTじゃない講演枠で話しますw<br />
+タイトルは、「なりたい技術者になる方法(仮)」と題して、自分のキャリアやコミュニティ活動といったことを話す予定です。今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>とかScrumとかの話を封印しますww<br />
+30分ぐらいの時間ですが、ちょっとしたワークショップを交えて楽しみながらキャリアとか考えていければと思います。<br />
+興味のある方はぜひご参加ください。</p><br />
+<p>当日は出番が終わっても会場をプラプラしているので、気軽に声とか掛けてもらえると助かります。一人で心細いのでww</p>
+
+-----
+COMMENT:
+AUTHOR: 良太
+EMAIL: ryota@risingsystem.co.jp
+DATE: 10/19/2012 17:13:57
+B103ってとこの担当らしいので、おヒマがありましたら。
+-----
+COMMENT:
+AUTHOR: 良太
+EMAIL: ryota@risingsystem.co.jp
+DATE: 10/19/2012 12:52:50
+ご無沙汰してますｗ<br>なんだか、当日スタッフに駆り出されて行くことになったらしい。<br>現地で会ったらよろしく。
+-----

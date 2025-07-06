@@ -1,0 +1,25 @@
+
+AUTHOR: nawoto
+TITLE:  Agile Day 4 で「やさしいアジャイルの始め方」という話をしました #msagile
+BASENAME: 20101214/1292345260
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 12/14/2010 01:47:40
+-----
+BODY:
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Microsoft">Microsoft</a> さんで主催された <a class="keyword" href="http://d.hatena.ne.jp/keyword/Agile">Agile</a> Day 4 で「やさしい<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>の始め方」という話をしてきました。</p><br />
+<p><a href="http://www.microsoft.com/japan/powerpro/developer/agile/events/agileday.mspx">http://www.microsoft.com/japan/powerpro/developer/agile/events/agileday.mspx</a></p><br />
+<p>非常にたくさんの人に来ていただき、ありがとうございました。<br />
+当日の資料を公開しておきます。</p><p><div style="width:425px" id="__ss_6136418"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/nawoto/how-to-easily-start-agile-development" title="How to easily start Agile Development">How to easily start Agile Development</a></strong><object id="__sse6136418" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=howtoeasilystartagiledevelopmentmsagileday420101210nawoto-101212223210-phpapp02&stripped_title=how-to-easily-start-agile-development&userName=nawoto" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse6136418" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=howtoeasilystartagiledevelopmentmsagileday420101210nawoto-101212223210-phpapp02&stripped_title=how-to-easily-start-agile-development&userName=nawoto" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/nawoto">Nishimura Naoto</a>.</div></div></p><br />
+<br />
+<p>今回の参加者の方にも感じたのですが、最近は前向きに<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>手法に興味を持たれている現場の方が多くなってきています。<br />
+けれど、実際に現場で始めるとなると少しばかりの勇気はどうしても必要になってきます。<br />
+特に、今は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>に関する情報も増えているので、どうしても「顧客を巻き込まないと上手くいかない」、「メンバーの動機付けが重要」とか目にする事も多く、逆に萎縮してしまうのかもしれません。</p><br />
+<p>しかし、まずは自分たちで実践してみる事が重要で、その経験を元に、次はもっと顧客を巻き込もうや価値にこだわるぞって事に繋ると考えています。<br />
+まず、その最初の一歩を踏み出す切っ掛けになればと思い、今回のような話にしてみました。<br />
+＃ 実際に、僕も最初は自分達のチームだけで朝会、タスクボード、ふりかえりから始めました。</p><br />
+<p>最後に、話を聞いていただいた人、質問をしてくれた方、今回の機会とサポートをしてくださったスタッフの皆さん、ありがとうございました。<br />
+僕も、他の人の話も面白かったし、本当に楽しかったです。</p>
+
+-----

@@ -1,0 +1,26 @@
+
+AUTHOR: nawoto
+TITLE:  Scrum Boot Camp in 島根 やりましたー #scrumdo #scrumbc
+BASENAME: 20130204/1359962155
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 02/04/2013 16:15:55
+-----
+BODY:
+
+<ul>
+<li><a href="http://agileshimane.doorkeeper.jp/events/2324">http://agileshimane.doorkeeper.jp/events/2324</a></li>
+</ul><p><a href="http://agileshimane.doorkeeper.jp/">AgileShimane</a> に呼んでいただいて <a href="http://agileshimane.doorkeeper.jp/events/2324">Scrum Boot Camp in &#x5CF6;&#x6839;</a> を開催してきました。<br />
+個人的にも<a class="keyword" href="http://d.hatena.ne.jp/keyword/%BD%E9%C5%E7">初島</a>根ってのもあって期待と不安があったのですが、蓋を開けてみると情熱あふれる参加者ばかりでした。<br />
+ついついいつも以上に僕の方も力がはいって、途中でガス欠になりそうでしたww<br />
+当日の資料は <a href="http://speakerdeck.com/u/nawoto">speakerdeck/nawoto</a> にあがっているので、なにかの参考にしてください > 参加者のみなさん</p><br />
+<p>運営や集客に尽力していただいた AgileShimane のみなさん、本当にありがとうございました。<br />
+また、Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> をやったり、他にも一緒に何かやりましょう!!<br />
+あと、サポートしてくれた [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@miholovesq] と [<a class="keyword" href="http://d.hatena.ne.jp/keyword/twitter">twitter</a>:@yohhatu] ありがとー。</p><br />
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%E9%A5%E0">スクラム</a>道では地方で呼んでもらえれば Scrum <a class="keyword" href="http://d.hatena.ne.jp/keyword/Boot%20Camp">Boot Camp</a> を開催していますので、お気軽にお問いあわせください。</p>
+
+<ul>
+<li><a href="https://www.facebook.com/TaoOfScrum">https://www.facebook.com/TaoOfScrum</a></li>
+</ul>
+-----

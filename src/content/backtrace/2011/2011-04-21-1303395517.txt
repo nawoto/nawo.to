@@ -1,0 +1,18 @@
+
+AUTHOR: nawoto
+TITLE:  「アジャイル開発の基本的な流れ」
+BASENAME: 20110421/1303395517
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/21/2011 23:18:37
+-----
+BODY:
+<p>先日、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発にはじめて取り組む現場向けのプチ講習をやりました。<br />
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B8%A5%E3%A5%A4%A5%EB">アジャイル</a>開発の一連の流れとそれぞれやる事をお話しして、これから自分達が何をやっていくのかを把握してもらおうというのが目的でした。<br />
+その後、実際にスプリントを始められるように準備をしましょうというところまでやりました。<br />
+その時に使った資料を公開しておきます。</p><br />
+<p>実際の現場でやる時は口頭で解説つけたり詳細な部分は実際にやる際に説明したりするので、資料的には一連の流れとそれぞれがやる事をダーっと説明している内容なのですが、ちょっとした<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C1%A1%BC%A5%C8%A5%B7%A1%BC%A5%C8">チートシート</a>みたいな感じには使える気がします。</p><p><a title="View The Basic Flow of Agile Development on Scribd" href="http://www.scribd.com/doc/53538415/The-Basic-Flow-of-Agile-Development" style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; display: block; text-decoration: underline;">The Basic Flow of Agile Development</a> <object id="doc_92759" name="doc_92759" height="600" width="100%" type="application/x-shockwave-flash" data="http://d1.scribdassets.com/ScribdViewer.swf" style="outline:none;" >            <param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf">             <param name="wmode" value="opaque">             <param name="bgcolor" value="#ffffff">             <param name="allowFullScreen" value="true">             <param name="allowScriptAccess" value="always">             <param name="FlashVars" value="document_id=53538415&access_key=key-2ohs07tx2sazvoparm15&page=1&viewMode=slideshow">             <embed id="doc_92759" name="doc_92759" src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=53538415&access_key=key-2ohs07tx2sazvoparm15&page=1&viewMode=slideshow" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="600" width="100%" wmode="opaque" bgcolor="#ffffff"></embed>         </object></p><br />
+<p>あと、今回はいつも資料の公開用に使っている <a class="keyword" href="http://d.hatena.ne.jp/keyword/slideshare">slideshare</a> が調子が悪いので <a href="http://www.scribd.com">Scribd</a> を使ってみました。</p>
+
+-----
