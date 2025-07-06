@@ -79,12 +79,12 @@ export async function getStaticPaths() {
         props: { 
           post,
           previousPost: previousPost ? {
-            slug: `backtrace/${previousPost.slug}`,
+            slug: `backtrace/${previousPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
             collection: 'backtrace',
             data: previousPost.data
           } : undefined,
           nextPost: nextPost ? {
-            slug: `backtrace/${nextPost.slug}`,
+            slug: `backtrace/${nextPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
             collection: 'backtrace',
             data: nextPost.data
           } : undefined
@@ -95,17 +95,28 @@ export async function getStaticPaths() {
     const [, year, month, day, slug] = dateMatch;
     const urlSlug = `backtrace/${year}/${month}/${day}/${slug}`;
     
+    // previousPostとnextPostのURL生成
+    const getBacktraceUrl = (post: CollectionEntry<'backtrace'>) => {
+      const fileName = post.slug.replace(/^\d{4}\//, '');
+      const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+      if (!dateMatch) {
+        return `backtrace/${fileName.toLowerCase()}`;
+      }
+      const [, year, month, day, slug] = dateMatch;
+      return `backtrace/${year}/${month}/${day}/${slug}`;
+    };
+    
     return {
       params: { slug: urlSlug },
       props: { 
         post,
         previousPost: previousPost ? {
-          slug: `backtrace/${previousPost.slug}`,
+          slug: getBacktraceUrl(previousPost),
           collection: 'backtrace',
           data: previousPost.data
         } : undefined,
         nextPost: nextPost ? {
-          slug: `backtrace/${nextPost.slug}`,
+          slug: getBacktraceUrl(nextPost),
           collection: 'backtrace',
           data: nextPost.data
         } : undefined

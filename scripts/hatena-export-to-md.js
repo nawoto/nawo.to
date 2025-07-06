@@ -74,7 +74,16 @@ const convertBody = (body) => {
   
   let markdown = body;
 
-  // まず全体の各行の先頭空白を一括除去
+  // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
+  markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
+    let cleanContent = content
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<[^>]*>/g, '')
+      .trim();
+    return `\n\`\`\`\n${cleanContent}\n\`\`\`\n\n`;
+  });
+  
+  // PREタグ以外の部分の各行の先頭空白を一括除去
   markdown = markdown.replace(/^\s+/gm, '');
   
   // COMMENTセクションを適切に処理
@@ -111,6 +120,24 @@ const convertBody = (body) => {
     .replace(/<\/p>/g, '\n\n')
     // brタグを改行に変換
     .replace(/<br\s*\/?>/g, '\n')
+    // ul/liタグをMarkdownの箇条書きに変換
+    .replace(/<ul>\s*([\s\S]*?)\s*<\/ul>/g, (match, content) => {
+      const items = content.match(/<li[^>]*>([\s\S]*?)<\/li>/g);
+      if (!items) return '';
+      const markdownItems = items.map(item => {
+        let itemContent = item.replace(/<li[^>]*>([\s\S]*?)<\/li>/, '$1');
+        
+        // リンクをMarkdown形式に変換
+        itemContent = itemContent
+          .replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '[$2]($1)')
+          .replace(/<br\s*\/?>/gi, '\n')
+          .replace(/<[^>]*>/g, '')
+          .trim();
+        
+        return `- ${itemContent}`;
+      });
+      return markdownItems.join('\n') + '\n\n';
+    })
     // imgタグをMarkdown画像に変換
     .replace(/<img\s+[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*\/?>/gi, '![$2]($1)')
     .replace(/<img\s+[^>]*alt="([^"]*)"[^>]*src="([^"]+)"[^>]*\/?>/gi, '![$1]($2)')
