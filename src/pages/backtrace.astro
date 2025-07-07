@@ -79,18 +79,18 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 	</div>
 
 	<!-- View Mode Toggle -->
-	<div class="mx-auto w-5/6 mt-6 mb-4">
+	<nav class="mx-auto w-5/6 mt-6 mb-4" aria-label="表示モード切り替え">
 		<div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
 			<span class="whitespace-nowrap">view mode:</span>
-			<div class="flex space-x-2">
-				<button id="flat-mode" class="view-mode-btn active px-3 py-1 rounded border">flat</button>
-				<button id="yearly-mode" class="view-mode-btn px-3 py-1 rounded border">yearly</button>
+			<div class="flex space-x-2" role="tablist" aria-label="表示モード">
+				<button id="flat-mode" class="view-mode-btn active px-3 py-1 rounded border" role="tab" aria-selected="true" aria-controls="flat-view">flat</button>
+				<button id="yearly-mode" class="view-mode-btn px-3 py-1 rounded border" role="tab" aria-selected="false" aria-controls="yearly-view">yearly</button>
 			</div>
 		</div>
-	</div>
+	</nav>
 
 	<!-- Year Navigation (yearly mode only) -->
-	<div id="year-nav" class="mx-auto w-5/6 mb-6 hidden">
+	<nav id="year-nav" class="mx-auto w-5/6 mb-6 hidden" aria-label="年別ジャンプナビゲーション">
 		<div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
 			<span class="whitespace-nowrap">jump to year:</span>
 			<div class="flex flex-wrap gap-2">
@@ -98,16 +98,17 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 					<button 
 						class="year-jump-btn px-2 py-1 rounded border hover:bg-gray-100 transition-colors"
 						data-year={year}
+						aria-label={`${year}年の記事にジャンプ`}
 					>
 						{year}
 					</button>
 				))}
 			</div>
 		</div>
-	</div>
+	</nav>
 
 	<!-- Flat View (Default) -->
-	<div id="flat-view" class="view-content">
+	<main id="flat-view" class="view-content" role="tabpanel" aria-labelledby="flat-mode">
 		<ol style="list-style: none;">
 			{postsWithExcerpt.map((post) => {
 				const title = post.data.title || post.slug;
@@ -136,11 +137,11 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 										<span itemprop="headline">{title}</span>
 									</a>
 								</h2>
-								<small>{post.data.pubDate.toLocaleDateString('ja-JP', {
+								<time datetime={post.data.pubDate.toISOString()} itemprop="datePublished" class="text-sm text-gray-600">{post.data.pubDate.toLocaleDateString('ja-JP', {
 									year: 'numeric',
 									month: '2-digit',
 									day: '2-digit'
-								}).replace(/\//g, '/')}</small>
+								}).replace(/\//g, '/')}</time>
 								{tags.length > 0 && (
 									<div class="mt-2">
 										{tags.map((tag: string) => (
@@ -166,19 +167,20 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 				);
 			})}
 		</ol>
-	</div>
+	</main>
 
 	<!-- Yearly View -->
-	<div id="yearly-view" class="view-content hidden">
+	<main id="yearly-view" class="view-content hidden" role="tabpanel" aria-labelledby="yearly-mode">
 		{years.map(year => {
 			const yearPosts = postsByYearWithExcerpt[year];
 			return (
-				<div class="year-section mb-8" data-year={year}>
+				<section class="year-section mb-8" data-year={year} aria-labelledby={`year-${year}`}>
 					<div class="flex items-center justify-between mb-4">
-						<h2 class="text-xl sm:text-2xl font-bold font-titillium text-gray-800">## {year}</h2>
+						<h2 id={`year-${year}`} class="text-xl sm:text-2xl font-bold font-titillium text-gray-800">{year}</h2>
 						<button 
 							class="back-to-top-btn px-2 py-1 text-sm font-mono border rounded hover:bg-gray-100 transition-colors"
 							title="ナビゲーションに戻る"
+							aria-label="年別ナビゲーションに戻る"
 						>
 							↑
 						</button>
@@ -197,22 +199,22 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 							}
 							
 							return (
-								<div class="hover-style py-2 group">
-									<a href={postUrl} class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 text-base sm:text-lg font-mono hover:text-green-400 transition-colors duration-200">
-										<span class="text-gray-600 whitespace-nowrap">{post.data.pubDate.toLocaleDateString('ja-JP', {
+								<article class="hover-style py-2 group" itemscope itemtype="http://schema.org/Article">
+									<a href={postUrl} class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 text-base sm:text-lg font-mono hover:text-green-400 transition-colors duration-200" itemprop="url">
+										<time class="text-gray-600 whitespace-nowrap" datetime={post.data.pubDate.toISOString()} itemprop="datePublished">{post.data.pubDate.toLocaleDateString('ja-JP', {
 											month: '2-digit',
 											day: '2-digit'
-										}).replace(/\//g, '/')}</span>
-										<span class="text-black group-hover:text-green-400 break-words">{title}</span>
+										}).replace(/\//g, '/')}</time>
+										<span class="text-black group-hover:text-green-400 break-words" itemprop="headline">{title}</span>
 									</a>
-								</div>
+								</article>
 							);
 						})}
 					</div>
-				</div>
+				</section>
 			);
 		})}
-	</div>
+	</main>
 </Layout>
 
 <style>
@@ -252,6 +254,10 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 			// ボタンの状態を更新
 			flatBtn?.classList.toggle('active', mode === 'flat');
 			yearlyBtn?.classList.toggle('active', mode === 'yearly');
+			
+			// ARIA属性を更新
+			flatBtn?.setAttribute('aria-selected', (mode === 'flat').toString());
+			yearlyBtn?.setAttribute('aria-selected', (mode === 'yearly').toString());
 			
 			// ビューの表示/非表示を切り替え
 			flatView?.classList.toggle('hidden', mode !== 'flat');
