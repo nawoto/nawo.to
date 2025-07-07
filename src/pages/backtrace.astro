@@ -68,7 +68,7 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 <Layout title={`BACKTRACE | ${SITE.title}`}>
 	<!-- Tab Navigation -->
 	<div class="mt-4">
-		<div class="tab-container">
+		<div class="tab-container backtrace-tabs">
 			<a href="/logs" class="tab">LOGS</a>
 			<a href="/texts" class="tab">TEXTS</a>
 			<a href="/backtrace" class="tab active">BACKTRACE</a>
@@ -109,7 +109,7 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 
 	<!-- Flat View (Default) -->
 	<main id="flat-view" class="view-content" role="tabpanel" aria-labelledby="flat-mode">
-		<ol style="list-style: none;">
+		<ol style="list-style: none;" class="backtrace-posts">
 			{postsWithExcerpt.map((post) => {
 				const title = post.data.title || post.slug;
 				// 年別ディレクトリ構造に合わせたURL生成
@@ -127,12 +127,12 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 				return (
 					<li class="hover-style border-y border-solid py-2 group">
 						<article
-							class="mx-auto w-5/6"
+							class="mx-auto w-11/12 sm:w-5/6"
 							itemscope
 							itemtype="http://schema.org/Article"
 						>
 							<header class="py-4">
-								<h2 class="text-2xl font-bold font-titillium group-hover:text-green-400 transition-colors duration-200 break-words">
+								<h2 class="text-xl sm:text-2xl font-bold font-titillium group-hover:text-green-400 transition-colors duration-200 break-words">
 									<a href={postUrl} itemprop="url">
 										<span itemprop="headline">{title}</span>
 									</a>
@@ -159,7 +159,7 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 								>
 								</p>
 								<div class="my-2 py-2">
-									<a href={postUrl} class="read-more text-lg font-mono text-black underline hover:text-white transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ MORE</a>
+									<a href={postUrl} class="read-more text-base sm:text-lg font-mono text-black underline hover:text-white transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ MORE</a>
 								</div>
 							</section>
 						</article>
@@ -185,7 +185,7 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 							↑
 						</button>
 					</div>
-					<div class="space-y-2">
+					<div class="space-y-3 mx-auto w-11/12 sm:w-full">
 						{yearPosts.map((post) => {
 							const title = post.data.title || post.slug;
 							const fileName = post.slug.replace(/^\d{4}\//, '');
@@ -197,16 +197,28 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 							} else {
 								postUrl = `/backtrace/${post.slug}/`;
 							}
+							const tags = post.data.tags || [];
 							
 							return (
-								<article class="hover-style py-2 group" itemscope itemtype="http://schema.org/Article">
-									<a href={postUrl} class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 text-base sm:text-lg font-mono hover:text-green-400 transition-colors duration-200" itemprop="url">
-										<time class="text-gray-600 whitespace-nowrap" datetime={post.data.pubDate.toISOString()} itemprop="datePublished">{post.data.pubDate.toLocaleDateString('ja-JP', {
-											month: '2-digit',
-											day: '2-digit'
-										}).replace(/\//g, '/')}</time>
-										<span class="text-black group-hover:text-green-400 break-words" itemprop="headline">{title}</span>
-									</a>
+								<article class="hover-style py-3 px-2 group border border-transparent hover:border-gray-200 rounded" itemscope itemtype="http://schema.org/Article">
+									<div class="flex flex-col space-y-2">
+										<div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+											<time class="text-gray-600 whitespace-nowrap text-sm" datetime={post.data.pubDate.toISOString()} itemprop="datePublished">{post.data.pubDate.toLocaleDateString('ja-JP', {
+												month: '2-digit',
+												day: '2-digit'
+											}).replace(/\//g, '/')}</time>
+											<a href={postUrl} class="text-black group-hover:text-green-400 break-words font-mono text-sm sm:text-base transition-colors duration-200" itemprop="url headline">{title}</a>
+										</div>
+										{tags.length > 0 && (
+											<div class="flex flex-wrap gap-1">
+												{tags.map((tag: string) => (
+													<span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded border">
+														{tag}
+													</span>
+												))}
+											</div>
+										)}
+									</div>
 								</article>
 							);
 						})}
@@ -218,6 +230,50 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 </Layout>
 
 <style>
+	/* Backtraceページ専用のタブスタイル */
+	.backtrace-tabs {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	
+	.backtrace-tabs .tab {
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+	
+	@media (max-width: 640px) {
+		.backtrace-tabs .tab {
+			font-size: 0.875rem;
+			padding: 0.4rem 0.8rem;
+		}
+		
+		.backtrace-posts {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.backtrace-posts li {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+		}
+		
+		/* 年別表示のモバイル最適化 */
+		.year-section article {
+			padding: 0.75rem;
+		}
+		
+		.year-section .flex-wrap {
+			gap: 0.25rem;
+		}
+		
+		.year-section .flex-wrap span {
+			font-size: 0.75rem;
+			padding: 0.25rem 0.5rem;
+		}
+	}
+	
 	.view-mode-btn {
 		@apply text-gray-400 border-gray-300 hover:border-gray-400 transition-colors;
 	}
