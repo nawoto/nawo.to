@@ -17,6 +17,34 @@ const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
 
+// コレクションに応じた一覧ページのURLを生成
+function getListPageUrl(collection: string): string {
+  switch (collection) {
+    case 'logs':
+      return '/logs';
+    case 'texts':
+      return '/texts';
+    case 'backtrace':
+      return '/backtrace';
+    default:
+      return '/logs';
+  }
+}
+
+// コレクションに応じた一覧ページの名前を取得
+function getListPageName(collection: string): string {
+  switch (collection) {
+    case 'logs':
+      return 'LOGS';
+    case 'texts':
+      return 'TEXTS';
+    case 'backtrace':
+      return 'BACKTRACE';
+    default:
+      return 'LOGS';
+  }
+}
+
 // 本文からサマリを生成する関数
 function generateDescription(content: ArticleContent): string {
   // 既にdescriptionがある場合はそれを使用
@@ -98,8 +126,8 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     {
       "@type": "ListItem",
       position: 2,
-      name: "LOGS",
-      item: `${SITE.url}/logs`
+      name: getListPageName(content.collection),
+      item: `${SITE.url}${getListPageUrl(content.collection)}`
     },
     {
       "@type": "ListItem",
@@ -133,6 +161,19 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     itemtype="http://schema.org/Article"
     class="prose prose-lg mx-auto max-w-4xl px-4 py-8"
   >
+    <!-- 一覧へのナビゲーション（上部） -->
+    <nav class="mb-6 text-sm font-mono" aria-label="一覧へのナビゲーション">
+      <a 
+        href={getListPageUrl(content.collection)} 
+        class="text-base font-mono text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
+        aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+        rel="up"
+      >
+        <span aria-hidden="true">🔙</span>
+        <span>{getListPageName(content.collection)}</span>
+      </a>
+    </nav>
+
     <header class="mb-8">
       <h1 itemprop="headline" class="text-3xl font-bold md:text-5xl mb-0 font-titillium break-words">
         {title}
@@ -171,40 +212,55 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     </footer>
   </article>
 
-  <!-- Navigation -->
-  <nav class="mx-auto max-w-4xl px-4">
-    <ul class="my-5 grid grid-cols-2 divide-x border-y text-center text-2xl uppercase">
-      <li class="hover-style p-3">
+  <!-- Navigation（2段構成） -->
+  <nav class="mx-auto max-w-4xl px-4" aria-label="記事ナビゲーション">
+    <!-- 1段目: PREV | NEXT -->
+    <ul class="grid grid-cols-2 divide-x border-t text-center text-2xl uppercase overflow-hidden" role="list">
+      <li class="hover-style p-3" role="listitem">
         {previousPost ? (
           <a
             href={previousPost.collection === 'texts' ? `/texts/${previousPost.slug}/` : `/${previousPost.slug}/`}
             title={previousPost.data.title}
             rel="prev"
             class="block"
+            aria-label={`前の記事: ${previousPost.data.title}`}
           >
             prev
             <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
           </a>
         ) : (
-          <span class="text-gray-400">prev</span>
+          <span class="text-gray-400" aria-label="前の記事はありません">prev</span>
         )}
       </li>
-      <li class="hover-style p-3">
+      <li class="hover-style p-3" role="listitem">
         {nextPost ? (
           <a
             href={nextPost.collection === 'texts' ? `/texts/${nextPost.slug}/` : `/${nextPost.slug}/`}
             title={nextPost.data.title}
             rel="next"
             class="block"
+            aria-label={`次の記事: ${nextPost.data.title}`}
           >
             next
             <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
           </a>
         ) : (
-          <span class="text-gray-400">next</span>
+          <span class="text-gray-400" aria-label="次の記事はありません">next</span>
         )}
       </li>
     </ul>
+    <!-- 2段目: BACK TO XXX -->
+    <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
+      <a 
+        href={getListPageUrl(content.collection)} 
+        class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
+        aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+        rel="up"
+      >
+        <span aria-hidden="true">🔙</span>
+        <span>{getListPageName(content.collection)}</span>
+      </a>
+    </div>
   </nav>
 
   <!-- Share Buttons -->
@@ -522,4 +578,18 @@ const breadcrumbData = generateBreadcrumbStructuredData({
       }
     });
   </script>
+
+  <style>
+    /* 一覧へのナビゲーションリンクのモバイル最適化 */
+    @media (max-width: 640px) {
+      .prose nav a {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .prose nav a span:last-child {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
 </Layout>
