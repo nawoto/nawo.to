@@ -288,6 +288,11 @@ function convertToMarkdown(entry, meta, year) {
   markdown = markdown.replace(/<script src="http:\/\/speakerdeck\.com\/embed\/([a-zA-Z0-9]+)\.js"><\/script>/g, (match, slideId) => {
     return `\n\nhttps://speakerdeck.com/embed/${slideId}\n\n`;
   });
+  
+  // SlideShareの埋め込みウィジェットをURLのみに変換
+  markdown = markdown.replace(/<div[^>]*id="__ss_\d+"[^>]*>\s*<strong[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>([^<]+)<\/a>\s*<\/strong>\s*<iframe[^>]*><\/iframe>\s*<div[^>]*>\s*View more[^<]*<a[^>]*>[^<]*<\/a>[^<]*from[^<]*<a[^>]*>[^<]*<\/a>\s*<\/div>\s*<\/div>/g, (match, url, title) => {
+    return `\n\n${url}\n\n`;
+  });
   // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
   markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
     let cleanContent = content
@@ -337,6 +342,35 @@ function convertToMarkdown(entry, meta, year) {
           .replace(/<br\s*\/?>/gi, '\n')
           .replace(/<[^>]*>/g, '')
           .trim();
+        
+        // SpeakerDeckのリンクの場合は箇条書きを除去してURLのみに変換
+        if (itemContent.includes('speakerdeck.com')) {
+          // [URL](URL) の形式をURLのみに変換
+          const markdownLinkMatch = itemContent.match(/\[(https:\/\/speakerdeck\.com\/[^\]]+)\]\(\1\)/);
+          if (markdownLinkMatch) {
+            return markdownLinkMatch[1];
+          }
+          // 通常のURLの場合
+          const urlMatch = itemContent.match(/https:\/\/speakerdeck\.com\/[^\s]+/);
+          if (urlMatch) {
+            return urlMatch[0];
+          }
+        }
+        
+        // SlideShareのリンクの場合は箇条書きを除去してURLのみに変換
+        if (itemContent.includes('slideshare.net')) {
+          // [URL](URL) の形式をURLのみに変換
+          const markdownLinkMatch = itemContent.match(/\[(https:\/\/slideshare\.net\/[^\]]+)\]\(\1\)/);
+          if (markdownLinkMatch) {
+            return markdownLinkMatch[1];
+          }
+          // 通常のURLの場合
+          const urlMatch = itemContent.match(/https:\/\/slideshare\.net\/[^\s]+/);
+          if (urlMatch) {
+            return urlMatch[0];
+          }
+        }
+        
         return `- ${itemContent}`;
       });
       return markdownItems.join('\n') + '\n\n';
@@ -352,11 +386,13 @@ function convertToMarkdown(entry, meta, year) {
   markdown = markdown
     .replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => String.fromCodePoint(parseInt(hex, 16)))
     .replace(/&#([0-9]+);/g, (match, dec) => String.fromCodePoint(parseInt(dec, 10)));
-  // タグを抽出
+  // タグを抽出（全角・半角ハッシュタグに対応）
   const tags = [];
-  const hashtagMatch = meta.title.match(/＃([^\s]+)/g);
-  if (hashtagMatch) tags.push(...hashtagMatch);
-  const cleanTitle = meta.title.replace(/＃[^\s]+/g, '').trim();
+  const hashtagMatch = meta.title.match(/[#＃]([^\s]+)/g);
+  if (hashtagMatch) {
+    tags.push(...hashtagMatch.map(tag => tag.substring(1))); // #を除去
+  }
+  const cleanTitle = meta.title.replace(/[#＃][^\s]+/g, '').trim();
   const dateStr = meta.date.toISOString().split('T')[0];
   const cleanBasename = meta.basename.split('/').pop();
   const fileName = `${dateStr}-${cleanBasename}.md`;
