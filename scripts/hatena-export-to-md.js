@@ -298,6 +298,32 @@ function processEntries(entries, year, startIndex) {
 function convertToMarkdown(entry, meta, year) {
   if (!meta) return null;
   let markdown = meta.body;
+
+  // --- SlideShare埋め込みブロック内のViewリンクまたはタイトルリンク（ラベル不問）を抽出し、埋め込みブロック直前の行にインデントなしで追加 ---
+  const embedBlockPattern = /<div[^>]+id="__ss_[^"']+"[^>]*>[\s\S]*?<\/div>/g;
+  // <a ... href="https://www.slideshare.net/nawoto/xxx" ...>（ラベル不問）</a>
+  const anyLinkPattern = /<a[^>]+href="(https?:\/\/www\.slideshare\.net\/nawoto\/[a-zA-Z0-9\-_]+)"[^>]*>[^<]*<\/a>/g;
+  // まず埋め込みブロックの直前に改行を強制挿入
+  markdown = markdown.replace(embedBlockPattern, '\n$&');
+  let lines = markdown.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const embedBlocks = line.match(embedBlockPattern);
+    if (embedBlocks) {
+      for (const block of embedBlocks) {
+        let match;
+        // ブロック内のSlideshare本体URL<a>をすべて抽出
+        while ((match = anyLinkPattern.exec(block)) !== null) {
+          lines.splice(i, 0, match[1]);
+          i++;
+        }
+        // ブロック自体は消す
+        lines[i] = line.replace(block, '');
+      }
+    }
+  }
+  markdown = lines.join('\n');
+
   // SpeakerDeckの埋め込みスクリプトをURLのみに変換（最初に実行）
   markdown = markdown.replace(
     /<script src="http:\/\/speakerdeck\.com\/embed\/([a-zA-Z0-9]+)\.js"><\/script>/g,
@@ -313,6 +339,11 @@ function convertToMarkdown(entry, meta, year) {
       return `\n\n${url}\n\n`;
     }
   );
+  // SlideShare埋め込みやリンク行をURLのみに変換（複数リンク混在パターン対応）
+  // 例: [![SlideShare](...)](...) | [View](URL) | [Upload your own](...)
+  markdown = markdown.replace(/\[!\[SlideShare\][^\]]*\]\([^\)]*\)\s*\|\s*\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)\s*\|\s*\[Upload your own\]\([^\)]*\)[^\n]*\n?/gi, '$1\n');
+  // [View](URL) だけの場合も対応
+  markdown = markdown.replace(/\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)[^\n]*\n?/gi, '$1\n');
   // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
   markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
     let cleanContent = content
@@ -417,7 +448,7 @@ function convertToMarkdown(entry, meta, year) {
   const tags = [];
   const hashtagMatch = meta.title.match(/[#＃]([^\s]+)/g);
   if (hashtagMatch) {
-    tags.push(...hashtagMatch.map((tag) => tag.substring(1))); // #を除去
+    tags.push(...hashtagMatch); // #を残したまま保存
   }
   const cleanTitle = meta.title.replace(/[#＃][^\s]+/g, '').trim();
   const dateStr = meta.date.toISOString().split('T')[0];
