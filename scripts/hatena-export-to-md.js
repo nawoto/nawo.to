@@ -239,6 +239,27 @@ function extractMeta(entry) {
   const dateMatch = entry.match(/DATE: (.+)/);
   const basenameMatch = entry.match(/BASENAME: (.+)/);
   const bodyMatch = entry.match(/BODY:([\s\S]*?)(?=-----|$)/);
+  // コメント抽出: -----COMMENT: ...（複数可）
+  const commentBlocks = [];
+  const commentPattern = /-----\s*COMMENT:\s*([\s\S]*?)(?=-----|$)/g;
+  let commentMatch;
+  while ((commentMatch = commentPattern.exec(entry)) !== null) {
+    // AUTHOR, DATE, 本文を抽出
+    const authorMatch = commentMatch[1].match(/AUTHOR: ([^\n]*)/);
+    const dateMatch = commentMatch[1].match(/DATE: ([^\n]*)/);
+    // 本文はAUTHOR/DATE以外の行
+    let body = commentMatch[1]
+      .replace(/AUTHOR: [^\n]*\n?/, '')
+      .replace(/DATE: [^\n]*\n?/, '')
+      .replace(/^\s+|\s+$/g, '');
+    // <br>→改行、HTMLタグ除去
+    body = body.replace(/<br\s*\/?/gi, '\n').replace(/<[^>]*>/g, '').trim();
+    commentBlocks.push({
+      author: authorMatch ? authorMatch[1].trim() : '',
+      date: dateMatch ? dateMatch[1].trim() : '',
+      body,
+    });
+  }
   if (!titleMatch || !dateMatch || !basenameMatch || !bodyMatch) return null;
   const title = titleMatch[1].trim();
   const dateStr = dateMatch[1].trim();
@@ -251,7 +272,7 @@ function extractMeta(entry) {
   } catch (e) {
     return null;
   }
-  return { title, date, basename, body };
+  return { title, date, basename, body, comments: commentBlocks };
 }
 
 function processEntries(entries, year, startIndex) {
@@ -457,8 +478,22 @@ function convertToMarkdown(entry, meta, year) {
   const yearDir = `src/content/backtrace/${year ? year : meta.date.getFullYear()}`;
   if (!fs.existsSync(yearDir)) fs.mkdirSync(yearDir, { recursive: true });
   const frontmatter = `---\ntitle: "${cleanTitle}"\npubDate: ${meta.date.toISOString()}\ntags: ${tags.length > 0 ? JSON.stringify(tags) : '[]'}\n---\n\n`;
+
+  // コメント出力（本文末尾）
+  let commentSection = '';
+  if (meta.comments && meta.comments.length > 0) {
+    commentSection = '\n';
+    for (const c of meta.comments) {
+      commentSection += '```comment\n';
+      commentSection += `AUTHOR: ${c.author}\n`;
+      commentSection += `DATE: ${c.date}\n`;
+      commentSection += `${c.body}\n`;
+      commentSection += '```\n\n';
+    }
+  }
+
   const filePath = path.join(yearDir, fileName);
-  fs.writeFileSync(filePath, frontmatter + markdown);
+  fs.writeFileSync(filePath, frontmatter + markdown + commentSection);
 
   // 元のエクスポートファイルの内容をtxtファイルとして保存
   const originalFileName = `${dateStr}-${cleanBasename}.txt`;
