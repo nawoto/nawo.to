@@ -6,8 +6,10 @@ import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
 import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
 import WebMentions from '../components/WebMentions.astro';
-import { generateBlogPostingStructuredData, generateBreadcrumbStructuredData } from '../data/structured-data.js';
 import StructuredData from '../components/StructuredData.astro';
+import { generateArticleSEO } from '../utils/seo';
+import { generateArticleStructuredData } from '../utils/structured-data';
+import { processCompleteArticleMetadata } from '../utils/metadata';
 // import fs from 'node:fs';
 // import path from 'node:path';
 
@@ -17,133 +19,29 @@ const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
 
-// コレクションに応じた一覧ページのURLを生成
-function getListPageUrl(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return '/logs';
-    case 'texts':
-      return '/texts';
-    case 'backtrace':
-      return '/backtrace';
-    default:
-      return '/logs';
-  }
-}
 
-// コレクションに応じた一覧ページの名前を取得
-function getListPageName(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return 'LOGS';
-    case 'texts':
-      return 'TEXTS';
-    case 'backtrace':
-      return 'BACKTRACE';
-    default:
-      return 'LOGS';
-  }
-}
 
-// 本文からサマリを生成する関数
-function generateDescription(content: ArticleContent): string {
-  // 既にdescriptionがある場合はそれを使用
-  if (content.data.description && content.data.description.trim() !== '') {
-    return content.data.description;
-  }
-  
-  // 本文からサマリを生成
-  const bodyText = content.body || '';
-  const plainText = bodyText
-    .replace(/---[\s\S]*?---/g, '') // フロントマターを除去
-    .replace(/```[\s\S]*?```/g, '') // コードブロックを除去
-    .replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
-    .replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
-    .replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
-    .replace(/\n+/g, ' ') // 改行を空白に変換
-    .replace(/\s+/g, ' ') // 複数の空白を1つに
-    .trim()
-    .slice(0, 160); // 160文字に制限（SEO推奨）
-  
-  return plainText + (plainText.length >= 160 ? '...' : '');
-}
-
-const metaDescription = generateDescription(content);
-const publishedTime = content.data.pubDate.toISOString();
-const modifiedTime = content.data.updatedDate?.toISOString();
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
 
-// OGP画像の決定ロジック
-let ogImageUrl;
-let collectionName;
+// 記事のメタデータを取得
+const metadata = processCompleteArticleMetadata(content as any, shareUrl);
 
-if (content.data.ogimage) {
-  // 1. 手動設定がある場合はそれを使用
-  ogImageUrl = new URL(content.data.ogimage, SITE.url).href;
-} else {
-  // 2. 自動生成された画像パスを構築
-  collectionName = content.collection === 'texts' ? 'texts' : 'logs';
-  ogImageUrl = new URL(`/${collectionName}/${content.slug}/og.png`, SITE.url).href;
-}
+// SEO設定を生成（型変換が必要）
+const seoConfig = generateArticleSEO(content as any, currentUrl, () => currentUrl);
 
-// BlogPosting構造化データを生成
-const blogPostingData = generateBlogPostingStructuredData({
-  url: currentUrl,
-  headline: title,
-  description: metaDescription,
-  image: ogImageUrl,
-  author: {
-    "@type": "Person",
-    name: authorName,
-    url: SITE.url
-  },
-  publisher: {
-    "@type": "Organization",
-    name: SITE.title,
-    logo: {
-      "@type": "ImageObject",
-      url: new URL(SITE.images.siteIcon, SITE.url).href
-    }
-  },
-  datePublished: publishedTime,
-  dateModified: modifiedTime || publishedTime,
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": currentUrl
-  }
-});
-
-// BreadcrumbList構造化データを生成
-const breadcrumbData = generateBreadcrumbStructuredData({
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: SITE.url
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: getListPageName(content.collection),
-      item: `${SITE.url}${getListPageUrl(content.collection)}`
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: title,
-      item: currentUrl
-    }
-  ]
-});
+// 構造化データを生成
+const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
+  content as any,
+  currentUrl,
+  () => currentUrl
+);
 ---
 
-<Layout title={pageTitle} description={metaDescription} image={content.data.ogimage}>
+<Layout title={metadata.pageTitle} description={metadata.description} image={metadata.ogImageUrl}>
   <!-- Article specific meta tags in head -->
   <Fragment slot="head">
-    <meta property="article:published_time" content={publishedTime} />
-    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    <meta property="article:published_time" content={metadata.publishedTime} />
+    {metadata.modifiedTime !== metadata.publishedTime && <meta property="article:modified_time" content={metadata.modifiedTime} />}
     <meta property="article:author" content={authorName} />
     <meta property="article:section" content="Technology" />
     
@@ -164,13 +62,13 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     <!-- 一覧へのナビゲーション（上部） -->
     <nav class="mb-6 text-sm font-mono" aria-label="一覧へのナビゲーション">
       <a 
-        href={getListPageUrl(content.collection)} 
+        href={content.collection === 'logs' ? '/logs' : content.collection === 'texts' ? '/texts' : '/backtrace'} 
         class="text-base font-mono text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
-        aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+        aria-label={`${content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}一覧に戻る`}
         rel="up"
       >
         <span aria-hidden="true">🔙</span>
-        <span>{getListPageName(content.collection)}</span>
+        <span>{content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}</span>
       </a>
     </nav>
 
@@ -252,13 +150,13 @@ const breadcrumbData = generateBreadcrumbStructuredData({
     <!-- 2段目: BACK TO XXX -->
     <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
       <a 
-        href={getListPageUrl(content.collection)} 
+        href={content.collection === 'logs' ? '/logs' : content.collection === 'texts' ? '/texts' : '/backtrace'} 
         class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-        aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+        aria-label={`${content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}一覧に戻る`}
         rel="up"
       >
         <span aria-hidden="true">🔙</span>
-        <span>{getListPageName(content.collection)}</span>
+        <span>{content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}</span>
       </a>
     </div>
   </nav>

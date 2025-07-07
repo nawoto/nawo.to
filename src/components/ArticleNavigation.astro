@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getListPageUrl, getListPageName } from '../utils/content';
+
+interface Props {
+  content: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+  previousPost?: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+  nextPost?: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+}
+
+const { content, previousPost, nextPost } = Astro.props;
+---
+
+<!-- Navigation（2段構成） -->
+<nav class="mx-auto max-w-4xl px-4" aria-label="記事ナビゲーション">
+  <!-- 1段目: PREV | NEXT -->
+  <ul class="grid grid-cols-2 divide-x border-t text-center text-2xl uppercase overflow-hidden" role="list">
+    <li class="hover-style p-3" role="listitem">
+      {previousPost ? (
+        <a
+          href={previousPost.collection === 'texts' ? `/texts/${previousPost.slug}/` : `/${previousPost.slug}/`}
+          title={previousPost.data.title}
+          rel="prev"
+          class="block"
+          aria-label={`前の記事: ${previousPost.data.title}`}
+        >
+          prev
+          <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
+        </a>
+      ) : (
+        <span class="text-gray-400" aria-label="前の記事はありません">prev</span>
+      )}
+    </li>
+    <li class="hover-style p-3" role="listitem">
+      {nextPost ? (
+        <a
+          href={nextPost.collection === 'texts' ? `/texts/${nextPost.slug}/` : `/${nextPost.slug}/`}
+          title={nextPost.data.title}
+          rel="next"
+          class="block"
+          aria-label={`次の記事: ${nextPost.data.title}`}
+        >
+          next
+          <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
+        </a>
+      ) : (
+        <span class="text-gray-400" aria-label="次の記事はありません">next</span>
+      )}
+    </li>
+  </ul>
+  <!-- 2段目: BACK TO XXX -->
+  <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
+    <a 
+      href={getListPageUrl(content.collection)} 
+      class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
+      aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+      rel="up"
+    >
+      <span aria-hidden="true">🔙</span>
+      <span>{getListPageName(content.collection)}</span>
+    </a>
+  </div>
+</nav> 

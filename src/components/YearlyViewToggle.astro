@@ -1,0 +1,150 @@
+---
+interface Props {
+  years: number[];
+  activeTab: 'logs' | 'texts' | 'backtrace';
+}
+
+const { years, activeTab } = Astro.props;
+---
+
+<!-- View Mode Toggle -->
+<nav class="mx-auto w-5/6 mt-6 mb-4" aria-label="表示モード切り替え">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
+    <span class="whitespace-nowrap">view mode:</span>
+    <div class="flex space-x-2" role="tablist" aria-label="表示モード">
+      <button id="flat-mode" class="view-mode-btn active px-3 py-1 rounded border" role="tab" aria-selected="true" aria-controls="flat-view">flat</button>
+      <button id="yearly-mode" class="view-mode-btn px-3 py-1 rounded border" role="tab" aria-selected="false" aria-controls="yearly-view">yearly</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Year Navigation (yearly mode only) -->
+<nav id="year-nav" class="mx-auto w-5/6 mb-6 hidden" aria-label="年別ジャンプナビゲーション">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
+    <span class="whitespace-nowrap">jump to year:</span>
+    <div class="flex flex-wrap gap-2">
+      {years.map(year => (
+        <button 
+          class="year-jump-btn px-2 py-1 rounded border hover:bg-gray-100 transition-colors"
+          data-year={year}
+          aria-label={`${year}年の記事にジャンプ`}
+        >
+          {year}
+        </button>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .view-mode-btn {
+    @apply text-gray-400 border-gray-300 hover:border-gray-400 transition-colors;
+  }
+  .view-mode-btn.active {
+    @apply text-black border-black underline;
+  }
+  .year-jump-btn {
+    @apply text-gray-600 border-gray-300;
+  }
+  .year-jump-btn:hover {
+    @apply text-black border-black;
+  }
+</style>
+
+<script>
+  // 表示モードの切り替え機能
+  function initViewModeToggle() {
+    const flatBtn = document.getElementById('flat-mode');
+    const yearlyBtn = document.getElementById('yearly-mode');
+    const flatView = document.getElementById('flat-view');
+    const yearlyView = document.getElementById('yearly-view');
+    const yearNav = document.getElementById('year-nav');
+    
+    // ローカルストレージから保存されたモードを取得（ページ別に保存）
+    const storageKey = `${window.location.pathname}-view-mode`;
+    const savedMode = localStorage.getItem(storageKey) || 'flat';
+    
+    function setViewMode(mode: string) {
+      // ボタンの状態を更新
+      flatBtn?.classList.toggle('active', mode === 'flat');
+      yearlyBtn?.classList.toggle('active', mode === 'yearly');
+      
+      // ARIA属性を更新
+      flatBtn?.setAttribute('aria-selected', (mode === 'flat').toString());
+      yearlyBtn?.setAttribute('aria-selected', (mode === 'yearly').toString());
+      
+      // ビューの表示/非表示を切り替え
+      flatView?.classList.toggle('hidden', mode !== 'flat');
+      yearlyView?.classList.toggle('hidden', mode !== 'yearly');
+      yearNav?.classList.toggle('hidden', mode !== 'yearly');
+      
+      // yearlyモードに切り替えた時は年ジャンプ機能を再初期化
+      if (mode === 'yearly') {
+        // DOMの更新を待つ
+        setTimeout(() => {
+          initYearJump();
+        }, 200);
+      }
+      
+      // ローカルストレージに保存（ページ別）
+      localStorage.setItem(storageKey, mode);
+    }
+    
+    // 初期表示を設定
+    setViewMode(savedMode);
+    
+    // ボタンクリックイベント
+    flatBtn?.addEventListener('click', () => setViewMode('flat'));
+    yearlyBtn?.addEventListener('click', () => setViewMode('yearly'));
+    
+    // 年ジャンプ機能の初期化
+    function initYearJump() {
+      const yearJumpBtns = document.querySelectorAll('.year-jump-btn');
+      
+      yearJumpBtns.forEach((btn) => {
+        // 既存のイベントリスナーを削除（重複防止）
+        btn.removeEventListener('click', handleYearJump);
+        // 新しいイベントリスナーを追加
+        btn.addEventListener('click', handleYearJump);
+      });
+      
+      // 「↑」ボタンのイベントリスナーを設定
+      const backToTopBtns = document.querySelectorAll('.back-to-top-btn');
+      backToTopBtns.forEach((btn) => {
+        // 既存のイベントリスナーを削除（重複防止）
+        btn.removeEventListener('click', handleBackToTop);
+        // 新しいイベントリスナーを追加
+        btn.addEventListener('click', handleBackToTop);
+      });
+    }
+    
+    // 年ジャンプの処理関数
+    function handleYearJump(event: Event) {
+      const btn = event.target as HTMLElement;
+      const year = btn.getAttribute('data-year');
+      
+      if (year) {
+        // 年セクションを正確に特定（ボタンではなく、year-sectionクラスを持つ要素）
+        const yearSection = document.querySelector(`.year-section[data-year="${year}"]`);
+        
+        if (yearSection) {
+          yearSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    
+    // ナビゲーションに戻る処理関数
+    function handleBackToTop(event: Event) {
+      const yearNav = document.getElementById('year-nav');
+      if (yearNav) {
+        yearNav.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    
+    // 初期化時に年ジャンプ機能を設定
+    initYearJump();
+  }
+  
+  // DOM読み込み完了後に初期化
+  document.addEventListener('DOMContentLoaded', initViewModeToggle);
+</script> 

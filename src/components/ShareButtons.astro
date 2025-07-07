@@ -1,0 +1,76 @@
+---
+import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
+
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props;
+---
+
+<!-- Share Buttons -->
+<div class="mx-auto max-w-4xl px-4 mb-8">
+  <h3 class="text-sm text-gray-400 -mb-10">/** Share **/</h3>
+  <div class="flex gap-2 items-end">
+    <!-- X (Twitter) -->
+    <a
+      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Xでシェア"
+      class="hover:opacity-70 transition"
+    >
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        class="w-6 h-6"
+        style="color: #000;"
+      >
+        <path d={siX.path} />
+      </svg>
+    </a>
+    <!-- Facebook -->
+    <a
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebookでシェア"
+      class="hover:opacity-70 transition"
+    >
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        class="w-6 h-6"
+        style="color: #1877F2;"
+      >
+        <path d={siFacebook.path} />
+      </svg>
+    </a>
+    <!-- Hatena -->
+    <a
+      href={`https://b.hatena.ne.jp/add?mode=confirm&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="はてなブックマークでシェア"
+      class="hover:opacity-70 transition"
+    >
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        class="w-6 h-6"
+        style="color: #00A4DE;"
+      >
+        <path d={siHatenabookmark.path} />
+      </svg>
+    </a>
+    <!-- Applause Button（いいねボタン） -->
+    <applause-button 
+      style="width: 28px; height: 28px; margin:0; padding:0;"
+      color="#dc3545"
+      api="https://applause.chabouis.fr"
+      url={url}
+      class="self-end"
+    />
+  </div>
+</div> 

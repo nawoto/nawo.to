@@ -9,12 +9,16 @@ import Comments from '../components/Comments.astro';
 import StructuredData from '../components/StructuredData.astro';
 import { generatePersonStructuredData, DEFAULT_PERSON_DATA } from '../data/structured-data.js';
 import BookCard from '../components/BookCard.astro';
+import { generateProfileSEO } from '../utils/seo';
 
 const pageTitle = `About | ${SITE.title}`;
 const pageDescription = "西村直人（nawoto）のプロフィール。エンジニアリングマネージャー、スクラムマスター、アジャイル開発専門家として活動。";
 const shareUrl = `${SITE.url}/about`;
 const authorName = SITE.author.name;
 const profileImage = `${SITE.url}/images/profile-pic.png`;
+
+// SEO設定を生成
+const seoConfig = generateProfileSEO(pageTitle, pageDescription, shareUrl, profileImage);
 
 // Person構造化データを生成
 const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
@@ -23,42 +27,7 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <SEO
-      title={pageTitle}
-      description={pageDescription}
-      canonical={shareUrl}
-      openGraph={{
-        basic: {
-          type: "profile",
-          title: pageTitle,
-          image: profileImage,
-          url: shareUrl
-        },
-        optional: {
-          description: pageDescription,
-          siteName: SITE.title,
-          locale: "ja_JP"
-        }
-      }}
-      twitter={{
-        card: "summary_large_image",
-        site: `@${SITE.social.twitter}`,
-        creator: `@${SITE.social.twitter}`,
-        title: pageTitle,
-        description: pageDescription,
-        image: profileImage
-      }}
-      extend={{
-        meta: [
-          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-          // プロフィール専用メタタグのみ追加
-          { property: "profile:first_name", content: "Naoto" },
-          { property: "profile:last_name", content: "Nishimura" },
-          { property: "profile:username", content: "nawoto" },
-          { property: "profile:gender", content: "male" }
-        ]
-      }}
-    />
+    <SEO {...seoConfig} />
 
     <!-- Google Fonts preload & stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

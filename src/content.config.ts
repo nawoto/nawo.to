@@ -9,6 +9,7 @@ const logs = defineCollection({
     updatedDate: z.date().optional(),
     heroImage: z.string().optional(),
     ogimage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
@@ -20,6 +21,7 @@ const texts = defineCollection({
     description: z.string().optional(),
     updatedDate: z.date().optional(),
     ogimage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 

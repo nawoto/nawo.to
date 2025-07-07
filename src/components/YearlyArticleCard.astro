@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string;
+}
+
+const { article, getArticleUrl } = Astro.props;
+const tags = article.data.tags || [];
+---
+
+<article class="hover-style py-3 px-2 group border border-transparent hover:border-gray-200 rounded" itemscope itemtype="http://schema.org/Article">
+  <div class="flex flex-col space-y-2">
+    <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+      <time class="text-gray-600 whitespace-nowrap text-sm" datetime={article.data.pubDate.toISOString()} itemprop="datePublished">
+        {article.data.pubDate.toLocaleDateString('ja-JP', {
+          month: '2-digit',
+          day: '2-digit'
+        }).replace(/\//g, '/')}
+      </time>
+      <a href={getArticleUrl(article)} class="text-black group-hover:text-green-400 break-words font-mono text-sm sm:text-base transition-colors duration-200" itemprop="url headline">
+        {article.data.title || article.slug}
+      </a>
+    </div>
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-1">
+        {tags.map((tag: string) => (
+          <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded border">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</article> 

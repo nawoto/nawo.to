@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { generateArticleExcerpts } from '../utils/content';
+import ArticleCard from './ArticleCard.astro';
+
+interface Props {
+  articles: CollectionEntry<'logs' | 'texts' | 'backtrace'>[];
+  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string;
+  showBorder?: boolean;
+}
+
+const { articles, getArticleUrl, showBorder = true } = Astro.props;
+
+// 記事の抜粋を生成
+const articlesWithExcerpt = await generateArticleExcerpts(articles);
+---
+
+<ol style="list-style: none;">
+  {articlesWithExcerpt.map((article) => (
+    <ArticleCard
+      article={article}
+      excerpt={article.excerpt}
+      url={getArticleUrl(article)}
+      showBorder={showBorder}
+    />
+  ))}
+</ol> 

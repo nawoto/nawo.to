@@ -47,12 +47,22 @@ export interface NavigationPost {
 
 // SEO設定の型定義
 export interface SEOConfig {
+  title: string;
+  description?: string;
+  canonical?: string;
+  charset?: string;
   openGraph?: {
-    title?: string;
-    description?: string;
-    image?: string;
-    type?: string;
-    url?: string;
+    basic: {
+      type: string;
+      title: string;
+      image: string;
+      url: string;
+    };
+    optional?: {
+      description?: string;
+      siteName?: string;
+      locale?: string;
+    };
   };
   twitter?: {
     card?: string;
@@ -62,13 +72,55 @@ export interface SEOConfig {
     description?: string;
     image?: string;
   };
-  extend?: Record<string, unknown>;
+  extend?: {
+    meta?: Array<{ name?: string; property?: string; content: string }>;
+    link?: Array<{ rel: string; href: string; type?: string; title?: string; crossorigin?: string }>;
+  };
 }
 
-// 構造化データの基本型定義（structured-data.tsと統一）
+// 構造化データの基本型定義
 export interface BaseStructuredData {
   "@context": "https://schema.org";
   "@type": string;
+}
+
+// 記事用構造化データの型定義
+export interface ArticleStructuredData {
+  blogPostingData: BaseStructuredData & {
+    "@type": "BlogPosting";
+    headline: string;
+    description: string;
+    image: string;
+    author: {
+      "@type": "Person";
+      name: string;
+      url: string;
+    };
+    publisher: {
+      "@type": "Organization";
+      name: string;
+      logo: {
+        "@type": "ImageObject";
+        url: string;
+      };
+    };
+    datePublished: string;
+    dateModified: string;
+    url: string;
+    mainEntityOfPage: {
+      "@type": "WebPage";
+      "@id": string;
+    };
+  };
+  breadcrumbData: BaseStructuredData & {
+    "@type": "BreadcrumbList";
+    itemListElement: Array<{
+      "@type": "ListItem";
+      position: number;
+      name: string;
+      item: string;
+    }>;
+  };
 }
 
 // 記事レイアウトのProps型定義
@@ -84,7 +136,8 @@ export interface ArticleLayoutProps {
 export interface SEOProps {
   title: string;
   description?: string;
-  image?: string;
+  canonical?: string;
+  charset?: string;
   openGraph?: SEOConfig['openGraph'];
   twitter?: SEOConfig['twitter'];
   extend?: SEOConfig['extend'];
@@ -98,4 +151,16 @@ export interface StructuredDataProps {
 // WebMentionsコンポーネントのProps型定義
 export interface WebMentionsProps {
   url: string;
+}
+
+// 記事メタデータ処理用の型定義
+export interface ArticleMetadata {
+  title: string;
+  description: string;
+  publishedTime: string;
+  modifiedTime: string;
+  ogImageUrl: string;
+  tags: string[];
+  url: string;
+  pageTitle: string;
 } 

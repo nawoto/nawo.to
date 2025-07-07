@@ -1,93 +1,21 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
-import { getTextSlug } from '../utils/slug';
+import TabNavigation from '../components/TabNavigation.astro';
+import YearlyArticleList from '../components/YearlyArticleList.astro';
+import { sortArticlesByDate } from '../utils/content';
+import { getTextUrl } from '../utils/url';
 
-const texts = (await getCollection('texts')).sort(
-	(a: CollectionEntry<'texts'>, b: CollectionEntry<'texts'>) => 
-		b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-// テキストの抜粋を生成する関数（Gatsbyライク版）
-function generateExcerpt(content: string): string {
-	// 最初の140文字程度を取得（Gatsbyのデフォルト）
-	const plainText = content
-		.replace(/---[\s\S]*?---/g, '') // フロントマターを除去
-		.slice(0, 500) // 最初の500文字から処理開始
-		.replace(/```[\s\S]*?```/g, '[コード]') // コードブロックを[コード]に置換
-		.replace(/#{1,6}\s+/g, '') // ヘッダー記号を除去
-		.replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1') // 太字・斜体記号を除去
-		.replace(/`([^`]+)`/g, '$1') // インラインコード記号を除去
-		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // リンク記号を除去
-		.replace(/\n+/g, ' ') // 改行を空白に変換
-		.replace(/\s+/g, ' ') // 複数の空白を1つに
-		.trim()
-		.slice(0, 140); // 最終的に140文字に制限
-	
-	return plainText + (plainText.length >= 140 ? '...' : '');
-}
-
-// テキストの本文を読み込んで抜粋を生成
-const textsWithExcerpt = await Promise.all(
-	texts.map(async (text) => {
-		const excerpt = generateExcerpt(text.body);
-		return {
-			...text,
-			excerpt
-		};
-	})
-);
+const texts = sortArticlesByDate(await getCollection('texts'));
 ---
 
 <Layout title={`TEXTS | ${SITE.title}`}>
-	<!-- Tab Navigation -->
-	<div class="mt-4">
-		<div class="tab-container">
-			<a href="/logs" class="tab">LOGS</a>
-			<a href="/texts" class="tab active">TEXTS</a>
-			<a href="/backtrace" class="tab">BACKTRACE</a>
-		</div>
-		<p class="text-sm text-gray-500 text-left pl-4 mt-2">
-			不定期に思いついたことなどを文章にまとめています✍️
-		</p>
-	</div>
-	<ol style="list-style: none;">
-		{textsWithExcerpt.map((text) => {
-			const title = text.data.title || text.slug;
-			const textSlug = getTextSlug(text.slug);
-			return (
-				<li class="hover-style border-y border-solid py-2 group">
-					<article
-						class="mx-auto w-5/6"
-						itemscope
-						itemtype="http://schema.org/Article"
-					>
-						<header class="py-4">
-							<h2 class="text-2xl font-bold font-titillium group-hover:text-green-400 transition-colors duration-200 break-words">
-								<a href={`/texts/${textSlug}/`} itemprop="url">
-									<span itemprop="headline">{title}</span>
-								</a>
-							</h2>
-							<small>{text.data.pubDate.toLocaleDateString('ja-JP', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit'
-							}).replace(/\//g, '/')}</small>
-						</header>
-						<section>
-							<p
-								itemprop="description"
-								set:html={text.data.description || text.excerpt}
-							>
-							</p>
-							<div class="my-2 py-2">
-								<a href={`/texts/${textSlug}/`} class="read-more text-lg font-mono text-black underline hover:text-white transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ MORE</a>
-							</div>
-						</section>
-					</article>
-				</li>
-			);
-		})}
-	</ol>
+	<TabNavigation activeTab="texts" />
+	<YearlyArticleList
+		articles={texts}
+		getArticleUrl={getTextUrl}
+		showBorder={true}
+		activeTab="texts"
+	/>
 </Layout>
