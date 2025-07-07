@@ -1,7 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
-import { generateBlogPostingStructuredData, generateBreadcrumbStructuredData } from '../data/structured-data';
-import type { ArticleStructuredData } from '../types';
+import { generateBlogPostingStructuredData, generateBreadcrumbStructuredData } from '../data/structured-data-generators';
 import { processArticleMetadata } from './metadata';
 import type { CollectionType } from './collections';
 import { getListPageUrl, getListPageName, generateExcerpt } from './content';
@@ -11,7 +10,7 @@ export function generateArticleStructuredData(
   article: CollectionEntry<CollectionType>,
   url: string,
   getArticleUrl: (article: CollectionEntry<CollectionType>) => string
-): ArticleStructuredData {
+) {
   const metadata = processArticleMetadata(article);
   const title = metadata.title;
 

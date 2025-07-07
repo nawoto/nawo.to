@@ -84,42 +84,79 @@ export interface BaseStructuredData {
   "@type": string;
 }
 
-// 記事用構造化データの型定義
-export interface ArticleStructuredData {
-  blogPostingData: BaseStructuredData & {
-    "@type": "BlogPosting";
-    headline: string;
-    description: string;
-    image: string;
-    author: {
-      "@type": "Person";
-      name: string;
+// BlogPosting構造化データ用型定義
+export interface BlogPostingData {
+  headline: string;
+  description: string;
+  image: string;
+  author: {
+    "@type": "Person";
+    name: string;
+    url: string;
+  };
+  publisher: {
+    "@type": "Organization";
+    name: string;
+    logo: {
+      "@type": "ImageObject";
       url: string;
     };
-    publisher: {
-      "@type": "Organization";
-      name: string;
-      logo: {
-        "@type": "ImageObject";
-        url: string;
-      };
-    };
-    datePublished: string;
-    dateModified: string;
-    url: string;
-    mainEntityOfPage: {
-      "@type": "WebPage";
-      "@id": string;
-    };
   };
-  breadcrumbData: BaseStructuredData & {
-    "@type": "BreadcrumbList";
-    itemListElement: Array<{
-      "@type": "ListItem";
-      position: number;
-      name: string;
-      item: string;
-    }>;
+  datePublished: string;
+  dateModified: string;
+  url: string;
+  mainEntityOfPage: {
+    "@type": "WebPage";
+    "@id": string;
+  };
+}
+
+// BreadcrumbList構造化データ用型定義
+export interface BreadcrumbData {
+  itemListElement: Array<{
+    "@type": "ListItem";
+    position: number;
+    name: string;
+    item: string;
+  }>;
+}
+
+// Person構造化データ用型定義
+export interface PersonData {
+  name: string;
+  alternateName?: string[];
+  image?: string;
+  url?: string;
+  jobTitle?: string[];
+  worksFor?: Array<{
+    "@type": "Organization";
+    name: string;
+    description?: string;
+  }>;
+  address?: {
+    "@type": "PostalAddress";
+    addressLocality: string;
+    addressCountry: string;
+  };
+  birthDate?: string;
+  gender?: string;
+  nationality?: string;
+  sameAs?: string[];
+  author?: Array<{
+    "@type": "Book";
+    name: string;
+    isbn: string;
+    publisher: string;
+    datePublished: string;
+  }>;
+  hasCredential?: {
+    "@type": "EducationalOccupationalCredential";
+    credentialCategory: string;
+    name: string;
+  };
+  mainEntityOfPage?: {
+    "@type": "WebPage";
+    "@id": string;
   };
 }
 
