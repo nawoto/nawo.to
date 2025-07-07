@@ -1,19 +1,19 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import ArticleLayout from '../layouts/ArticleLayout.astro';
-import { getLogSlug } from '../utils/slug';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getLogSlug } from '../../utils/slug';
 
 export async function getStaticPaths() {
-  const logsPosts = await getCollection('logs');
+  const backtracePosts = await getCollection('backtrace');
 
   // 公開日順にソート（新しい記事が前に来るように）
-  const sortedLogsPosts = logsPosts.sort(
+  const sortedBacktracePosts = backtracePosts.sort(
     (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 
-  return sortedLogsPosts.map((post, index: number) => {
-    const previousPost = sortedLogsPosts[index + 1] || undefined;
-    const nextPost = sortedLogsPosts[index - 1] || undefined;
+  return sortedBacktracePosts.map((post, index: number) => {
+    const previousPost = sortedBacktracePosts[index + 1] || undefined;
+    const nextPost = sortedBacktracePosts[index - 1] || undefined;
 
     const fileName = post.slug.replace(/^\d{4}\//, '');
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
@@ -33,14 +33,14 @@ export async function getStaticPaths() {
         previousPost: previousPost
           ? {
               slug: getLogSlug(previousPost.slug),
-              collection: 'logs',
+              collection: 'backtrace',
               data: previousPost.data,
             }
           : undefined,
         nextPost: nextPost
           ? {
               slug: getLogSlug(nextPost.slug),
-              collection: 'logs',
+              collection: 'backtrace',
               data: nextPost.data,
             }
           : undefined,
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 
 const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await post.render();
-const shareUrl = `https://nawo.to/${Astro.params.slug}`;
+const shareUrl = `https://nawo.to/backtrace/${Astro.params.slug}`;
 ---
 
 <ArticleLayout
@@ -62,4 +62,4 @@ const shareUrl = `https://nawo.to/${Astro.params.slug}`;
   shareUrl={shareUrl}
 >
   <Content />
-</ArticleLayout>
+</ArticleLayout> 

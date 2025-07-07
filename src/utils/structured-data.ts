@@ -12,7 +12,7 @@ import { getListPageUrl, getListPageName, generateExcerpt } from './content';
 export function generateArticleStructuredData(
   article: CollectionEntry<CollectionType>,
   url: string,
-  getArticleUrl: (article: CollectionEntry<CollectionType>) => string
+  getArticleUrl: (collection: CollectionType, slug: string) => string
 ) {
   const metadata = processArticleMetadata(article);
   const title = metadata.title;

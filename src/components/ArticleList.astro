@@ -6,7 +6,7 @@ import type { CollectionType } from '../utils/collections';
 
 interface Props {
   articles: CollectionEntry<CollectionType>[];
-  getArticleUrl: (article: CollectionEntry<CollectionType>) => string;
+  getArticleUrl: (collection: CollectionType, slug: string) => string;
   showBorder?: boolean;
 }
 
@@ -22,7 +22,7 @@ const articlesWithExcerpt = await generateArticleExcerpts(articles);
       <ArticleCard
         article={article}
         excerpt={article.excerpt}
-        url={getArticleUrl(article)}
+        url={getArticleUrl(article.collection, article.slug)}
         showBorder={showBorder}
       />
     ))

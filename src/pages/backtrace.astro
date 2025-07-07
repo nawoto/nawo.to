@@ -6,6 +6,7 @@ import TabNavigation from '../components/TabNavigation.astro';
 import YearlyArticleList from '../components/YearlyArticleList.astro';
 import { sortArticlesByDate } from '../utils/content';
 import { getBacktraceUrl } from '../utils/url';
+import { getLogSlug } from '../utils/slug';
 
 const posts = sortArticlesByDate(await getCollection('backtrace'));
 ---
@@ -18,7 +19,7 @@ const posts = sortArticlesByDate(await getCollection('backtrace'));
   <div class="border-t border-solid border-gray-300 mt-0 mb-2"></div>
   <YearlyArticleList
     articles={posts}
-    getArticleUrl={getBacktraceUrl}
+    getArticleUrl={(collection, slug) => getBacktraceUrl(collection, getLogSlug(slug))}
     showBorder={true}
     activeTab="backtrace"
   />

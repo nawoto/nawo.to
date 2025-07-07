@@ -75,7 +75,7 @@ export function generateBasicSEO(title: string, description: string, url: string
 export function generateArticleSEO(
   article: CollectionEntry<CollectionType>,
   url: string,
-  getArticleUrl: (article: CollectionEntry<CollectionType>) => string
+  getArticleUrl: (collection: CollectionType, slug: string) => string
 ) {
   const metadata = processArticleMetadata(article);
   const title = `${article.data.title} | ${SITE.title}`;

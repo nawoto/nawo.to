@@ -36,6 +36,12 @@ export function getCollectionName(collection: CollectionType): string {
 
 // 記事のURLを生成
 export function getArticleUrl(collection: CollectionType, slug: string): string {
-  const config = getCollectionConfig(collection);
-  return `${config.path}/${slug}/`;
+  if (collection === 'logs') {
+    return `/${slug}/`;
+  }
+  if (collection === 'backtrace') {
+    return `/backtrace/${slug}/`;
+  }
+  // textsはフラットslug
+  return `/texts/${slug}/`;
 }

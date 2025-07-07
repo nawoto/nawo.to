@@ -14,7 +14,7 @@ const texts = sortArticlesByDate(await getCollection('texts'));
   <TabNavigation activeTab="texts" />
   <YearlyArticleList
     articles={texts}
-    getArticleUrl={getTextUrl}
+    getArticleUrl={(collection, slug) => getTextUrl(collection, slug)}
     showBorder={true}
     activeTab="texts"
   />

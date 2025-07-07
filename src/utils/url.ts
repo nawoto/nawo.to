@@ -1,33 +1,18 @@
-import type { CollectionEntry } from 'astro:content';
 import { getLogSlug, getTextSlug } from './slug';
 import type { CollectionType } from './collections';
 
-// 記事のURLを生成する共通関数
-export function generateArticleUrl(
-  article: CollectionEntry<CollectionType>,
-  collectionType: 'logs' | 'texts' | 'backtrace'
-): string {
-  switch (collectionType) {
-    case 'logs':
-      return `/${getLogSlug(article.slug)}/`;
-    case 'texts':
-      return `/texts/${getTextSlug(article.slug)}/`;
-    case 'backtrace':
-      return `/backtrace/${article.data.pubDate.getFullYear()}/${String(article.data.pubDate.getMonth() + 1).padStart(2, '0')}/${String(article.data.pubDate.getDate()).padStart(2, '0')}/${article.slug.split('-').pop()}/`;
-    default:
-      return `/${article.slug}/`;
-  }
+// logs用URL生成
+export function getLogUrl(collection: CollectionType, slug: string): string {
+  return `/${getLogSlug(slug)}/`;
 }
 
-// コレクション別のURL生成関数
-export function getLogUrl(article: CollectionEntry<CollectionType>): string {
-  return generateArticleUrl(article, 'logs');
+// texts用URL生成
+export function getTextUrl(collection: CollectionType, slug: string): string {
+  return `/texts/${getTextSlug(slug)}/`;
 }
 
-export function getTextUrl(article: CollectionEntry<CollectionType>): string {
-  return generateArticleUrl(article, 'texts');
-}
-
-export function getBacktraceUrl(article: CollectionEntry<CollectionType>): string {
-  return generateArticleUrl(article, 'backtrace');
+// backtrace用URL生成
+export function getBacktraceUrl(collection: CollectionType, slug: string): string {
+  // slugは "2012/03/26/1332726969" のような形式で渡る前提
+  return `/backtrace/${slug}/`;
 }
