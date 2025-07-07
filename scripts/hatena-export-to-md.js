@@ -467,11 +467,31 @@ function convertToMarkdown(entry, meta, year) {
     .replace(/&#([0-9]+);/g, (match, dec) => String.fromCodePoint(parseInt(dec, 10)));
   // タグを抽出（全角・半角ハッシュタグに対応）
   const tags = [];
-  const hashtagMatch = meta.title.match(/[#＃]([^\s]+)/g);
-  if (hashtagMatch) {
-    tags.push(...hashtagMatch); // #を残したまま保存
+  let cleanTitle = meta.title;
+
+  // 末尾の連続したハッシュタグをすべて抽出してtagsに移動
+  const titleWords = meta.title.split(/\s+/);
+  const endHashtags = [];
+  let i = titleWords.length - 1;
+  // ハッシュタグ以外の単語が出たら必ずbreakし、それ以降はタイトルに残す
+  while (i >= 0) {
+    const word = titleWords[i];
+    // ハッシュタグの判定：#または＃で始まる部分があるかチェック
+    if (/^[#＃][^\s]+$/.test(word)) {
+      endHashtags.unshift(word);
+      i--;
+    } else {
+      break;
+    }
   }
-  const cleanTitle = meta.title.replace(/[#＃][^\s]+/g, '').trim();
+  if (endHashtags.length > 0) {
+    tags.push(...endHashtags);
+    // タイトルから末尾のハッシュタグを削除
+    const titleWithoutEndHashtags = titleWords.slice(0, i + 1).join(' ');
+    cleanTitle = titleWithoutEndHashtags.trim();
+  }
+
+
   const dateStr = meta.date.toISOString().split('T')[0];
   const cleanBasename = meta.basename.split('/').pop();
   const fileName = `${dateStr}-${cleanBasename}.md`;
