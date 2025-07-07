@@ -14,23 +14,23 @@ import type { CollectionType } from './collections';
 export function generateExcerpt(content: string, maxLength: number = 140): string {
   // HTMLタグを除去
   const plainText = content.replace(/<[^>]*>/g, '');
-  
+
   // 改行を除去して単一の文字列に
   const singleLine = plainText.replace(/\n+/g, ' ').trim();
-  
+
   // 最大文字数で切り取り
   if (singleLine.length <= maxLength) {
     return singleLine;
   }
-  
+
   // 単語の境界で切り取り
   const truncated = singleLine.substring(0, maxLength);
   const lastSpaceIndex = truncated.lastIndexOf(' ');
-  
+
   if (lastSpaceIndex > 0) {
     return truncated.substring(0, lastSpaceIndex) + '...';
   }
-  
+
   return truncated + '...';
 }
 
@@ -91,7 +91,7 @@ export function getListPageName(collection: string): string {
     default:
       return 'LOGS';
   }
-} 
+}
 
 // 記事を日付順でソートする共通関数
 export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(
@@ -117,7 +117,7 @@ export function groupArticlesByYear<T extends CollectionEntry<CollectionType>>(
 // 年を降順でソートする共通関数
 export function getSortedYears(articlesByYear: Record<number, any[]>): number[] {
   return Object.keys(articlesByYear).map(Number).sort((a, b) => b - a);
-} 
+}
 
 // 記事の抜粋を生成する共通関数
 export async function generateArticleExcerpts<T extends CollectionEntry<CollectionType>>(
@@ -151,4 +151,4 @@ export function processArticleMetadata<T extends CollectionEntry<CollectionType>
     updatedDate: 'updatedDate' in article.data ? article.data.updatedDate : undefined,
     tags: article.data.tags
   };
-} 
+}

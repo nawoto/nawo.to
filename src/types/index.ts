@@ -163,4 +163,4 @@ export interface ArticleMetadata {
   tags: string[];
   url: string;
   pageTitle: string;
-} 
+}

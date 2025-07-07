@@ -28,4 +28,4 @@ export const books: Book[] = [
 
 export function getBookByAsin(asin: string): Book | undefined {
   return books.find(book => book.asin === asin);
-} 
+}

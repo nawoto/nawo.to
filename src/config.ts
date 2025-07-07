@@ -43,4 +43,4 @@ export const SITE = {
     iconPath: 'public/images/site-icon.png',
     defaultOgImagePath: 'public/images/opengraph-default.png',
   },
-} as const; 
+} as const;

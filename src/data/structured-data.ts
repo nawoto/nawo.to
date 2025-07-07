@@ -203,7 +203,7 @@ export const DEFAULT_PERSON_DATA: PersonData = {
       name: "株式会社エス・エム・エス"
     },
     {
-      "@type": "Organization", 
+      "@type": "Organization",
       name: "一般社団法人アジャイルチームを支える会",
       description: "代表理事"
     }
@@ -234,7 +234,7 @@ export const DEFAULT_PERSON_DATA: PersonData = {
       datePublished: "2020-05-20"
     },
     {
-      "@type": "Book", 
+      "@type": "Book",
       name: "SCRUM BOOT CAMP THE BOOK",
       isbn: "9784798129716",
       publisher: "翔泳社",
@@ -250,4 +250,4 @@ export const DEFAULT_PERSON_DATA: PersonData = {
     "@type": "WebPage",
     "@id": `${SITE.url}/about`
   }
-}; 
+};

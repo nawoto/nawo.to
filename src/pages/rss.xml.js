@@ -6,7 +6,7 @@ import { getTextSlug, getLogSlug } from '../utils/slug';
 export async function GET(context) {
   const posts = await getCollection('logs');
   const texts = await getCollection('texts');
-  
+
   // 投稿と記事を統合してソート
   const allContent = [
     ...posts.map(post => ({
@@ -31,7 +31,7 @@ export async function GET(context) {
         const slug = getTextSlug(item.slug);
         link = `/texts/${slug}/`;
       }
-      
+
       return {
         title: item.data.title,
         pubDate: item.data.pubDate,
@@ -41,4 +41,4 @@ export async function GET(context) {
       };
     }),
   });
-} 
+}

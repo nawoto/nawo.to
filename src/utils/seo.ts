@@ -11,7 +11,7 @@ export function generateBasicSEO(
   image?: string
 ) {
   const ogImageUrl = image ? new URL(image, SITE.url).href : new URL(SITE.images.defaultOg, SITE.url).href;
-  
+
   return {
     title,
     description,
@@ -75,9 +75,9 @@ export function generateArticleSEO(
 ) {
   const metadata = processArticleMetadata(article);
   const title = `${article.data.title} | ${SITE.title}`;
-  
+
   const basicSEO = generateBasicSEO(title, metadata.description, url, metadata.ogImageUrl);
-  
+
   return {
     ...basicSEO,
     extend: {
@@ -101,7 +101,7 @@ export function generateProfileSEO(
   profileImage: string
 ) {
   const basicSEO = generateBasicSEO(title, description, url, profileImage);
-  
+
   return {
     ...basicSEO,
     openGraph: {
@@ -124,4 +124,3 @@ export function generateProfileSEO(
   };
 }
 
- 

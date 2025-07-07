@@ -11,10 +11,10 @@ export function processArticleMetadata(
   const title = article.data.title;
   const description = article.data.description || generateExcerpt(article.body);
   const publishedTime = article.data.pubDate.toISOString();
-  const modifiedTime = 'updatedDate' in article.data && article.data.updatedDate 
-    ? article.data.updatedDate.toISOString() 
+  const modifiedTime = 'updatedDate' in article.data && article.data.updatedDate
+    ? article.data.updatedDate.toISOString()
     : publishedTime;
-  
+
   // OGP画像の決定ロジック
   let ogImageUrl;
   if ('ogimage' in article.data && article.data.ogimage) {
@@ -23,7 +23,7 @@ export function processArticleMetadata(
     const collectionPath = getCollectionPath(article.collection);
     ogImageUrl = new URL(`${collectionPath}/${article.slug}/og.png`, SITE.url).href;
   }
-  
+
   return {
     title,
     description,
@@ -42,7 +42,7 @@ export function generateArticleUrl(
   if (shareUrl) {
     return shareUrl;
   }
-  
+
   const collectionPath = getCollectionPath(article.collection);
   return new URL(`${collectionPath}/${article.slug}/`, SITE.url).href;
 }
@@ -62,10 +62,10 @@ export function processCompleteArticleMetadata(
   const metadata = processArticleMetadata(article);
   const url = generateArticleUrl(article, shareUrl);
   const pageTitle = generateArticleTitle(article);
-  
+
   return {
     ...metadata,
     url,
     pageTitle
   };
-} 
+}

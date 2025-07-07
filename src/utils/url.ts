@@ -30,4 +30,4 @@ export function getTextUrl(article: CollectionEntry<CollectionType>): string {
 
 export function getBacktraceUrl(article: CollectionEntry<CollectionType>): string {
   return generateArticleUrl(article, 'backtrace');
-} 
+}

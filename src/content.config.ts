@@ -39,4 +39,4 @@ export const collections = {
   'logs': logs,
   'texts': texts,
   'backtrace': backtrace,
-}; 
+};

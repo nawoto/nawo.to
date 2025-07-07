@@ -58,4 +58,4 @@ export function getIconData(name: IconName) {
 // アイコン名の存在チェック
 export function isValidIconName(name: string): name is IconName {
   return name in iconData;
-} 
+}

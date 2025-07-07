@@ -13,7 +13,7 @@ export function getTextSlug(slug: string): string {
 export function getLogSlug(slug: string): string {
   const fileName = slug.replace(/^\d{4}\//, '');
   const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
-  
+
   if (dateMatch) {
     const [, year, month, day, postSlug] = dateMatch;
     return `${year}/${month}/${day}/${postSlug}`;
@@ -21,4 +21,4 @@ export function getLogSlug(slug: string): string {
     // 日付プレフィックスがない場合はそのまま使用
     return fileName.toLowerCase();
   }
-} 
+}

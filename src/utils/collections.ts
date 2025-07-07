@@ -6,13 +6,13 @@ export const COLLECTIONS = {
     slug: 'logs'
   },
   texts: {
-    name: 'TEXTS', 
+    name: 'TEXTS',
     path: '/texts',
     slug: 'texts'
   },
   backtrace: {
     name: 'BACKTRACE',
-    path: '/backtrace', 
+    path: '/backtrace',
     slug: 'backtrace'
   }
 } as const;
@@ -38,4 +38,4 @@ export function getCollectionName(collection: CollectionType): string {
 export function getArticleUrl(collection: CollectionType, slug: string): string {
   const config = getCollectionConfig(collection);
   return `${config.path}/${slug}/`;
-} 
+}

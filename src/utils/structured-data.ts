@@ -13,7 +13,7 @@ export function generateArticleStructuredData(
 ): ArticleStructuredData {
   const metadata = processArticleMetadata(article);
   const title = metadata.title;
-  
+
   // BlogPosting構造化データを生成
   const blogPostingData = generateBlogPostingStructuredData({
     url,
@@ -40,7 +40,7 @@ export function generateArticleStructuredData(
       "@id": url
     }
   });
-  
+
   // BreadcrumbList構造化データを生成
   const breadcrumbData = generateBreadcrumbStructuredData({
     itemListElement: [
@@ -64,7 +64,7 @@ export function generateArticleStructuredData(
       }
     ]
   });
-  
+
   return {
     blogPostingData,
     breadcrumbData
@@ -103,22 +103,22 @@ function getListPageName(collection: string): string {
 function generateExcerpt(content: string, maxLength: number = 140): string {
   // HTMLタグを除去
   const plainText = content.replace(/<[^>]*>/g, '');
-  
+
   // 改行を除去して単一の文字列に
   const singleLine = plainText.replace(/\n+/g, ' ').trim();
-  
+
   // 最大文字数で切り取り
   if (singleLine.length <= maxLength) {
     return singleLine;
   }
-  
+
   // 単語の境界で切り取り
   const truncated = singleLine.substring(0, maxLength);
   const lastSpaceIndex = truncated.lastIndexOf(' ');
-  
+
   if (lastSpaceIndex > 0) {
     return truncated.substring(0, lastSpaceIndex) + '...';
   }
-  
+
   return truncated + '...';
-} 
+}
