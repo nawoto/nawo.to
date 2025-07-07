@@ -1,9 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
-  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string;
+  article: CollectionEntry<CollectionType>;
+  getArticleUrl: (article: CollectionEntry<CollectionType>) => string;
 }
 
 const { article, getArticleUrl } = Astro.props;

@@ -1,14 +1,17 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getListPageUrl, getListPageName } from '../utils/content';
+import { getArticleUrl } from '../utils/collections';
+import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  content: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
-  previousPost?: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
-  nextPost?: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+  content?: CollectionEntry<CollectionType>;
+  previousPost?: CollectionEntry<CollectionType>;
+  nextPost?: CollectionEntry<CollectionType>;
+  collection?: string;
 }
 
-const { content, previousPost, nextPost } = Astro.props;
+const { content, previousPost, nextPost, collection } = Astro.props;
 ---
 
 <!-- Navigation（2段構成） -->
@@ -18,7 +21,7 @@ const { content, previousPost, nextPost } = Astro.props;
     <li class="hover-style p-3" role="listitem">
       {previousPost ? (
         <a
-          href={previousPost.collection === 'texts' ? `/texts/${previousPost.slug}/` : `/${previousPost.slug}/`}
+          href={getArticleUrl(previousPost.collection as any, previousPost.slug)}
           title={previousPost.data.title}
           rel="prev"
           class="block"
@@ -34,7 +37,7 @@ const { content, previousPost, nextPost } = Astro.props;
     <li class="hover-style p-3" role="listitem">
       {nextPost ? (
         <a
-          href={nextPost.collection === 'texts' ? `/texts/${nextPost.slug}/` : `/${nextPost.slug}/`}
+          href={getArticleUrl(nextPost.collection as any, nextPost.slug)}
           title={nextPost.data.title}
           rel="next"
           class="block"
@@ -51,13 +54,13 @@ const { content, previousPost, nextPost } = Astro.props;
   <!-- 2段目: BACK TO XXX -->
   <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
     <a 
-      href={getListPageUrl(content.collection)} 
+      href={content ? getListPageUrl(content.collection) : collection === 'texts' ? '/texts' : collection === 'backtrace' ? '/backtrace' : '/logs'} 
       class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-      aria-label={`${getListPageName(content.collection)}一覧に戻る`}
+      aria-label={`${content ? getListPageName(content.collection) : collection === 'texts' ? 'TEXTS' : collection === 'backtrace' ? 'BACKTRACE' : 'LOGS'}一覧に戻る`}
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span>{getListPageName(content.collection)}</span>
+      <span>{content ? getListPageName(content.collection) : collection === 'texts' ? 'TEXTS' : collection === 'backtrace' ? 'BACKTRACE' : 'LOGS'}</span>
     </a>
   </div>
 </nav> 

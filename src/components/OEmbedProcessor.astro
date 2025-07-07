@@ -1,0 +1,241 @@
+---
+// OEmbed処理専用コンポーネント
+---
+
+<script>
+  // OEmbed処理のロジック
+  document.addEventListener('DOMContentLoaded', function() {
+    // URL copy functionality
+    const copyButtons = document.querySelectorAll('[data-copy-url]');
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', function(this: HTMLElement) {
+        const url = this.getAttribute('data-copy-url');
+        if (url && navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(() => {
+            alert('URLをコピーしました');
+          });
+        }
+      });
+    });
+
+    // Instagram embed script loading
+    const instagramEmbeds = document.querySelectorAll('.instagram-media');
+    if (instagramEmbeds.length > 0 && !document.querySelector('script[src*="instagram.com/embed.js"]')) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//www.instagram.com/embed.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // Process OEmbed for multiple providers
+    const processedUrls = new Set<string>();
+    
+    // OEmbed provider configurations
+    const oembedProviders = [
+      {
+        name: 'YouTube',
+        patterns: [/https:\/\/(www\.)?youtube\.com\/watch\?v=/, /https:\/\/youtu\.be\//],
+        endpoint: 'https://www.youtube.com/oembed'
+      },
+      {
+        name: 'Twitter',
+        patterns: [/https:\/\/(www\.)?twitter\.com\/\w+\/status\/\d+/, /https:\/\/x\.com\/\w+\/status\/\d+/],
+        useWidget: true,
+        maxwidth: 300
+      },
+      {
+        name: 'SpeakerDeck',
+        patterns: [/https:\/\/speakerdeck\.com\//],
+        endpoint: 'https://speakerdeck.com/oembed.json'
+      },
+      {
+        name: 'Spotify',
+        patterns: [/https:\/\/open\.spotify\.com\//],
+        endpoint: 'https://open.spotify.com/oembed'
+      },
+      {
+        name: 'SlideShare',
+        patterns: [/https:\/\/www\.slideshare\.net\//],
+        endpoint: 'https://www.slideshare.net/api/oembed/2'
+      },
+      {
+        name: 'Suzuri',
+        patterns: [/https:\/\/suzuri\.jp\/[^\/]+\/\d+/],
+        endpoint: 'https://suzuri.jp/oembed'
+      }
+    ] as Array<{
+      name: string;
+      patterns: RegExp[];
+      endpoint?: string;
+      useWidget?: boolean;
+      maxwidth?: number;
+    }>;
+
+    // Find all links that might be oembed candidates
+    const allLinks = document.querySelectorAll('a:not([data-oembed-processed])') as NodeListOf<HTMLAnchorElement>;
+    
+    allLinks.forEach(link => {
+      let url = link.href;
+      // x.com → twitter.com に自動変換
+      if (url.match(/^https:\/\/x\.com\//)) {
+        url = url.replace(/^https:\/\/x\.com\//, 'https://twitter.com/');
+      }
+      
+      // Check if this URL matches any oembed provider
+      const provider = oembedProviders.find(p => 
+        p.patterns.some(pattern => pattern.test(url))
+      );
+      
+      if (provider) {
+        console.log(`Found ${provider.name} URL:`, url);
+        
+        // Check if it's a standalone link
+        const isStandalone = isStandaloneLink(link);
+        console.log(`Is standalone link:`, isStandalone);
+        
+        if (!isStandalone) {
+          return; // Skip non-standalone links
+        }
+        
+        // Skip if already processed
+        if (processedUrls.has(url)) {
+          link.style.display = 'none';
+          return;
+        }
+        
+        // Mark as processed
+        link.setAttribute('data-oembed-processed', 'true');
+        processedUrls.add(url);
+        
+        // Handle Twitter with Widget.js
+        if (provider.useWidget && provider.name === 'Twitter') {
+          handleTwitterEmbed(link, url);
+          return;
+        }
+        
+        // Handle other providers with oembed API
+        if (provider.endpoint) {
+          // Build oembed URL
+          const oembedUrl = new URL(provider.endpoint);
+          oembedUrl.searchParams.set('url', url);
+          if (provider.maxwidth) {
+            oembedUrl.searchParams.set('maxwidth', provider.maxwidth.toString());
+          }
+          
+          console.log(`Fetching oembed from:`, oembedUrl.toString());
+          
+          fetch(oembedUrl.toString())
+            .then(response => {
+              console.log(`${provider.name} oembed response status:`, response.status);
+              return response.json();
+            })
+            .then(data => {
+              console.log(`${provider.name} oembed data:`, data);
+              if (data.html) {
+                const embedContainer = document.createElement('div');
+                embedContainer.innerHTML = data.html;
+                embedContainer.className = `${provider.name.toLowerCase()}-embed my-4`;
+                
+                // Replace the link
+                const parentP = link.closest('p');
+                if (parentP) {
+                  const linkText = link.textContent || '';
+                  const parentText = parentP.textContent || '';
+                  
+                  if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
+                    parentP.replaceWith(embedContainer);
+                  } else {
+                    link.replaceWith(embedContainer);
+                  }
+                } else {
+                  link.replaceWith(embedContainer);
+                }
+                console.log(`${provider.name} embed successfully inserted`);
+              }
+            })
+            .catch(error => {
+              console.log(`${provider.name} oembed failed:`, error);
+            });
+        }
+      }
+    });
+
+    // Check if a link is standalone
+    function isStandaloneLink(link: HTMLAnchorElement): boolean {
+      const linkText = link.textContent || '';
+      const linkUrl = link.href;
+      
+      // Link text should match URL (standalone link)
+      if (linkText.trim() !== linkUrl) {
+        return false;
+      }
+      
+      // Check if parent p element contains only this link
+      const parentP = link.closest('p');
+      if (parentP) {
+        const parentText = parentP.textContent || '';
+        return parentText.trim() === linkText.trim();
+      }
+      
+      return true;
+    }
+
+    // Handle Twitter embed using Widget.js
+    function handleTwitterEmbed(link: HTMLAnchorElement, url: string) {
+      console.log('Handling Twitter embed with Widget.js:', url);
+      
+      // Create Twitter widget container
+      const embedContainer = document.createElement('div');
+      embedContainer.className = 'twitter-embed my-4';
+      
+      // Create blockquote for Twitter widget
+      const blockquote = document.createElement('blockquote');
+      blockquote.className = 'twitter-tweet';
+      blockquote.setAttribute('data-width', '300');
+      
+      // Create link inside blockquote
+      const tweetLink = document.createElement('a');
+      tweetLink.href = url;
+      tweetLink.textContent = 'Tweet';
+      blockquote.appendChild(tweetLink);
+      
+      embedContainer.appendChild(blockquote);
+      
+      // Replace the link
+      const parentP = link.closest('p');
+      if (parentP) {
+        const linkText = link.textContent || '';
+        const parentText = parentP.textContent || '';
+        
+        if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
+          parentP.replaceWith(embedContainer);
+        } else {
+          link.replaceWith(embedContainer);
+        }
+      } else {
+        link.replaceWith(embedContainer);
+      }
+      
+      // Load Twitter Widget.js if not already loaded
+      if (!(window as any).twttr) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.onload = function() {
+          if ((window as any).twttr && (window as any).twttr.widgets) {
+            (window as any).twttr.widgets.load();
+          }
+        };
+        document.head.appendChild(script);
+      } else {
+        // Twitter Widget.js already loaded, just process new widgets
+        if ((window as any).twttr.widgets) {
+          (window as any).twttr.widgets.load();
+        }
+      }
+      
+      console.log('Twitter embed successfully inserted');
+    }
+  });
+</script> 

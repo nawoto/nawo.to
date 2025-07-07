@@ -1,9 +1,10 @@
 import type { CollectionEntry } from 'astro:content';
 import { getLogSlug, getTextSlug } from './slug';
+import type { CollectionType } from './collections';
 
 // 記事のURLを生成する共通関数
 export function generateArticleUrl(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>,
+  article: CollectionEntry<CollectionType>,
   collectionType: 'logs' | 'texts' | 'backtrace'
 ): string {
   switch (collectionType) {
@@ -19,14 +20,14 @@ export function generateArticleUrl(
 }
 
 // コレクション別のURL生成関数
-export function getLogUrl(article: CollectionEntry<'logs' | 'texts' | 'backtrace'>): string {
+export function getLogUrl(article: CollectionEntry<CollectionType>): string {
   return generateArticleUrl(article, 'logs');
 }
 
-export function getTextUrl(article: CollectionEntry<'logs' | 'texts' | 'backtrace'>): string {
+export function getTextUrl(article: CollectionEntry<CollectionType>): string {
   return generateArticleUrl(article, 'texts');
 }
 
-export function getBacktraceUrl(article: CollectionEntry<'logs' | 'texts' | 'backtrace'>): string {
+export function getBacktraceUrl(article: CollectionEntry<CollectionType>): string {
   return generateArticleUrl(article, 'backtrace');
 } 

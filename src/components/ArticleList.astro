@@ -2,10 +2,11 @@
 import type { CollectionEntry } from 'astro:content';
 import { generateArticleExcerpts } from '../utils/content';
 import ArticleCard from './ArticleCard.astro';
+import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  articles: CollectionEntry<'logs' | 'texts' | 'backtrace'>[];
-  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string;
+  articles: CollectionEntry<CollectionType>[];
+  getArticleUrl: (article: CollectionEntry<CollectionType>) => string;
   showBorder?: boolean;
 }
 

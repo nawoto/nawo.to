@@ -3,12 +3,13 @@ import { SITE } from '../config';
 import { generateBlogPostingStructuredData, generateBreadcrumbStructuredData } from '../data/structured-data';
 import type { ArticleStructuredData } from '../types';
 import { processArticleMetadata } from './metadata';
+import type { CollectionType } from './collections';
 
 // 記事用の構造化データを生成する共通関数
 export function generateArticleStructuredData(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>,
+  article: CollectionEntry<CollectionType>,
   url: string,
-  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string
+  getArticleUrl: (article: CollectionEntry<CollectionType>) => string
 ): ArticleStructuredData {
   const metadata = processArticleMetadata(article);
   const title = metadata.title;

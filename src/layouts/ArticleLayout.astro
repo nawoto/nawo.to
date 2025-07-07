@@ -4,14 +4,15 @@ import type { ArticleLayoutProps, ArticleContent } from '../types/index.js';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
-import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
 import WebMentions from '../components/WebMentions.astro';
 import StructuredData from '../components/StructuredData.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import ArticleNavigation from '../components/ArticleNavigation.astro';
+import OEmbedProcessor from '../components/OEmbedProcessor.astro';
 import { generateArticleSEO } from '../utils/seo';
 import { generateArticleStructuredData } from '../utils/structured-data';
 import { processCompleteArticleMetadata } from '../utils/metadata';
-// import fs from 'node:fs';
-// import path from 'node:path';
+import { getCollectionPath, getCollectionName } from '../utils/collections';
 
 export interface Props extends ArticleLayoutProps {}
 
@@ -62,13 +63,13 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     <!-- 一覧へのナビゲーション（上部） -->
     <nav class="mb-6 text-sm font-mono" aria-label="一覧へのナビゲーション">
       <a 
-        href={content.collection === 'logs' ? '/logs' : content.collection === 'texts' ? '/texts' : '/backtrace'} 
+        href={getCollectionPath(content.collection as any)} 
         class="text-base font-mono text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
-        aria-label={`${content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}一覧に戻る`}
+        aria-label={`${getCollectionName(content.collection as any)}一覧に戻る`}
         rel="up"
       >
         <span aria-hidden="true">🔙</span>
-        <span>{content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}</span>
+        <span>{getCollectionName(content.collection as any)}</span>
       </a>
     </nav>
 
@@ -110,122 +111,15 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     </footer>
   </article>
 
-  <!-- Navigation（2段構成） -->
-  <nav class="mx-auto max-w-4xl px-4" aria-label="記事ナビゲーション">
-    <!-- 1段目: PREV | NEXT -->
-    <ul class="grid grid-cols-2 divide-x border-t text-center text-2xl uppercase overflow-hidden" role="list">
-      <li class="hover-style p-3" role="listitem">
-        {previousPost ? (
-          <a
-            href={previousPost.collection === 'texts' ? `/texts/${previousPost.slug}/` : `/${previousPost.slug}/`}
-            title={previousPost.data.title}
-            rel="prev"
-            class="block"
-            aria-label={`前の記事: ${previousPost.data.title}`}
-          >
-            prev
-            <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
-          </a>
-        ) : (
-          <span class="text-gray-400" aria-label="前の記事はありません">prev</span>
-        )}
-      </li>
-      <li class="hover-style p-3" role="listitem">
-        {nextPost ? (
-          <a
-            href={nextPost.collection === 'texts' ? `/texts/${nextPost.slug}/` : `/${nextPost.slug}/`}
-            title={nextPost.data.title}
-            rel="next"
-            class="block"
-            aria-label={`次の記事: ${nextPost.data.title}`}
-          >
-            next
-            <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
-          </a>
-        ) : (
-          <span class="text-gray-400" aria-label="次の記事はありません">next</span>
-        )}
-      </li>
-    </ul>
-    <!-- 2段目: BACK TO XXX -->
-    <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
-      <a 
-        href={content.collection === 'logs' ? '/logs' : content.collection === 'texts' ? '/texts' : '/backtrace'} 
-        class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-        aria-label={`${content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}一覧に戻る`}
-        rel="up"
-      >
-        <span aria-hidden="true">🔙</span>
-        <span>{content.collection === 'logs' ? 'LOGS' : content.collection === 'texts' ? 'TEXTS' : 'BACKTRACE'}</span>
-      </a>
-    </div>
-  </nav>
+  <!-- Navigation -->
+  <ArticleNavigation 
+    previousPost={previousPost as any}
+    nextPost={nextPost as any}
+    collection={content.collection}
+  />
 
   <!-- Share Buttons -->
-  <div class="mx-auto max-w-4xl px-4 mb-8">
-    <h3 class="text-sm text-gray-400 -mb-10">/** Share **/</h3>
-    <div class="flex gap-2 items-end">
-      <!-- X (Twitter) -->
-      <a
-        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(title)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Xでシェア"
-        class="hover:opacity-70 transition"
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          class="w-6 h-6"
-          style="color: #000;"
-        >
-          <path d={siX.path} />
-        </svg>
-      </a>
-      <!-- Facebook -->
-      <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebookでシェア"
-        class="hover:opacity-70 transition"
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          class="w-6 h-6"
-          style="color: #1877F2;"
-        >
-          <path d={siFacebook.path} />
-        </svg>
-      </a>
-      <!-- Hatena -->
-      <a
-        href={`https://b.hatena.ne.jp/add?mode=confirm&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(title)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="はてなブックマークでシェア"
-        class="hover:opacity-70 transition"
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          class="w-6 h-6"
-          style="color: #00A4DE;"
-        >
-          <path d={siHatenabookmark.path} />
-        </svg>
-      </a>
-      <!-- Applause Button（いいねボタン） -->
-      <applause-button 
-        style="width: 28px; height: 28px; margin:0; padding:0;"
-        color="#dc3545"
-        api="https://applause.chabouis.fr"
-        url={currentUrl}
-        class="self-end"
-      />
-    </div>
-  </div>
+  <ShareButtons url={currentUrl} title={title} />
 
   <!-- Webmentions Section -->
   <div class="mx-auto max-w-4xl px-4 mb-8">
@@ -239,243 +133,8 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     <Comments />
   </div>
 
-  <script>
-    // Add URL copy functionality and Instagram embed script
-    document.addEventListener('DOMContentLoaded', function() {
-      // URL copy functionality
-      const copyButtons = document.querySelectorAll('[data-copy-url]');
-      copyButtons.forEach((button) => {
-        button.addEventListener('click', function(this: HTMLElement) {
-          const url = this.getAttribute('data-copy-url');
-          if (url && navigator.clipboard) {
-            navigator.clipboard.writeText(url).then(() => {
-              alert('URLをコピーしました');
-            });
-          }
-        });
-      });
-
-      // Instagram embed script loading
-      const instagramEmbeds = document.querySelectorAll('.instagram-media');
-      if (instagramEmbeds.length > 0 && !document.querySelector('script[src*="instagram.com/embed.js"]')) {
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = '//www.instagram.com/embed.js';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-
-      // Process OEmbed for multiple providers (like Gatsby version)
-      const processedUrls = new Set<string>();
-      
-      // OEmbed provider configurations
-      const oembedProviders = [
-        {
-          name: 'YouTube',
-          patterns: [/https:\/\/(www\.)?youtube\.com\/watch\?v=/, /https:\/\/youtu\.be\//],
-          endpoint: 'https://www.youtube.com/oembed'
-        },
-        {
-          name: 'Twitter',
-          patterns: [/https:\/\/(www\.)?twitter\.com\/\w+\/status\/\d+/, /https:\/\/x\.com\/\w+\/status\/\d+/],
-          useWidget: true,
-          maxwidth: 300
-        },
-        {
-          name: 'SpeakerDeck',
-          patterns: [/https:\/\/speakerdeck\.com\//],
-          endpoint: 'https://speakerdeck.com/oembed.json'
-        },
-        {
-          name: 'Spotify',
-          patterns: [/https:\/\/open\.spotify\.com\//],
-          endpoint: 'https://open.spotify.com/oembed'
-        },
-        {
-          name: 'SlideShare',
-          patterns: [/https:\/\/www\.slideshare\.net\//],
-          endpoint: 'https://www.slideshare.net/api/oembed/2'
-        },
-        {
-          name: 'Suzuri',
-          patterns: [/https:\/\/suzuri\.jp\/[^\/]+\/\d+/],
-          endpoint: 'https://suzuri.jp/oembed'
-        }
-      ] as Array<{
-        name: string;
-        patterns: RegExp[];
-        endpoint?: string;
-        useWidget?: boolean;
-        maxwidth?: number;
-      }>;
-
-      // Find all links that might be oembed candidates
-      const allLinks = document.querySelectorAll('a:not([data-oembed-processed])') as NodeListOf<HTMLAnchorElement>;
-      
-      allLinks.forEach(link => {
-        let url = link.href;
-        // x.com → twitter.com に自動変換
-        if (url.match(/^https:\/\/x\.com\//)) {
-          url = url.replace(/^https:\/\/x\.com\//, 'https://twitter.com/');
-        }
-        
-        // Check if this URL matches any oembed provider
-        const provider = oembedProviders.find(p => 
-          p.patterns.some(pattern => pattern.test(url))
-        );
-        
-        if (provider) {
-          console.log(`Found ${provider.name} URL:`, url);
-          
-          // Check if it's a standalone link
-          const isStandalone = isStandaloneLink(link);
-          console.log(`Is standalone link:`, isStandalone);
-          
-          if (!isStandalone) {
-            return; // Skip non-standalone links
-          }
-          
-          // Skip if already processed
-          if (processedUrls.has(url)) {
-            link.style.display = 'none';
-            return;
-          }
-          
-          // Mark as processed
-          link.setAttribute('data-oembed-processed', 'true');
-          processedUrls.add(url);
-          
-          // Handle Twitter with Widget.js
-          if (provider.useWidget && provider.name === 'Twitter') {
-            handleTwitterEmbed(link, url);
-            return;
-          }
-          
-          // Handle other providers with oembed API
-          if (provider.endpoint) {
-            // Build oembed URL
-            const oembedUrl = new URL(provider.endpoint);
-            oembedUrl.searchParams.set('url', url);
-            if (provider.maxwidth) {
-              oembedUrl.searchParams.set('maxwidth', provider.maxwidth.toString());
-            }
-            
-            console.log(`Fetching oembed from:`, oembedUrl.toString());
-            
-            fetch(oembedUrl.toString())
-              .then(response => {
-                console.log(`${provider.name} oembed response status:`, response.status);
-                return response.json();
-              })
-              .then(data => {
-                console.log(`${provider.name} oembed data:`, data);
-                if (data.html) {
-                  const embedContainer = document.createElement('div');
-                  embedContainer.innerHTML = data.html;
-                  embedContainer.className = `${provider.name.toLowerCase()}-embed my-4`;
-                  
-                  // Replace the link
-                  const parentP = link.closest('p');
-                  if (parentP) {
-                    const linkText = link.textContent || '';
-                    const parentText = parentP.textContent || '';
-                    
-                    if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
-                      parentP.replaceWith(embedContainer);
-                    } else {
-                      link.replaceWith(embedContainer);
-                    }
-                  } else {
-                    link.replaceWith(embedContainer);
-                  }
-                  console.log(`${provider.name} embed successfully inserted`);
-                }
-              })
-              .catch(error => {
-                console.log(`${provider.name} oembed failed:`, error);
-              });
-          }
-        }
-      });
-
-      // Check if a link is standalone (same logic as before)
-      function isStandaloneLink(link: HTMLAnchorElement): boolean {
-        const linkText = link.textContent || '';
-        const linkUrl = link.href;
-        
-        // Link text should match URL (standalone link)
-        if (linkText.trim() !== linkUrl) {
-          return false;
-        }
-        
-        // Check if parent p element contains only this link
-        const parentP = link.closest('p');
-        if (parentP) {
-          const parentText = parentP.textContent || '';
-          return parentText.trim() === linkText.trim();
-        }
-        
-        return true;
-      }
-
-      // Handle Twitter embed using Widget.js
-      function handleTwitterEmbed(link: HTMLAnchorElement, url: string) {
-        console.log('Handling Twitter embed with Widget.js:', url);
-        
-        // Create Twitter widget container
-        const embedContainer = document.createElement('div');
-        embedContainer.className = 'twitter-embed my-4';
-        
-        // Create blockquote for Twitter widget
-        const blockquote = document.createElement('blockquote');
-        blockquote.className = 'twitter-tweet';
-        blockquote.setAttribute('data-width', '300');
-        
-        // Create link inside blockquote
-        const tweetLink = document.createElement('a');
-        tweetLink.href = url;
-        tweetLink.textContent = 'Tweet';
-        blockquote.appendChild(tweetLink);
-        
-        embedContainer.appendChild(blockquote);
-        
-        // Replace the link
-        const parentP = link.closest('p');
-        if (parentP) {
-          const linkText = link.textContent || '';
-          const parentText = parentP.textContent || '';
-          
-          if (parentText.trim() === linkText.trim() || parentText.trim() === url) {
-            parentP.replaceWith(embedContainer);
-          } else {
-            link.replaceWith(embedContainer);
-          }
-        } else {
-          link.replaceWith(embedContainer);
-        }
-        
-        // Load Twitter Widget.js if not already loaded
-        if (!(window as any).twttr) {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://platform.twitter.com/widgets.js';
-          script.onload = function() {
-            if ((window as any).twttr && (window as any).twttr.widgets) {
-              (window as any).twttr.widgets.load();
-            }
-          };
-          document.head.appendChild(script);
-        } else {
-          // Twitter Widget.js already loaded, just process new widgets
-          if ((window as any).twttr.widgets) {
-            (window as any).twttr.widgets.load();
-          }
-        }
-        
-        console.log('Twitter embed successfully inserted');
-      }
-    });
-  </script>
+  <!-- OEmbed処理 -->
+  <OEmbedProcessor />
 
   <style>
     /* 一覧へのナビゲーションリンクのモバイル最適化 */

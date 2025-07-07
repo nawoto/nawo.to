@@ -4,10 +4,11 @@ import { generateArticleExcerpts, groupArticlesByYear, getSortedYears } from '..
 import ArticleCard from './ArticleCard.astro';
 import YearlyArticleCard from './YearlyArticleCard.astro';
 import YearlyViewToggle from './YearlyViewToggle.astro';
+import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  articles: CollectionEntry<'logs' | 'texts' | 'backtrace'>[];
-  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string;
+  articles: CollectionEntry<CollectionType>[];
+  getArticleUrl: (article: CollectionEntry<CollectionType>) => string;
   showBorder?: boolean;
   activeTab: 'logs' | 'texts' | 'backtrace';
 }

@@ -1,10 +1,12 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
 import { generateExcerpt } from './content';
+import type { CollectionType } from './collections';
+import { getCollectionPath } from './collections';
 
 // 記事のメタデータを処理する共通関数
 export function processArticleMetadata(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>
+  article: CollectionEntry<CollectionType>
 ) {
   const title = article.data.title;
   const description = article.data.description || generateExcerpt(article.body);
@@ -18,8 +20,8 @@ export function processArticleMetadata(
   if ('ogimage' in article.data && article.data.ogimage) {
     ogImageUrl = new URL(article.data.ogimage, SITE.url).href;
   } else {
-    const collectionName = article.collection === 'texts' ? 'texts' : 'logs';
-    ogImageUrl = new URL(`/${collectionName}/${article.slug}/og.png`, SITE.url).href;
+    const collectionPath = getCollectionPath(article.collection);
+    ogImageUrl = new URL(`${collectionPath}/${article.slug}/og.png`, SITE.url).href;
   }
   
   return {
@@ -34,26 +36,27 @@ export function processArticleMetadata(
 
 // 記事のURLを生成する共通関数
 export function generateArticleUrl(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>,
+  article: CollectionEntry<CollectionType>,
   shareUrl?: string
 ): string {
   if (shareUrl) {
     return shareUrl;
   }
   
-  return new URL(`/${article.collection}/${article.slug}/`, SITE.url).href;
+  const collectionPath = getCollectionPath(article.collection);
+  return new URL(`${collectionPath}/${article.slug}/`, SITE.url).href;
 }
 
 // 記事のページタイトルを生成する共通関数
 export function generateArticleTitle(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>
+  article: CollectionEntry<CollectionType>
 ): string {
   return `${article.data.title} | ${SITE.title}`;
 }
 
 // 記事のメタデータを完全に処理する共通関数
 export function processCompleteArticleMetadata(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>,
+  article: CollectionEntry<CollectionType>,
   shareUrl?: string
 ) {
   const metadata = processArticleMetadata(article);

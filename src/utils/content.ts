@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import type { CollectionType } from './collections';
 
 /**
  * コンテンツ関連の共通ユーティリティ関数
@@ -93,14 +94,14 @@ export function getListPageName(collection: string): string {
 } 
 
 // 記事を日付順でソートする共通関数
-export function sortArticlesByDate<T extends CollectionEntry<'logs' | 'texts' | 'backtrace'>>(
+export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(
   articles: T[]
 ): T[] {
   return articles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 
 // 記事を年別にグループ化する共通関数
-export function groupArticlesByYear<T extends CollectionEntry<'logs' | 'texts' | 'backtrace'>>(
+export function groupArticlesByYear<T extends CollectionEntry<CollectionType>>(
   articles: T[]
 ): Record<number, T[]> {
   return articles.reduce((acc, article) => {
@@ -119,7 +120,7 @@ export function getSortedYears(articlesByYear: Record<number, any[]>): number[] 
 } 
 
 // 記事の抜粋を生成する共通関数
-export async function generateArticleExcerpts<T extends CollectionEntry<'logs' | 'texts' | 'backtrace'>>(
+export async function generateArticleExcerpts<T extends CollectionEntry<CollectionType>>(
   articles: T[]
 ): Promise<(T & { excerpt: string })[]> {
   return Promise.all(
@@ -134,7 +135,7 @@ export async function generateArticleExcerpts<T extends CollectionEntry<'logs' |
 }
 
 // 記事のメタデータを処理する共通関数
-export function processArticleMetadata<T extends CollectionEntry<'logs' | 'texts' | 'backtrace'>>(
+export function processArticleMetadata<T extends CollectionEntry<CollectionType>>(
   article: T
 ): {
   title: string;

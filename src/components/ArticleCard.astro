@@ -1,9 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { formatDate, getDescription } from '../utils/content';
+import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>;
+  article: CollectionEntry<CollectionType>;
   excerpt?: string;
   url: string;
   showBorder?: boolean;

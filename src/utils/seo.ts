@@ -1,6 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
 import { processArticleMetadata } from './metadata';
+import type { CollectionType } from './collections';
 
 // 基本的なSEO設定を生成する共通関数
 export function generateBasicSEO(
@@ -68,9 +69,9 @@ export function generateBasicSEO(
 
 // 記事用のSEO設定を生成する共通関数
 export function generateArticleSEO(
-  article: CollectionEntry<'logs' | 'texts' | 'backtrace'>,
+  article: CollectionEntry<CollectionType>,
   url: string,
-  getArticleUrl: (article: CollectionEntry<'logs' | 'texts' | 'backtrace'>) => string
+  getArticleUrl: (article: CollectionEntry<CollectionType>) => string
 ) {
   const metadata = processArticleMetadata(article);
   const title = `${article.data.title} | ${SITE.title}`;
