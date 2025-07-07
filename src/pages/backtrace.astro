@@ -5,7 +5,20 @@ import { SITE } from '../config';
 
 const posts = (await getCollection('backtrace')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-); // 全記事表示
+);
+
+// 記事を年別にグループ化
+const postsByYear = posts.reduce((acc, post) => {
+	const year = post.data.pubDate.getFullYear();
+	if (!acc[year]) {
+		acc[year] = [];
+	}
+	acc[year].push(post);
+	return acc;
+}, {} as Record<number, typeof posts>);
+
+// 年を降順でソート
+const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
 
 // 記事の抜粋を生成する関数（Gatsbyライク版）
 function generateExcerpt(content: string): string {
@@ -41,6 +54,15 @@ const postsWithExcerptRaw = await Promise.all(
 const postsWithExcerpt = postsWithExcerptRaw.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+// 年別グループにも抜粋を追加
+const postsByYearWithExcerpt = years.reduce((acc, year) => {
+	acc[year] = postsByYear[year].map(post => {
+		const postWithExcerpt = postsWithExcerpt.find(p => p.slug === post.slug);
+		return postWithExcerpt || { ...post, excerpt: generateExcerpt(post.body) };
+	});
+	return acc;
+}, {} as Record<number, typeof postsWithExcerpt>);
 ---
 
 <Layout title={`BACKTRACE | ${SITE.title}`}>
@@ -55,62 +77,254 @@ const postsWithExcerpt = postsWithExcerptRaw.sort(
 			[WIP] ❓ かつて「はてなダイアリー」でアジャイルな開発を夢みて奮闘していた記録
 		</p>
 	</div>
-	<ol style="list-style: none;">
-		{postsWithExcerpt.map((post) => {
-			const title = post.data.title || post.slug;
-			// 年別ディレクトリ構造に合わせたURL生成
-			const fileName = post.slug.replace(/^\d{4}\//, ''); // 年別ディレクトリを除去
-			const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
-			let postUrl;
-			if (dateMatch) {
-				const [, year, month, day, slug] = dateMatch;
-				postUrl = `/backtrace/${year}/${month}/${day}/${slug}/`;
-			} else {
-				postUrl = `/backtrace/${post.slug}/`;
-			}
-			const tags = post.data.tags || [];
-			
-			return (
-				<li class="hover-style border-y border-solid py-2 group">
-					<article
-						class="mx-auto w-5/6"
-						itemscope
-						itemtype="http://schema.org/Article"
+
+	<!-- View Mode Toggle -->
+	<div class="mx-auto w-5/6 mt-6 mb-4">
+		<div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
+			<span class="whitespace-nowrap">view mode:</span>
+			<div class="flex space-x-2">
+				<button id="flat-mode" class="view-mode-btn active px-3 py-1 rounded border">flat</button>
+				<button id="yearly-mode" class="view-mode-btn px-3 py-1 rounded border">yearly</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Year Navigation (yearly mode only) -->
+	<div id="year-nav" class="mx-auto w-5/6 mb-6 hidden">
+		<div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-mono">
+			<span class="whitespace-nowrap">jump to year:</span>
+			<div class="flex flex-wrap gap-2">
+				{years.map(year => (
+					<button 
+						class="year-jump-btn px-2 py-1 rounded border hover:bg-gray-100 transition-colors"
+						data-year={year}
 					>
-						<header class="py-4">
-							<h2 class="text-2xl font-bold font-titillium group-hover:text-green-400 transition-colors duration-200 break-words">
-								<a href={postUrl} itemprop="url">
-									<span itemprop="headline">{title}</span>
-								</a>
-							</h2>
-							<small>{post.data.pubDate.toLocaleDateString('ja-JP', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit'
-							}).replace(/\//g, '/')}</small>
-							{tags.length > 0 && (
-								<div class="mt-2">
-									{tags.map((tag: string) => (
-										<span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded mr-2 mb-1">
-											{tag}
-										</span>
-									))}
+						{year}
+					</button>
+				))}
+			</div>
+		</div>
+	</div>
+
+	<!-- Flat View (Default) -->
+	<div id="flat-view" class="view-content">
+		<ol style="list-style: none;">
+			{postsWithExcerpt.map((post) => {
+				const title = post.data.title || post.slug;
+				// 年別ディレクトリ構造に合わせたURL生成
+				const fileName = post.slug.replace(/^\d{4}\//, ''); // 年別ディレクトリを除去
+				const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+				let postUrl;
+				if (dateMatch) {
+					const [, year, month, day, slug] = dateMatch;
+					postUrl = `/backtrace/${year}/${month}/${day}/${slug}/`;
+				} else {
+					postUrl = `/backtrace/${post.slug}/`;
+				}
+				const tags = post.data.tags || [];
+				
+				return (
+					<li class="hover-style border-y border-solid py-2 group">
+						<article
+							class="mx-auto w-5/6"
+							itemscope
+							itemtype="http://schema.org/Article"
+						>
+							<header class="py-4">
+								<h2 class="text-2xl font-bold font-titillium group-hover:text-green-400 transition-colors duration-200 break-words">
+									<a href={postUrl} itemprop="url">
+										<span itemprop="headline">{title}</span>
+									</a>
+								</h2>
+								<small>{post.data.pubDate.toLocaleDateString('ja-JP', {
+									year: 'numeric',
+									month: '2-digit',
+									day: '2-digit'
+								}).replace(/\//g, '/')}</small>
+								{tags.length > 0 && (
+									<div class="mt-2">
+										{tags.map((tag: string) => (
+											<span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded mr-2 mb-1">
+												{tag}
+											</span>
+										))}
+									</div>
+								)}
+							</header>
+							<section>
+								<p
+									itemprop="description"
+									set:html={(post.data.description && post.data.description.trim() !== '') ? post.data.description : post.excerpt}
+								>
+								</p>
+								<div class="my-2 py-2">
+									<a href={postUrl} class="read-more text-lg font-mono text-black underline hover:text-white transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ MORE</a>
 								</div>
-							)}
-						</header>
-						<section>
-							<p
-								itemprop="description"
-								set:html={(post.data.description && post.data.description.trim() !== '') ? post.data.description : post.excerpt}
-							>
-							</p>
-							<div class="my-2 py-2">
-								<a href={postUrl} class="read-more text-lg font-mono text-black underline hover:text-white transition-colors duration-200 group-hover:text-green-400">&gt;&gt; READ MORE</a>
-							</div>
-						</section>
-					</article>
-				</li>
+							</section>
+						</article>
+					</li>
+				);
+			})}
+		</ol>
+	</div>
+
+	<!-- Yearly View -->
+	<div id="yearly-view" class="view-content hidden">
+		{years.map(year => {
+			const yearPosts = postsByYearWithExcerpt[year];
+			return (
+				<div class="year-section mb-8" data-year={year}>
+					<div class="flex items-center justify-between mb-4">
+						<h2 class="text-xl sm:text-2xl font-bold font-titillium text-gray-800">## {year}</h2>
+						<button 
+							class="back-to-top-btn px-2 py-1 text-sm font-mono border rounded hover:bg-gray-100 transition-colors"
+							title="ナビゲーションに戻る"
+						>
+							↑
+						</button>
+					</div>
+					<div class="space-y-2">
+						{yearPosts.map((post) => {
+							const title = post.data.title || post.slug;
+							const fileName = post.slug.replace(/^\d{4}\//, '');
+							const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+							let postUrl;
+							if (dateMatch) {
+								const [, , month, day, slug] = dateMatch;
+								postUrl = `/backtrace/${year}/${month}/${day}/${slug}/`;
+							} else {
+								postUrl = `/backtrace/${post.slug}/`;
+							}
+							
+							return (
+								<div class="hover-style py-2 group">
+									<a href={postUrl} class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 text-base sm:text-lg font-mono hover:text-green-400 transition-colors duration-200">
+										<span class="text-gray-600 whitespace-nowrap">{post.data.pubDate.toLocaleDateString('ja-JP', {
+											month: '2-digit',
+											day: '2-digit'
+										}).replace(/\//g, '/')}</span>
+										<span class="text-black group-hover:text-green-400 break-words">{title}</span>
+									</a>
+								</div>
+							);
+						})}
+					</div>
+				</div>
 			);
 		})}
-	</ol>
-</Layout> 
+	</div>
+</Layout>
+
+<style>
+	.view-mode-btn {
+		@apply text-gray-400 border-gray-300 hover:border-gray-400 transition-colors;
+	}
+	.view-mode-btn.active {
+		@apply text-black border-black underline;
+	}
+	.year-jump-btn {
+		@apply text-gray-600 border-gray-300;
+	}
+	.year-jump-btn:hover {
+		@apply text-black border-black;
+	}
+	.back-to-top-btn {
+		@apply text-gray-600 border-gray-300;
+	}
+	.back-to-top-btn:hover {
+		@apply text-black border-black;
+	}
+</style>
+
+<script>
+	// 表示モードの切り替え機能
+	function initViewModeToggle() {
+		const flatBtn = document.getElementById('flat-mode');
+		const yearlyBtn = document.getElementById('yearly-mode');
+		const flatView = document.getElementById('flat-view');
+		const yearlyView = document.getElementById('yearly-view');
+		const yearNav = document.getElementById('year-nav');
+		
+		// ローカルストレージから保存されたモードを取得
+		const savedMode = localStorage.getItem('backtrace-view-mode') || 'flat';
+		
+		function setViewMode(mode: string) {
+			// ボタンの状態を更新
+			flatBtn?.classList.toggle('active', mode === 'flat');
+			yearlyBtn?.classList.toggle('active', mode === 'yearly');
+			
+			// ビューの表示/非表示を切り替え
+			flatView?.classList.toggle('hidden', mode !== 'flat');
+			yearlyView?.classList.toggle('hidden', mode !== 'yearly');
+			yearNav?.classList.toggle('hidden', mode !== 'yearly');
+			
+			// yearlyモードに切り替えた時は年ジャンプ機能を再初期化
+			if (mode === 'yearly') {
+				// DOMの更新を待つ
+				setTimeout(() => {
+					initYearJump();
+				}, 200);
+			}
+			
+			// ローカルストレージに保存
+			localStorage.setItem('backtrace-view-mode', mode);
+		}
+		
+		// 初期表示を設定
+		setViewMode(savedMode);
+		
+		// ボタンクリックイベント
+		flatBtn?.addEventListener('click', () => setViewMode('flat'));
+		yearlyBtn?.addEventListener('click', () => setViewMode('yearly'));
+		
+		// 年ジャンプ機能の初期化
+		function initYearJump() {
+			const yearJumpBtns = document.querySelectorAll('.year-jump-btn');
+			
+			yearJumpBtns.forEach((btn) => {
+				// 既存のイベントリスナーを削除（重複防止）
+				btn.removeEventListener('click', handleYearJump);
+				// 新しいイベントリスナーを追加
+				btn.addEventListener('click', handleYearJump);
+			});
+			
+			// 「↑」ボタンのイベントリスナーを設定
+			const backToTopBtns = document.querySelectorAll('.back-to-top-btn');
+			backToTopBtns.forEach((btn) => {
+				// 既存のイベントリスナーを削除（重複防止）
+				btn.removeEventListener('click', handleBackToTop);
+				// 新しいイベントリスナーを追加
+				btn.addEventListener('click', handleBackToTop);
+			});
+		}
+		
+		// 年ジャンプの処理関数
+		function handleYearJump(event: Event) {
+			const btn = event.target as HTMLElement;
+			const year = btn.getAttribute('data-year');
+			
+			if (year) {
+				// 年セクションを正確に特定（ボタンではなく、year-sectionクラスを持つ要素）
+				const yearSection = document.querySelector(`.year-section[data-year="${year}"]`);
+				
+				if (yearSection) {
+					yearSection.scrollIntoView({ behavior: 'smooth' });
+				}
+			}
+		}
+		
+		// ナビゲーションに戻る処理関数
+		function handleBackToTop(event: Event) {
+			const yearNav = document.getElementById('year-nav');
+			if (yearNav) {
+				yearNav.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+		
+		// 初期化時に年ジャンプ機能を設定
+		initYearJump();
+	}
+	
+	// DOM読み込み完了後に初期化
+	document.addEventListener('DOMContentLoaded', initViewModeToggle);
+</script> 
