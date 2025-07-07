@@ -74,14 +74,20 @@ export interface SEOConfig {
   };
   extend?: {
     meta?: Array<{ name?: string; property?: string; content: string }>;
-    link?: Array<{ rel: string; href: string; type?: string; title?: string; crossorigin?: string }>;
+    link?: Array<{
+      rel: string;
+      href: string;
+      type?: string;
+      title?: string;
+      crossorigin?: string;
+    }>;
   };
 }
 
 // 構造化データの基本型定義
 export interface BaseStructuredData {
-  "@context": "https://schema.org";
-  "@type": string;
+  '@context': 'https://schema.org';
+  '@type': string;
 }
 
 // BlogPosting構造化データ用型定義
@@ -90,15 +96,15 @@ export interface BlogPostingData {
   description: string;
   image: string;
   author: {
-    "@type": "Person";
+    '@type': 'Person';
     name: string;
     url: string;
   };
   publisher: {
-    "@type": "Organization";
+    '@type': 'Organization';
     name: string;
     logo: {
-      "@type": "ImageObject";
+      '@type': 'ImageObject';
       url: string;
     };
   };
@@ -106,15 +112,15 @@ export interface BlogPostingData {
   dateModified: string;
   url: string;
   mainEntityOfPage: {
-    "@type": "WebPage";
-    "@id": string;
+    '@type': 'WebPage';
+    '@id': string;
   };
 }
 
 // BreadcrumbList構造化データ用型定義
 export interface BreadcrumbData {
   itemListElement: Array<{
-    "@type": "ListItem";
+    '@type': 'ListItem';
     position: number;
     name: string;
     item: string;
@@ -129,12 +135,12 @@ export interface PersonData {
   url?: string;
   jobTitle?: string[];
   worksFor?: Array<{
-    "@type": "Organization";
+    '@type': 'Organization';
     name: string;
     description?: string;
   }>;
   address?: {
-    "@type": "PostalAddress";
+    '@type': 'PostalAddress';
     addressLocality: string;
     addressCountry: string;
   };
@@ -143,20 +149,20 @@ export interface PersonData {
   nationality?: string;
   sameAs?: string[];
   author?: Array<{
-    "@type": "Book";
+    '@type': 'Book';
     name: string;
     isbn: string;
     publisher: string;
     datePublished: string;
   }>;
   hasCredential?: {
-    "@type": "EducationalOccupationalCredential";
+    '@type': 'EducationalOccupationalCredential';
     credentialCategory: string;
     name: string;
   };
   mainEntityOfPage?: {
-    "@type": "WebPage";
-    "@id": string;
+    '@type': 'WebPage';
+    '@id': string;
   };
 }
 

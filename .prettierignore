@@ -1,4 +1,6 @@
-.cache
-package.json
-package-lock.json
+node_modules
 public
+.pnp.*
+dist
+tmp
+purgecss-report

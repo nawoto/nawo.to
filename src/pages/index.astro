@@ -11,11 +11,11 @@ const posts = sortArticlesByDate(await getCollection('logs'));
 ---
 
 <Layout title={SITE.title} image={SITE.images.defaultOg}>
-	<TabNavigation activeTab="logs" />
-	<YearlyArticleList
-		articles={posts}
-		getArticleUrl={getLogUrl}
-		showBorder={true}
-		activeTab="logs"
-	/>
+  <TabNavigation activeTab="logs" />
+  <YearlyArticleList
+    articles={posts}
+    getArticleUrl={getLogUrl}
+    showBorder={true}
+    activeTab="logs"
+  />
 </Layout>

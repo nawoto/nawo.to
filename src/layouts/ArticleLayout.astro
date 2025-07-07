@@ -1,5 +1,4 @@
 ---
-
 import type { ArticleLayoutProps, ArticleContent } from '../types/index.js';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
@@ -19,8 +18,6 @@ export interface Props extends ArticleLayoutProps {}
 const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
-
-
 
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
 
@@ -42,14 +39,18 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
   <!-- Article specific meta tags in head -->
   <Fragment slot="head">
     <meta property="article:published_time" content={metadata.publishedTime} />
-    {metadata.modifiedTime !== metadata.publishedTime && <meta property="article:modified_time" content={metadata.modifiedTime} />}
+    {
+      metadata.modifiedTime !== metadata.publishedTime && (
+        <meta property="article:modified_time" content={metadata.modifiedTime} />
+      )
+    }
     <meta property="article:author" content={authorName} />
     <meta property="article:section" content="Technology" />
-    
+
     <!-- JSON-LD Structured Data -->
     <StructuredData data={blogPostingData} />
     <StructuredData data={breadcrumbData} />
-    
+
     <!-- Applause Button CSS & JS -->
     <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css" />
     <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
@@ -62,8 +63,8 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
   >
     <!-- 一覧へのナビゲーション（上部） -->
     <nav class="mb-6 text-sm font-mono" aria-label="一覧へのナビゲーション">
-      <a 
-        href={getCollectionPath(content.collection as any)} 
+      <a
+        href={getCollectionPath(content.collection as any)}
         class="text-base font-mono text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
         aria-label={`${getCollectionName(content.collection as any)}一覧に戻る`}
         rel="up"
@@ -74,31 +75,38 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     </nav>
 
     <header class="mb-8">
-      <h1 itemprop="headline" class="text-3xl font-bold md:text-5xl mb-0 font-titillium break-words">
+      <h1
+        itemprop="headline"
+        class="text-3xl font-bold md:text-5xl mb-0 font-titillium break-words"
+      >
         {title}
       </h1>
-      
+
       <div class="text-sm text-gray-600 m-0">
         <time itemprop="datePublished" datetime={content.data.pubDate.toISOString()}>
           {content.data.pubDate.toLocaleDateString('ja-JP')}
         </time>
-        {content.data.updatedDate && (
-          <>
-            {' '} (更新: <time itemprop="dateModified" datetime={content.data.updatedDate.toISOString()}>
-              {content.data.updatedDate.toLocaleDateString('ja-JP')}
-            </time>)
-          </>
-        )}
+        {
+          content.data.updatedDate && (
+            <>
+              {' '}
+              (更新:{' '}
+              <time itemprop="dateModified" datetime={content.data.updatedDate.toISOString()}>
+                {content.data.updatedDate.toLocaleDateString('ja-JP')}
+              </time>
+              )
+            </>
+          )
+        }
       </div>
-      
+
       <!-- Mini Applause Button -->
       <div class="relative m-0 p-0" style="margin:0;padding:0;">
-        <applause-button 
+        <applause-button
           style="width: 24px; height: 24px; margin:0; padding:0;"
           color="#dc3545"
           api="https://applause.chabouis.fr"
-          url={currentUrl}
-        />
+          url={currentUrl}></applause-button>
       </div>
     </header>
 
@@ -112,7 +120,7 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
   </article>
 
   <!-- Navigation -->
-  <ArticleNavigation 
+  <ArticleNavigation
     previousPost={previousPost as any}
     nextPost={nextPost as any}
     collection={content.collection}
@@ -143,7 +151,7 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
         font-size: 0.875rem;
         padding: 0.5rem 0.75rem;
       }
-      
+
       .prose nav a span:last-child {
         font-size: 0.75rem;
       }

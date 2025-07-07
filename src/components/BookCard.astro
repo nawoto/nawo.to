@@ -10,6 +10,7 @@ function formatAuthorName(author: string) {
 }
 const amazonUrl = `https://www.amazon.co.jp/dp/${book.asin}?tag=${SITE.affiliate.amazon}`;
 ---
+
 <div class="book-card group">
   <div class="book-cover">
     <picture>
@@ -19,8 +20,14 @@ const amazonUrl = `https://www.amazon.co.jp/dp/${book.asin}?tag=${SITE.affiliate
   </div>
   <div class="book-content">
     <h3 class="book-title">📚 {book.title}</h3>
-    <p class="book-author" set:html={formatAuthorName(book.author)}></p>
+    <p class="book-author" set:html={formatAuthorName(book.author)} />
     <p class="book-description">{book.description}</p>
-    <a href={amazonUrl} class="amazon-link transition-colors duration-200 group-hover:bg-green-500 group-hover:text-white" target="_blank" rel="noopener noreferrer">📖 Amazonで見る</a>
+    <a
+      href={amazonUrl}
+      class="amazon-link transition-colors duration-200 group-hover:bg-green-500 group-hover:text-white"
+      target="_blank"
+      rel="noopener noreferrer">📖 Amazonで見る</a
+    >
   </div>
-</div> 
+</div>
+

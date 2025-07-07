@@ -13,13 +13,13 @@ export function remarkYoutubeEmbed() {
     visit(tree, 'paragraph', (node) => {
       if (node.children && node.children.length === 1) {
         const child = node.children[0];
-        
+
         // Check if it's a text node with YouTube URL
         if (child.type === 'text') {
           const youtubeMatch = extractYoutubeVideoId(child.value);
           if (youtubeMatch) {
             const videoId = youtubeMatch;
-            
+
             // Replace the paragraph with HTML
             node.type = 'html';
             node.value = createYoutubeEmbed(videoId);
@@ -35,7 +35,7 @@ export function remarkYoutubeEmbed() {
         const youtubeMatch = extractYoutubeVideoId(node.url);
         if (youtubeMatch) {
           const videoId = youtubeMatch;
-          
+
           // Replace the link with HTML
           node.type = 'html';
           node.value = createYoutubeEmbed(videoId);
@@ -50,16 +50,16 @@ export function remarkYoutubeEmbed() {
 function extractYoutubeVideoId(url) {
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
-    /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})/
+    /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})/,
   ];
-  
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match) {
       return match[1];
     }
   }
-  
+
   return null;
 }
 
@@ -74,4 +74,4 @@ function createYoutubeEmbed(videoId) {
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
   </iframe>
 </div>`;
-} 
+}

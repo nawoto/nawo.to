@@ -30,44 +30,50 @@ const years = getSortedYears(articlesByYear);
 <!-- Flat View (Default) -->
 <main id="flat-view" class="view-content" role="tabpanel" aria-labelledby="flat-mode">
   <ol style="list-style: none;">
-    {articlesWithExcerpt.map((article) => (
-      <ArticleCard
-        article={article}
-        excerpt={article.excerpt}
-        url={getArticleUrl(article)}
-        showBorder={showBorder}
-      />
-    ))}
+    {
+      articlesWithExcerpt.map((article) => (
+        <ArticleCard
+          article={article}
+          excerpt={article.excerpt}
+          url={getArticleUrl(article)}
+          showBorder={showBorder}
+        />
+      ))
+    }
   </ol>
 </main>
 
 <!-- Yearly View -->
 <main id="yearly-view" class="view-content hidden" role="tabpanel" aria-labelledby="yearly-mode">
-  {years.map(year => {
-    const yearArticles = articlesByYear[year];
-    return (
-      <section class="year-section mb-8" data-year={year} aria-labelledby={`year-${year}`}>
-        <div class="flex items-center justify-between mb-4">
-          <h2 id={`year-${year}`} class="text-xl sm:text-2xl font-bold font-titillium text-gray-800">{year}</h2>
-          <button 
-            class="back-to-top-btn px-2 py-1 text-sm font-mono border rounded hover:bg-gray-100 transition-colors"
-            title="ナビゲーションに戻る"
-            aria-label="年別ナビゲーションに戻る"
-          >
-            ↑
-          </button>
-        </div>
-        <div class="space-y-3 mx-auto w-11/12 sm:w-full">
-          {yearArticles.map((article) => (
-            <YearlyArticleCard
-              article={article}
-              getArticleUrl={getArticleUrl}
-            />
-          ))}
-        </div>
-      </section>
-    );
-  })}
+  {
+    years.map((year) => {
+      const yearArticles = articlesByYear[year];
+      return (
+        <section class="year-section mb-8" data-year={year} aria-labelledby={`year-${year}`}>
+          <div class="flex items-center justify-between mb-4">
+            <h2
+              id={`year-${year}`}
+              class="text-xl sm:text-2xl font-bold font-titillium text-gray-800"
+            >
+              {year}
+            </h2>
+            <button
+              class="back-to-top-btn px-2 py-1 text-sm font-mono border rounded hover:bg-gray-100 transition-colors"
+              title="ナビゲーションに戻る"
+              aria-label="年別ナビゲーションに戻る"
+            >
+              ↑
+            </button>
+          </div>
+          <div class="space-y-3 mx-auto w-11/12 sm:w-full">
+            {yearArticles.map((article) => (
+              <YearlyArticleCard article={article} getArticleUrl={getArticleUrl} />
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
 </main>
 
 <style>
@@ -76,21 +82,22 @@ const years = getSortedYears(articlesByYear);
     .year-section article {
       padding: 0.75rem;
     }
-    
+
     .year-section .flex-wrap {
       gap: 0.25rem;
     }
-    
+
     .year-section .flex-wrap span {
       font-size: 0.75rem;
       padding: 0.25rem 0.5rem;
     }
   }
-  
+
   .back-to-top-btn {
     @apply text-gray-600 border-gray-300;
   }
   .back-to-top-btn:hover {
     @apply text-black border-black;
   }
-</style> 
+</style>
+

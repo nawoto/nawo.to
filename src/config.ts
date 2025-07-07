@@ -20,8 +20,8 @@ export const SITE = {
   navigation: {
     items: [
       { href: '/', label: 'top' },
-      { href: '/about', label: 'about' }
-    ]
+      { href: '/about', label: 'about' },
+    ],
   },
   // --- アフィリエイト設定 ---
   affiliate: {

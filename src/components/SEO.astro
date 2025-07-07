@@ -1,6 +1,6 @@
 ---
-import { SEO as AstroSEO } from "astro-seo";
-import { SITE } from "../config.js";
+import { SEO as AstroSEO } from 'astro-seo';
+import { SITE } from '../config.js';
 
 interface Props {
   title: string;
@@ -13,38 +13,38 @@ interface Props {
   ogimage?: string;
 }
 
-const { 
+const {
   title,
   description,
   canonical,
-  charset = "UTF-8",
+  charset = 'UTF-8',
   openGraph,
   twitter,
-  extend
+  extend,
 } = Astro.props;
 
 // openGraphが存在しない場合のデフォルト値
 const defaultOpenGraph = {
   basic: {
-    type: "website",
+    type: 'website',
     title: title,
     image: SITE.images.defaultOg,
-  }
+  },
 };
 
-const ogImageUrl = (openGraph?.basic?.image) 
-  || Astro.props.ogimage 
-  || SITE.images.defaultOg;
+const ogImageUrl = openGraph?.basic?.image || Astro.props.ogimage || SITE.images.defaultOg;
 
 // openGraphが存在しない場合はデフォルト値を使用
-const finalOpenGraph = openGraph ? {
-  ...openGraph,
-  basic: {
-    ...defaultOpenGraph.basic,
-    ...openGraph?.basic,
-    image: ogImageUrl,
-  },
-} : defaultOpenGraph;
+const finalOpenGraph = openGraph
+  ? {
+      ...openGraph,
+      basic: {
+        ...defaultOpenGraph.basic,
+        ...openGraph?.basic,
+        image: ogImageUrl,
+      },
+    }
+  : defaultOpenGraph;
 ---
 
 <AstroSEO
@@ -58,4 +58,5 @@ const finalOpenGraph = openGraph ? {
     image: ogImageUrl,
   }}
   extend={extend}
-/> 
+/>
+

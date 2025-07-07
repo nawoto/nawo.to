@@ -1,8 +1,5 @@
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    'plugin:astro/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:astro/recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -16,21 +13,21 @@ module.exports = {
     // 重複コードの検出
     'no-duplicate-imports': 'error',
     'no-duplicate-case': 'error',
-    
+
     // 未使用変数の検出
     'no-unused-vars': 'warn',
     'no-undef': 'error',
-    
+
     // コードスタイル
     'no-console': 'warn',
     'no-debugger': 'error',
     'no-alert': 'error',
-    
+
     // 型安全性
     'no-var': 'error',
     'prefer-const': 'error',
     'no-const-assign': 'error',
-    
+
     // 可読性
     'no-multiple-empty-lines': ['error', { max: 2 }],
     'no-trailing-spaces': 'error',
@@ -47,4 +44,4 @@ module.exports = {
       },
     },
   ],
-}; 
+};

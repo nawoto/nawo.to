@@ -1,6 +1,6 @@
 ---
 title: Scrum Boot Camp The Book が台湾で出版された
-description: ""
+description: ''
 pubDate: 2022-05-31T07:25:43.458Z
 ---
 

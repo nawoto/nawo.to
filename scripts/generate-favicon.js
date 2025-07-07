@@ -12,15 +12,11 @@ async function generateFavicon() {
 
   try {
     // 16x16のサイズにリサイズしてICOファイルを生成
-    await sharp(inputPath)
-      .resize(16, 16)
-      .toFile(icoOutputPath);
+    await sharp(inputPath).resize(16, 16).toFile(icoOutputPath);
     console.log('✅ Favicon.ico generated successfully!');
 
     // 32x32のサイズにリサイズしてPNGファイルを生成
-    await sharp(inputPath)
-      .resize(32, 32)
-      .toFile(pngOutputPath);
+    await sharp(inputPath).resize(32, 32).toFile(pngOutputPath);
     console.log('✅ Favicon-32x32.png generated successfully!');
   } catch (error) {
     console.error('❌ Error generating favicon:', error);
@@ -28,4 +24,4 @@ async function generateFavicon() {
   }
 }
 
-generateFavicon(); 
+generateFavicon();

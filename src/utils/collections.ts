@@ -3,18 +3,18 @@ export const COLLECTIONS = {
   logs: {
     name: 'LOGS',
     path: '/logs',
-    slug: 'logs'
+    slug: 'logs',
   },
   texts: {
     name: 'TEXTS',
     path: '/texts',
-    slug: 'texts'
+    slug: 'texts',
   },
   backtrace: {
     name: 'BACKTRACE',
     path: '/backtrace',
-    slug: 'backtrace'
-  }
+    slug: 'backtrace',
+  },
 } as const;
 
 export type CollectionType = keyof typeof COLLECTIONS;

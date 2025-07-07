@@ -33,7 +33,7 @@ const backtrace = defineCollection({
 });
 
 export const collections = {
-  'logs': logs,
-  'texts': texts,
-  'backtrace': backtrace,
+  logs: logs,
+  texts: texts,
+  backtrace: backtrace,
 };

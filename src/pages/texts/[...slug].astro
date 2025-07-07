@@ -4,42 +4,46 @@ import type { NavigationPost } from '../../types/index.js';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
-	const texts = await getCollection('texts');
-	
-	// 公開日順にソート（新しい記事が前に来るように）
-	const sortedTexts = texts.sort((a, b) => 
-		new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-	);
-	
-	return sortedTexts.map((text: CollectionEntry<'texts'>, index: number) => {
-		const previousText = sortedTexts[index + 1] || null; // より古い記事
-		const nextText = sortedTexts[index - 1] || null; // より新しい記事
-		
-		// slug から年別ディレクトリと日付プレフィックスを削除
-		const slug = text.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
-		
-		// NavigationPost型に合わせて構造を修正
-		const previousPost: NavigationPost | undefined = previousText ? {
-			slug: previousText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-			collection: 'texts',
-			data: previousText.data
-		} : undefined;
-		
-		const nextPost: NavigationPost | undefined = nextText ? {
-			slug: nextText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-			collection: 'texts',
-			data: nextText.data
-		} : undefined;
-		
-		return {
-			params: { slug },
-			props: { 
-				text,
-				previousPost,
-				nextPost
-			},
-		};
-	});
+  const texts = await getCollection('texts');
+
+  // 公開日順にソート（新しい記事が前に来るように）
+  const sortedTexts = texts.sort(
+    (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+
+  return sortedTexts.map((text: CollectionEntry<'texts'>, index: number) => {
+    const previousText = sortedTexts[index + 1] || null; // より古い記事
+    const nextText = sortedTexts[index - 1] || null; // より新しい記事
+
+    // slug から年別ディレクトリと日付プレフィックスを削除
+    const slug = text.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+
+    // NavigationPost型に合わせて構造を修正
+    const previousPost: NavigationPost | undefined = previousText
+      ? {
+          slug: previousText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+          collection: 'texts',
+          data: previousText.data,
+        }
+      : undefined;
+
+    const nextPost: NavigationPost | undefined = nextText
+      ? {
+          slug: nextText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+          collection: 'texts',
+          data: nextText.data,
+        }
+      : undefined;
+
+    return {
+      params: { slug },
+      props: {
+        text,
+        previousPost,
+        nextPost,
+      },
+    };
+  });
 }
 
 const { text, previousPost, nextPost } = Astro.props;
@@ -47,12 +51,13 @@ const { Content } = await text.render();
 const shareUrl = `https://nawo.to/texts/${Astro.params.slug}`;
 ---
 
-<ArticleLayout 
-	title={text.data.title}
-	content={text}
-	previousPost={previousPost}
-	nextPost={nextPost}
-	shareUrl={shareUrl}
+<ArticleLayout
+  title={text.data.title}
+  content={text}
+  previousPost={previousPost}
+  nextPost={nextPost}
+  shareUrl={shareUrl}
 >
-	<Content />
-</ArticleLayout> 
+  <Content />
+</ArticleLayout>
+

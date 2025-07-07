@@ -40,11 +40,13 @@ export function generateExcerpt(content: string, maxLength: number = 140): strin
  * @returns フォーマットされた日付文字列
  */
 export function formatDate(date: Date): string {
-  return date.toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  }).replace(/\//g, '/');
+  return date
+    .toLocaleDateString('ja-JP', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })
+    .replace(/\//g, '/');
 }
 
 /**
@@ -94,9 +96,7 @@ export function getListPageName(collection: string): string {
 }
 
 // 記事を日付順でソートする共通関数
-export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(
-  articles: T[]
-): T[] {
+export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(articles: T[]): T[] {
   return articles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 
@@ -104,19 +104,24 @@ export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(
 export function groupArticlesByYear<T extends CollectionEntry<CollectionType>>(
   articles: T[]
 ): Record<number, T[]> {
-  return articles.reduce((acc, article) => {
-    const year = article.data.pubDate.getFullYear();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(article);
-    return acc;
-  }, {} as Record<number, T[]>);
+  return articles.reduce(
+    (acc, article) => {
+      const year = article.data.pubDate.getFullYear();
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push(article);
+      return acc;
+    },
+    {} as Record<number, T[]>
+  );
 }
 
 // 年を降順でソートする共通関数
 export function getSortedYears(articlesByYear: Record<number, any[]>): number[] {
-  return Object.keys(articlesByYear).map(Number).sort((a, b) => b - a);
+  return Object.keys(articlesByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
 }
 
 // 記事の抜粋を生成する共通関数
@@ -128,7 +133,7 @@ export async function generateArticleExcerpts<T extends CollectionEntry<Collecti
       const excerpt = generateExcerpt(article.body);
       return {
         ...article,
-        excerpt
+        excerpt,
       };
     })
   );
@@ -149,6 +154,6 @@ export function processArticleMetadata<T extends CollectionEntry<CollectionType>
     description: getDescription(article.data.description, generateExcerpt(article.body)),
     pubDate: article.data.pubDate,
     updatedDate: 'updatedDate' in article.data ? article.data.updatedDate : undefined,
-    tags: article.data.tags
+    tags: article.data.tags,
   };
 }

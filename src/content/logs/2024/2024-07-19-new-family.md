@@ -1,7 +1,7 @@
 ---
-title: "家族が増えた🎂 "
+title: '家族が増えた🎂 '
 pubDate: 2024-07-19T00:00:00.000Z
-description: "娘が爆誕した"
+description: '娘が爆誕した'
 ---
 
 4人家族になりました👶

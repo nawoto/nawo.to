@@ -11,7 +11,9 @@ const { name, class: className = '' } = Astro.props;
 
 // アイコン名の型チェック
 if (!isValidIconName(name)) {
-  throw new Error(`Icon "${name}" not found. Available icons: ${Object.keys(getIconData('github')).join(', ')}`);
+  throw new Error(
+    `Icon "${name}" not found. Available icons: ${Object.keys(getIconData('github')).join(', ')}`
+  );
 }
 
 const iconData = getIconData(name as IconName);
@@ -29,4 +31,5 @@ const svgClass = `${defaultClass} ${className}`.trim();
   aria-hidden="true"
 >
   <path d={iconData.path}></path>
-</svg> 
+</svg>
+

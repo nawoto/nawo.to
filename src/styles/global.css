@@ -6,84 +6,89 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply border-solid bg-white text-black;
-        font-family: 'Titillium Web', sans-serif;
-    }
-    
-    /* Ensure all headings use Titillium Web by default - like Gatsby version */
-    h1, h2, h3 {
-        font-family: 'Titillium Web', sans-serif !important;
-    }
-    
-    /* Article content headings - match Gatsby version exactly */
-    
-    .prose h1, .prose h3 {
-        font-family: 'Titillium Web', sans-serif !important;
-        font-weight: 700 !important;
-    }
-    
-    /* Instagram embed styling - override prose defaults */
-    .prose .instagram-media {
-        margin: 1.5rem auto !important;
-        max-width: 540px !important;
-        min-width: 326px !important;
-        width: 99.375% !important;
-        width: -webkit-calc(100% - 2px) !important;
-        width: calc(100% - 2px) !important;
-        background: #FFF !important;
-        background: var(--ig-primary-background, #FFF) !important;
-        border: 0 !important;
-        border-radius: 3px !important;
-        box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15) !important;
-    }
-    
-    .prose .instagram-media blockquote {
-        background: transparent !important;
-        border: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-style: normal !important;
-        quotes: none !important;
-    }
+  body {
+    @apply border-solid bg-white text-black;
+    font-family: 'Titillium Web', sans-serif;
+  }
+
+  /* Ensure all headings use Titillium Web by default - like Gatsby version */
+  h1,
+  h2,
+  h3 {
+    font-family: 'Titillium Web', sans-serif !important;
+  }
+
+  /* Article content headings - match Gatsby version exactly */
+
+  .prose h1,
+  .prose h3 {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  /* Instagram embed styling - override prose defaults */
+  .prose .instagram-media {
+    margin: 1.5rem auto !important;
+    max-width: 540px !important;
+    min-width: 326px !important;
+    width: 99.375% !important;
+    width: -webkit-calc(100% - 2px) !important;
+    width: calc(100% - 2px) !important;
+    background: #fff !important;
+    background: var(--ig-primary-background, #fff) !important;
+    border: 0 !important;
+    border-radius: 3px !important;
+    box-shadow:
+      0 0 1px 0 rgba(0, 0, 0, 0.5),
+      0 1px 10px 0 rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .prose .instagram-media blockquote {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-style: normal !important;
+    quotes: none !important;
+  }
 }
 
 /* =========================
    Utility Classes
    ========================= */
 @layer components {
-    .hover-style {
-        @apply transition-colors duration-200 hover:bg-black hover:text-white;
-    }
-    .link {
-        @apply font-semibold underline decoration-gray-500;
-    }
+  .hover-style {
+    @apply transition-colors duration-200 hover:bg-black hover:text-white;
+  }
+  .link {
+    @apply font-semibold underline decoration-gray-500;
+  }
+  .brutalist-container {
+    @apply mx-auto max-w-4xl px-4 py-8;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
     .brutalist-container {
-        @apply mx-auto max-w-4xl px-4 py-8;
+      @apply px-2 py-4;
     }
-    
-    /* Mobile responsive adjustments */
-    @media (max-width: 767px) {
-        .brutalist-container {
-            @apply px-2 py-4;
-        }
-    }
-    
-    /* 
+  }
+
+  /* 
      * Link Card Styles 
      * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
      * original: https://sur33.com/notes/2023/astro-remark-link-card
     */
 
+  /* Switch to 2 columns ONLY if a thumbnail exists */
+
+  /* If there's no thumbnail, round all corners */
+
+  @media (min-width: 60ch) {
     /* Switch to 2 columns ONLY if a thumbnail exists */
+  }
 
-    /* If there's no thumbnail, round all corners */
-
-    @media (min-width: 60ch) {
-        /* Switch to 2 columns ONLY if a thumbnail exists */
-    }
-    
-    /* About page specific styles for Amazon cards */
+  /* About page specific styles for Amazon cards */
 }
 
 /* =========================
@@ -97,7 +102,7 @@
   border-radius: 0.5rem;
   background: #fff;
   margin: 1rem 0;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 .book-cover {
   width: 120px;
@@ -108,7 +113,8 @@
   align-items: center;
   justify-content: center;
 }
-.book-cover img, .book-cover picture {
+.book-cover img,
+.book-cover picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -168,7 +174,8 @@
     margin-right: auto;
     display: block;
   }
-  .book-cover img, .book-cover picture {
+  .book-cover img,
+  .book-cover picture {
     max-width: 100px;
     max-height: 140px;
     aspect-ratio: 5/7;
@@ -276,7 +283,10 @@
   min-width: 100%;
   border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
 }
-.prose .remark-link-card-plus__card:not(:has(.remark-link-card-plus__thumbnail)) .prose .remark-link-card-plus__main {
+.prose
+  .remark-link-card-plus__card:not(:has(.remark-link-card-plus__thumbnail))
+  .prose
+  .remark-link-card-plus__main {
   border-radius: var(--card-border-radius);
 }
 .prose .remark-link-card-plus__title {
@@ -335,12 +345,12 @@ a.read-more:hover {
   color: #00ff00; /* CLI感のあるグリーン */
   text-decoration: underline;
   text-underline-offset: 3px;
-  background-color: #111;       /* 背景でフォーカス感を演出 */
+  background-color: #111; /* 背景でフォーカス感を演出 */
   padding: 2px 4px;
   border-radius: 2px;
   font-weight: bold;
-  outline: none;                /* デフォルトのoutlineを消す */
-  box-shadow: 0 0 4px #0f0;     /* 緑の発光感でアクセシビリティ確保 */
+  outline: none; /* デフォルトのoutlineを消す */
+  box-shadow: 0 0 4px #0f0; /* 緑の発光感でアクセシビリティ確保 */
   transition: all 0.15s ease-in-out;
 }
 

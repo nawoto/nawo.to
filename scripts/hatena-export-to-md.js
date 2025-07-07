@@ -26,9 +26,15 @@ for (let i = 0; i < args.length; i++) {
     // YYYY-MM-DD形式をパース
     const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (dateMatch) {
-      targetDate = new Date(parseInt(dateMatch[1]), parseInt(dateMatch[2]) - 1, parseInt(dateMatch[3]));
+      targetDate = new Date(
+        parseInt(dateMatch[1]),
+        parseInt(dateMatch[2]) - 1,
+        parseInt(dateMatch[3])
+      );
     } else {
-      console.error('❌ 日付形式が正しくありません。YYYY-MM-DD形式で指定してください。例: --date 2012-03-26');
+      console.error(
+        '❌ 日付形式が正しくありません。YYYY-MM-DD形式で指定してください。例: --date 2012-03-26'
+      );
       process.exit(1);
     }
   }
@@ -81,7 +87,7 @@ const convertedFile = 'converted.txt';
 let convertedSet = new Set();
 if (fs.existsSync(convertedFile)) {
   const lines = fs.readFileSync(convertedFile, 'utf8').split(/\r?\n/).filter(Boolean);
-  lines.forEach(line => convertedSet.add(line.trim()));
+  lines.forEach((line) => convertedSet.add(line.trim()));
 }
 
 // エクスポートファイルを読み込み
@@ -93,15 +99,15 @@ if (!fs.existsSync(exportFile)) {
 const content = fs.readFileSync(exportFile, 'utf8');
 
 // エントリを抽出
-const entries = content.split('--------').filter(entry => entry.trim());
+const entries = content.split('--------').filter((entry) => entry.trim());
 console.log(`📊 総記事数: ${entries.length}件`);
 
 if (allMode) {
   // 全記事から範囲指定
   let filtered = entries
-    .map(entry => ({ entry, meta: extractMeta(entry) }))
+    .map((entry) => ({ entry, meta: extractMeta(entry) }))
     .filter(({ meta }) => meta && meta.basename);
-  
+
   // 日付指定がある場合はフィルタリング
   if (targetDate) {
     filtered = filtered.filter(({ meta }) => {
@@ -113,19 +119,23 @@ if (allMode) {
       const targetDay = targetDate.getDate();
       return entryYear === targetYear && entryMonth === targetMonth && entryDay === targetDay;
     });
-    console.log(`📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`);
+    console.log(
+      `📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`
+    );
   }
-  
+
   // 強制モードでない場合は変換済みを除外
   if (!forceMode) {
     filtered = filtered.filter(({ meta }) => !convertedSet.has(meta.basename));
   }
-  
+
   // --allモードではcountが指定されていない場合は全件処理
   const actualCount = count === 10 && !process.argv.includes('--count') ? filtered.length : count;
   const endIndex = Math.min(startIndex + actualCount, filtered.length);
   const targetEntries = filtered.slice(startIndex, endIndex);
-  console.log(`🔢 全記事から変換対象: ${startIndex + 1}件目 〜 ${endIndex}件目（${targetEntries.length}件）`);
+  console.log(
+    `🔢 全記事から変換対象: ${startIndex + 1}件目 〜 ${endIndex}件目（${targetEntries.length}件）`
+  );
   if (targetEntries.length === 0) {
     console.log('⚠️  指定範囲に記事がありません');
     process.exit(0);
@@ -148,7 +158,7 @@ if (allMode) {
 
 // 年別に記事を分類
 const entriesByYear = {};
-entries.forEach(entry => {
+entries.forEach((entry) => {
   const meta = extractMeta(entry);
   if (meta && meta.date) {
     const year = meta.date.getFullYear();
@@ -174,19 +184,21 @@ if (!entriesByYear[targetYear]) {
 
 let yearEntries = entriesByYear[targetYear];
 
-  // 日付指定がある場合はフィルタリング
-  if (targetDate) {
-    yearEntries = yearEntries.filter(({ meta }) => {
-      const entryYear = meta.date.getFullYear();
-      const entryMonth = meta.date.getMonth() + 1;
-      const entryDay = meta.date.getDate();
-      const targetYear = targetDate.getFullYear();
-      const targetMonth = targetDate.getMonth() + 1;
-      const targetDay = targetDate.getDate();
-      return entryYear === targetYear && entryMonth === targetMonth && entryDay === targetDay;
-    });
-    console.log(`📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`);
-  }
+// 日付指定がある場合はフィルタリング
+if (targetDate) {
+  yearEntries = yearEntries.filter(({ meta }) => {
+    const entryYear = meta.date.getFullYear();
+    const entryMonth = meta.date.getMonth() + 1;
+    const entryDay = meta.date.getDate();
+    const targetYear = targetDate.getFullYear();
+    const targetMonth = targetDate.getMonth() + 1;
+    const targetDay = targetDate.getDate();
+    return entryYear === targetYear && entryMonth === targetMonth && entryDay === targetDay;
+  });
+  console.log(
+    `📅 日付指定: ${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, '0')}-${String(targetDate.getDate()).padStart(2, '0')}`
+  );
+}
 
 // 強制モードでない場合は変換済みを除外
 if (!forceMode) {
@@ -236,7 +248,9 @@ function extractMeta(entry) {
   try {
     date = new Date(dateStr);
     if (isNaN(date.getTime())) return null;
-  } catch (e) { return null; }
+  } catch (e) {
+    return null;
+  }
   return { title, date, basename, body };
 }
 
@@ -285,14 +299,20 @@ function convertToMarkdown(entry, meta, year) {
   if (!meta) return null;
   let markdown = meta.body;
   // SpeakerDeckの埋め込みスクリプトをURLのみに変換（最初に実行）
-  markdown = markdown.replace(/<script src="http:\/\/speakerdeck\.com\/embed\/([a-zA-Z0-9]+)\.js"><\/script>/g, (match, slideId) => {
-    return `\n\nhttps://speakerdeck.com/embed/${slideId}\n\n`;
-  });
-  
+  markdown = markdown.replace(
+    /<script src="http:\/\/speakerdeck\.com\/embed\/([a-zA-Z0-9]+)\.js"><\/script>/g,
+    (match, slideId) => {
+      return `\n\nhttps://speakerdeck.com/embed/${slideId}\n\n`;
+    }
+  );
+
   // SlideShareの埋め込みウィジェットをURLのみに変換
-  markdown = markdown.replace(/<div[^>]*id="__ss_\d+"[^>]*>\s*<strong[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>([^<]+)<\/a>\s*<\/strong>\s*<iframe[^>]*><\/iframe>\s*<div[^>]*>\s*View more[^<]*<a[^>]*>[^<]*<\/a>[^<]*from[^<]*<a[^>]*>[^<]*<\/a>\s*<\/div>\s*<\/div>/g, (match, url, title) => {
-    return `\n\n${url}\n\n`;
-  });
+  markdown = markdown.replace(
+    /<div[^>]*id="__ss_\d+"[^>]*>\s*<strong[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>([^<]+)<\/a>\s*<\/strong>\s*<iframe[^>]*><\/iframe>\s*<div[^>]*>\s*View more[^<]*<a[^>]*>[^<]*<\/a>[^<]*from[^<]*<a[^>]*>[^<]*<\/a>\s*<\/div>\s*<\/div>/g,
+    (match, url, title) => {
+      return `\n\n${url}\n\n`;
+    }
+  );
   // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
   markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
     let cleanContent = content
@@ -304,13 +324,16 @@ function convertToMarkdown(entry, meta, year) {
   // まず全体の各行の先頭空白を一括除去（PREタグ処理後）
   markdown = markdown.replace(/^\s+/gm, '');
   // COMMENTセクションを適切に処理
-  markdown = markdown.replace(/-----[\s\S]*?COMMENT:\s*([\s\S]*?)(?=-----|$)/g, (match, comment) => {
-    const cleanComment = comment
-      .replace(/<br\s*\/?/g, '\n')
-      .replace(/<[^>]*>/g, '')
-      .trim();
-    return `\n\n---\n**元コメント:**\n\n${cleanComment}\n\n---`;
-  });
+  markdown = markdown.replace(
+    /-----[\s\S]*?COMMENT:\s*([\s\S]*?)(?=-----|$)/g,
+    (match, comment) => {
+      const cleanComment = comment
+        .replace(/<br\s*\/?/g, '\n')
+        .replace(/<[^>]*>/g, '')
+        .trim();
+      return `\n\n---\n**元コメント:**\n\n${cleanComment}\n\n---`;
+    }
+  );
   // blockquoteタグをMarkdownの引用に変換
   markdown = markdown.replace(/<blockquote>\s*([\s\S]*?)\s*<\/blockquote>/g, (match, content) => {
     let cleanContent = content
@@ -321,7 +344,7 @@ function convertToMarkdown(entry, meta, year) {
       .replace(/<(?!br\s*\/?)[^>]*>/gi, '')
       .replace(/\n{3,}/g, '\n\n');
     const lines = cleanContent.split('\n');
-    const quotedLines = lines.map(line => {
+    const quotedLines = lines.map((line) => {
       const trimmed = line.trimStart();
       return trimmed === '' ? '>' : `> ${trimmed.replace(/^> ?/, '')}`;
     });
@@ -335,18 +358,20 @@ function convertToMarkdown(entry, meta, year) {
     .replace(/<ul>\s*([\s\S]*?)\s*<\/ul>/g, (match, content) => {
       const items = content.match(/<li[^>]*>([\s\S]*?)<\/li>/g);
       if (!items) return '';
-      const markdownItems = items.map(item => {
+      const markdownItems = items.map((item) => {
         let itemContent = item.replace(/<li[^>]*>([\s\S]*?)<\/li>/, '$1');
         itemContent = itemContent
           .replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '[$2]($1)')
           .replace(/<br\s*\/?>/gi, '\n')
           .replace(/<[^>]*>/g, '')
           .trim();
-        
+
         // SpeakerDeckのリンクの場合は箇条書きを除去してURLのみに変換
         if (itemContent.includes('speakerdeck.com')) {
           // [URL](URL) の形式をURLのみに変換
-          const markdownLinkMatch = itemContent.match(/\[(https:\/\/speakerdeck\.com\/[^\]]+)\]\(\1\)/);
+          const markdownLinkMatch = itemContent.match(
+            /\[(https:\/\/speakerdeck\.com\/[^\]]+)\]\(\1\)/
+          );
           if (markdownLinkMatch) {
             return markdownLinkMatch[1];
           }
@@ -356,11 +381,13 @@ function convertToMarkdown(entry, meta, year) {
             return urlMatch[0];
           }
         }
-        
+
         // SlideShareのリンクの場合は箇条書きを除去してURLのみに変換
         if (itemContent.includes('slideshare.net')) {
           // [URL](URL) の形式をURLのみに変換
-          const markdownLinkMatch = itemContent.match(/\[(https:\/\/slideshare\.net\/[^\]]+)\]\(\1\)/);
+          const markdownLinkMatch = itemContent.match(
+            /\[(https:\/\/slideshare\.net\/[^\]]+)\]\(\1\)/
+          );
           if (markdownLinkMatch) {
             return markdownLinkMatch[1];
           }
@@ -370,7 +397,7 @@ function convertToMarkdown(entry, meta, year) {
             return urlMatch[0];
           }
         }
-        
+
         return `- ${itemContent}`;
       });
       return markdownItems.join('\n') + '\n\n';
@@ -390,7 +417,7 @@ function convertToMarkdown(entry, meta, year) {
   const tags = [];
   const hashtagMatch = meta.title.match(/[#＃]([^\s]+)/g);
   if (hashtagMatch) {
-    tags.push(...hashtagMatch.map(tag => tag.substring(1))); // #を除去
+    tags.push(...hashtagMatch.map((tag) => tag.substring(1))); // #を除去
   }
   const cleanTitle = meta.title.replace(/[#＃][^\s]+/g, '').trim();
   const dateStr = meta.date.toISOString().split('T')[0];
@@ -401,12 +428,12 @@ function convertToMarkdown(entry, meta, year) {
   const frontmatter = `---\ntitle: "${cleanTitle}"\npubDate: ${meta.date.toISOString()}\ntags: ${tags.length > 0 ? JSON.stringify(tags) : '[]'}\n---\n\n`;
   const filePath = path.join(yearDir, fileName);
   fs.writeFileSync(filePath, frontmatter + markdown);
-  
+
   // 元のエクスポートファイルの内容をtxtファイルとして保存
   const originalFileName = `${dateStr}-${cleanBasename}.txt`;
   const originalFilePath = path.join(yearDir, originalFileName);
   fs.writeFileSync(originalFilePath, entry);
-  
+
   return { title: cleanTitle, date: meta.date, tags, filePath, originalFilePath };
 }
 
@@ -420,7 +447,7 @@ function processTxtOnly() {
   const content = fs.readFileSync(exportFile, 'utf8');
 
   // エントリを抽出
-  const entries = content.split('--------').filter(entry => entry.trim());
+  const entries = content.split('--------').filter((entry) => entry.trim());
   console.log(`📊 総記事数: ${entries.length}件`);
 
   let successCount = 0;
@@ -435,14 +462,14 @@ function processTxtOnly() {
         const cleanBasename = meta.basename.split('/').pop();
         const fileName = `${dateStr}-${cleanBasename}.txt`;
         const yearDir = `src/content/backtrace/${year}`;
-        
+
         if (!fs.existsSync(yearDir)) {
           fs.mkdirSync(yearDir, { recursive: true });
         }
-        
+
         const filePath = path.join(yearDir, fileName);
         fs.writeFileSync(filePath, entry);
-        
+
         successCount++;
         console.log(`✅ [${i + 1}] ${meta.title}`);
       } else {
@@ -459,10 +486,10 @@ function processTxtOnly() {
   console.log(`   ✅ 成功: ${successCount}件`);
   console.log(`   ❌ 失敗: ${errorCount}件`);
   console.log(`   📁 出力先: src/content/backtrace/（年別ディレクトリ）`);
-  
+
   if (errorCount === 0) {
     console.log(`\n🎉 txtファイル分割が完了しました！`);
   } else {
     console.log(`\n⚠️  ${errorCount}件のファイルでエラーが発生しました`);
   }
-} 
+}

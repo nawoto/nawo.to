@@ -1,7 +1,7 @@
 ---
 title: Font Awesome を使おう
 pubDate: 2022-05-11T00:00:00.000Z
-description: ""
+description: ''
 ---
 
 自分の SNS アカウントへのリンクは、アイコンのみで良さそうなので [Font Awesome](https://fontawesome.com/) を導入した。
@@ -30,14 +30,14 @@ $ npm i --save @fortawesome/free-brands-svg-icons
 [Font Awesome](https://fontawesome.com/) で使いたいアイコンを探して、表記を camel case に読みかえて import する。
 
 ```js
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSquareRss } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareRss } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter,
   faGithub,
   faSpeakerDeck,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons"
+} from '@fortawesome/free-brands-svg-icons';
 ```
 
 あとは使いたい箇所で、以下のようにアイコンを呼びだせば表示された。
@@ -54,7 +54,7 @@ import {
 
 ```js
 // CSS style for Font Awesome
-import "@fortawesome/fontawesome-svg-core/styles.css"
+import '@fortawesome/fontawesome-svg-core/styles.css';
 ```
 
 無事にアイコンが表示できたはず 🎉
@@ -91,14 +91,14 @@ export const iconData = {
   // Simple Icons使用
   x: {
     viewBox: '0 0 24 24',
-    path: siX.path
+    path: siX.path,
   },
   // カスタムSVG
   suzuri: {
     viewBox: '0 0 640 512',
-    path: 'M211.8 0c7.8 0 14.3 5.7 16.7 13.2...'
-  }
-}
+    path: 'M211.8 0c7.8 0 14.3 5.7 16.7 13.2...',
+  },
+};
 ```
 
 ### 使用例

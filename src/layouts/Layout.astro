@@ -16,12 +16,7 @@ interface Props {
   showBio?: boolean;
 }
 
-const { 
-  title, 
-  description = SITE.description,
-  image,
-  showBio = true
-} = Astro.props;
+const { title, description = SITE.description, image, showBio = true } = Astro.props;
 
 const pageTitle = title || SITE.title;
 const metaDescription = description || SITE.description;
@@ -37,43 +32,48 @@ const websiteStructuredData = generateWebSiteStructuredData();
 const shouldShowBio = showBio !== false;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <SEO {...seoConfig} />
-    
+
     <!-- WebSite JSON-LD Structured Data -->
     <StructuredData data={websiteStructuredData} />
-    
+
     <!-- Additional head content from child layouts -->
     <slot name="head" />
   </head>
   <body class="mx-auto max-w-screen-xl">
     <Header />
-    
+
     <main>
-      {/* 
+      {
+        /* 
         Bio表示の制御:
         - showBioがtrue（デフォルト）または未指定の場合: Bioを表示
         - showBioが明示的にfalseの場合: Bioを非表示
         - 404ページなど、Bioを表示したくないページで使用
-      */}
+      */
+      }
       <div class="flex flex-col md:flex-row">
         {/* メインコンテンツエリア */}
-        <div class={shouldShowBio ? "order-2 md:order-last md:basis-3/4" : "w-full"}>
+        <div class={shouldShowBio ? 'order-2 md:order-last md:basis-3/4' : 'w-full'}>
           <slot />
         </div>
-        
+
         {/* Bioサイドバー（showBioがfalseでない場合のみ表示） */}
-        {shouldShowBio && (
-          <div class="order-1 border-r md:order-none md:basis-1/4">
-            <Bio />
-          </div>
-        )}
+        {
+          shouldShowBio && (
+            <div class="order-1 border-r md:order-none md:basis-1/4">
+              <Bio />
+            </div>
+          )
+        }
       </div>
     </main>
 
     <Footer />
     <script is:inline src="/js/amazon-cards.js"></script>
   </body>
-</html> 
+</html>
+

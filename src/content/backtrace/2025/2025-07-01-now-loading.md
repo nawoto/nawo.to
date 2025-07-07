@@ -1,6 +1,6 @@
 ---
-title: "🔄Now Loading...😴"
-description: "絶賛放置していた「はてなダイアリー」の記事を移行しようと思っている"
+title: '🔄Now Loading...😴'
+description: '絶賛放置していた「はてなダイアリー」の記事を移行しようと思っている'
 pubDate: 2025-07-01
 tags: []
 ---

@@ -6,95 +6,107 @@ import { getLogSlug } from '../utils/slug';
 export async function getStaticPaths() {
   const logsPosts = await getCollection('logs');
   const backtracePosts = await getCollection('backtrace');
-  
+
   // logsコレクションのパス生成
-  const sortedLogsPosts = logsPosts.sort((a, b) => 
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  const sortedLogsPosts = logsPosts.sort(
+    (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
-  
+
   const logsPaths = sortedLogsPosts.map((post, index: number) => {
     const previousPost = sortedLogsPosts[index + 1] || undefined;
     const nextPost = sortedLogsPosts[index - 1] || undefined;
-    
+
     const fileName = post.slug.replace(/^\d{4}\//, '');
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
-    
+
     if (!dateMatch) {
       const slug = fileName.toLowerCase();
       return {
         params: { slug: slug },
-        props: { 
+        props: {
           post,
-          previousPost: previousPost ? {
-            slug: getLogSlug(previousPost.slug),
-            collection: 'logs',
-            data: previousPost.data
-          } : undefined,
-          nextPost: nextPost ? {
-            slug: getLogSlug(nextPost.slug),
-            collection: 'logs',
-            data: nextPost.data
-          } : undefined
+          previousPost: previousPost
+            ? {
+                slug: getLogSlug(previousPost.slug),
+                collection: 'logs',
+                data: previousPost.data,
+              }
+            : undefined,
+          nextPost: nextPost
+            ? {
+                slug: getLogSlug(nextPost.slug),
+                collection: 'logs',
+                data: nextPost.data,
+              }
+            : undefined,
         },
       };
     }
-    
+
     const [, year, month, day, slug] = dateMatch;
     const urlSlug = `${year}/${month}/${day}/${slug}`;
-    
+
     return {
       params: { slug: urlSlug },
-      props: { 
+      props: {
         post,
-        previousPost: previousPost ? {
-          slug: getLogSlug(previousPost.slug),
-          collection: 'logs',
-          data: previousPost.data
-        } : undefined,
-        nextPost: nextPost ? {
-          slug: getLogSlug(nextPost.slug),
-          collection: 'logs',
-          data: nextPost.data
-        } : undefined
+        previousPost: previousPost
+          ? {
+              slug: getLogSlug(previousPost.slug),
+              collection: 'logs',
+              data: previousPost.data,
+            }
+          : undefined,
+        nextPost: nextPost
+          ? {
+              slug: getLogSlug(nextPost.slug),
+              collection: 'logs',
+              data: nextPost.data,
+            }
+          : undefined,
       },
     };
   });
 
   // backtraceコレクションのパス生成
-  const sortedBacktracePosts = backtracePosts.sort((a, b) => 
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  const sortedBacktracePosts = backtracePosts.sort(
+    (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
-  
+
   const backtracePaths = sortedBacktracePosts.map((post, index: number) => {
     const previousPost = sortedBacktracePosts[index + 1] || undefined;
     const nextPost = sortedBacktracePosts[index - 1] || undefined;
-    
+
     const fileName = post.slug.replace(/^\d{4}\//, '');
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
-    
+
     if (!dateMatch) {
       const slug = fileName.toLowerCase();
       return {
         params: { slug: `backtrace/${slug}` },
-        props: { 
+        props: {
           post,
-          previousPost: previousPost ? {
-            slug: `backtrace/${previousPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
-            collection: 'backtrace',
-            data: previousPost.data
-          } : undefined,
-          nextPost: nextPost ? {
-            slug: `backtrace/${nextPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
-            collection: 'backtrace',
-            data: nextPost.data
-          } : undefined
+          previousPost: previousPost
+            ? {
+                slug: `backtrace/${previousPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
+                collection: 'backtrace',
+                data: previousPost.data,
+              }
+            : undefined,
+          nextPost: nextPost
+            ? {
+                slug: `backtrace/${nextPost.slug.replace(/^\d{4}\//, '').toLowerCase()}`,
+                collection: 'backtrace',
+                data: nextPost.data,
+              }
+            : undefined,
         },
       };
     }
-    
+
     const [, year, month, day, slug] = dateMatch;
     const urlSlug = `backtrace/${year}/${month}/${day}/${slug}`;
-    
+
     // previousPostとnextPostのURL生成
     const getBacktraceUrl = (post: CollectionEntry<'backtrace'>) => {
       const fileName = post.slug.replace(/^\d{4}\//, '');
@@ -105,21 +117,25 @@ export async function getStaticPaths() {
       const [, year, month, day, slug] = dateMatch;
       return `backtrace/${year}/${month}/${day}/${slug}`;
     };
-    
+
     return {
       params: { slug: urlSlug },
-      props: { 
+      props: {
         post,
-        previousPost: previousPost ? {
-          slug: getBacktraceUrl(previousPost),
-          collection: 'backtrace',
-          data: previousPost.data
-        } : undefined,
-        nextPost: nextPost ? {
-          slug: getBacktraceUrl(nextPost),
-          collection: 'backtrace',
-          data: nextPost.data
-        } : undefined
+        previousPost: previousPost
+          ? {
+              slug: getBacktraceUrl(previousPost),
+              collection: 'backtrace',
+              data: previousPost.data,
+            }
+          : undefined,
+        nextPost: nextPost
+          ? {
+              slug: getBacktraceUrl(nextPost),
+              collection: 'backtrace',
+              data: nextPost.data,
+            }
+          : undefined,
       },
     };
   });
@@ -132,7 +148,7 @@ const { Content } = await post.render();
 const shareUrl = `https://nawo.to/${Astro.params.slug}`;
 ---
 
-<ArticleLayout 
+<ArticleLayout
   title={post.data.title}
   content={post}
   previousPost={previousPost}

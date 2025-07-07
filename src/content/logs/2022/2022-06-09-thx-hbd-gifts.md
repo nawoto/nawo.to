@@ -1,7 +1,7 @@
 ---
 title: プレゼントありがとう
 pubDate: 2022-06-09T00:00:00.000Z
-description: ""
+description: ''
 ---
 
 今年もたくさんの[誕生日](https://nawo.to/texts/happy-birthday/)プレゼントをいただきました。  

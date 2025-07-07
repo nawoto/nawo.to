@@ -5,7 +5,7 @@
 # nawo.to
 
 > **これは「nawoto」の構造化のためのリポジトリです**
-> 
+>
 > 未来の自分が迷子にならないように、運用・設計・コマンド全部ここにメモしておく！
 
 ---
@@ -66,26 +66,29 @@
 
 ## 🧞 npmコマンド早見表（自分用チートシート）
 
-| コマンド                        | やること                                         |
-|---------------------------------|--------------------------------------------------|
-| `npm install`                   | 依存パッケージをインストール                     |
-| `npm run dev`                   | ローカル開発サーバー起動（localhost:4321）       |
-| `npm run build`                 | 本番用にビルド（`dist/`に出力）                   |
-| `npm run preview`               | ビルド結果をローカルでプレビュー                 |
-| `npm run astro ...`             | Astro CLIコマンドを実行                          |
-| `node scripts/new-article.js`   | 新しい記事ファイルを作成（下記オプション参照）   |
+| コマンド                      | やること                                       |
+| ----------------------------- | ---------------------------------------------- |
+| `npm install`                 | 依存パッケージをインストール                   |
+| `npm run dev`                 | ローカル開発サーバー起動（localhost:4321）     |
+| `npm run build`               | 本番用にビルド（`dist/`に出力）                |
+| `npm run preview`             | ビルド結果をローカルでプレビュー               |
+| `npm run astro ...`           | Astro CLIコマンドを実行                        |
+| `node scripts/new-article.js` | 新しい記事ファイルを作成（下記オプション参照） |
 
 ---
 
 ### 記事作成スクリプトの使い方（未来の自分へ）
 
 #### 基本形
+
 ```sh
 node scripts/new-article.js --slug my-article
 ```
+
 - `--slug`（必須）: 記事のスラッグ（ファイル名・URLの一部）
 
 #### オプション
+
 - `--type <logs|texts>` または `--texts`  
   → テキスト系（`src/content/texts/`）に作成。  
   省略時はブログ記事（`src/content/logs/`）に作成。
@@ -101,6 +104,7 @@ node scripts/new-article.js --slug my-article
   → ヘルプを表示
 
 #### 例
+
 ```sh
 # ネタストック一覧表示
 node scripts/new-article.js --idea
@@ -131,13 +135,16 @@ node scripts/new-article.js --slug agile-ai-coaching --type texts --title "ア�
 ## 📄 ライセンス
 
 ### サイトコード
+
 - **ライセンス**: [MIT License](https://opensource.org/licenses/MIT)
 
 ### 記事コンテンツ
+
 - **ライセンス**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - **条件**: 帰属表示（nawo.toへのリンク）が必要
 
 ### 画像
+
 - **プロフィール写真、サイトアイコン、OpenGraph画像**: [MIT License](https://opensource.org/licenses/MIT)
 - **書籍カバー画像**: 著者/出版社の許可による利用
 

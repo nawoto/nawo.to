@@ -9,28 +9,33 @@ const { activeTab, description } = Astro.props;
 const tabs = [
   { id: 'logs', label: 'LOGS', href: '/logs' },
   { id: 'texts', label: 'TEXTS', href: '/texts' },
-  { id: 'backtrace', label: 'BACKTRACE', href: '/backtrace' }
+  { id: 'backtrace', label: 'BACKTRACE', href: '/backtrace' },
 ];
 
 const defaultDescriptions = {
   logs: '日々のなんとなくを書き留めてます✍️',
   texts: '不定期に思いついたことなどを文章にまとめています✍️',
-  backtrace: '過去のブログ記事を移行中です📚'
+  backtrace: '過去のブログ記事を移行中です📚',
 };
 ---
 
 <div class="mt-4">
   <div class="tab-container">
-    {tabs.map(tab => (
-      <a 
-        href={tab.href} 
-        class={`tab ${activeTab === tab.id ? 'active' : ''}`}
-        aria-current={activeTab === tab.id ? 'page' : undefined}
-      >
-        {tab.label}
-      </a>
-    ))}
+    {
+      tabs.map((tab) => (
+        <a
+          href={tab.href}
+          class={`tab ${activeTab === tab.id ? 'active' : ''}`}
+          aria-current={activeTab === tab.id ? 'page' : undefined}
+        >
+          {tab.label}
+        </a>
+      ))
+    }
   </div>
-  <p class="text-sm text-gray-500 text-left pl-4 mt-2" set:html={description || defaultDescriptions[activeTab]}>
-  </p>
-</div> 
+  <p
+    class="text-sm text-gray-500 text-left pl-4 mt-2"
+    set:html={description || defaultDescriptions[activeTab]}
+  />
+</div>
+

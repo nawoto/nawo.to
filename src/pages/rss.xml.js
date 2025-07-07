@@ -9,14 +9,14 @@ export async function GET(context) {
 
   // 投稿と記事を統合してソート
   const allContent = [
-    ...posts.map(post => ({
+    ...posts.map((post) => ({
       ...post,
-      type: 'logs'
+      type: 'logs',
     })),
-    ...texts.map(text => ({
+    ...texts.map((text) => ({
       ...text,
-      type: 'texts'
-    }))
+      type: 'texts',
+    })),
   ].sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 
   return rss({

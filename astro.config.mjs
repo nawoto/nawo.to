@@ -16,26 +16,27 @@ import { SITE } from './src/config.js';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nawo.to',
-  integrations: [
-    tailwind(),
-    sitemap(),
-    partytown(),
-    react(),
-    ogImageGenerator(),
-  ],
+  integrations: [tailwind(), sitemap(), partytown(), react(), ogImageGenerator()],
   markdown: {
     remarkPlugins: [
       remarkToc,
       [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
       remarkYoutubeEmbed,
       remarkInstagramEmbed,
-      [remarkLinkCardPlus, { 
-        excludeDomains: ['youtube.com', 'www.youtube.com', 'youtu.be', 'instagram.com', 'www.instagram.com']
-      }],
+      [
+        remarkLinkCardPlus,
+        {
+          excludeDomains: [
+            'youtube.com',
+            'www.youtube.com',
+            'youtu.be',
+            'instagram.com',
+            'www.instagram.com',
+          ],
+        },
+      ],
     ],
-    rehypePlugins: [
-      rehypeRaw,
-    ],
+    rehypePlugins: [rehypeRaw],
   },
   trailingSlash: 'ignore',
 });

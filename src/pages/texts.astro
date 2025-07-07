@@ -11,11 +11,11 @@ const texts = sortArticlesByDate(await getCollection('texts'));
 ---
 
 <Layout title={`TEXTS | ${SITE.title}`}>
-	<TabNavigation activeTab="texts" />
-	<YearlyArticleList
-		articles={texts}
-		getArticleUrl={getTextUrl}
-		showBorder={true}
-		activeTab="texts"
-	/>
+  <TabNavigation activeTab="texts" />
+  <YearlyArticleList
+    articles={texts}
+    getArticleUrl={getTextUrl}
+    showBorder={true}
+    activeTab="texts"
+  />
 </Layout>

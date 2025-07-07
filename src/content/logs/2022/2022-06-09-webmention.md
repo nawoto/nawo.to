@@ -1,6 +1,6 @@
 ---
 title: Webmention をサポートしてみた
-description: ""
+description: ''
 pubDate: 2022-06-09T03:15:26.549Z
 ---
 

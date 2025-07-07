@@ -21,13 +21,8 @@ const { url, title } = Astro.props;
       aria-label="Xでシェア"
       class="hover:opacity-70 transition"
     >
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        class="w-6 h-6"
-        style="color: #000;"
-      >
-        <path d={siX.path} />
+      <svg role="img" viewBox="0 0 24 24" class="w-6 h-6" style="color: #000;">
+        <path d={siX.path}></path>
       </svg>
     </a>
     <!-- Facebook -->
@@ -38,13 +33,8 @@ const { url, title } = Astro.props;
       aria-label="Facebookでシェア"
       class="hover:opacity-70 transition"
     >
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        class="w-6 h-6"
-        style="color: #1877F2;"
-      >
-        <path d={siFacebook.path} />
+      <svg role="img" viewBox="0 0 24 24" class="w-6 h-6" style="color: #1877F2;">
+        <path d={siFacebook.path}></path>
       </svg>
     </a>
     <!-- Hatena -->
@@ -55,22 +45,17 @@ const { url, title } = Astro.props;
       aria-label="はてなブックマークでシェア"
       class="hover:opacity-70 transition"
     >
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        class="w-6 h-6"
-        style="color: #00A4DE;"
-      >
-        <path d={siHatenabookmark.path} />
+      <svg role="img" viewBox="0 0 24 24" class="w-6 h-6" style="color: #00A4DE;">
+        <path d={siHatenabookmark.path}></path>
       </svg>
     </a>
     <!-- Applause Button（いいねボタン） -->
-    <applause-button 
+    <applause-button
       style="width: 28px; height: 28px; margin:0; padding:0;"
       color="#dc3545"
       api="https://applause.chabouis.fr"
       url={url}
-      class="self-end"
-    />
+      class="self-end"></applause-button>
   </div>
-</div> 
+</div>
+

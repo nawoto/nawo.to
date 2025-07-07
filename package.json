@@ -19,7 +19,8 @@
     "generate-favicon": "node scripts/generate-favicon.js",
     "generate-og-images": "node scripts/generate-og-images-astro.js",
     "new-article": "node scripts/new-article.js",
-    "deploy": "npm run build && npx gh-pages -d dist --dotfiles"
+    "deploy": "npm run build && npx gh-pages -d dist --dotfiles",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
@@ -51,6 +52,8 @@
     "gh-pages": "^6.3.0",
     "jscpd": "^4.0.5",
     "postcss": "^8.4.33",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
     "purgecss": "^7.0.2",
     "sharp": "^0.34.2",
     "tailwindcss": "^3.4.17"

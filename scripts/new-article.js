@@ -60,7 +60,9 @@ if (params.type === 'texts' || params.texts) {
 const slug = params.slug;
 const now = new Date();
 const date = params.date || now.toISOString().slice(0, 10);
-const dateTime = params.date ? `${params.date}T00:00:00+09:00` : now.toISOString().replace('Z', '+09:00');
+const dateTime = params.date
+  ? `${params.date}T00:00:00+09:00`
+  : now.toISOString().replace('Z', '+09:00');
 
 if (!slug) {
   console.error('エラー: --slug を指定してください');
@@ -95,8 +97,8 @@ if (fs.existsSync(filepath)) {
 }
 
 // テンプレート選択
-const title = params.title || "タイトルを入力";
-const description = params.description || "";
+const title = params.title || 'タイトルを入力';
+const description = params.description || '';
 
 let template = '';
 if (type === 'texts') {
@@ -143,4 +145,4 @@ console.log(`✅ 記事ファイルを作成しました: ${filepath}`);
 
 // ネタストックの更新提案
 console.log('\n💡 ネタストックを更新することをお忘れなく！');
-console.log('docs/content-ideas.md で完了したネタにチェックを入れてください。'); 
+console.log('docs/content-ideas.md で完了したネタにチェックを入れてください。');

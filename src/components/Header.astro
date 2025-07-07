@@ -7,37 +7,34 @@ interface Props {
   showLink?: boolean;
 }
 
-const { 
-  title = SITE.title,
-  textColor = "",
-  showLink = true
-} = Astro.props;
+const { title = SITE.title, textColor = '', showLink = true } = Astro.props;
 ---
 
 <header>
   <div class="hover-style py-6">
     <h3 class={`text-center text-6xl font-black tracking-widest md:text-8xl ${textColor}`}>
-      {showLink ? (
-        <a href="/">{title}</a>
-      ) : (
-        title
-      )}
+      {showLink ? <a href="/">{title}</a> : title}
     </h3>
   </div>
   <nav>
     <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase">
-      {SITE.navigation.items.map((item, index) => {
-        const isFirst = index === 0;
-        const isLast = index === SITE.navigation.items.length - 1;
-        const isSecond = index === 1;
-        const isThird = index === 2;
-        
-        return (
-          <li class={`hover-style ${isFirst || isSecond ? 'border-y' : ''} ${isThird || isLast ? 'border-b md:border-y' : ''}`}>
-            <a href={item.href}>{item.label}</a>
-          </li>
-        );
-      })}
+      {
+        SITE.navigation.items.map((item, index) => {
+          const isFirst = index === 0;
+          const isLast = index === SITE.navigation.items.length - 1;
+          const isSecond = index === 1;
+          const isThird = index === 2;
+
+          return (
+            <li
+              class={`hover-style ${isFirst || isSecond ? 'border-y' : ''} ${isThird || isLast ? 'border-b md:border-y' : ''}`}
+            >
+              <a href={item.href}>{item.label}</a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
-</header> 
+</header>
+

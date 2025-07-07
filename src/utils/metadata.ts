@@ -5,15 +5,14 @@ import type { CollectionType } from './collections';
 import { getCollectionPath } from './collections';
 
 // 記事のメタデータを処理する共通関数
-export function processArticleMetadata(
-  article: CollectionEntry<CollectionType>
-) {
+export function processArticleMetadata(article: CollectionEntry<CollectionType>) {
   const title = article.data.title;
   const description = article.data.description || generateExcerpt(article.body);
   const publishedTime = article.data.pubDate.toISOString();
-  const modifiedTime = 'updatedDate' in article.data && article.data.updatedDate
-    ? article.data.updatedDate.toISOString()
-    : publishedTime;
+  const modifiedTime =
+    'updatedDate' in article.data && article.data.updatedDate
+      ? article.data.updatedDate.toISOString()
+      : publishedTime;
 
   // OGP画像の決定ロジック
   let ogImageUrl;
@@ -30,7 +29,7 @@ export function processArticleMetadata(
     publishedTime,
     modifiedTime,
     ogImageUrl,
-    tags: article.data.tags || []
+    tags: article.data.tags || [],
   };
 }
 
@@ -48,9 +47,7 @@ export function generateArticleUrl(
 }
 
 // 記事のページタイトルを生成する共通関数
-export function generateArticleTitle(
-  article: CollectionEntry<CollectionType>
-): string {
+export function generateArticleTitle(article: CollectionEntry<CollectionType>): string {
   return `${article.data.title} | ${SITE.title}`;
 }
 
@@ -66,6 +63,6 @@ export function processCompleteArticleMetadata(
   return {
     ...metadata,
     url,
-    pageTitle
+    pageTitle,
   };
 }

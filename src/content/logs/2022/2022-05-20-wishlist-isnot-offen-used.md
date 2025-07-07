@@ -1,7 +1,7 @@
 ---
 title: Wish List あまり使わなくなった
 pubDate: 2022-05-20T00:00:00.000Z
-description: ""
+description: ''
 ---
 
 誕生日が近いので、Amazon の Wish List をひさびさに触っている。

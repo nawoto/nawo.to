@@ -17,12 +17,15 @@ const articlesWithExcerpt = await generateArticleExcerpts(articles);
 ---
 
 <ol style="list-style: none;">
-  {articlesWithExcerpt.map((article) => (
-    <ArticleCard
-      article={article}
-      excerpt={article.excerpt}
-      url={getArticleUrl(article)}
-      showBorder={showBorder}
-    />
-  ))}
-</ol> 
+  {
+    articlesWithExcerpt.map((article) => (
+      <ArticleCard
+        article={article}
+        excerpt={article.excerpt}
+        url={getArticleUrl(article)}
+        showBorder={showBorder}
+      />
+    ))
+  }
+</ol>
+

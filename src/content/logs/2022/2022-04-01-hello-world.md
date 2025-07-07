@@ -1,7 +1,7 @@
 ---
 title: Hello World!!
 pubDate: 2022-04-01T00:00:00.000Z
-description: ""
+description: ''
 ---
 
 雑多な文章を書きたいなっと思ったので、放置していた自分のサイトを[Gatsby](https://www.gatsbyjs.com/)で作り直してみた。

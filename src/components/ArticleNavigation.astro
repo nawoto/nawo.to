@@ -17,50 +17,80 @@ const { content, previousPost, nextPost, collection } = Astro.props;
 <!-- Navigation（2段構成） -->
 <nav class="mx-auto max-w-4xl px-4" aria-label="記事ナビゲーション">
   <!-- 1段目: PREV | NEXT -->
-  <ul class="grid grid-cols-2 divide-x border-t text-center text-2xl uppercase overflow-hidden" role="list">
+  <ul
+    class="grid grid-cols-2 divide-x border-t text-center text-2xl uppercase overflow-hidden"
+    role="list"
+  >
     <li class="hover-style p-3" role="listitem">
-      {previousPost ? (
-        <a
-          href={getArticleUrl(previousPost.collection as any, previousPost.slug)}
-          title={previousPost.data.title}
-          rel="prev"
-          class="block"
-          aria-label={`前の記事: ${previousPost.data.title}`}
-        >
-          prev
-          <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
-        </a>
-      ) : (
-        <span class="text-gray-400" aria-label="前の記事はありません">prev</span>
-      )}
+      {
+        previousPost ? (
+          <a
+            href={getArticleUrl(previousPost.collection as any, previousPost.slug)}
+            title={previousPost.data.title}
+            rel="prev"
+            class="block"
+            aria-label={`前の記事: ${previousPost.data.title}`}
+          >
+            prev
+            <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
+          </a>
+        ) : (
+          <span class="text-gray-400" aria-label="前の記事はありません">
+            prev
+          </span>
+        )
+      }
     </li>
     <li class="hover-style p-3" role="listitem">
-      {nextPost ? (
-        <a
-          href={getArticleUrl(nextPost.collection as any, nextPost.slug)}
-          title={nextPost.data.title}
-          rel="next"
-          class="block"
-          aria-label={`次の記事: ${nextPost.data.title}`}
-        >
-          next
-          <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
-        </a>
-      ) : (
-        <span class="text-gray-400" aria-label="次の記事はありません">next</span>
-      )}
+      {
+        nextPost ? (
+          <a
+            href={getArticleUrl(nextPost.collection as any, nextPost.slug)}
+            title={nextPost.data.title}
+            rel="next"
+            class="block"
+            aria-label={`次の記事: ${nextPost.data.title}`}
+          >
+            next
+            <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
+          </a>
+        ) : (
+          <span class="text-gray-400" aria-label="次の記事はありません">
+            next
+          </span>
+        )
+      }
     </li>
   </ul>
   <!-- 2段目: BACK TO XXX -->
-  <div class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200">
-    <a 
-      href={content ? getListPageUrl(content.collection) : collection === 'texts' ? '/texts' : collection === 'backtrace' ? '/backtrace' : '/logs'} 
+  <div
+    class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200"
+  >
+    <a
+      href={content
+        ? getListPageUrl(content.collection)
+        : collection === 'texts'
+          ? '/texts'
+          : collection === 'backtrace'
+            ? '/backtrace'
+            : '/logs'}
       class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
       aria-label={`${content ? getListPageName(content.collection) : collection === 'texts' ? 'TEXTS' : collection === 'backtrace' ? 'BACKTRACE' : 'LOGS'}一覧に戻る`}
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span>{content ? getListPageName(content.collection) : collection === 'texts' ? 'TEXTS' : collection === 'backtrace' ? 'BACKTRACE' : 'LOGS'}</span>
+      <span
+        >{
+          content
+            ? getListPageName(content.collection)
+            : collection === 'texts'
+              ? 'TEXTS'
+              : collection === 'backtrace'
+                ? 'BACKTRACE'
+                : 'LOGS'
+        }</span
+      >
     </a>
   </div>
-</nav> 
+</nav>
+

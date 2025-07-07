@@ -3,22 +3,22 @@ import type { BaseStructuredData, BlogPostingData, BreadcrumbData, PersonData } 
 
 // WebSite構造化データ
 export function generateWebSiteStructuredData(): BaseStructuredData & {
-  "@type": "WebSite";
+  '@type': 'WebSite';
   name: string;
   description: string;
   url: string;
   author: {
-    "@type": "Person";
+    '@type': 'Person';
     name: string;
     url: string;
   };
   publisher: {
-    "@type": "Organization";
+    '@type': 'Organization';
     name: string;
     description: string;
     url: string;
     logo: {
-      "@type": "ImageObject";
+      '@type': 'ImageObject';
       url: string;
       width: number;
       height: number;
@@ -26,12 +26,12 @@ export function generateWebSiteStructuredData(): BaseStructuredData & {
     sameAs: string[];
   };
   potentialAction: {
-    "@type": "SearchAction";
+    '@type': 'SearchAction';
     target: {
-      "@type": "EntryPoint";
+      '@type': 'EntryPoint';
       urlTemplate: string;
     };
-    "query-input": string;
+    'query-input': string;
   };
 } {
   const socialLinks = [
@@ -41,135 +41,135 @@ export function generateWebSiteStructuredData(): BaseStructuredData & {
     `https://www.instagram.com/${SITE.social.instagram}/`,
     `https://www.facebook.com/${SITE.social.facebook}`,
     `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`,
-    `https://bsky.app/profile/nawo.to`
+    `https://bsky.app/profile/nawo.to`,
   ];
 
   return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
     name: SITE.title,
     description: SITE.description,
     url: SITE.url,
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: SITE.author.name,
-      url: SITE.url
+      url: SITE.url,
     },
     publisher: {
-      "@type": "Organization",
+      '@type': 'Organization',
       name: SITE.title,
       description: SITE.description,
       url: SITE.url,
       logo: {
-        "@type": "ImageObject",
+        '@type': 'ImageObject',
         url: new URL(SITE.images.siteIcon, SITE.url).href,
         width: 512,
-        height: 512
+        height: 512,
       },
-      sameAs: socialLinks
+      sameAs: socialLinks,
     },
     potentialAction: {
-      "@type": "SearchAction",
+      '@type': 'SearchAction',
       target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE.url}/search?q={search_term_string}`
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE.url}/search?q={search_term_string}`,
       },
-      "query-input": "required name=search_term_string"
-    }
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
 // Person構造化データ
 export function generatePersonStructuredData(data: PersonData): BaseStructuredData & {
-  "@type": "Person";
+  '@type': 'Person';
 } & PersonData {
   return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    ...data
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    ...data,
   };
 }
 
 // BlogPosting構造化データ
 export function generateBlogPostingStructuredData(data: BlogPostingData): BaseStructuredData & {
-  "@type": "BlogPosting";
+  '@type': 'BlogPosting';
 } & BlogPostingData {
   return {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    ...data
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    ...data,
   };
 }
 
 // BreadcrumbList構造化データ
 export function generateBreadcrumbStructuredData(data: BreadcrumbData): BaseStructuredData & {
-  "@type": "BreadcrumbList";
+  '@type': 'BreadcrumbList';
 } & BreadcrumbData {
   return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    ...data
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    ...data,
   };
 }
 
 // デフォルトのPersonデータ（aboutページ用）
 export const DEFAULT_PERSON_DATA: PersonData = {
-  name: "西村 直人",
-  alternateName: ["NISHIMURA Naoto", "nawoto"],
+  name: '西村 直人',
+  alternateName: ['NISHIMURA Naoto', 'nawoto'],
   image: `${SITE.url}/images/profile-pic.png`,
   url: `${SITE.url}/about`,
-  jobTitle: ["エンジニアリングマネージャー", "スクラムマスター"],
+  jobTitle: ['エンジニアリングマネージャー', 'スクラムマスター'],
   worksFor: [
     {
-      "@type": "Organization",
-      name: "株式会社エス・エム・エス"
+      '@type': 'Organization',
+      name: '株式会社エス・エム・エス',
     },
     {
-      "@type": "Organization",
-      name: "一般社団法人アジャイルチームを支える会",
-      description: "代表理事"
-    }
+      '@type': 'Organization',
+      name: '一般社団法人アジャイルチームを支える会',
+      description: '代表理事',
+    },
   ],
   address: {
-    "@type": "PostalAddress",
-    addressLocality: "Asakusa, Tokyo",
-    addressCountry: "JP"
+    '@type': 'PostalAddress',
+    addressLocality: 'Asakusa, Tokyo',
+    addressCountry: 'JP',
   },
-  birthDate: "1974-05-24",
-  gender: "Male",
-  nationality: "Japanese",
+  birthDate: '1974-05-24',
+  gender: 'Male',
+  nationality: 'Japanese',
   sameAs: [
-    "https://twitter.com/nawoto",
-    "https://github.com/nawoto/",
-    "https://speakerdeck.com/nawoto",
-    "https://www.instagram.com/nawoto/",
-    "https://suzuri.jp/nawoto/",
-    "https://www.amazon.co.jp/~/e/B00B46MLPG",
-    "https://bsky.app/profile/nawo.to"
+    'https://twitter.com/nawoto',
+    'https://github.com/nawoto/',
+    'https://speakerdeck.com/nawoto',
+    'https://www.instagram.com/nawoto/',
+    'https://suzuri.jp/nawoto/',
+    'https://www.amazon.co.jp/~/e/B00B46MLPG',
+    'https://bsky.app/profile/nawo.to',
   ],
   author: [
     {
-      "@type": "Book",
-      name: "SCRUM BOOT CAMP THE BOOK【増補改訂版】",
-      isbn: "9784798163673",
-      publisher: "翔泳社",
-      datePublished: "2020-05-20"
+      '@type': 'Book',
+      name: 'SCRUM BOOT CAMP THE BOOK【増補改訂版】',
+      isbn: '9784798163673',
+      publisher: '翔泳社',
+      datePublished: '2020-05-20',
     },
     {
-      "@type": "Book",
-      name: "SCRUM BOOT CAMP THE BOOK",
-      isbn: "9784798129716",
-      publisher: "翔泳社",
-      datePublished: "2013-02-13"
-    }
+      '@type': 'Book',
+      name: 'SCRUM BOOT CAMP THE BOOK',
+      isbn: '9784798129716',
+      publisher: '翔泳社',
+      datePublished: '2013-02-13',
+    },
   ],
   hasCredential: {
-    "@type": "EducationalOccupationalCredential",
-    credentialCategory: "Award",
-    name: "楽天テクロノロジーアワード 2011 Ruby 賞"
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'Award',
+    name: '楽天テクロノロジーアワード 2011 Ruby 賞',
   },
   mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `${SITE.url}/about`
-  }
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/about`,
+  },
 };
