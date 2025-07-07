@@ -68,7 +68,7 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 <Layout title={`BACKTRACE | ${SITE.title}`}>
 	<!-- Tab Navigation -->
 	<div class="mt-4">
-		<div class="tab-container backtrace-tabs">
+		<div class="tab-container">
 			<a href="/logs" class="tab">LOGS</a>
 			<a href="/texts" class="tab">TEXTS</a>
 			<a href="/backtrace" class="tab active">BACKTRACE</a>
@@ -230,25 +230,8 @@ const postsByYearWithExcerpt = years.reduce((acc, year) => {
 </Layout>
 
 <style>
-	/* Backtraceページ専用のタブスタイル */
-	.backtrace-tabs {
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-	}
-	
-	.backtrace-tabs .tab {
-		font-size: 1rem;
-		padding: 0.5rem 1rem;
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-	
+	/* Backtraceページ専用のスタイル */
 	@media (max-width: 640px) {
-		.backtrace-tabs .tab {
-			font-size: 0.875rem;
-			padding: 0.4rem 0.8rem;
-		}
-		
 		.backtrace-posts {
 			padding-left: 0;
 			padding-right: 0;

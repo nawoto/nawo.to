@@ -189,15 +189,17 @@
   border-bottom: 2px solid #000;
   margin-bottom: 1rem;
   position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tab {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border: 1px solid #d1d5db;
@@ -208,6 +210,8 @@
   border-radius: 0;
   position: relative;
   z-index: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tab:hover {
@@ -233,6 +237,13 @@
 .tab:not(.active):hover {
   background: #f3f4f6;
   border-color: #a3a3a3;
+}
+
+@media (max-width: 640px) {
+  .tab {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* =========================
