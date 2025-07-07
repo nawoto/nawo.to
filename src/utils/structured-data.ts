@@ -4,6 +4,7 @@ import { generateBlogPostingStructuredData, generateBreadcrumbStructuredData } f
 import type { ArticleStructuredData } from '../types';
 import { processArticleMetadata } from './metadata';
 import type { CollectionType } from './collections';
+import { getListPageUrl, getListPageName, generateExcerpt } from './content';
 
 // 記事用の構造化データを生成する共通関数
 export function generateArticleStructuredData(
@@ -69,56 +70,4 @@ export function generateArticleStructuredData(
     blogPostingData,
     breadcrumbData
   };
-}
-
-// コレクションに応じた一覧ページのURLを生成
-function getListPageUrl(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return '/logs';
-    case 'texts':
-      return '/texts';
-    case 'backtrace':
-      return '/backtrace';
-    default:
-      return '/logs';
-  }
-}
-
-// コレクションに応じた一覧ページの名前を取得
-function getListPageName(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return 'LOGS';
-    case 'texts':
-      return 'TEXTS';
-    case 'backtrace':
-      return 'BACKTRACE';
-    default:
-      return 'LOGS';
-  }
-}
-
-// 記事の抜粋を生成する関数
-function generateExcerpt(content: string, maxLength: number = 140): string {
-  // HTMLタグを除去
-  const plainText = content.replace(/<[^>]*>/g, '');
-
-  // 改行を除去して単一の文字列に
-  const singleLine = plainText.replace(/\n+/g, ' ').trim();
-
-  // 最大文字数で切り取り
-  if (singleLine.length <= maxLength) {
-    return singleLine;
-  }
-
-  // 単語の境界で切り取り
-  const truncated = singleLine.substring(0, maxLength);
-  const lastSpaceIndex = truncated.lastIndexOf(' ');
-
-  if (lastSpaceIndex > 0) {
-    return truncated.substring(0, lastSpaceIndex) + '...';
-  }
-
-  return truncated + '...';
 }
