@@ -186,7 +186,6 @@
    ========================= */
 .tab-container {
   display: flex;
-  border-bottom: 2px solid #000;
   margin-bottom: 1rem;
   position: relative;
   overflow-x: auto;
@@ -222,13 +221,18 @@
   border: 2px solid #000;
   border-bottom: none;
   z-index: 2;
+  position: relative;
+  background: #fff;
+  overflow: visible;
 }
 
 .tab.active::after {
   content: '';
   display: block;
   position: absolute;
-  left: 0; right: 0; bottom: -2px;
+  left: 0;
+  right: 0;
+  bottom: -2px;
   height: 2px;
   background: #fff;
   z-index: 3;
