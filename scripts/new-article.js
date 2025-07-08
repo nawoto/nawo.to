@@ -28,6 +28,7 @@ if (params.help || args.length === 0) {
   --description <説明>   記事の説明
   --template <テンプレート> テンプレート名
   --idea                 ネタストック一覧表示
+  --with-images          記事ディレクトリに images フォルダも作成
   --help                 このヘルプを表示
 
 例:
@@ -142,6 +143,17 @@ description: "${description}"
 
 fs.writeFileSync(filepath, template, 'utf8');
 console.log(`✅ 記事ファイルを作成しました: ${filepath}`);
+
+// --with-images オプションで images ディレクトリも作成
+if (params['with-images']) {
+  const imagesDir = path.join(dir, 'images');
+  if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir);
+    console.log(`📁 images ディレクトリも作成しました: ${imagesDir}`);
+  } else {
+    console.log(`📁 images ディレクトリは既に存在します: ${imagesDir}`);
+  }
+}
 
 // ネタストックの更新提案
 console.log('\n💡 ネタストックを更新することをお忘れなく！');

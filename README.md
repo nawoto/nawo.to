@@ -100,6 +100,8 @@ node scripts/new-article.js --slug my-article
   → 記事のタイトルを指定
 - `--description "説明"`  
   → 記事の説明を指定
+- `--with-images`  
+  → 記事ディレクトリに `images` フォルダも同時に作成
 - `--idea`  
   → ネタストック一覧を表示
 - `--help`  
