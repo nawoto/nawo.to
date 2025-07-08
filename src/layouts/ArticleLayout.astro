@@ -8,6 +8,7 @@ import StructuredData from '../components/StructuredData.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import ArticleNavigation from '../components/ArticleNavigation.astro';
 import OEmbedProcessor from '../components/OEmbedProcessor.astro';
+import Tags from '../components/Tags.astro';
 import { generateArticleSEO } from '../utils/seo';
 import { generateArticleStructuredData } from '../utils/structured-data';
 import { processCompleteArticleMetadata } from '../utils/metadata';
@@ -77,12 +78,15 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     <header class="mb-8">
       <h1
         itemprop="headline"
-        class="text-3xl font-bold md:text-5xl mb-0 font-titillium break-words"
+        class="text-3xl font-bold md:text-5xl mb-4 font-titillium break-words"
       >
         {title}
       </h1>
 
-      <div class="text-sm text-gray-600 m-0">
+      <!-- Tags -->
+      <Tags tags={content.data.tags || []} class="mb-4" />
+
+      <div class="text-base text-gray-600 mb-4 flex flex-col items-start gap-0">
         <time itemprop="datePublished" datetime={content.data.pubDate.toISOString()}>
           {content.data.pubDate.toLocaleDateString('ja-JP')}
         </time>
@@ -98,15 +102,13 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
             </>
           )
         }
-      </div>
-
-      <!-- Mini Applause Button -->
-      <div class="relative m-0 p-0" style="margin:0;padding:0;">
-        <applause-button
-          style="width: 24px; height: 24px; margin:0; padding:0;"
-          color="#dc3545"
-          api="https://applause.chabouis.fr"
-          url={currentUrl}></applause-button>
+        <span class="inline-block align-middle mt-1" style="margin:0;padding:0;">
+          <applause-button
+            style="width: 22px; height: 22px; margin:0; padding:0; vertical-align:middle;"
+            color="#dc3545"
+            api="https://applause.chabouis.fr"
+            url={currentUrl}></applause-button>
+        </span>
       </div>
     </header>
 
