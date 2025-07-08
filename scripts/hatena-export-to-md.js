@@ -11,6 +11,7 @@ let allMode = false;
 let txtOnly = false; // txtファイルのみ分割するオプション
 let forceMode = false; // 強制再変換モード
 let targetDate = null; // 特定日付指定
+let targetBasename = null;
 
 for (let i = 0; i < args.length; i++) {
   const arg = args[i];
@@ -38,6 +39,7 @@ for (let i = 0; i < args.length; i++) {
       process.exit(1);
     }
   }
+  else if (arg === '--basename' && args[i + 1]) targetBasename = args[++i];
 }
 
 console.log(`🎯 はてなブログ移行スクリプト（統合版）`);
@@ -56,6 +58,7 @@ if (args.includes('--help') || args.includes('-h')) {
   --txt-only           txtファイルのみ分割（mdファイルは作成しない）
   --force              強制再変換モード（変換済みも再変換）
   --date <YYYY-MM-DD>  特定日付の記事のみ変換（例: --date 2012-03-26）
+  --basename <BASENAME> BASENAME一致の記事のみ変換（例: --basename 20120326/1332127848）
   --yes, -y            確認プロンプトをスキップして自動実行
   --help, -h           このヘルプを表示
 
@@ -71,6 +74,9 @@ if (args.includes('--help') || args.includes('-h')) {
 
   # txtファイルのみ分割
   node scripts/hatena-export-to-md.js --txt-only --yes
+
+  # BASENAME指定で1記事だけ変換
+  node scripts/hatena-export-to-md.js --basename 20120326/1332127848 --force --yes
 `);
   process.exit(0);
 }
@@ -101,6 +107,39 @@ const content = fs.readFileSync(exportFile, 'utf8');
 // エントリを抽出
 const entries = content.split('--------').filter((entry) => entry.trim());
 console.log(`📊 総記事数: ${entries.length}件`);
+
+if (targetBasename) {
+  // BASENAME指定時は全記事から一致するものを抽出
+  const filtered = entries
+    .map((entry) => ({ entry, meta: extractMeta(entry) }))
+    .filter(({ meta }) => meta && meta.basename === targetBasename);
+  if (filtered.length === 0) {
+    console.log(`❌ 指定されたBASENAMEの記事が見つかりません: ${targetBasename}`);
+    process.exit(1);
+  }
+  // 強制モードでない場合は変換済みを除外
+  const finalEntries = !forceMode ? filtered.filter(({ meta }) => !convertedSet.has(meta.basename)) : filtered;
+  if (finalEntries.length === 0) {
+    console.log('⚠️  すでに変換済みです (--force で再変換可能)');
+    process.exit(0);
+  }
+  if (autoYes) {
+    processEntries(finalEntries, null, 0);
+  } else {
+    console.log(`\n🚀 変換を実行しますか？ (y/N)`);
+    process.stdin.once('data', (data) => {
+      const answer = data.toString().trim().toLowerCase();
+      if (answer === 'y' || answer === 'yes') {
+        processEntries(finalEntries, null, 0);
+      } else {
+        console.log('❌ 処理をキャンセルしました');
+        process.exit(0);
+      }
+    });
+  }
+  // BASENAME指定時は他の処理をスキップ
+  return;
+}
 
 if (allMode) {
   // 全記事から範囲指定
