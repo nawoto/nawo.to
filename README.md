@@ -29,6 +29,7 @@
 ├── src/
 │   ├── components/ # ヘッダーやフッターなど部品たち
 │   ├── content/    # 記事やテキストの中身（.mdで管理！）
+│   │   └── backtrace/ # はてなから移行した過去記事
 │   ├── layouts/    # レイアウトテンプレ
 │   ├── pages/      # ルーティングの心臓部
 │   └── styles/     # CSSとか
@@ -45,6 +46,7 @@
 
 - `/` … トップページ
 - `/yyyy/mm/dd/slug/` … ブログ記事（例: `/2022/04/01/hello-world/`）
+- `/backtrace/yyyy/mm/dd/slug/` … はてなから移行した過去記事
 - `/texts/slug/` … テキスト系コンテンツ
 - `/about` … 自己紹介
 - `/privacy` … プライバシーポリシー
