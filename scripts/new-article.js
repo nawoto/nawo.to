@@ -146,12 +146,17 @@ console.log(`✅ 記事ファイルを作成しました: ${filepath}`);
 
 // --with-images オプションで images ディレクトリも作成
 if (params['with-images']) {
-  const imagesDir = path.join(dir, 'images');
-  if (!fs.existsSync(imagesDir)) {
-    fs.mkdirSync(imagesDir);
-    console.log(`📁 images ディレクトリも作成しました: ${imagesDir}`);
+  const yearImagesDir = path.join('src/content', type, year, 'images');
+  if (!fs.existsSync(yearImagesDir)) {
+    fs.mkdirSync(yearImagesDir, { recursive: true });
+  }
+
+  const articleImagesDir = path.join(yearImagesDir, slug);
+  if (!fs.existsSync(articleImagesDir)) {
+    fs.mkdirSync(articleImagesDir);
+    console.log(`📁 記事用画像フォルダも作成しました: ${articleImagesDir}`);
   } else {
-    console.log(`📁 images ディレクトリは既に存在します: ${imagesDir}`);
+    console.log(`📁 記事用画像フォルダは既に存在します: ${articleImagesDir}`);
   }
 }
 

@@ -24,6 +24,7 @@ export interface ArticleContent {
     updatedDate?: Date;
     description?: string;
     ogimage?: string;
+    tags?: string[];
   };
   render: () => Promise<{
     Content: any;
@@ -42,6 +43,7 @@ export interface NavigationPost {
     updatedDate?: Date;
     description?: string;
     ogimage?: string;
+    tags?: string[];
   };
 }
 
