@@ -165,20 +165,6 @@ async function migrateHatenaImages() {
     // 記事内のURLを置換
     if (imageMappings.length > 0) {
       const content = fs.readFileSync(articlePath, 'utf8');
-      // デバッグ: 記事内の画像URLと置換対象URLを出力
-      console.log('--- デバッグ: 置換対象 ---');
-      console.log('記事ファイル:', articlePath);
-      console.log('抽出画像URL:', images);
-      console.log(
-        '置換対象URL:',
-        imageMappings.map(([url]) => url)
-      );
-      console.log(
-        '置換先パス:',
-        imageMappings.map(([_, path]) => path)
-      );
-      console.log('置換前内容:');
-      console.log(content.slice(0, 500)); // 先頭500文字だけ
       let newContent = replaceImageUrls(content, imageMappings);
 
       // はてな画像URLを自動的に標準的なMarkdown画像形式に変換
@@ -235,8 +221,7 @@ async function migrateHatenaImages() {
       }
       */
       newContent = patchedContent;
-      console.log('置換後内容:');
-      console.log(newContent.slice(0, 500)); // 先頭500文字だけ
+
       fs.writeFileSync(articlePath, newContent);
       console.log(`  🔄 記事内のURLを更新しました`);
     }
