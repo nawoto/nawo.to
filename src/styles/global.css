@@ -26,6 +26,27 @@
     font-weight: 700 !important;
   }
 
+  /* Article content images - responsive and mobile optimized */
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    display: block;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Mobile responsive adjustments for images */
+  @media (max-width: 767px) {
+    .prose img {
+      max-height: 300px;
+      margin: 1rem auto;
+    }
+  }
+
   /* Instagram embed styling - override prose defaults */
   .prose .instagram-media {
     margin: 1.5rem auto !important;

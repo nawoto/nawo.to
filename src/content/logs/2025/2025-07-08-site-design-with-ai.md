@@ -59,6 +59,6 @@ https://nawo.to/2025/06/17/migrate-to-astro-by-ai/
 めっちゃ笑った😆
 なんやねん、よく見ると別人って。
 
-<img src="/images/logs/2025/07/08/fake-profile.webp" alt="お前だれやねん" style="max-width: 100%; height: auto; max-height: 400px;" />
+![お前だれやねん](/images/logs/2025/07/08/fake-profile.webp)
 
 生成AIすごいな…その画像をつくるのに時間かけてたのね

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* global process, console */
 // src/content/{backtrace,logs,texts}/**/images/* を public/images/{backtrace,logs,texts}/**/images/* にコピーし、jpg/pngはwebpに変換するスクリプト
 import fs from 'fs';
 import path from 'path';
@@ -11,13 +12,21 @@ const __dirname = path.dirname(__filename);
 const collections = ['backtrace', 'logs', 'texts'];
 const extsToConvert = ['.jpg', '.jpeg', '.png'];
 
+// コマンドライン引数をチェック
+const args = process.argv.slice(2);
+const shouldCleanup = args.includes('--cleanup') || args.includes('-c');
+
 // クリーンアップ処理
 function cleanupImages() {
+  if (!shouldCleanup) {
+    console.log('🧹 クリーンアップをスキップしました（--cleanup オプションで有効化）');
+    return;
+  }
+
   for (const collection of collections) {
     const destRoot = path.join(__dirname, `../public/images/${collection}`);
     if (fs.existsSync(destRoot)) {
       fs.rmSync(destRoot, { recursive: true, force: true });
-
       console.log(`🧹 Cleaned up: ${destRoot}`);
     }
   }
