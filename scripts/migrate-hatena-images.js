@@ -76,36 +76,21 @@ function replaceImageUrls(content, imageMappings) {
     const filename = path.basename(newPath);
     const newUrl = `/images/backtrace/${year}/${month}/${day}/${filename}`;
 
-    // より柔軟な置換パターン
-    const patterns = [
-      // <img>タグの置換（属性の順序に関係なく）
-      new RegExp(
-        `(<img[^>]*src=["'])${oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(["'][^>]*>)`,
-        'gi'
-      ),
-      // Markdown画像記法の置換
-      new RegExp(`(!\\[([^\\]]*)\\]\\()${oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\))`, 'g'),
-      // リンク形式の画像
-      new RegExp(`(\\[([^\\]]*)\\]\\()${oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\))`, 'g'),
-      // プレーンテキストのURL（コメントや説明文内）
-      new RegExp(`(?<!["'])\\b${oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b(?!["'])`, 'g'),
-    ];
-
-    patterns.forEach((pattern, index) => {
-      if (index === 0) {
-        // <img>タグの場合
-        newContent = newContent.replace(pattern, `$1${newUrl}$2`);
-      } else if (index === 1) {
-        // Markdown画像記法の場合
-        newContent = newContent.replace(pattern, `$1${newUrl}$3`);
-      } else if (index === 2) {
-        // リンク形式の場合
-        newContent = newContent.replace(pattern, `$1${newUrl}$3`);
-      } else {
-        // プレーンテキストの場合（コメントアウト）
-        newContent = newContent.replace(pattern, `<!-- ${oldUrl} -->`);
-      }
+    // はてなブログ特有の画像リンク形式に対応
+    // 例: [![f:id:nawoto:20131014185028j:image:w360](https://cdn-ak.f.st-hatena.com/images/fotolife/n/nawoto/20131014/20131014185028.jpg)](http://f.hatena.ne.jp/nawoto/20131014185028)
+    const hatenaImagePattern = new RegExp(
+      `(\\[!\\[f:id:nawoto:[^\\]]+\\]\\(${oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\)\\]\\([^)]+\\))`,
+      'g'
+    );
+    newContent = newContent.replace(hatenaImagePattern, (match) => {
+      // はてな形式の画像リンクを通常のMarkdown画像形式に変換
+      const imageAlt = match.match(/\[!\[([^\]]+)\]/)?.[1] || '';
+      return `![${imageAlt}](${newUrl})`;
     });
+
+    // 通常の画像URLも置換
+    const pattern = new RegExp(oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    newContent = newContent.replace(pattern, newUrl);
   }
 
   return newContent;
@@ -157,6 +142,7 @@ async function migrateHatenaImages() {
         // 既に存在する場合はスキップ
         if (fs.existsSync(imagePath)) {
           console.log(`  ✅ 既に存在: ${filename}`);
+          // ★記事内で実際に使われているURLをそのまま置換対象にする
           imageMappings.push([imageUrl, imagePath]);
           results.skipped.push({ url: imageUrl, reason: 'Already exists' });
           continue;
@@ -179,7 +165,78 @@ async function migrateHatenaImages() {
     // 記事内のURLを置換
     if (imageMappings.length > 0) {
       const content = fs.readFileSync(articlePath, 'utf8');
-      const newContent = replaceImageUrls(content, imageMappings);
+      // デバッグ: 記事内の画像URLと置換対象URLを出力
+      console.log('--- デバッグ: 置換対象 ---');
+      console.log('記事ファイル:', articlePath);
+      console.log('抽出画像URL:', images);
+      console.log(
+        '置換対象URL:',
+        imageMappings.map(([url]) => url)
+      );
+      console.log(
+        '置換先パス:',
+        imageMappings.map(([_, path]) => path)
+      );
+      console.log('置換前内容:');
+      console.log(content.slice(0, 500)); // 先頭500文字だけ
+      let newContent = replaceImageUrls(content, imageMappings);
+
+      // はてな画像URLを自動的に標準的なMarkdown画像形式に変換
+      const hatenaImageRegex =
+        /\[!\[([^\]]*)\]\(https?:\/\/cdn-ak\.f\.st-hatena\.com\/images\/fotolife\/n\/nawoto\/[0-9]{8}\/([0-9a-zA-Z_\-\.]+\.(?:jpg|jpeg|png|gif))\)[^)]*\]\([^)]*\)/gs;
+      let patchedContent = newContent;
+
+      // はてな画像リンク形式を標準的なMarkdown画像形式に変換
+      patchedContent = patchedContent.replace(hatenaImageRegex, (match, altText, filename) => {
+        // 記事の投稿日を使用（画像の撮影日ではなく）
+        const articleBasenameInfo = extractBasenameFromArticlePath(articlePath);
+        if (!articleBasenameInfo) {
+          console.log(`  ⚠️  記事パスから日付を抽出できません: ${articlePath}`);
+          return match; // 変換せずにそのまま返す
+        }
+
+        const { year, month, day } = articleBasenameInfo;
+        // 拡張子を.webpに変更
+        const webpFilename = filename.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+        const newImagePath = `/images/backtrace/${year}/${month}/${day}/${webpFilename}`;
+
+        // 代替テキストが空の場合は「はてなから移行」を設定
+        const finalAltText = altText.trim() || 'はてなから移行';
+
+        return `![${finalAltText}](${newImagePath})`;
+      });
+
+      // 変換漏れがあった場合のみ、変換候補コメントを挿入（WebP形式）
+      // 一時的にコメント機能をオフ
+      /*
+      const hatenaUrlRegex =
+        /(https?:\/\/cdn-ak\.f\.st-hatena\.com\/images\/fotolife\/n\/nawoto\/[0-9]{8}\/[0-9a-zA-Z_\-]+\.(?:jpg|jpeg|png|gif))/g;
+      let match;
+      let alreadyWarned = false;
+      while ((match = hatenaUrlRegex.exec(patchedContent)) !== null) {
+        const url = match[1];
+        // 変換候補パスを生成
+        // 例: .../20131014185028.jpg → /images/backtrace/YYYY/MM/DD/ファイル名
+        const urlParts = url.split('/');
+        const yyyymmdd = urlParts[urlParts.length - 2];
+        const filename = urlParts[urlParts.length - 1];
+        const year = yyyymmdd.substring(0, 4);
+        const month = yyyymmdd.substring(4, 6);
+        const day = yyyymmdd.substring(6, 8);
+        // 拡張子を.webpに変更
+        const webpFilename = filename.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+        const candidate = `/images/backtrace/${year}/${month}/${day}/${webpFilename}`;
+        // コメントを直後に挿入
+        patchedContent = patchedContent.replace(url, url + `\n<!-- 変換候補: ${candidate} -->`);
+        alreadyWarned = true;
+      }
+      if (alreadyWarned) {
+        console.log('❗ 変換漏れがあったため、変換候補コメントを挿入しました');
+      }
+      */
+      newContent = patchedContent;
+      console.log('置換後内容:');
+      console.log(newContent.slice(0, 500)); // 先頭500文字だけ
       fs.writeFileSync(articlePath, newContent);
       console.log(`  🔄 記事内のURLを更新しました`);
     }
