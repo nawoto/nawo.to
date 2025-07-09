@@ -9,14 +9,13 @@ import { remarkInstagramEmbed } from './scripts/remark-instagram-embed.js';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import react from '@astrojs/react';
-import { ogImageGenerator } from './src/integrations/og-image-generator.tsx';
 import remarkLinkCardPlus from 'remark-link-card-plus';
 import { SITE } from './src/config.js';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nawo.to',
-  integrations: [tailwind(), sitemap(), partytown(), react(), ogImageGenerator()],
+  integrations: [tailwind(), sitemap(), partytown(), react()],
   markdown: {
     remarkPlugins: [
       remarkToc,
@@ -33,6 +32,8 @@ export default defineConfig({
             'instagram.com',
             'www.instagram.com',
           ],
+          // キャッシュを無効化して新しいOG画像URLを取得
+          cache: false,
         },
       ],
     ],

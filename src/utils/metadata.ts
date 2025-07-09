@@ -2,7 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
 import { generateExcerpt } from './content';
 import type { CollectionType } from './collections';
-import { getCollectionPath } from './collections';
+import { getCollectionPath, getArticleUrl } from './collections';
 
 // 記事のメタデータを処理する共通関数
 export function processArticleMetadata(article: CollectionEntry<CollectionType>) {
@@ -17,10 +17,11 @@ export function processArticleMetadata(article: CollectionEntry<CollectionType>)
   // OGP画像の決定ロジック
   let ogImageUrl;
   if ('ogimage' in article.data && article.data.ogimage) {
-    ogImageUrl = new URL(article.data.ogimage, SITE.url).href;
+    // frontmatterで指定された場合のみその画像を使う
+    ogImageUrl = new globalThis.URL(article.data.ogimage, SITE.url).href;
   } else {
-    const collectionPath = getCollectionPath(article.collection);
-    ogImageUrl = new URL(`${collectionPath}/${article.slug}/og.png`, SITE.url).href;
+    // デフォルト画像を使用
+    ogImageUrl = new globalThis.URL('/images/og/opengraph-default.png', SITE.url).href;
   }
 
   return {
@@ -43,7 +44,7 @@ export function generateArticleUrl(
   }
 
   const collectionPath = getCollectionPath(article.collection);
-  return new URL(`${collectionPath}/${article.slug}/`, SITE.url).href;
+  return new globalThis.URL(`${collectionPath}/${article.slug}/`, SITE.url).href;
 }
 
 // 記事のページタイトルを生成する共通関数

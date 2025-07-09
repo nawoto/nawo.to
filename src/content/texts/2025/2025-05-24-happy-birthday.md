@@ -2,7 +2,7 @@
 title: 誕生日🎂🎉
 pubDate: 2025-05-24T00:00:00.000Z
 description: おめでとう、自分
-ogimage: '/images/opengraph-hbd.png'
+ogimage: '/images/og/opengraph-hbd.png'
 tags: ['birthday', 'personal', 'family']
 ---
 
