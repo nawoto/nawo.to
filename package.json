@@ -31,7 +31,7 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource/titillium-web": "^5.2.6",
-    "astro": "^5.10.2",
+    "astro": "^5.11.0",
     "astro-seo": "^0.8.4",
     "date-fns": "^4.1.0",
     "rehype-raw": "^7.0.0",
