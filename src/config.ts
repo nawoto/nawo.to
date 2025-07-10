@@ -29,7 +29,8 @@ export const SITE = {
   },
   // --- 画像パス設定 ---
   images: {
-    defaultOg: '/images/opengraph-default.png',
+    defaultOg: '/images/og/opengraph-default.png',
+    backtraceOg: '/images/og/opengraph-backtrace.png',
     siteIcon: '/images/site-icon.png',
     profilePic: '/images/profile-pic.png',
   },

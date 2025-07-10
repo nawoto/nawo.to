@@ -19,6 +19,7 @@
     "duplicate:report": "jscpd src/ --reporters html,console",
     "generate-favicon": "node scripts/generate-favicon.js",
     "generate-og-images": "node scripts/generate-og-images-astro.js",
+    "generate-backtrace-og": "node scripts/generate-backtrace-og.js",
     "new-article": "node scripts/new-article.js",
     "deploy": "npm run build && npx gh-pages -d dist --dotfiles",
     "format": "prettier --write .",

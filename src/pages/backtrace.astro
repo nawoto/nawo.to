@@ -11,12 +11,12 @@ import { getLogSlug } from '../utils/slug';
 const posts = sortArticlesByDate(await getCollection('backtrace'));
 ---
 
-<Layout title={`BACKTRACE | ${SITE.title}`}>
+<Layout title={`BACKTRACE | ${SITE.title}`} image={SITE.images.backtraceOg}>
   <TabNavigation
     activeTab="backtrace"
     description="<strong>[WIP]</strong> 💭 かつて「はてな」で書いていたアジャイルな開発を夢見て奮闘してたときの記憶"
   />
-		<div class="border-t border-solid border-gray-300 mt-0 mb-2"></div>
+  <div class="border-t border-solid border-gray-300 mt-0 mb-2"></div>
   <YearlyArticleList
     articles={posts}
     getArticleUrl={(collection, slug) => getBacktraceUrl(collection, getLogSlug(slug))}
@@ -24,4 +24,3 @@ const posts = sortArticlesByDate(await getCollection('backtrace'));
     activeTab="backtrace"
   />
 </Layout>
-
