@@ -28,6 +28,33 @@ export const books: Book[] = [
   },
 ];
 
+// 書籍名キーでのアクセス
+export const booksByName: Record<string, Book> = {
+  'agile-samurai': books[0],
+  'scrum-bootcamp': books[1],
+};
+
+// ASINキーでのアクセス
+export const booksByAsin: Record<string, Book> = {
+  B00J1XKB6K: books[0],
+  B086GBXRN6: books[1],
+};
+
 export function getBookByAsin(asin: string): Book | undefined {
   return books.find((book) => book.asin === asin);
+}
+
+export function getBookByName(name: string): Book | undefined {
+  return booksByName[name];
+}
+
+export function getBookByIdentifier(identifier: string): Book | undefined {
+  // ASIN記法かどうか判定
+  if (identifier.startsWith('ASIN:')) {
+    const asin = identifier.replace('ASIN:', '');
+    return booksByAsin[asin];
+  } else {
+    // 書籍名記法
+    return booksByName[identifier];
+  }
 }

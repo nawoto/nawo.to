@@ -6,6 +6,7 @@ import partytown from '@astrojs/partytown';
 import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
 import { remarkYoutubeEmbed } from './scripts/remark-youtube-embed.js';
 import { remarkInstagramEmbed } from './scripts/remark-instagram-embed.js';
+import remarkBookCard from './scripts/remark-bookcard.js';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import react from '@astrojs/react';
@@ -22,6 +23,7 @@ export default defineConfig({
       [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
       remarkYoutubeEmbed,
       remarkInstagramEmbed,
+      remarkBookCard,
       [
         remarkLinkCardPlus,
         {
