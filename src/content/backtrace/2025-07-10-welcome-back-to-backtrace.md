@@ -1,5 +1,5 @@
 ---
-title: '📚 Welcome Back to Backtrace - はてなダイアリーアーカイブ'
+title: '📚 Welcome Back to Backtrace - はてなアーカイブ'
 description: 'はてなから移行した過去の記事の一覧'
 pubDate: 2025-07-10
 tags: ['archive', 'hatena', 'backtrace']
