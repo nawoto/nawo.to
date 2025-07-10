@@ -17,7 +17,7 @@ web 日記ぽさがなくなったりで、移行されたタイミングでな�
 
 https://nawoto.hatenadiary.org/
 
-けれど、自分がガムシャラに頑張ってた大事な時期の記録であったりするので、他の場所に自分の過去ログがあるよりかは、このサイトで過去ログも見れた方がいいかなという気になった。
+けれど、自分がガムシャラに頑張ってた大切な時期の記録であったりするので、このサイトで過去ログとして見れた方がいいかなという気になった。
 
 過去ログということで、昔のタイトルの一部である backtrace がニュアンスとしても良さそうなので、**logs**, **texts** とは分けて **backtrace** で見れるようにしてみた。
 
@@ -46,6 +46,6 @@ https://github.com/nawoto/nawo.to/tree/main/scripts/hatena-migration
 
 完全に移行できたわけではないので、少し制限はあるが仕方がない。
 
-http://nawo.to/backtrace/2025/01/01/welcome-back-to-backtrace/
+http://nawo.to/backtrace/2025/07/10/welcome-back-to-backtrace/
 
-当時を懐しむ読み物としては十分なので、良ければ読んで楽しんでください😄
+当時を懐しむ読み物としては十分だと思うので、良ければ読んで楽しんでください😄
