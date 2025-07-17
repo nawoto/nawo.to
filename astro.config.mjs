@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
@@ -12,11 +11,15 @@ import rehypeRaw from 'rehype-raw';
 import react from '@astrojs/react';
 import remarkLinkCardPlus from 'remark-link-card-plus';
 import { SITE } from './src/config.js';
+import tailwind from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nawo.to',
-  integrations: [tailwind(), sitemap(), partytown(), react()],
+  integrations: [sitemap(), partytown(), react()],
+  vite: {
+    plugins: [tailwind()],
+  },
   markdown: {
     remarkPlugins: [
       remarkToc,

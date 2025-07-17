@@ -56,16 +56,16 @@ const { years, activeTab } = Astro.props;
 
 <style>
   .view-mode-btn {
-    @apply text-gray-400 border-gray-300 hover:border-gray-400 transition-colors;
+    @reference @apply text-gray-400 border-gray-300 hover:border-gray-400 transition-colors;
   }
   .view-mode-btn.active {
-    @apply text-black border-black underline;
+    @reference @apply text-black border-black underline;
   }
   .year-jump-btn {
-    @apply text-gray-600 border-gray-300;
+    @reference @apply text-gray-600 border-gray-300;
   }
   .year-jump-btn:hover {
-    @apply text-black border-black;
+    @reference @apply text-black border-black;
   }
 </style>
 

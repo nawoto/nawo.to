@@ -32,6 +32,7 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource/titillium-web": "^5.2.6",
+    "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.2",
     "astro-seo": "^0.8.4",
     "date-fns": "^4.1.0",
@@ -44,7 +45,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
     "@eslint/js": "^9.30.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^24.0.13",
