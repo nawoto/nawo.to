@@ -16,14 +16,14 @@ const { years, activeTab } = Astro.props;
     <div class="flex space-x-2" role="tablist" aria-label="表示モード">
       <button
         id="flat-mode"
-        class="view-mode-btn active px-3 py-1 rounded border"
+        class="view-mode-btn active px-3 py-1 rounded-sm border"
         role="tab"
         aria-selected="true"
         aria-controls="flat-view">flat</button
       >
       <button
         id="yearly-mode"
-        class="view-mode-btn px-3 py-1 rounded border"
+        class="view-mode-btn px-3 py-1 rounded-sm border"
         role="tab"
         aria-selected="false"
         aria-controls="yearly-view">yearly</button
@@ -42,7 +42,7 @@ const { years, activeTab } = Astro.props;
       {
         years.map((year) => (
           <button
-            class="year-jump-btn px-2 py-1 rounded border hover:bg-gray-100 transition-colors"
+            class="year-jump-btn px-2 py-1 rounded-sm border hover:bg-gray-100 transition-colors"
             data-year={year}
             aria-label={`${year}年の記事にジャンプ`}
           >

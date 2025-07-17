@@ -12,7 +12,7 @@ const tags = article.data.tags || [];
 ---
 
 <article
-  class="hover-style py-3 px-2 group border border-transparent hover:border-gray-200 rounded"
+  class="hover-style py-3 px-2 group border border-transparent hover:border-gray-200 rounded-sm"
   itemscope
   itemtype="http://schema.org/Article"
 >
@@ -44,7 +44,7 @@ const tags = article.data.tags || [];
       tags.length > 0 && (
         <div class="flex flex-wrap gap-1">
           {tags.map((tag: string) => (
-            <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded border">
+            <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-sm border">
               {tag}
             </span>
           ))}

@@ -43,7 +43,7 @@ const shouldShowBio = showBio !== false;
     <!-- Additional head content from child layouts -->
     <slot name="head" />
   </head>
-  <body class="mx-auto max-w-screen-xl">
+  <body class="mx-auto max-w-(--breakpoint-xl)">
     <Header />
 
     <main>
@@ -64,7 +64,7 @@ const shouldShowBio = showBio !== false;
         {/* Bioサイドバー（showBioがfalseでない場合のみ表示） */}
         {
           shouldShowBio && (
-            <div class="order-1 border-r md:order-none md:basis-1/4">
+            <div class="order-1 border-r md:order-0 md:basis-1/4">
               <Bio />
             </div>
           )

@@ -1,9 +1,101 @@
 /* =========================
    Base Styles (reset, typography, body, heading)
    ========================= */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-titillium: Titillium Web, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* =========================
+   Utility Classes
+   ========================= */
+@utility hover-style {
+  @apply transition-colors duration-200 hover:bg-black hover:text-white;
+
+  /* Mobile responsive adjustments */
+
+  /* 
+     * Link Card Styles 
+     * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
+     * original: https://sur33.com/notes/2023/astro-remark-link-card
+    */
+
+  /* Switch to 2 columns ONLY if a thumbnail exists */
+
+  /* If there's no thumbnail, round all corners */
+
+  @media (min-width: 60ch) {
+    /* Switch to 2 columns ONLY if a thumbnail exists */
+  }
+
+  /* About page specific styles for Amazon cards */
+}
+@utility link {
+  @apply font-semibold underline decoration-gray-500;
+
+  /* Mobile responsive adjustments */
+
+  /* 
+     * Link Card Styles 
+     * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
+     * original: https://sur33.com/notes/2023/astro-remark-link-card
+    */
+
+  /* Switch to 2 columns ONLY if a thumbnail exists */
+
+  /* If there's no thumbnail, round all corners */
+
+  @media (min-width: 60ch) {
+    /* Switch to 2 columns ONLY if a thumbnail exists */
+  }
+
+  /* About page specific styles for Amazon cards */
+}
+@utility brutalist-container {
+  @apply mx-auto max-w-4xl px-4 py-8;
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    @apply px-2 py-4;
+  }
+
+  /* 
+     * Link Card Styles 
+     * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
+     * original: https://sur33.com/notes/2023/astro-remark-link-card
+    */
+
+  /* Switch to 2 columns ONLY if a thumbnail exists */
+
+  /* If there's no thumbnail, round all corners */
+
+  @media (min-width: 60ch) {
+    /* Switch to 2 columns ONLY if a thumbnail exists */
+  }
+
+  /* About page specific styles for Amazon cards */
+}
 
 @layer base {
   body {
@@ -72,44 +164,6 @@
     font-style: normal !important;
     quotes: none !important;
   }
-}
-
-/* =========================
-   Utility Classes
-   ========================= */
-@layer components {
-  .hover-style {
-    @apply transition-colors duration-200 hover:bg-black hover:text-white;
-  }
-  .link {
-    @apply font-semibold underline decoration-gray-500;
-  }
-  .brutalist-container {
-    @apply mx-auto max-w-4xl px-4 py-8;
-  }
-
-  /* Mobile responsive adjustments */
-  @media (max-width: 767px) {
-    .brutalist-container {
-      @apply px-2 py-4;
-    }
-  }
-
-  /* 
-     * Link Card Styles 
-     * from: https://ilapaj.com/posts/2025-03-16-remark-link-card-plus/
-     * original: https://sur33.com/notes/2023/astro-remark-link-card
-    */
-
-  /* Switch to 2 columns ONLY if a thumbnail exists */
-
-  /* If there's no thumbnail, round all corners */
-
-  @media (min-width: 60ch) {
-    /* Switch to 2 columns ONLY if a thumbnail exists */
-  }
-
-  /* About page specific styles for Amazon cards */
 }
 
 /* =========================
