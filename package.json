@@ -30,7 +30,7 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/sitemap": "^3.4.2",
     "@fontsource/titillium-web": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.2",
