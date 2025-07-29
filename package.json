@@ -40,7 +40,7 @@
     "remark-gfm": "^4.0.1",
     "remark-link-card-plus": "^0.6.1",
     "remark-toc": "^9.0.0",
-    "satori": "^0.15.2",
+    "satori": "^0.16.1",
     "simple-icons": "^15.8.0",
     "unist-util-visit": "^5.0.0"
   },
