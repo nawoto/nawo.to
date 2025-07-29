@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { getLogSlug } from '../../utils/slug';
 
@@ -62,4 +62,4 @@ const shareUrl = `https://nawo.to/backtrace/${Astro.params.slug}`;
   shareUrl={shareUrl}
 >
   <Content />
-</ArticleLayout> 
+</ArticleLayout>

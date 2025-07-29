@@ -271,6 +271,7 @@
   color: #111827;
 }
 
+.amazon-link,
 .product-card a {
   margin-top: auto;
   max-width: 200px;
@@ -285,13 +286,17 @@
   font-weight: 500;
   transition: background 0.2s;
   box-sizing: border-box;
-  text-decoration: none;
-  display: inline-block;
 }
 
+.amazon-link:hover,
 .product-card a:hover {
   background: #111827;
   border-color: #111827;
+}
+
+.product-card a {
+  text-decoration: none;
+  display: inline-block;
 }
 
 @media (max-width: 600px) {

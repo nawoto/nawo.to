@@ -25,7 +25,7 @@ const { content, previousPost, nextPost, collection } = Astro.props;
       {
         previousPost ? (
           <a
-            href={getArticleUrl(previousPost.collection as any, previousPost.slug)}
+            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.slug)}
             title={previousPost.data.title}
             rel="prev"
             class="block"
@@ -45,7 +45,7 @@ const { content, previousPost, nextPost, collection } = Astro.props;
       {
         nextPost ? (
           <a
-            href={getArticleUrl(nextPost.collection as any, nextPost.slug)}
+            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.slug)}
             title={nextPost.data.title}
             rel="next"
             class="block"
@@ -93,4 +93,3 @@ const { content, previousPost, nextPost, collection } = Astro.props;
     </a>
   </div>
 </nav>
-

@@ -3,7 +3,7 @@ import type { WebMention, WebMentionsProps } from '../types/index.js';
 
 // Webmention表示コンポーネント
 // props: url（記事の絶対URL）
-interface Props extends WebMentionsProps {}
+type Props = WebMentionsProps;
 
 const { url } = Astro.props;
 let mentions: WebMention[] = [];
@@ -16,7 +16,7 @@ if (typeof url === 'string') {
       const data = await res.json();
       mentions = data.children || [];
     }
-  } catch (e) {
+  } catch {
     // エラー時は空配列のまま
   }
 }
@@ -63,4 +63,3 @@ const likes: WebMention[] = mentions.filter(
     }
   </div>
 </div>
-

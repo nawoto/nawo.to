@@ -15,6 +15,8 @@
     "check": "astro check",
     "lint": "eslint src/ --ext .js,.ts,.astro",
     "lint:fix": "eslint src/ --ext .js,.ts,.astro --fix",
+    "lint:check": "eslint src/ --ext .js,.ts,.astro --max-warnings 0",
+    "quality": "node scripts/check-code-quality.js",
     "duplicate": "jscpd src/",
     "duplicate:report": "jscpd src/ --reporters html,console",
     "generate-favicon": "node scripts/generate-favicon.js",

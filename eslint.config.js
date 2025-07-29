@@ -19,12 +19,13 @@ export default tsEslint.config(
     },
     rules: {
       // カスタムルール
-      'no-console': 'warn',
+      'no-console': 'off',
       'no-debugger': 'error',
       'no-alert': 'error',
       'no-multiple-empty-lines': ['error', { max: 2 }],
       'no-trailing-spaces': 'error',
       'eol-last': 'error',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   }
 );

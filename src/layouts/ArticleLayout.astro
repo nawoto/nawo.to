@@ -1,5 +1,7 @@
 ---
-import type { ArticleLayoutProps, ArticleContent } from '../types/index.js';
+import type { ArticleLayoutProps } from '../types/index.js';
+import type { CollectionEntry } from 'astro:content';
+import type { CollectionType } from '../utils/collections';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
@@ -9,28 +11,26 @@ import ShareButtons from '../components/ShareButtons.astro';
 import ArticleNavigation from '../components/ArticleNavigation.astro';
 import OEmbedProcessor from '../components/OEmbedProcessor.astro';
 import Tags from '../components/Tags.astro';
-import { generateArticleSEO } from '../utils/seo';
 import { generateArticleStructuredData } from '../utils/structured-data';
 import { processCompleteArticleMetadata } from '../utils/metadata';
 import { getCollectionPath, getCollectionName } from '../utils/collections';
 
-export interface Props extends ArticleLayoutProps {}
+type Props = ArticleLayoutProps;
 
 const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
-const pageTitle = `${title} | ${SITE.title}`;
 const authorName = SITE.author.name;
 
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
 
 // 記事のメタデータを取得
-const metadata = processCompleteArticleMetadata(content as any, shareUrl);
-
-// SEO設定を生成（型変換が必要）
-const seoConfig = generateArticleSEO(content as any, currentUrl, () => currentUrl);
+const metadata = processCompleteArticleMetadata(
+  content as CollectionEntry<CollectionType>,
+  shareUrl
+);
 
 // 構造化データを生成
 const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
-  content as any,
+  content as CollectionEntry<CollectionType>,
   currentUrl,
   () => currentUrl
 );
@@ -65,13 +65,13 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     <!-- 一覧へのナビゲーション（上部） -->
     <nav class="mb-6 text-sm font-mono" aria-label="一覧へのナビゲーション">
       <a
-        href={getCollectionPath(content.collection as any)}
+        href={getCollectionPath(content.collection as CollectionType)}
         class="text-base font-mono text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
-        aria-label={`${getCollectionName(content.collection as any)}一覧に戻る`}
+        aria-label={`${getCollectionName(content.collection as CollectionType)}一覧に戻る`}
         rel="up"
       >
         <span aria-hidden="true">🔙</span>
-        <span>{getCollectionName(content.collection as any)}</span>
+        <span>{getCollectionName(content.collection as CollectionType)}</span>
       </a>
     </nav>
 
@@ -123,8 +123,8 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
 
   <!-- Navigation -->
   <ArticleNavigation
-    previousPost={previousPost as any}
-    nextPost={nextPost as any}
+    previousPost={previousPost as CollectionEntry<CollectionType> | undefined}
+    nextPost={nextPost as CollectionEntry<CollectionType> | undefined}
     collection={content.collection}
   />
 

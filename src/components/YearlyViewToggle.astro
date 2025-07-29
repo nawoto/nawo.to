@@ -4,7 +4,7 @@ interface Props {
   activeTab: 'logs' | 'texts' | 'backtrace';
 }
 
-const { years, activeTab } = Astro.props;
+const { years } = Astro.props;
 ---
 
 <!-- View Mode Toggle -->
@@ -137,8 +137,8 @@ const { years, activeTab } = Astro.props;
     }
 
     // 年ジャンプの処理関数
-    function handleYearJump(event: Event) {
-      const btn = event.target as HTMLElement;
+    function handleYearJump() {
+      const btn = document.activeElement as HTMLElement;
       const year = btn.getAttribute('data-year');
 
       if (year) {
@@ -166,4 +166,3 @@ const { years, activeTab } = Astro.props;
   // DOM読み込み完了後に初期化
   document.addEventListener('DOMContentLoaded', initViewModeToggle);
 </script>
-

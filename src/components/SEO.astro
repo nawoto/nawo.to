@@ -7,9 +7,9 @@ interface Props {
   description?: string;
   canonical?: string;
   charset?: string;
-  openGraph?: any;
-  twitter?: any;
-  extend?: any;
+  openGraph?: Record<string, unknown>;
+  twitter?: Record<string, unknown>;
+  extend?: Record<string, unknown>;
   ogimage?: string;
 }
 
@@ -59,4 +59,3 @@ const finalOpenGraph = openGraph
   }}
   extend={extend}
 />
-

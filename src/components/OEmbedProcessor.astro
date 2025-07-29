@@ -12,7 +12,7 @@
         const url = this.getAttribute('data-copy-url');
         if (url && navigator.clipboard) {
           navigator.clipboard.writeText(url).then(() => {
-            alert('URLをコピーしました');
+            // URL copied successfully
           });
         }
       });
@@ -62,12 +62,12 @@
       },
       {
         name: 'SlideShare',
-        patterns: [/https:\/\/www\.slideshare\.net\//],
+        patterns: [/https:\/\/www\.slideshare\.net/],
         endpoint: 'https://www.slideshare.net/api/oembed/2',
       },
       {
         name: 'Suzuri',
-        patterns: [/https:\/\/suzuri\.jp\/[^\/]+\/\d+/],
+        patterns: [/https:\/\/suzuri\.jp\/[^/]+\/\d+/],
         endpoint: 'https://suzuri.jp/oembed',
       },
     ] as Array<{
@@ -224,20 +224,22 @@
       }
 
       // Load Twitter Widget.js if not already loaded
-      if (!(window as any).twttr) {
+      if (!(window as unknown as Record<string, unknown>).twttr) {
         const script = document.createElement('script');
         script.async = true;
         script.src = 'https://platform.twitter.com/widgets.js';
         script.onload = function () {
-          if ((window as any).twttr && (window as any).twttr.widgets) {
-            (window as any).twttr.widgets.load();
+          const twttr = (window as unknown as Record<string, unknown>).twttr;
+          if (twttr && (twttr as Record<string, unknown>).widgets) {
+            ((twttr as Record<string, unknown>).widgets as Record<string, unknown>).load();
           }
         };
         document.head.appendChild(script);
       } else {
         // Twitter Widget.js already loaded, just process new widgets
-        if ((window as any).twttr.widgets) {
-          (window as any).twttr.widgets.load();
+        const twttr = (window as unknown as Record<string, unknown>).twttr;
+        if ((twttr as Record<string, unknown>).widgets) {
+          ((twttr as Record<string, unknown>).widgets as Record<string, unknown>).load();
         }
       }
 
@@ -245,4 +247,3 @@
     }
   });
 </script>
-
