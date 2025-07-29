@@ -72,11 +72,7 @@ export function generateBasicSEO(title: string, description: string, url: string
 }
 
 // 記事用のSEO設定を生成する共通関数
-export function generateArticleSEO(
-  article: CollectionEntry<CollectionType>,
-  url: string,
-  getArticleUrl: (collection: CollectionType, slug: string) => string
-) {
+export function generateArticleSEO(article: CollectionEntry<CollectionType>, url: string) {
   const metadata = processArticleMetadata(article);
   const title = `${article.data.title} | ${SITE.title}`;
 

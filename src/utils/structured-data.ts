@@ -6,13 +6,12 @@ import {
 } from '../data/structured-data-generators';
 import { processArticleMetadata } from './metadata';
 import type { CollectionType } from './collections';
-import { getListPageUrl, getListPageName, generateExcerpt } from './content';
+import { getListPageUrl, getListPageName } from './content';
 
 // 記事用の構造化データを生成する共通関数
 export function generateArticleStructuredData(
   article: CollectionEntry<CollectionType>,
-  url: string,
-  getArticleUrl: (collection: CollectionType, slug: string) => string
+  url: string
 ) {
   const metadata = processArticleMetadata(article);
   const title = metadata.title;
@@ -73,4 +72,3 @@ export function generateArticleStructuredData(
     breadcrumbData,
   };
 }
- 

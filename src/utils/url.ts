@@ -16,4 +16,3 @@ export function getBacktraceUrl(collection: CollectionType, slug: string): strin
   // slugは "2012/03/26/1332726969" のような形式で渡る前提
   return `/backtrace/${slug}/`;
 }
- 

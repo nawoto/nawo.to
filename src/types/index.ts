@@ -27,9 +27,9 @@ export interface ArticleContent {
     tags?: string[];
   };
   render: () => Promise<{
-    Content: any;
-    headings: any[];
-    remarkPluginFrontmatter: any;
+    Content: unknown;
+    headings: unknown[];
+    remarkPluginFrontmatter: unknown;
   }>;
 }
 
@@ -190,7 +190,7 @@ export interface SEOProps {
 
 // 構造化データコンポーネントのProps型定義
 export interface StructuredDataProps {
-  data: BaseStructuredData & Record<string, any>;
+  data: BaseStructuredData & Record<string, unknown>;
 }
 
 // WebMentionsコンポーネントのProps型定義

@@ -2,7 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
 import { generateExcerpt } from './content';
 import type { CollectionType } from './collections';
-import { getCollectionPath, getArticleUrl } from './collections';
+import { getCollectionPath } from './collections';
 
 // 記事のメタデータを処理する共通関数
 export function processArticleMetadata(article: CollectionEntry<CollectionType>) {

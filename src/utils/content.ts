@@ -118,7 +118,7 @@ export function groupArticlesByYear<T extends CollectionEntry<CollectionType>>(
 }
 
 // 年を降順でソートする共通関数
-export function getSortedYears(articlesByYear: Record<number, any[]>): number[] {
+export function getSortedYears(articlesByYear: Record<number, unknown[]>): number[] {
   return Object.keys(articlesByYear)
     .map(Number)
     .sort((a, b) => b - a);
