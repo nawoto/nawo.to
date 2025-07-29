@@ -17,12 +17,17 @@ try {
   execSync('npm run lint:check', { stdio: 'inherit' });
   console.log('✅ ESLintチェック完了');
 
-  // 2. Duplicate code check
+  // 2. Format check
+  console.log('🎨 フォーマットチェック中...');
+  execSync('npm run format:check', { stdio: 'inherit' });
+  console.log('✅ フォーマットチェック完了');
+
+  // 3. Duplicate code check
   console.log('🔄 重複コードチェック中...');
   execSync('npm run duplicate', { stdio: 'inherit' });
   console.log('✅ 重複コードチェック完了');
 
-  // 3. Type check (warning only)
+  // 4. Type check (warning only)
   console.log('🔍 TypeScript型チェック中...');
   try {
     execSync('npm run check', { stdio: 'inherit' });

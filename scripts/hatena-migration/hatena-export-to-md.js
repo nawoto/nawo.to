@@ -38,8 +38,7 @@ for (let i = 0; i < args.length; i++) {
       );
       process.exit(1);
     }
-  }
-  else if (arg === '--basename' && args[i + 1]) targetBasename = args[++i];
+  } else if (arg === '--basename' && args[i + 1]) targetBasename = args[++i];
 }
 
 console.log(`🎯 はてなブログ移行スクリプト（統合版）`);
@@ -118,7 +117,9 @@ if (targetBasename) {
     process.exit(1);
   }
   // 強制モードでない場合は変換済みを除外
-  const finalEntries = !forceMode ? filtered.filter(({ meta }) => !convertedSet.has(meta.basename)) : filtered;
+  const finalEntries = !forceMode
+    ? filtered.filter(({ meta }) => !convertedSet.has(meta.basename))
+    : filtered;
   if (finalEntries.length === 0) {
     console.log('⚠️  すでに変換済みです (--force で再変換可能)');
     process.exit(0);
@@ -292,7 +293,10 @@ function extractMeta(entry) {
       .replace(/DATE: [^\n]*\n?/, '')
       .replace(/^\s+|\s+$/g, '');
     // <br>→改行、HTMLタグ除去
-    body = body.replace(/<br\s*\/?/gi, '\n').replace(/<[^>]*>/g, '').trim();
+    body = body
+      .replace(/<br\s*\/?/gi, '\n')
+      .replace(/<[^>]*>/g, '')
+      .trim();
     commentBlocks.push({
       author: authorMatch ? authorMatch[1].trim() : '',
       date: dateMatch ? dateMatch[1].trim() : '',
@@ -362,7 +366,8 @@ function convertToMarkdown(entry, meta, year) {
   // --- SlideShare埋め込みブロック内のViewリンクまたはタイトルリンク（ラベル不問）を抽出し、埋め込みブロック直前の行にインデントなしで追加 ---
   const embedBlockPattern = /<div[^>]+id="__ss_[^"']+"[^>]*>[\s\S]*?<\/div>/g;
   // <a ... href="https://www.slideshare.net/nawoto/xxx" ...>（ラベル不問）</a>
-  const anyLinkPattern = /<a[^>]+href="(https?:\/\/www\.slideshare\.net\/nawoto\/[a-zA-Z0-9\-_]+)"[^>]*>[^<]*<\/a>/g;
+  const anyLinkPattern =
+    /<a[^>]+href="(https?:\/\/www\.slideshare\.net\/nawoto\/[a-zA-Z0-9\-_]+)"[^>]*>[^<]*<\/a>/g;
   // まず埋め込みブロックの直前に改行を強制挿入
   markdown = markdown.replace(embedBlockPattern, '\n$&');
   let lines = markdown.split('\n');
@@ -401,9 +406,15 @@ function convertToMarkdown(entry, meta, year) {
   );
   // SlideShare埋め込みやリンク行をURLのみに変換（複数リンク混在パターン対応）
   // 例: [![SlideShare](...)](...) | [View](URL) | [Upload your own](...)
-  markdown = markdown.replace(/\[!\[SlideShare\][^\]]*\]\([^\)]*\)\s*\|\s*\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)\s*\|\s*\[Upload your own\]\([^\)]*\)[^\n]*\n?/gi, '$1\n');
+  markdown = markdown.replace(
+    /\[!\[SlideShare\][^\]]*\]\([^\)]*\)\s*\|\s*\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)\s*\|\s*\[Upload your own\]\([^\)]*\)[^\n]*\n?/gi,
+    '$1\n'
+  );
   // [View](URL) だけの場合も対応
-  markdown = markdown.replace(/\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)[^\n]*\n?/gi, '$1\n');
+  markdown = markdown.replace(
+    /\[View\]\((https?:\/\/www\.slideshare\.net\/[^\)]+)\)[^\n]*\n?/gi,
+    '$1\n'
+  );
   // PREタグをMarkdownのコードブロックに変換（先頭空白を保持）
   markdown = markdown.replace(/<pre[^>]*>\s*([\s\S]*?)\s*<\/pre>/g, (match, content) => {
     let cleanContent = content
@@ -529,7 +540,6 @@ function convertToMarkdown(entry, meta, year) {
     const titleWithoutEndHashtags = titleWords.slice(0, i + 1).join(' ');
     cleanTitle = titleWithoutEndHashtags.trim();
   }
-
 
   const dateStr = meta.date.toISOString().split('T')[0];
   const cleanBasename = meta.basename.split('/').pop();

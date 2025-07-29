@@ -17,6 +17,7 @@
     "lint:fix": "eslint src/ --ext .js,.ts,.astro --fix",
     "lint:check": "eslint src/ --ext .js,.ts,.astro --max-warnings 0",
     "quality": "node scripts/check-code-quality.js",
+    "format:auto": "node scripts/format-code.js",
     "duplicate": "jscpd src/",
     "duplicate:report": "jscpd src/ --reporters html,console",
     "generate-favicon": "node scripts/generate-favicon.js",
@@ -25,6 +26,8 @@
     "new-article": "node scripts/new-article.js",
     "deploy": "npm run build && npx gh-pages -d dist --dotfiles",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
     "precommit": "node scripts/cleanup-images.js",
     "prepare": "husky"
   },

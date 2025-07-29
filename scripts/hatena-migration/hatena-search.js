@@ -11,7 +11,7 @@ const CONTENT_DIR = 'src/content/backtrace/';
 const args = process.argv.slice(2);
 const showFull = args.includes('--full') || args.includes('-f');
 const openMd = args.includes('--open-md');
-const searchWords = args.filter(a => !a.startsWith('-'));
+const searchWords = args.filter((a) => !a.startsWith('-'));
 
 if (!fs.existsSync(EXPORT_FILE)) {
   console.error(`❌ エクスポートファイルが見つかりません: ${EXPORT_FILE}`);
@@ -19,7 +19,7 @@ if (!fs.existsSync(EXPORT_FILE)) {
 }
 
 const content = fs.readFileSync(EXPORT_FILE, 'utf8');
-const entries = content.split('--------').filter(e => e.trim());
+const entries = content.split('--------').filter((e) => e.trim());
 
 function normalize(str) {
   return str.toLowerCase();
@@ -54,18 +54,18 @@ function mdFilePath(date, basename) {
 function matchEntry(entry, words) {
   if (words.length === 0) return false;
   const lower = normalize(entry);
-  return words.some(w => lower.includes(normalize(w)));
+  return words.some((w) => lower.includes(normalize(w)));
 }
 
 function matchBasename(entry, words) {
   const { basename } = extractMeta(entry);
   if (!basename) return false;
-  return words.some(w => basename.includes(w));
+  return words.some((w) => basename.includes(w));
 }
 
 function findHitLines(entry, words) {
   const lines = entry.split('\n');
-  return lines.filter(line => words.some(w => normalize(line).includes(normalize(w))));
+  return lines.filter((line) => words.some((w) => normalize(line).includes(normalize(w))));
 }
 
 let hits = [];
@@ -95,7 +95,7 @@ for (const entry of hits) {
     const lines = findHitLines(entry, searchWords);
     if (lines.length > 0) {
       console.log('\n[該当行]');
-      lines.forEach(l => console.log(l));
+      lines.forEach((l) => console.log(l));
     }
   }
 
@@ -113,4 +113,4 @@ for (const entry of hits) {
       console.error('VSCodeでmdファイルを開けませんでした。');
     }
   }
-} 
+}
