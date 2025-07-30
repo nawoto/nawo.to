@@ -229,17 +229,17 @@
         script.async = true;
         script.src = 'https://platform.twitter.com/widgets.js';
         script.onload = function () {
-          const twttr = (window as unknown as Record<string, unknown>).twttr;
-          if (twttr && (twttr as Record<string, unknown>).widgets) {
-            ((twttr as Record<string, unknown>).widgets as Record<string, unknown>).load();
+          const twttr = (window as { twttr?: { widgets?: { load(): void } } }).twttr;
+          if (twttr && twttr.widgets) {
+            twttr.widgets.load();
           }
         };
         document.head.appendChild(script);
       } else {
         // Twitter Widget.js already loaded, just process new widgets
-        const twttr = (window as unknown as Record<string, unknown>).twttr;
-        if ((twttr as Record<string, unknown>).widgets) {
-          ((twttr as Record<string, unknown>).widgets as Record<string, unknown>).load();
+        const twttr = (window as { twttr?: { widgets?: { load(): void } } }).twttr;
+        if (twttr && twttr.widgets) {
+          twttr.widgets.load();
         }
       }
 
