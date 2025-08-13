@@ -70,6 +70,12 @@
         patterns: [/https:\/\/suzuri\.jp\/[^/]+\/\d+/],
         endpoint: 'https://suzuri.jp/oembed',
       },
+      {
+        name: 'Bluesky',
+        patterns: [/https:\/\/bsky\.app\/profile\/[^/]+\/post\/[^/]+/],
+        endpoint: 'https://embed.bsky.app/oembed',
+        maxwidth: 600,
+      },
     ] as Array<{
       name: string;
       patterns: RegExp[];
