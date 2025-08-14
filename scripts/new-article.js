@@ -61,9 +61,7 @@ if (params.type === 'texts' || params.texts) {
 const slug = params.slug;
 const now = new Date();
 const date = params.date || now.toISOString().slice(0, 10);
-const dateTime = params.date
-  ? `${params.date}T00:00:00+09:00`
-  : now.toISOString().replace('Z', '+09:00');
+const dateTime = params.date || now.toISOString().slice(0, 10);
 
 if (!slug) {
   console.error('エラー: --slug を指定してください');
@@ -105,7 +103,7 @@ let template = '';
 if (type === 'texts') {
   template = `---
 title: "${title}"
-pubDate: "${dateTime}"
+pubDate: ${dateTime}
 description: "${description}"
 ---
 
@@ -129,7 +127,7 @@ description: "${description}"
 } else {
   template = `---
 title: "${title}"
-pubDate: "${dateTime}"
+pubDate: ${dateTime}
 description: "${description}"
 ---
 
