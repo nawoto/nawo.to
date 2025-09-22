@@ -36,7 +36,7 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.5.1",
-    "@fontsource/titillium-web": "^5.2.6",
+    "@fontsource/titillium-web": "^5.2.8",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.5",
     "astro-seo": "^0.8.4",
