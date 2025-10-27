@@ -43,7 +43,7 @@
     "date-fns": "^4.1.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
-    "remark-link-card-plus": "^0.7.0",
+    "remark-link-card-plus": "^0.7.1",
     "remark-toc": "^9.0.0",
     "satori": "^0.18.2",
     "simple-icons": "^15.17.0",
