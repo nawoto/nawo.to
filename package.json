@@ -45,7 +45,7 @@
     "remark-gfm": "^4.0.1",
     "remark-link-card-plus": "^0.7.0",
     "remark-toc": "^9.0.0",
-    "satori": "^0.18.2",
+    "satori": "^0.18.3",
     "simple-icons": "^15.17.0",
     "typescript-eslint": "^8.46.1",
     "unist-util-visit": "^5.0.0"
