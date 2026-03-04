@@ -39,7 +39,7 @@
     "@fontsource/titillium-web": "^5.2.8",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.7",
-    "astro-seo": "^0.8.4",
+    "astro-seo": "^1.1.0",
     "date-fns": "^4.1.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
