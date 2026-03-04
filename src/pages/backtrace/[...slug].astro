@@ -18,13 +18,9 @@ export async function getStaticPaths() {
     const fileName = post.slug.replace(/^\d{4}\//, '');
     const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
 
-    let urlSlug = '';
-    if (dateMatch) {
-      const [, year, month, day, slug] = dateMatch;
-      urlSlug = `${year}/${month}/${day}/${slug}`;
-    } else {
-      urlSlug = fileName.toLowerCase();
-    }
+    const urlSlug = dateMatch
+      ? `${dateMatch[1]}/${dateMatch[2]}/${dateMatch[3]}/${dateMatch[4]}`
+      : fileName.toLowerCase();
 
     return {
       params: { slug: urlSlug },
