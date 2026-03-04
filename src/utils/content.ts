@@ -102,4 +102,3 @@ export async function generateArticleExcerpts<T extends CollectionEntry<Collecti
     })
   );
 }
-

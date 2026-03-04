@@ -72,7 +72,9 @@ const { content, previousPost, nextPost, collection } = Astro.props;
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span>{getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}</span>
+      <span
+        >{getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}</span
+      >
     </a>
   </div>
 </nav>
