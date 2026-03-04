@@ -6,7 +6,7 @@ import {
 } from '../data/structured-data-generators';
 import { processArticleMetadata } from './metadata';
 import type { CollectionType } from './collections';
-import { getListPageUrl, getListPageName } from './content';
+import { getCollectionPath, getCollectionName } from './collections';
 
 // 記事用の構造化データを生成する共通関数
 export function generateArticleStructuredData(
@@ -55,8 +55,8 @@ export function generateArticleStructuredData(
       {
         '@type': 'ListItem',
         position: 2,
-        name: getListPageName(article.collection),
-        item: `${SITE.url}${getListPageUrl(article.collection)}`,
+        name: getCollectionName(article.collection),
+        item: `${SITE.url}${getCollectionPath(article.collection)}`,
       },
       {
         '@type': 'ListItem',

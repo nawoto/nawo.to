@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getListPageUrl, getListPageName } from '../utils/content';
-import { getArticleUrl } from '../utils/collections';
+import { getArticleUrl, getCollectionPath, getCollectionName } from '../utils/collections';
 import type { CollectionType } from '../utils/collections';
 
 interface Props {
@@ -67,29 +66,13 @@ const { content, previousPost, nextPost, collection } = Astro.props;
     class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200"
   >
     <a
-      href={content
-        ? getListPageUrl(content.collection)
-        : collection === 'texts'
-          ? '/texts'
-          : collection === 'backtrace'
-            ? '/backtrace'
-            : '/logs'}
+      href={getCollectionPath((content?.collection ?? collection ?? 'logs') as CollectionType)}
       class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-      aria-label={`${content ? getListPageName(content.collection) : collection === 'texts' ? 'TEXTS' : collection === 'backtrace' ? 'BACKTRACE' : 'LOGS'}一覧に戻る`}
+      aria-label={`${getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}一覧に戻る`}
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span
-        >{
-          content
-            ? getListPageName(content.collection)
-            : collection === 'texts'
-              ? 'TEXTS'
-              : collection === 'backtrace'
-                ? 'BACKTRACE'
-                : 'LOGS'
-        }</span
-      >
+      <span>{getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}</span>
     </a>
   </div>
 </nav>

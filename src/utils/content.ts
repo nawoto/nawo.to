@@ -59,42 +59,6 @@ export function getDescription(description: string | undefined, excerpt: string)
   return description || excerpt;
 }
 
-/**
- * コレクションに応じた一覧ページのURLを生成する関数
- * @param collection コレクション名
- * @returns 一覧ページのURL
- */
-export function getListPageUrl(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return '/logs';
-    case 'texts':
-      return '/texts';
-    case 'backtrace':
-      return '/backtrace';
-    default:
-      return '/logs';
-  }
-}
-
-/**
- * コレクションに応じた一覧ページの名前を取得する関数
- * @param collection コレクション名
- * @returns 一覧ページの名前
- */
-export function getListPageName(collection: string): string {
-  switch (collection) {
-    case 'logs':
-      return 'LOGS';
-    case 'texts':
-      return 'TEXTS';
-    case 'backtrace':
-      return 'BACKTRACE';
-    default:
-      return 'LOGS';
-  }
-}
-
 // 記事を日付順でソートする共通関数
 export function sortArticlesByDate<T extends CollectionEntry<CollectionType>>(articles: T[]): T[] {
   return articles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -139,21 +103,3 @@ export async function generateArticleExcerpts<T extends CollectionEntry<Collecti
   );
 }
 
-// 記事のメタデータを処理する共通関数
-export function processArticleMetadata<T extends CollectionEntry<CollectionType>>(
-  article: T
-): {
-  title: string;
-  description: string;
-  pubDate: Date;
-  updatedDate?: Date;
-  tags?: string[];
-} {
-  return {
-    title: article.data.title,
-    description: getDescription(article.data.description, generateExcerpt(article.body)),
-    pubDate: article.data.pubDate,
-    updatedDate: 'updatedDate' in article.data ? article.data.updatedDate : undefined,
-    tags: article.data.tags,
-  };
-}
