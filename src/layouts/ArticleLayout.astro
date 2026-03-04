@@ -31,8 +31,7 @@ const metadata = processCompleteArticleMetadata(
 // 構造化データを生成
 const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
   content as CollectionEntry<CollectionType>,
-  currentUrl,
-  () => currentUrl
+  currentUrl
 );
 ---
 
@@ -116,9 +115,6 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
       <slot />
     </div>
 
-    <footer class="mt-8 pt-4">
-      <!-- Written by 部分を削除 - Bioコンポーネントで著者情報を表示するため -->
-    </footer>
   </article>
 
   <!-- Navigation -->

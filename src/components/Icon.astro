@@ -1,6 +1,6 @@
 ---
 import type { IconName } from '../data/icons.js';
-import { getIconData, isValidIconName } from '../data/icons.js';
+import { iconData, getIconData, isValidIconName } from '../data/icons.js';
 
 interface Props {
   name: string;
@@ -12,11 +12,11 @@ const { name, class: className = '' } = Astro.props;
 // アイコン名の型チェック
 if (!isValidIconName(name)) {
   throw new Error(
-    `Icon "${name}" not found. Available icons: ${Object.keys(getIconData('github')).join(', ')}`
+    `Icon "${name}" not found. Available icons: ${Object.keys(iconData).join(', ')}`
   );
 }
 
-const iconData = getIconData(name as IconName);
+const icon = getIconData(name as IconName);
 
 // デフォルトクラス
 const defaultClass = 'w-6 h-6 text-gray-400';
@@ -26,9 +26,9 @@ const svgClass = `${defaultClass} ${className}`.trim();
 <svg
   class={svgClass}
   xmlns="http://www.w3.org/2000/svg"
-  viewBox={iconData.viewBox}
+  viewBox={icon.viewBox}
   fill="currentColor"
   aria-hidden="true"
 >
-  <path d={iconData.path}></path>
+  <path d={icon.path}></path>
 </svg>

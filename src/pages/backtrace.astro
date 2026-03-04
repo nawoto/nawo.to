@@ -19,7 +19,7 @@ const posts = sortArticlesByDate(await getCollection('backtrace'));
   <div class="border-t border-solid border-gray-300 mt-0 mb-2"></div>
   <YearlyArticleList
     articles={posts}
-    getArticleUrl={(collection, slug) => getBacktraceUrl(collection, getLogSlug(slug))}
+    getArticleUrl={(_collection, slug) => getBacktraceUrl(getLogSlug(slug))}
     showBorder={true}
     activeTab="backtrace"
   />

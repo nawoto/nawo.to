@@ -14,7 +14,7 @@ const posts = sortArticlesByDate(await getCollection('logs'));
   <TabNavigation activeTab="logs" />
   <YearlyArticleList
     articles={posts}
-    getArticleUrl={(collection, slug) => getLogUrl(collection, slug)}
+    getArticleUrl={(_collection, slug) => getLogUrl(slug)}
     showBorder={true}
     activeTab="logs"
   />
