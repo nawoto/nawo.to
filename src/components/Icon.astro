@@ -11,9 +11,7 @@ const { name, class: className = '' } = Astro.props;
 
 // アイコン名の型チェック
 if (!isValidIconName(name)) {
-  throw new Error(
-    `Icon "${name}" not found. Available icons: ${Object.keys(iconData).join(', ')}`
-  );
+  throw new Error(`Icon "${name}" not found. Available icons: ${Object.keys(iconData).join(', ')}`);
 }
 
 const icon = getIconData(name as IconName);
