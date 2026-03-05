@@ -21,6 +21,7 @@ export const SITE = {
     items: [
       { href: '/', label: 'top' },
       { href: '/about', label: 'about' },
+      { href: '/mentions', label: '#mentions' },
     ],
   },
   // --- アフィリエイト設定 ---

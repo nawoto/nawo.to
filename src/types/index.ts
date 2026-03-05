@@ -2,11 +2,18 @@
 export interface WebMention {
   'wm-property': string;
   'wm-source': string;
+  'wm-target'?: string;
   author?: {
     name: string;
     photo?: string;
     url?: string;
   };
+  content?: {
+    text?: string;
+    html?: string;
+  };
+  published?: string;
+  url?: string;
   'wm-received'?: string;
   'wm-id'?: string;
   'wm-private'?: boolean;

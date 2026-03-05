@@ -17,7 +17,7 @@ const { title = SITE.title, textColor = '', showLink = true } = Astro.props;
     </h3>
   </div>
   <nav>
-    <ul class="grid grid-cols-2 divide-x text-center text-lg uppercase">
+    <ul class="grid grid-cols-3 divide-x text-center text-lg uppercase">
       {
         SITE.navigation.items.map((item, index) => {
           const isFirst = index === 0;

@@ -40,6 +40,9 @@ const shouldShowBio = showBio !== false;
     <!-- WebSite JSON-LD Structured Data -->
     <StructuredData data={websiteStructuredData} />
 
+    <!-- WebMentions endpoint -->
+    <link rel="webmention" href="https://webmention.io/nawo.to/webmention" />
+
     <!-- Additional head content from child layouts -->
     <slot name="head" />
   </head>

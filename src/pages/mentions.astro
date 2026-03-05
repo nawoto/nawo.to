@@ -1,0 +1,140 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+import type { WebMention } from '../types/index.js';
+import { getLogUrl, getTextUrl, getBacktraceUrl } from '../utils/url';
+
+const token = import.meta.env.WEBMENTION_TOKEN;
+
+let mentions: WebMention[] = [];
+try {
+  const res = await fetch(
+    `https://webmention.io/api/mentions.jf2?domain=nawo.to&token=${token}&per-page=500&sort-by=published`
+  );
+  if (res.ok) {
+    const data = await res.json();
+    mentions = (data.children || []).filter((m: WebMention) => !m['wm-private']);
+  }
+} catch {
+  // エラー時は空配列のまま
+}
+
+// URL → タイトル マップを構築
+const titleMap = new Map<string, string>();
+const [logs, texts, backtrace] = await Promise.all([
+  getCollection('logs'),
+  getCollection('texts'),
+  getCollection('backtrace'),
+]);
+for (const post of logs) titleMap.set(getLogUrl(post.slug), post.data.title);
+for (const post of texts) titleMap.set(getTextUrl(post.slug), post.data.title);
+for (const post of backtrace) titleMap.set(getBacktraceUrl(post.slug), post.data.title);
+
+// wm-target でグループ化
+const grouped = new Map<string, WebMention[]>();
+for (const m of mentions) {
+  const target = m['wm-target'] || '';
+  if (!grouped.has(target)) grouped.set(target, []);
+  grouped.get(target)!.push(m);
+}
+
+// 件数の多い順にソート
+const sortedGroups = [...grouped.entries()].sort((a, b) => b[1].length - a[1].length);
+
+function getPath(url?: string) {
+  if (!url) return url;
+  try {
+    return new URL(url).pathname;
+  } catch {
+    return url;
+  }
+}
+
+function getTypeEmoji(property: string): string {
+  switch (property) {
+    case 'like-of': return '❤️';
+    case 'in-reply-to': return '💬';
+    case 'repost-of': return '🔁';
+    case 'bookmark-of': return '🔖';
+    default: return '💬';
+  }
+}
+---
+
+<Layout title={`#mentions | ${SITE.title}`} description="nawo.to に届いた WebMentions" showBio={false}>
+  <div class="mx-auto max-w-4xl px-4 py-8 font-mono">
+    <header class="mb-8">
+      <h1 class="text-4xl font-black tracking-widest mb-2">#mentions</h1>
+      <div class="text-xs text-gray-400 leading-5">
+        <p>/**</p>
+        <p> * WebMentions received by nawo.to</p>
+        <p> * X(Twitter): 2023年4月のAPI有料化により取得不可。以前の分のみ表示</p>
+        <p> * ❤️ like  🔁 repost  💬 reply  🔖 bookmark</p>
+        <p> **/</p>
+      </div>
+      <p class="text-xs text-gray-400 mt-3">total: {mentions.length} mentions</p>
+    </header>
+
+    {
+      mentions.length === 0 && (
+        <p class="text-gray-500">// No webmentions yet.</p>
+      )
+    }
+
+    <ul class="space-y-8">
+      {sortedGroups.map(([target, items]) => {
+        const path = getPath(target);
+        const title = titleMap.get(path || '');
+        return (
+          <li class="border-t border-gray-200 pt-6">
+            <div class="mb-3">
+              <a
+                href={target}
+                class="text-sm font-bold hover:underline break-all"
+              >
+                {path}
+              </a>
+              {title && (
+                <p class="text-xs text-gray-500 mt-0.5">「{title}」</p>
+              )}
+            </div>
+            <ul class="flex flex-wrap gap-4">
+              {items.map((m) => {
+                const sourceUrl = m.url || m['wm-source'];
+                const emoji = getTypeEmoji(m['wm-property']);
+                return (
+                  <li class="flex items-center">
+                    <a
+                      href={sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${m.author?.name || 'anonymous'} (${sourceUrl})`}
+                      class="relative block"
+                    >
+                      {m.author?.photo ? (
+                        <img
+                          src={m.author.photo}
+                          alt={m.author.name}
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                          class="rounded-full overflow-hidden hover:opacity-80 transition-opacity"
+                        />
+                      ) : (
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-xs">
+                          ?
+                        </div>
+                      )}
+                      <span class="absolute -bottom-1 -right-1 text-xs leading-none">{emoji}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</Layout>

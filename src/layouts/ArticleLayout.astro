@@ -5,7 +5,6 @@ import type { CollectionType } from '../utils/collections';
 import { SITE } from '../config';
 import Layout from './Layout.astro';
 import Comments from '../components/Comments.astro';
-import WebMentions from '../components/WebMentions.astro';
 import StructuredData from '../components/StructuredData.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import ArticleNavigation from '../components/ArticleNavigation.astro';
@@ -114,7 +113,6 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
     <div itemprop="articleBody" class="prose prose-lg max-w-none">
       <slot />
     </div>
-
   </article>
 
   <!-- Navigation -->
@@ -126,12 +124,6 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
 
   <!-- Share Buttons -->
   <ShareButtons url={currentUrl} title={title} />
-
-  <!-- Webmentions Section -->
-  <div class="mx-auto max-w-4xl px-4 mb-8">
-    <h3 class="text-sm text-gray-400">/** Webmentions **/</h3>
-    <WebMentions url={currentUrl} />
-  </div>
 
   <!-- Comments Section -->
   <div class="mx-auto max-w-4xl px-4">
