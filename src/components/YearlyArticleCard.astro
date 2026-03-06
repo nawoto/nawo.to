@@ -24,12 +24,10 @@ const tags = article.data.tags || [];
         itemprop="datePublished"
       >
         {
-          article.data.pubDate
-            .toLocaleDateString('ja-JP', {
-              month: '2-digit',
-              day: '2-digit',
-            })
-            .replace(/\//g, '/')
+          article.data.pubDate.toLocaleDateString('ja-JP', {
+            month: '2-digit',
+            day: '2-digit',
+          })
         }
       </time>
       <a

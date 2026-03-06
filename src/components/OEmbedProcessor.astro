@@ -100,11 +100,8 @@
       const provider = oembedProviders.find((p) => p.patterns.some((pattern) => pattern.test(url)));
 
       if (provider) {
-        console.log(`Found ${provider.name} URL:`, url);
-
         // Check if it's a standalone link
         const isStandalone = isStandaloneLink(link);
-        console.log(`Is standalone link:`, isStandalone);
 
         if (!isStandalone) {
           return; // Skip non-standalone links
@@ -135,15 +132,9 @@
             oembedUrl.searchParams.set('maxwidth', provider.maxwidth.toString());
           }
 
-          console.log(`Fetching oembed from:`, oembedUrl.toString());
-
           fetch(oembedUrl.toString())
-            .then((response) => {
-              console.log(`${provider.name} oembed response status:`, response.status);
-              return response.json();
-            })
+            .then((response) => response.json())
             .then((data) => {
-              console.log(`${provider.name} oembed data:`, data);
               if (data.html) {
                 const embedContainer = document.createElement('div');
                 embedContainer.innerHTML = data.html;
@@ -163,11 +154,10 @@
                 } else {
                   link.replaceWith(embedContainer);
                 }
-                console.log(`${provider.name} embed successfully inserted`);
               }
             })
             .catch((error) => {
-              console.log(`${provider.name} oembed failed:`, error);
+              console.error(`${provider.name} oembed failed:`, error);
             });
         }
       }
@@ -195,8 +185,6 @@
 
     // Handle Twitter embed using Widget.js
     function handleTwitterEmbed(link: HTMLAnchorElement, url: string) {
-      console.log('Handling Twitter embed with Widget.js:', url);
-
       // Create Twitter widget container
       const embedContainer = document.createElement('div');
       embedContainer.className = 'twitter-embed my-4';
@@ -248,8 +236,6 @@
           twttr.widgets.load();
         }
       }
-
-      console.log('Twitter embed successfully inserted');
     }
   });
 </script>

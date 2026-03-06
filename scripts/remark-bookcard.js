@@ -1,3 +1,4 @@
+import { visit } from 'unist-util-visit';
 import { books } from '../src/data/books.js';
 import { getBookByIdentifier } from '../src/data/books.js';
 import { SITE } from '../src/config.js';
@@ -63,15 +64,4 @@ function generateBookCardHtml(book) {
     </a>
   </div>
 </div>`;
-}
-
-// visit関数の実装
-function visit(tree, type, visitor) {
-  if (tree.type === type) {
-    visitor(tree);
-  }
-
-  if (tree.children) {
-    tree.children.forEach((child) => visit(child, type, visitor));
-  }
 }
