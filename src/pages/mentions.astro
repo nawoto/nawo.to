@@ -8,16 +8,18 @@ import { getLogUrl, getTextUrl, getBacktraceUrl } from '../utils/url';
 const token = import.meta.env.WEBMENTION_TOKEN;
 
 let mentions: WebMention[] = [];
-try {
-  const res = await fetch(
-    `https://webmention.io/api/mentions.jf2?domain=nawo.to&token=${token}&per-page=500&sort-by=published`
-  );
-  if (res.ok) {
-    const data = await res.json();
-    mentions = (data.children || []).filter((m: WebMention) => !m['wm-private']);
+if (token) {
+  try {
+    const res = await fetch(
+      `https://webmention.io/api/mentions.jf2?domain=nawo.to&token=${token}&per-page=500&sort-by=published`
+    );
+    if (res.ok) {
+      const data = await res.json();
+      mentions = (data.children || []).filter((m: WebMention) => !m['wm-private']);
+    }
+  } catch {
+    // エラー時は空配列のまま
   }
-} catch {
-  // エラー時は空配列のまま
 }
 
 // URL → タイトル マップを構築

@@ -218,7 +218,7 @@
       }
 
       // Load Twitter Widget.js if not already loaded
-      if (!(window as unknown as Record<string, unknown>).twttr) {
+      if (!(window as { twttr?: { widgets?: { load(): void } } }).twttr) {
         const script = document.createElement('script');
         script.async = true;
         script.src = 'https://platform.twitter.com/widgets.js';
