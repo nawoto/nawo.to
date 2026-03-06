@@ -1,7 +1,6 @@
 ---
 interface Props {
   years: number[];
-  activeTab: 'logs' | 'texts' | 'backtrace';
 }
 
 const { years } = Astro.props;
@@ -137,8 +136,8 @@ const { years } = Astro.props;
     }
 
     // 年ジャンプの処理関数
-    function handleYearJump() {
-      const btn = document.activeElement as HTMLElement;
+    function handleYearJump(event: Event) {
+      const btn = event.currentTarget as HTMLElement;
       const year = btn.getAttribute('data-year');
 
       if (year) {

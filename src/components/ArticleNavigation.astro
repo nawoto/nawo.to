@@ -4,13 +4,12 @@ import { getArticleUrl, getCollectionPath, getCollectionName } from '../utils/co
 import type { CollectionType } from '../utils/collections';
 
 interface Props {
-  content?: CollectionEntry<CollectionType>;
   previousPost?: CollectionEntry<CollectionType>;
   nextPost?: CollectionEntry<CollectionType>;
   collection?: string;
 }
 
-const { content, previousPost, nextPost, collection } = Astro.props;
+const { previousPost, nextPost, collection } = Astro.props;
 ---
 
 <!-- Navigation（2段構成） -->
@@ -66,15 +65,13 @@ const { content, previousPost, nextPost, collection } = Astro.props;
     class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200"
   >
     <a
-      href={getCollectionPath((content?.collection ?? collection ?? 'logs') as CollectionType)}
+      href={getCollectionPath((collection ?? 'logs') as CollectionType)}
       class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-      aria-label={`${getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}一覧に戻る`}
+      aria-label={`${getCollectionName((collection ?? 'logs') as CollectionType)}一覧に戻る`}
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span
-        >{getCollectionName((content?.collection ?? collection ?? 'logs') as CollectionType)}</span
-      >
+      <span>{getCollectionName((collection ?? 'logs') as CollectionType)}</span>
     </a>
   </div>
 </nav>

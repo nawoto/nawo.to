@@ -21,6 +21,5 @@ const posts = sortArticlesByDate(await getCollection('backtrace'));
     articles={posts}
     getArticleUrl={(_collection, slug) => getBacktraceUrl(getLogSlug(slug))}
     showBorder={true}
-    activeTab="backtrace"
   />
 </Layout>

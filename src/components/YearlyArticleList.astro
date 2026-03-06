@@ -10,10 +10,9 @@ interface Props {
   articles: CollectionEntry<CollectionType>[];
   getArticleUrl: (collection: CollectionType, slug: string) => string;
   showBorder?: boolean;
-  activeTab: 'logs' | 'texts' | 'backtrace';
 }
 
-const { articles, getArticleUrl, showBorder = true, activeTab } = Astro.props;
+const { articles, getArticleUrl, showBorder = true } = Astro.props;
 
 // 記事の抜粋を生成
 const articlesWithExcerpt = await generateArticleExcerpts(articles);
@@ -25,7 +24,7 @@ const articlesByYear = groupArticlesByYear(articlesWithExcerpt);
 const years = getSortedYears(articlesByYear);
 ---
 
-<YearlyViewToggle years={years} activeTab={activeTab} />
+<YearlyViewToggle years={years} />
 
 <!-- Flat View (Default) -->
 <main id="flat-view" class="view-content" role="tabpanel" aria-labelledby="flat-mode">

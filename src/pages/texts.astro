@@ -16,6 +16,5 @@ const texts = sortArticlesByDate(await getCollection('texts'));
     articles={texts}
     getArticleUrl={(_collection, slug) => getTextUrl(slug)}
     showBorder={true}
-    activeTab="texts"
   />
 </Layout>

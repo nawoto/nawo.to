@@ -15,12 +15,7 @@ export async function getStaticPaths() {
     const previousPost = sortedBacktracePosts[index + 1] || undefined;
     const nextPost = sortedBacktracePosts[index - 1] || undefined;
 
-    const fileName = post.slug.replace(/^\d{4}\//, '');
-    const dateMatch = fileName.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
-
-    const urlSlug = dateMatch
-      ? `${dateMatch[1]}/${dateMatch[2]}/${dateMatch[3]}/${dateMatch[4]}`
-      : fileName.toLowerCase();
+    const urlSlug = getLogSlug(post.slug);
 
     return {
       params: { slug: urlSlug },

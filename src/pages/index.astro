@@ -16,6 +16,5 @@ const posts = sortArticlesByDate(await getCollection('logs'));
     articles={posts}
     getArticleUrl={(_collection, slug) => getLogUrl(slug)}
     showBorder={true}
-    activeTab="logs"
   />
 </Layout>
