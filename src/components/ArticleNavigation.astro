@@ -6,7 +6,7 @@ import type { CollectionType } from '../utils/collections';
 interface Props {
   previousPost?: CollectionEntry<CollectionType>;
   nextPost?: CollectionEntry<CollectionType>;
-  collection?: string;
+  collection?: CollectionType;
 }
 
 const { previousPost, nextPost, collection } = Astro.props;
@@ -23,7 +23,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         previousPost ? (
           <a
-            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.slug)}
+            href={getArticleUrl(previousPost.collection, previousPost.slug)}
             title={previousPost.data.title}
             rel="prev"
             class="block"
@@ -43,7 +43,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         nextPost ? (
           <a
-            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.slug)}
+            href={getArticleUrl(nextPost.collection, nextPost.slug)}
             title={nextPost.data.title}
             rel="next"
             class="block"
@@ -65,13 +65,13 @@ const { previousPost, nextPost, collection } = Astro.props;
     class="border-b border-t rounded-b text-center py-3 bg-white hover:bg-gray-50 transition-colors duration-200"
   >
     <a
-      href={getCollectionPath((collection ?? 'logs') as CollectionType)}
+      href={getCollectionPath(collection ?? 'logs')}
       class="inline-block font-mono text-base sm:text-lg text-gray-700 hover:text-green-500 transition-colors duration-200"
-      aria-label={`${getCollectionName((collection ?? 'logs') as CollectionType)}一覧に戻る`}
+      aria-label={`${getCollectionName(collection ?? 'logs')}一覧に戻る`}
       rel="up"
     >
       <span aria-hidden="true">🔙</span>
-      <span>{getCollectionName((collection ?? 'logs') as CollectionType)}</span>
+      <span>{getCollectionName(collection ?? 'logs')}</span>
     </a>
   </div>
 </nav>

@@ -19,6 +19,6 @@ export function getLogSlug(slug: string): string {
     return `${year}/${month}/${day}/${postSlug}`;
   } else {
     // 日付プレフィックスがない場合はそのまま使用
-    return fileName.toLowerCase();
+    return fileName;
   }
 }

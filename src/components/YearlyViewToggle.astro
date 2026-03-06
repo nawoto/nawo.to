@@ -97,10 +97,7 @@ const { years } = Astro.props;
 
       // yearlyモードに切り替えた時は年ジャンプ機能を再初期化
       if (mode === 'yearly') {
-        // DOMの更新を待つ
-        setTimeout(() => {
-          initYearJump();
-        }, 200);
+        initYearJump();
       }
 
       // ローカルストレージに保存（ページ別）
