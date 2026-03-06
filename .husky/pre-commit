@@ -1,3 +1,4 @@
 npm run precommit
 npm run format:fix
+git add -u
 npm run lint:check
