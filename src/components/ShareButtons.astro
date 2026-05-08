@@ -1,5 +1,5 @@
 ---
-import { siX, siFacebook, siHatenabookmark } from 'simple-icons';
+import { siX, siFacebook, siHatenabookmark, siBluesky } from 'simple-icons';
 
 interface Props {
   url: string;
@@ -11,8 +11,20 @@ const { url, title } = Astro.props;
 
 <!-- Share Buttons -->
 <div class="mx-auto max-w-4xl px-4 mb-8 pt-10">
-  <h3 class="text-sm text-gray-400 -mb-10">/** Share **/</h3>
+  <h3 class="text-sm text-gray-400 -mb-10">/** Share and Awesome **/</h3>
   <div class="flex gap-2 items-end">
+    <!-- Bluesky -->
+    <a
+      href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} ${url}`)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Blueskyでシェア"
+      class="hover:opacity-70 transition"
+    >
+      <svg role="img" viewBox="0 0 24 24" class="w-6 h-6" style="color: #0085ff;">
+        <path d={siBluesky.path}></path>
+      </svg>
+    </a>
     <!-- X (Twitter) -->
     <a
       href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`}
