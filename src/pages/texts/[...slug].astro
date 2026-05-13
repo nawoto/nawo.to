@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import type { NavigationPost } from '../../types/index.js';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getTextSlug } from '../../utils/slug';
 
 export async function getStaticPaths() {
   const texts = await getCollection('texts');
@@ -15,33 +16,14 @@ export async function getStaticPaths() {
     const previousText = sortedTexts[index + 1] || null; // より古い記事
     const nextText = sortedTexts[index - 1] || null; // より新しい記事
 
-    // id から年別ディレクトリと日付プレフィックスを削除
-    const slug = text.id
-      .replace(/\.md$/, '')
-      .replace(/^\d{4}\//, '')
-      .replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    const slug = getTextSlug(text.id);
 
-    // NavigationPost型に合わせて構造を修正
     const previousPost: NavigationPost | undefined = previousText
-      ? {
-          slug: previousText.id
-            .replace(/\.md$/, '')
-            .replace(/^\d{4}\//, '')
-            .replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-          collection: 'texts',
-          data: previousText.data,
-        }
+      ? { slug: getTextSlug(previousText.id), collection: 'texts', data: previousText.data }
       : undefined;
 
     const nextPost: NavigationPost | undefined = nextText
-      ? {
-          slug: nextText.id
-            .replace(/\.md$/, '')
-            .replace(/^\d{4}\//, '')
-            .replace(/^\d{4}-\d{2}-\d{2}-/, ''),
-          collection: 'texts',
-          data: nextText.data,
-        }
+      ? { slug: getTextSlug(nextText.id), collection: 'texts', data: nextText.data }
       : undefined;
 
     return {
