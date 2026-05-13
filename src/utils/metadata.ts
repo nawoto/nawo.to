@@ -7,7 +7,7 @@ import { getCollectionPath } from './collections';
 // 記事のメタデータを処理する共通関数
 export function processArticleMetadata(article: CollectionEntry<CollectionType>) {
   const title = article.data.title;
-  const description = article.data.description || generateExcerpt(article.body);
+  const description = article.data.description || generateExcerpt(article.body ?? '');
   const publishedTime = article.data.pubDate.toISOString();
   const modifiedTime =
     'updatedDate' in article.data && article.data.updatedDate

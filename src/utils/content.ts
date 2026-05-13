@@ -94,7 +94,7 @@ export async function generateArticleExcerpts<T extends CollectionEntry<Collecti
 ): Promise<(T & { excerpt: string })[]> {
   return Promise.all(
     articles.map(async (article) => {
-      const excerpt = generateExcerpt(article.body);
+      const excerpt = generateExcerpt(article.body ?? '');
       return {
         ...article,
         excerpt,
