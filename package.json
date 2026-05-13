@@ -37,7 +37,7 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource/titillium-web": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.3.1",
     "astro-seo": "^1.1.0",
     "date-fns": "^4.1.0",
@@ -45,7 +45,7 @@
     "remark-gfm": "^4.0.1",
     "remark-link-card-plus": "^0.7.0",
     "remark-toc": "^9.0.0",
-    "satori": "^0.25.0",
+    "satori": "^0.26.0",
     "simple-icons": "^16.19.0",
     "typescript-eslint": "^8.57.1",
     "unist-util-visit": "^5.0.0"
@@ -63,6 +63,6 @@
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.2.1"
   }
 }
