@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
 import type { WebMention } from '../types/index.js';
 import { getLogUrl, getTextUrl, getBacktraceUrl } from '../utils/url';
+import { getLogSlug } from '../utils/slug';
 
 const token = import.meta.env.WEBMENTION_TOKEN;
 
@@ -31,8 +32,7 @@ const [logs, texts, backtrace] = await Promise.all([
 ]);
 for (const post of logs) titleMap.set(getLogUrl(post.id), post.data.title);
 for (const post of texts) titleMap.set(getTextUrl(post.id), post.data.title);
-// TODO: getLogSlug を通さないと正しい URL にならないため backtrace のタイトル引き当てが機能していない
-for (const post of backtrace) titleMap.set(getBacktraceUrl(post.id), post.data.title);
+for (const post of backtrace) titleMap.set(getBacktraceUrl(getLogSlug(post.id)), post.data.title);
 
 // wm-target でグループ化
 const grouped = new Map<string, WebMention[]>();
