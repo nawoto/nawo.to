@@ -26,9 +26,9 @@ export async function GET(context) {
     items: allContent.map((item) => {
       let link;
       if (item.type === 'logs') {
-        link = `/${getLogSlug(item.slug)}/`;
+        link = `/${getLogSlug(item.id)}/`;
       } else {
-        const slug = getTextSlug(item.slug);
+        const slug = getTextSlug(item.id);
         link = `/texts/${slug}/`;
       }
 

@@ -1,16 +1,17 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const baseSchema = {
   title: z.string(),
-  pubDate: z.date(),
+  pubDate: z.coerce.date(),
   description: z.string().optional(),
-  updatedDate: z.date().optional(),
+  updatedDate: z.coerce.date().optional(),
   ogimage: z.string().optional(),
   tags: z.array(z.string()).optional(),
 };
 
 const logs = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/logs' }),
   schema: z.object({
     ...baseSchema,
     heroImage: z.string().optional(),
@@ -18,15 +19,15 @@ const logs = defineCollection({
 });
 
 const texts = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/texts' }),
   schema: z.object(baseSchema),
 });
 
 const backtrace = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/backtrace' }),
   schema: z.object({
     title: z.string(),
-    pubDate: z.date(),
+    pubDate: z.coerce.date(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
   }),

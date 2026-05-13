@@ -44,7 +44,7 @@ export function generateArticleUrl(
   }
 
   const collectionPath = getCollectionPath(article.collection);
-  return new globalThis.URL(`${collectionPath}/${article.slug}/`, SITE.url).href;
+  return new globalThis.URL(`${collectionPath}/${article.id.replace(/\.md$/, '')}/`, SITE.url).href;
 }
 
 // 記事のページタイトルを生成する共通関数

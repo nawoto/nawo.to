@@ -22,8 +22,7 @@ export interface WebMention {
 // 記事コンテンツの型定義（AstroのCollectionEntryと互換性を保つ）
 export interface ArticleContent {
   id: string;
-  slug: string;
-  body: string;
+  body: string | undefined;
   collection: string;
   data: {
     title: string;
@@ -33,11 +32,6 @@ export interface ArticleContent {
     ogimage?: string;
     tags?: string[];
   };
-  render: () => Promise<{
-    Content: unknown;
-    headings: unknown[];
-    remarkPluginFrontmatter: unknown;
-  }>;
 }
 
 // 前後の記事の型定義

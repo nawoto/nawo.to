@@ -32,13 +32,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.1.5",
+    "@astrojs/partytown": "^2.1.7",
     "@astrojs/react": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/sitemap": "^3.7.2",
     "@fontsource/titillium-web": "^5.2.8",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.14.7",
+    "astro": "^6.3.1",
     "astro-seo": "^1.1.0",
     "date-fns": "^4.1.0",
     "rehype-raw": "^7.0.0",

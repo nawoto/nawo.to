@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { getLogSlug } from '../../utils/slug';
 
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     const previousPost = sortedBacktracePosts[index + 1] || undefined;
     const nextPost = sortedBacktracePosts[index - 1] || undefined;
 
-    const urlSlug = getLogSlug(post.slug);
+    const urlSlug = getLogSlug(post.id);
 
     return {
       params: { slug: urlSlug },
@@ -23,14 +23,14 @@ export async function getStaticPaths() {
         post,
         previousPost: previousPost
           ? {
-              slug: getLogSlug(previousPost.slug),
+              slug: getLogSlug(previousPost.id),
               collection: 'backtrace',
               data: previousPost.data,
             }
           : undefined,
         nextPost: nextPost
           ? {
-              slug: getLogSlug(nextPost.slug),
+              slug: getLogSlug(nextPost.id),
               collection: 'backtrace',
               data: nextPost.data,
             }
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 }
 
 const { post, previousPost, nextPost } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 const shareUrl = `https://nawo.to/backtrace/${Astro.params.slug}`;
 ---
 

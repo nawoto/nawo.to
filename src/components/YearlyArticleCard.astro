@@ -31,11 +31,11 @@ const tags = article.data.tags || [];
         }
       </time>
       <a
-        href={getArticleUrl(article.collection, article.slug)}
+        href={getArticleUrl(article.collection, article.id)}
         class="text-black group-hover:text-green-400 break-words font-mono text-sm sm:text-base transition-colors duration-200"
         itemprop="url headline"
       >
-        {article.data.title || article.slug}
+        {article.data.title || article.id}
       </a>
     </div>
     {

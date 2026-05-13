@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import type { NavigationPost } from '../../types/index.js';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
@@ -15,13 +15,19 @@ export async function getStaticPaths() {
     const previousText = sortedTexts[index + 1] || null; // より古い記事
     const nextText = sortedTexts[index - 1] || null; // より新しい記事
 
-    // slug から年別ディレクトリと日付プレフィックスを削除
-    const slug = text.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    // id から年別ディレクトリと日付プレフィックスを削除
+    const slug = text.id
+      .replace(/\.md$/, '')
+      .replace(/^\d{4}\//, '')
+      .replace(/^\d{4}-\d{2}-\d{2}-/, '');
 
     // NavigationPost型に合わせて構造を修正
     const previousPost: NavigationPost | undefined = previousText
       ? {
-          slug: previousText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+          slug: previousText.id
+            .replace(/\.md$/, '')
+            .replace(/^\d{4}\//, '')
+            .replace(/^\d{4}-\d{2}-\d{2}-/, ''),
           collection: 'texts',
           data: previousText.data,
         }
@@ -29,7 +35,10 @@ export async function getStaticPaths() {
 
     const nextPost: NavigationPost | undefined = nextText
       ? {
-          slug: nextText.slug.replace(/^\d{4}\//, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+          slug: nextText.id
+            .replace(/\.md$/, '')
+            .replace(/^\d{4}\//, '')
+            .replace(/^\d{4}-\d{2}-\d{2}-/, ''),
           collection: 'texts',
           data: nextText.data,
         }
@@ -47,7 +56,7 @@ export async function getStaticPaths() {
 }
 
 const { text, previousPost, nextPost } = Astro.props;
-const { Content } = await text.render();
+const { Content } = await render(text);
 const shareUrl = `https://nawo.to/texts/${Astro.params.slug}`;
 ---
 

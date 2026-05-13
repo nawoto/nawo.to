@@ -20,7 +20,7 @@ type Props = ArticleLayoutProps;
 const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
 const authorName = SITE.author.name;
 
-const currentUrl = shareUrl || new URL(`/${content.collection}/${content.slug}/`, SITE.url).href;
+const currentUrl = shareUrl || new URL(`/${content.collection}/${content.id}/`, SITE.url).href;
 
 // 記事のメタデータを取得
 const metadata = processCompleteArticleMetadata(
