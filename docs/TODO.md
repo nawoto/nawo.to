@@ -22,6 +22,7 @@
 
 - [ ] ESLint/Prettier設定の最適化
 - [ ] テストの実装
+- [ ] `mentions.astro` の backtrace タイトル引き当てバグの修正（`getLogSlug` を通さないと正しい URL にならない）
 
 ### Analytics・監視
 
