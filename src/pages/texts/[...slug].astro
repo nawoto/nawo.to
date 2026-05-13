@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 }
 
 const { text, previousPost, nextPost } = Astro.props;
-const { Content } = await render(text);
+const { Content, headings } = await render(text);
 const shareUrl = `https://nawo.to/texts/${Astro.params.slug}`;
 ---
 
@@ -48,6 +48,7 @@ const shareUrl = `https://nawo.to/texts/${Astro.params.slug}`;
   previousPost={previousPost}
   nextPost={nextPost}
   shareUrl={shareUrl}
+  headings={headings}
 >
   <Content />
 </ArticleLayout>

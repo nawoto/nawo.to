@@ -17,7 +17,8 @@ import { formatDate } from '../utils/content';
 
 type Props = ArticleLayoutProps;
 
-const { title, content, previousPost, nextPost, shareUrl } = Astro.props;
+const { title, content, previousPost, nextPost, shareUrl, headings } = Astro.props;
+const tocHeadings = (headings ?? []).filter((h) => h.depth === 2 || h.depth === 3);
 const authorName = SITE.author.name;
 
 const currentUrl = shareUrl || new URL(`/${content.collection}/${content.id}/`, SITE.url).href;
@@ -106,6 +107,25 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
         </span>
       </div>
     </header>
+
+    {
+      content.data.toc && tocHeadings.length > 0 && (
+        <nav aria-label="目次" class="not-prose mb-8 font-mono text-sm">
+          <p class="mb-1 text-sm text-gray-400">/** toc **/</p>
+          <div class="border border-gray-200 p-4">
+            <ol class="space-y-1">
+              {tocHeadings.map((h) => (
+                <li class={h.depth === 3 ? 'pl-4' : ''}>
+                  <a href={`#${h.slug}`} class="hover:underline text-gray-700">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </nav>
+      )
+    }
 
     <div itemprop="articleBody" class="prose prose-lg max-w-none">
       <slot />

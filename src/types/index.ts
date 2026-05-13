@@ -31,6 +31,7 @@ export interface ArticleContent {
     description?: string;
     ogimage?: string;
     tags?: string[];
+    toc?: boolean;
   };
 }
 
@@ -176,6 +177,7 @@ export interface ArticleLayoutProps {
   previousPost?: NavigationPost;
   nextPost?: NavigationPost;
   shareUrl?: string;
+  headings?: { depth: number; slug: string; text: string }[];
 }
 
 // SEOコンポーネントのProps型定義

@@ -4,6 +4,7 @@ pubDate: 2025-05-24T00:00:00.000Z
 description: おめでとう、自分
 ogimage: '/images/og/opengraph-hbd.png'
 tags: ['birthday', 'personal', 'family']
+toc: true
 ---
 
 おめでとう、自分！！  

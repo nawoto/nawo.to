@@ -8,6 +8,7 @@ const baseSchema = {
   updatedDate: z.coerce.date().optional(),
   ogimage: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  toc: z.boolean().optional(),
 };
 
 const logs = defineCollection({
