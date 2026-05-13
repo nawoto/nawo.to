@@ -31,6 +31,7 @@ const [logs, texts, backtrace] = await Promise.all([
 ]);
 for (const post of logs) titleMap.set(getLogUrl(post.id), post.data.title);
 for (const post of texts) titleMap.set(getTextUrl(post.id), post.data.title);
+// TODO: getLogSlug を通さないと正しい URL にならないため backtrace のタイトル引き当てが機能していない
 for (const post of backtrace) titleMap.set(getBacktraceUrl(post.id), post.data.title);
 
 // wm-target でグループ化
