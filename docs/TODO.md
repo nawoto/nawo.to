@@ -6,10 +6,8 @@
 
 - [x] `[twitter:@username]` 記法の整理（36ファイル） → `[@username](https://twitter.com/username)` に変換
 - [x] `[id:username](url)` 記法の整理（12ファイル） → 実際の hatenablog URL に更新、ursm は 404 のためプレーンテキスト化
-- [ ] `d.hatena.ne.jp/nawoto/` 自サイトリンクの内部リンク化（25ファイル）
-  - `/backtrace/YYYY/slug/` 形式に変換できるものは変換
-- [ ] `d.hatena.ne.jp` 他者リンクの確認（33ファイル）
-  - 基本はそのままでOK
+- [x] `d.hatena.ne.jp/nawoto/` 自サイトリンクの内部リンク化（25ファイル） → entry ID で backtrace ファイルを特定し `/backtrace/YYYY/MM/DD/id/` 形式に変換（archive 検索リンク 1 件は相当する内部ページがないためそのまま）
+- [x] `d.hatena.ne.jp` 他者リンクの確認 → そのまま維持
 
 参考 grep:
 
