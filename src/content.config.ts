@@ -13,10 +13,7 @@ const baseSchema = {
 
 const logs = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/logs' }),
-  schema: z.object({
-    ...baseSchema,
-    heroImage: z.string().optional(),
-  }),
+  schema: z.object(baseSchema),
 });
 
 const texts = defineCollection({
