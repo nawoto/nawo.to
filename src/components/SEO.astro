@@ -1,15 +1,16 @@
 ---
 import { SEO as AstroSEO } from 'astro-seo';
 import { SITE } from '../config.js';
+import type { SEOConfig } from '../types/index.js';
 
 interface Props {
   title: string;
   description?: string;
   canonical?: string;
   charset?: string;
-  openGraph?: Record<string, unknown>;
-  twitter?: Record<string, unknown>;
-  extend?: Record<string, unknown>;
+  openGraph?: SEOConfig['openGraph'];
+  twitter?: SEOConfig['twitter'];
+  extend?: SEOConfig['extend'];
   ogimage?: string;
 }
 
@@ -40,7 +41,7 @@ const finalOpenGraph = openGraph
       ...openGraph,
       basic: {
         ...defaultOpenGraph.basic,
-        ...openGraph?.basic,
+        ...openGraph.basic,
         image: ogImageUrl,
       },
     }

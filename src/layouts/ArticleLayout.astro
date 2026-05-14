@@ -134,9 +134,9 @@ const { blogPostingData, breadcrumbData } = generateArticleStructuredData(
 
   <!-- Navigation -->
   <ArticleNavigation
-    previousPost={previousPost as CollectionEntry<CollectionType> | undefined}
-    nextPost={nextPost as CollectionEntry<CollectionType> | undefined}
-    collection={content.collection}
+    previousPost={previousPost}
+    nextPost={nextPost}
+    collection={content.collection as CollectionType}
   />
 
   <!-- Share Buttons -->

@@ -79,7 +79,7 @@ export const ogImageGenerator = (): AstroIntegration => {
   return {
     name: 'og-image-generator',
     hooks: {
-      'astro:build:done': async ({ routes, logger }) => {
+      'astro:build:done': async ({ pages, dir, logger }) => {
         logger.info('🖼️  Generating OG images after build...');
 
         // フォントとアイコンを一度だけ読み込み（ループ外で最適化）
@@ -91,21 +91,19 @@ export const ogImageGenerator = (): AstroIntegration => {
 
         const defaultOgImagePath = path.resolve(process.cwd(), SITE.ogp.defaultOgImagePath);
 
-        // 対象となるルートコンポーネント
-        const targetComponents = ['src/pages/[...slug].astro', 'src/pages/texts/[...slug].astro'];
-
-        // 全ての生成ページをフラットなリストにする
-        const allPages = routes
-          .filter((route) => targetComponents.some((c) => route.component === c))
-          .flatMap((route) =>
-            route.distURL
-              ? route.distURL.map((url) => ({ component: route.component, distURL: url }))
-              : []
+        // logs: /yyyy/mm/dd/slug/ と texts: /texts/slug/ にマッチするページを対象にする
+        const targetPages = pages.filter((p) => {
+          const pathname = p.pathname;
+          return (
+            /^\/\d{4}\/\d{2}\/\d{2}\/[^/]+\/$/.test(pathname) || /^\/texts\/[^/]+\/$/.test(pathname)
           );
+        });
 
         await Promise.all(
-          allPages.map(async (page) => {
-            const indexHtmlPath = fileURLToPath(page.distURL);
+          targetPages.map(async (page) => {
+            const indexHtmlPath = fileURLToPath(
+              new URL(page.pathname.slice(1) + 'index.html', dir)
+            );
             const pageDir = path.dirname(indexHtmlPath);
             const outputOgPath = path.join(pageDir, 'og.png');
 
@@ -118,7 +116,7 @@ export const ogImageGenerator = (): AstroIntegration => {
               const titleMatch = indexHtml.match(/<title[^>]*>([^<]+)<\/title>/);
 
               if (!titleMatch || !titleMatch[1]) {
-                throw new Error(`Could not find title for page: ${page.component}`);
+                throw new Error(`Could not find title for page: ${page.pathname}`);
               }
               const title = titleMatch[1];
 

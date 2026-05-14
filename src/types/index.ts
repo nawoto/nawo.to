@@ -22,7 +22,7 @@ export interface WebMention {
 // 記事コンテンツの型定義（AstroのCollectionEntryと互換性を保つ）
 export interface ArticleContent {
   id: string;
-  body: string | undefined;
+  body?: string;
   collection: string;
   data: {
     title: string;
@@ -69,7 +69,7 @@ export interface SEOConfig {
     };
   };
   twitter?: {
-    card?: string;
+    card?: 'summary' | 'summary_large_image' | 'app' | 'player';
     site?: string;
     creator?: string;
     title?: string;

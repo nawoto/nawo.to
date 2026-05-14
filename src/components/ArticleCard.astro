@@ -13,7 +13,7 @@ interface Props {
 const { article, excerpt, url, showBorder = true } = Astro.props;
 
 const title = article.data.title || article.id;
-const description = getDescription(article.data.description, excerpt);
+const description = getDescription(article.data.description, excerpt ?? '');
 const borderClass = showBorder ? 'border-y border-solid' : '';
 const tags = article.data.tags || [];
 ---

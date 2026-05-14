@@ -28,7 +28,7 @@ export function generateBasicSEO(title: string, description: string, url: string
       },
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary_large_image' as const,
       site: `@${SITE.social.twitter}`,
       creator: `@${SITE.social.twitter}`,
       title,

@@ -2,38 +2,7 @@ import { SITE } from '../config.js';
 import type { BaseStructuredData, BlogPostingData, BreadcrumbData, PersonData } from '../types';
 
 // WebSite構造化データ
-export function generateWebSiteStructuredData(): BaseStructuredData & {
-  '@type': 'WebSite';
-  name: string;
-  description: string;
-  url: string;
-  author: {
-    '@type': 'Person';
-    name: string;
-    url: string;
-  };
-  publisher: {
-    '@type': 'Organization';
-    name: string;
-    description: string;
-    url: string;
-    logo: {
-      '@type': 'ImageObject';
-      url: string;
-      width: number;
-      height: number;
-    };
-    sameAs: string[];
-  };
-  potentialAction: {
-    '@type': 'SearchAction';
-    target: {
-      '@type': 'EntryPoint';
-      urlTemplate: string;
-    };
-    'query-input': string;
-  };
-} {
+export function generateWebSiteStructuredData(): BaseStructuredData & Record<string, unknown> {
   const socialLinks = [
     `https://twitter.com/${SITE.social.twitter}`,
     `https://github.com/${SITE.social.github}/`,
@@ -80,9 +49,9 @@ export function generateWebSiteStructuredData(): BaseStructuredData & {
 }
 
 // Person構造化データ
-export function generatePersonStructuredData(data: PersonData): BaseStructuredData & {
-  '@type': 'Person';
-} & PersonData {
+export function generatePersonStructuredData(
+  data: PersonData
+): BaseStructuredData & Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -91,9 +60,9 @@ export function generatePersonStructuredData(data: PersonData): BaseStructuredDa
 }
 
 // BlogPosting構造化データ
-export function generateBlogPostingStructuredData(data: BlogPostingData): BaseStructuredData & {
-  '@type': 'BlogPosting';
-} & BlogPostingData {
+export function generateBlogPostingStructuredData(
+  data: BlogPostingData
+): BaseStructuredData & Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -102,9 +71,9 @@ export function generateBlogPostingStructuredData(data: BlogPostingData): BaseSt
 }
 
 // BreadcrumbList構造化データ
-export function generateBreadcrumbStructuredData(data: BreadcrumbData): BaseStructuredData & {
-  '@type': 'BreadcrumbList';
-} & BreadcrumbData {
+export function generateBreadcrumbStructuredData(
+  data: BreadcrumbData
+): BaseStructuredData & Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

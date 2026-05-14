@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import { getArticleUrl, getCollectionPath, getCollectionName } from '../utils/collections';
 import type { CollectionType } from '../utils/collections';
+import type { NavigationPost } from '../types/index.js';
 
 interface Props {
-  previousPost?: CollectionEntry<CollectionType>;
-  nextPost?: CollectionEntry<CollectionType>;
+  previousPost?: NavigationPost;
+  nextPost?: NavigationPost;
   collection?: CollectionType;
 }
 
@@ -23,7 +23,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         previousPost ? (
           <a
-            href={getArticleUrl(previousPost.collection, previousPost.slug)}
+            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.slug)}
             title={previousPost.data.title}
             rel="prev"
             class="block"
@@ -43,7 +43,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         nextPost ? (
           <a
-            href={getArticleUrl(nextPost.collection, nextPost.slug)}
+            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.slug)}
             title={nextPost.data.title}
             rel="next"
             class="block"

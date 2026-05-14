@@ -22,7 +22,7 @@ const articlesWithExcerpt = await generateArticleExcerpts(articles);
       <ArticleCard
         article={article}
         excerpt={article.excerpt}
-        url={getArticleUrl(article.collection, article.slug)}
+        url={getArticleUrl(article.collection, article.id)}
         showBorder={showBorder}
       />
     ))
