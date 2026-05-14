@@ -4,10 +4,8 @@
 
 ### はてな記法の残存チェック（backtrace 移行後対応）
 
-- [ ] `[twitter:@username]` 記法の整理（36ファイル）
-  - `@username` テキストまたは通常リンクに変換
-- [ ] `[id:username](url)` 記法の整理（12ファイル）
-  - リンクとしては機能しているが見た目が古い
+- [x] `[twitter:@username]` 記法の整理（36ファイル） → `[@username](https://twitter.com/username)` に変換
+- [x] `[id:username](url)` 記法の整理（12ファイル） → 実際の hatenablog URL に更新、ursm は 404 のためプレーンテキスト化
 - [ ] `d.hatena.ne.jp/nawoto/` 自サイトリンクの内部リンク化（25ファイル）
   - `/backtrace/YYYY/slug/` 形式に変換できるものは変換
 - [ ] `d.hatena.ne.jp` 他者リンクの確認（33ファイル）
