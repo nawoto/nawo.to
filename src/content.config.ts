@@ -23,12 +23,7 @@ const texts = defineCollection({
 
 const backtrace = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/backtrace' }),
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.coerce.date(),
-    description: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-  }),
+  schema: z.object(baseSchema),
 });
 
 export const collections = {

@@ -1,7 +1,8 @@
 ---
 title: '📚 Welcome Back to Backtrace - はてなアーカイブ'
 description: 'はてなから移行した過去の記事の一覧'
-pubDate: 2025-07-10
+pubDate: 2025-07-10T00:00:00+09:00
+updatedDate: 2026-05-15T00:00:00+09:00
 tags: ['archive', 'hatena', 'backtrace']
 ---
 
@@ -23,6 +24,14 @@ tags: ['archive', 'hatena', 'backtrace']
 - **画像、コメント**: エイヤっと移行したため、正しく表示されない場合があります
 - **見た目**: レイアウトは大幅に変更されています
 - **はてな記法**: はてな記法からMarkdown記法への変換で一部不自然な表現になっている場合があります
+
+#### 2026-05-15 updated
+
+はてな記法の一部を対応しました。
+
+- `[twitter:@username]` → `[@username](https://twitter.com/username)` (36 files)
+- `[id:username]` → hatenablog URLs (12 files)
+- `d.hatena.ne.jp/nawoto/` → internal links (25 files)
 
 ### 内容に関する注意
 
