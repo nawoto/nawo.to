@@ -27,26 +27,12 @@ if (params.help || args.length === 0) {
   --title <タイトル>     記事タイトル
   --description <説明>   記事の説明
   --template <テンプレート> テンプレート名
-  --idea                 ネタストック一覧表示
   --with-images          記事ディレクトリに images フォルダも作成
   --help                 このヘルプを表示
 
 例:
   node scripts/new-article.js --slug switch2-unboxing --type logs --title "Switch2開封記"
-  node scripts/new-article.js --idea
 `);
-  process.exit(0);
-}
-
-// ネタストック一覧表示
-if (params.idea) {
-  const ideasPath = path.join(process.cwd(), 'docs', 'content-ideas.md');
-  if (fs.existsSync(ideasPath)) {
-    console.log('📝 ネタストック一覧:');
-    console.log(fs.readFileSync(ideasPath, 'utf8'));
-  } else {
-    console.log('❌ docs/content-ideas.md が見つかりません');
-  }
   process.exit(0);
 }
 
@@ -157,7 +143,3 @@ if (params['with-images']) {
     console.log(`📁 記事用画像フォルダは既に存在します: ${articleImagesDir}`);
   }
 }
-
-// ネタストックの更新提案
-console.log('\n💡 ネタストックを更新することをお忘れなく！');
-console.log('docs/content-ideas.md で完了したネタにチェックを入れてください。');

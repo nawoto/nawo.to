@@ -34,8 +34,7 @@
 │   ├── pages/      # ルーティングの心臓部
 │   └── styles/     # CSSとか
 ├── docs/           # プロジェクトドキュメント
-│   ├── TODO.md     # タスク管理
-│   └── content-ideas.md # 記事ネタストック
+│   └── TODO.md     # タスク管理
 ├── package.json
 └── ...and more!
 ```
@@ -102,17 +101,12 @@ node scripts/new-article.js --slug my-article
   → 記事の説明を指定
 - `--with-images`  
   → 記事ディレクトリに `images` フォルダも同時に作成
-- `--idea`  
-  → ネタストック一覧を表示
 - `--help`  
   → ヘルプを表示
 
 #### 例
 
 ```sh
-# ネタストック一覧表示
-node scripts/new-article.js --idea
-
 # ブログ記事（今日の日付で作成）
 node scripts/new-article.js --slug hello-world
 
