@@ -102,6 +102,8 @@ node scripts/new-article.js --slug my-article
   → 記事の説明を指定
 - `--with-images`  
   → 記事ディレクトリに `images` フォルダも同時に作成
+- `--draft`  
+  → 下書きとして作成（`draft: true` を frontmatter に追加）
 - `--help`  
   → ヘルプを表示
 
@@ -119,6 +121,9 @@ node scripts/new-article.js --slug new-family --date 2024-07-19
 
 # テキスト記事（タイトルと説明付き）
 node scripts/new-article.js --slug agile-ai-coaching --type texts --title "アジャイルコーチと生成AI" --description "アジャイルコーチが生成AIをどう活用しているか"
+
+# 下書きとして作成
+node scripts/new-article.js --slug wip-article --draft
 ```
 
 ---
