@@ -28,6 +28,7 @@ if (params.help || args.length === 0) {
   --description <説明>   記事の説明
   --template <テンプレート> テンプレート名
   --with-images          記事ディレクトリに images フォルダも作成
+  --draft                下書きとして作成 (draft: true)
   --help                 このヘルプを表示
 
 例:
@@ -84,13 +85,14 @@ if (fs.existsSync(filepath)) {
 // テンプレート選択
 const title = params.title || 'タイトルを入力';
 const description = params.description || '';
+const draftLine = params.draft ? '\ndraft: true' : '';
 
 let template = '';
 if (type === 'texts') {
   template = `---
 title: "${title}"
 pubDate: ${dateTime}
-description: "${description}"
+description: "${description}"${draftLine}
 ---
 
 ## はじめに
@@ -114,7 +116,7 @@ description: "${description}"
   template = `---
 title: "${title}"
 pubDate: ${dateTime}
-description: "${description}"
+description: "${description}"${draftLine}
 ---
 
 ここに本文を書いてください。
