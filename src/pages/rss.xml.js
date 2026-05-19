@@ -4,8 +4,8 @@ import { SITE } from '../config';
 import { getTextSlug, getLogSlug } from '../utils/slug';
 
 export async function GET(context) {
-  const posts = await getCollection('logs');
-  const texts = await getCollection('texts');
+  const posts = await getCollection('logs', (entry) => !entry.data.draft);
+  const texts = await getCollection('texts', (entry) => !entry.data.draft);
 
   // 投稿と記事を統合してソート
   const allContent = [

@@ -9,6 +9,7 @@ const baseSchema = {
   ogimage: z.string().optional(),
   tags: z.array(z.string()).optional(),
   toc: z.boolean().optional(),
+  draft: z.boolean().optional(),
 };
 
 const logs = defineCollection({

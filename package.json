@@ -24,6 +24,7 @@
     "generate-og-images": "node scripts/generate-og-images-astro.js",
     "generate-backtrace-og": "node scripts/generate-backtrace-og.js",
     "new-article": "node scripts/new-article.js",
+    "drafts": "node scripts/list-drafts.js",
     "deploy": "npm run build && npx gh-pages -d dist --dotfiles",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

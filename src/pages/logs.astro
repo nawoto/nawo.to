@@ -7,7 +7,9 @@ import YearlyArticleList from '../components/YearlyArticleList.astro';
 import { sortArticlesByDate } from '../utils/content';
 import { getLogUrl } from '../utils/url';
 
-const posts = sortArticlesByDate(await getCollection('logs'));
+const posts = sortArticlesByDate(
+  await getCollection('logs', (entry) => import.meta.env.DEV || !entry.data.draft)
+);
 ---
 
 <Layout title={`LOGS | ${SITE.title}`}>

@@ -4,7 +4,10 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { getLogSlug } from '../utils/slug';
 
 export async function getStaticPaths() {
-  const logsPosts = await getCollection('logs');
+  const logsPosts = await getCollection(
+    'logs',
+    (entry) => import.meta.env.DEV || !entry.data.draft
+  );
 
   // 公開日順にソート（新しい記事が前に来るように）
   const sortedLogsPosts = logsPosts.sort(

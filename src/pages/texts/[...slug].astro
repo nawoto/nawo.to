@@ -5,7 +5,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { getTextSlug } from '../../utils/slug';
 
 export async function getStaticPaths() {
-  const texts = await getCollection('texts');
+  const texts = await getCollection('texts', (entry) => import.meta.env.DEV || !entry.data.draft);
 
   // 公開日順にソート（新しい記事が前に来るように）
   const sortedTexts = texts.sort(
