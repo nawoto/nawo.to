@@ -12,6 +12,7 @@ import {
   DEFAULT_PERSON_DATA,
 } from '../data/structured-data-generators.js';
 import BookCard from '../components/BookCard.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 import { generateProfileSEO } from '../utils/seo';
 
 const pageTitle = `About | ${SITE.title}`;
@@ -48,6 +49,10 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
 
     <!-- Person Schema.org JSON-LD -->
     <StructuredData data={personStructuredData} />
+
+    <!-- Applause Button -->
+    <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css" />
+    <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
   </head>
   <body class="mx-auto max-w-(--breakpoint-xl)">
     <Header title="readme" textColor="uppercase text-gray-500" showLink={false} />
@@ -218,7 +223,7 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
         <div class="text-sm">
           <p class="py-2">2005年からアジャイルなソフトウェア開発を実践。</p>
           <p class="py-2">
-            エクストリーム・プログラミングとの出会いと株式会社永和システムマネジメントでチーム開発を経験して以来、「アジャイルな開発を通じて、ビジネスとともに成長できるような良いチームを増やしたい」という想いで日々奮闘中。
+            エクストリーム・プログラミングとの出会いと株式会社永和システムマネジメントでアジャイルな開発を経験して以来、「アジャイルな開発を通じて、ビジネスとともに成長できるような良いチームを増やしたい」という想いで日々奮闘中。
           </p>
           <p class="py-2" itemprop="description">
             <a href="#agile-samurai-ja" class="link"> 書籍 『アジャイルサムライ』 </a>
@@ -486,6 +491,8 @@ const personStructuredData = generatePersonStructuredData(DEFAULT_PERSON_DATA);
         </div>
       </section>
     </article>
+
+    <ShareButtons url={shareUrl} title={pageTitle} />
 
     <h3 class="text-sm text-gray-400">/** Comments **/</h3>
     <Comments />
