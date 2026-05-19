@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 
 const CONTENT_DIRS = [
   { dir: 'src/content/logs', type: 'logs' },
@@ -54,9 +55,23 @@ if (drafts.length === 0) {
   process.exit(0);
 }
 
+const openIndex = process.argv[2] ? parseInt(process.argv[2], 10) : null;
+
+if (openIndex !== null) {
+  if (isNaN(openIndex) || openIndex < 1 || openIndex > drafts.length) {
+    console.error(`エラー: 1〜${drafts.length} の番号を指定してください`);
+    process.exit(1);
+  }
+  const { filepath } = drafts[openIndex - 1];
+  const absPath = path.resolve(filepath);
+  execSync(`emacsclient -n ${absPath}`);
+  console.log(`📂 ${absPath}`);
+  process.exit(0);
+}
+
 console.log(`\n📝 下書き記事一覧 (${drafts.length}件)\n`);
-for (const { type, title, pubDate, filepath } of drafts) {
+for (const [i, { type, title, pubDate, filepath }] of drafts.entries()) {
   const date = pubDate ? pubDate.slice(0, 10) : '日付なし';
-  console.log(`  [${type}] ${date} ${title}`);
-  console.log(`         ${filepath}\n`);
+  console.log(`  ${i + 1}. [${type}] ${date} ${title}`);
+  console.log(`     ${filepath}\n`);
 }
