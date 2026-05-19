@@ -30,10 +30,18 @@ node scripts/new-article.js --slug <slug>
 node scripts/new-article.js --slug <slug> --type texts
 
 # オプション
-# --title "タイトル" --description "説明" --date YYYY-MM-DD --with-images
+# --title "タイトル" --description "説明" --date YYYY-MM-DD --with-images --draft
+
+# 下書き一覧表示
+npm run drafts
+
+# 下書きを番号指定で Emacs で開く
+npm run drafts -- 1
 ```
 
 Frontmatter の必須フィールド: `title`, `pubDate`
+
+下書き記事は `draft: true` を frontmatter に追加。本番ビルドでは除外され、開発サーバーでは表示される。
 
 ## コーディング規約
 
