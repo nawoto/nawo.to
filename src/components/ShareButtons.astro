@@ -4,13 +4,14 @@ import { siX, siFacebook, siHatenabookmark, siBluesky } from 'simple-icons';
 interface Props {
   url: string;
   title: string;
+  class?: string;
 }
 
-const { url, title } = Astro.props;
+const { url, title, class: className = 'mx-auto max-w-4xl px-4 mb-8 pt-10' } = Astro.props;
 ---
 
 <!-- Share Buttons -->
-<div class="mx-auto max-w-4xl px-4 mb-8 pt-10">
+<div class={className}>
   <h3 class="text-sm text-gray-400 -mb-10">/** Share and Awesome **/</h3>
   <div class="flex gap-2 items-end">
     <!-- Bluesky -->
