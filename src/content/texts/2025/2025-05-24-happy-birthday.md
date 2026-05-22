@@ -1,6 +1,6 @@
 ---
 title: 誕生日🎂🎉
-pubDate: 2025-05-24T00:00:00.000Z
+pubDate: 2026-05-24T00:00:00.000Z
 description: おめでとう、自分
 ogimage: '/images/og/opengraph-hbd.png'
 tags: ['birthday', 'personal', 'family']
@@ -20,6 +20,20 @@ https://amzn.to/happy_birthday_nawoto
 自分は Wish List が面倒になってきているので、こんな風にお祝いしています。
 
 https://nawo.to/2022/05/20/wishlist-isnot-offen-used
+
+## 2026-05-24
+
+今年も無事に年齢を重ねました。🎂
+
+あいかわらず娘ズの育児が中心の一年だったと思う。😊
+
+下の子も幼児に突入したので、家の中がさらに賑やか(大変)ではあるが、二人とも元気そうで良き良き。👧👧
+
+自分としては、約 3 年所属した東急を離れる決断をしたのが、一番の大きな変化かなー。😌
+
+https://nawo.to/2026/05/21/last-day-at-work/
+
+7月からは新しい環境になるので、この一年は、まぁ自分のペースで健やかに過ごしていこうと思う。🌱
 
 ## 2025-05-24
 
