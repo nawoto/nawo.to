@@ -2,10 +2,11 @@
 title: '最終出社'
 pubDate: 2026-05-21T10:00:00+09:00
 description: '新たな旅路に向かう記録'
-draft: true
 ---
 
 今日が最終出社日だった。🙂
+
+https://www.instagram.com/p/DYl_cMmyQGC/
 
 (正確には 6 月末で退社。)
 
