@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.7",
-    "@astrojs/react": "^5.0.4",
+    "@astrojs/react": "^5.0.5",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource/titillium-web": "^5.2.8",
