@@ -3,6 +3,7 @@ title: 誕生日🎂🎉
 pubDate: 2026-05-24T00:00:00.000Z
 description: おめでとう、自分
 ogimage: '/images/og/opengraph-hbd.png'
+rssGuid: 'https://nawo.to/texts/happy-birthday/#2026-05-24'
 tags: ['birthday', 'personal', 'family']
 toc: true
 ---

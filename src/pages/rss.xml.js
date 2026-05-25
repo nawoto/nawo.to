@@ -38,6 +38,7 @@ export async function GET(context) {
         description: item.data.description,
         content: item.body,
         link: link,
+        ...(item.data.rssGuid ? { customData: `<guid>${item.data.rssGuid}</guid>` } : {}),
       };
     }),
   });

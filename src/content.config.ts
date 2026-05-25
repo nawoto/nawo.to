@@ -10,6 +10,7 @@ const baseSchema = {
   tags: z.array(z.string()).optional(),
   toc: z.boolean().optional(),
   draft: z.boolean().optional(),
+  rssGuid: z.string().optional(),
 };
 
 const logs = defineCollection({
