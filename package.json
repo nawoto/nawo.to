@@ -48,7 +48,7 @@
     "remark-link-card-plus": "^0.7.0",
     "remark-toc": "^9.0.0",
     "satori": "^0.26.0",
-    "simple-icons": "^16.19.0",
+    "simple-icons": "^16.21.0",
     "typescript-eslint": "^8.57.1",
     "unist-util-visit": "^5.0.0"
   },
