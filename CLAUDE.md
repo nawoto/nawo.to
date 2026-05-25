@@ -43,6 +43,12 @@ Frontmatter の必須フィールド: `title`, `pubDate`
 
 下書き記事は `draft: true` を frontmatter に追加。本番ビルドでは除外され、開発サーバーでは表示される。
 
+毎年更新する記事（例: 誕生日記事）は `rssGuid` を frontmatter に設定すると、RSS リーダーが別アイテムとして認識して新着配信される。更新時は年の部分を変える。
+
+```yaml
+rssGuid: 'https://nawo.to/texts/happy-birthday/#2026-05-24'
+```
+
 ## コーディング規約
 
 - フォーマッターは **Prettier**。コード変更後は `npm run format` を実行。
