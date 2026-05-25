@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { marked } from 'marked';
 import { SITE } from '../config';
 import { getTextSlug, getLogSlug } from '../utils/slug';
 
@@ -36,7 +37,7 @@ export async function GET(context) {
         title: item.data.title,
         pubDate: item.data.pubDate,
         description: item.data.description,
-        content: item.body,
+        content: marked(item.body ?? ''),
         link: link,
         ...(item.data.rssGuid ? { customData: `<guid>${item.data.rssGuid}</guid>` } : {}),
       };
