@@ -19,11 +19,11 @@ export async function getStaticPaths() {
     const slug = getTextSlug(text.id);
 
     const previousPost: NavigationPost | undefined = previousText
-      ? { slug: getTextSlug(previousText.id), collection: 'texts', data: previousText.data }
+      ? { id: previousText.id, collection: 'texts', data: previousText.data }
       : undefined;
 
     const nextPost: NavigationPost | undefined = nextText
-      ? { slug: getTextSlug(nextText.id), collection: 'texts', data: nextText.data }
+      ? { id: nextText.id, collection: 'texts', data: nextText.data }
       : undefined;
 
     return {

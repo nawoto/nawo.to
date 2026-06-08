@@ -23,14 +23,14 @@ export async function getStaticPaths() {
         post,
         previousPost: previousPost
           ? {
-              slug: getLogSlug(previousPost.id),
+              id: previousPost.id,
               collection: 'backtrace',
               data: previousPost.data,
             }
           : undefined,
         nextPost: nextPost
           ? {
-              slug: getLogSlug(nextPost.id),
+              id: nextPost.id,
               collection: 'backtrace',
               data: nextPost.data,
             }

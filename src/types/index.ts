@@ -37,7 +37,7 @@ export interface ArticleContent {
 
 // 前後の記事の型定義
 export interface NavigationPost {
-  slug: string;
+  id: string;
   collection: string;
   data: {
     title: string;

@@ -1,5 +1,6 @@
 ---
-import { getArticleUrl, getCollectionPath, getCollectionName } from '../utils/collections';
+import { getArticleUrl } from '../utils/url';
+import { getCollectionPath, getCollectionName } from '../utils/collections';
 import type { CollectionType } from '../utils/collections';
 import type { NavigationPost } from '../types/index.js';
 
@@ -23,7 +24,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         previousPost ? (
           <a
-            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.slug)}
+            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.id)}
             title={previousPost.data.title}
             rel="prev"
             class="block"
@@ -43,7 +44,7 @@ const { previousPost, nextPost, collection } = Astro.props;
       {
         nextPost ? (
           <a
-            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.slug)}
+            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.id)}
             title={nextPost.data.title}
             rel="next"
             class="block"

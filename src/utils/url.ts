@@ -1,17 +1,24 @@
 import { getLogSlug, getTextSlug } from './slug';
+import type { CollectionType } from './collections';
 
 // logs用URL生成
-export function getLogUrl(slug: string): string {
-  return `/${getLogSlug(slug)}/`;
+export function getLogUrl(id: string): string {
+  return `/${getLogSlug(id)}/`;
 }
 
 // texts用URL生成
-export function getTextUrl(slug: string): string {
-  return `/texts/${getTextSlug(slug)}/`;
+export function getTextUrl(id: string): string {
+  return `/texts/${getTextSlug(id)}/`;
 }
 
 // backtrace用URL生成
-export function getBacktraceUrl(slug: string): string {
-  // slugは "2012/03/26/1332726969" のような形式で渡る前提
-  return `/backtrace/${slug}/`;
+export function getBacktraceUrl(id: string): string {
+  return `/backtrace/${getLogSlug(id)}/`;
+}
+
+// コレクション + ID からURL生成
+export function getArticleUrl(collection: CollectionType, id: string): string {
+  if (collection === 'backtrace') return getBacktraceUrl(id);
+  if (collection === 'texts') return getTextUrl(id);
+  return getLogUrl(id);
 }
