@@ -15,7 +15,7 @@ interface Props {
 const { articles, getArticleUrl, showBorder = true } = Astro.props;
 
 // 記事の抜粋を生成
-const articlesWithExcerpt = await generateArticleExcerpts(articles);
+const articlesWithExcerpt = generateArticleExcerpts(articles);
 
 // 記事を年別にグループ化
 const articlesByYear = groupArticlesByYear(articlesWithExcerpt);

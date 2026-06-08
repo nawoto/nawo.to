@@ -24,6 +24,11 @@ export const SITE = {
       { href: '/mentions', label: '#mentions' },
     ],
   },
+  // --- WebMention設定 ---
+  webmention: {
+    endpoint: 'https://webmention.io/nawo.to/webmention',
+    pingback: 'https://webmention.io/nawo.to/xmlrpc',
+  },
   // --- アフィリエイト設定 ---
   affiliate: {
     amazon: 'nawoto07-22',

@@ -10,7 +10,7 @@ export function generateWebSiteStructuredData(): BaseStructuredData & Record<str
     `https://www.instagram.com/${SITE.social.instagram}/`,
     `https://www.facebook.com/${SITE.social.facebook}`,
     `https://www.amazon.co.jp/~/e/${SITE.social.amazon}`,
-    `https://bsky.app/profile/nawo.to`,
+    `https://bsky.app/profile/${SITE.social.bluesky}`,
   ];
 
   return {
@@ -36,14 +36,6 @@ export function generateWebSiteStructuredData(): BaseStructuredData & Record<str
         height: 512,
       },
       sameAs: socialLinks,
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE.url}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
     },
   };
 }

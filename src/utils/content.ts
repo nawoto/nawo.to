@@ -40,13 +40,11 @@ export function generateExcerpt(content: string, maxLength: number = 140): strin
  * @returns フォーマットされた日付文字列
  */
 export function formatDate(date: Date): string {
-  return date
-    .toLocaleDateString('ja-JP', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    })
-    .replace(/\//g, '/');
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
 }
 
 /**
@@ -89,16 +87,11 @@ export function getSortedYears(articlesByYear: Record<number, unknown[]>): numbe
 }
 
 // 記事の抜粋を生成する共通関数
-export async function generateArticleExcerpts<T extends CollectionEntry<CollectionType>>(
+export function generateArticleExcerpts<T extends CollectionEntry<CollectionType>>(
   articles: T[]
-): Promise<(T & { excerpt: string })[]> {
-  return Promise.all(
-    articles.map(async (article) => {
-      const excerpt = generateExcerpt(article.body ?? '');
-      return {
-        ...article,
-        excerpt,
-      };
-    })
-  );
+): (T & { excerpt: string })[] {
+  return articles.map((article) => ({
+    ...article,
+    excerpt: generateExcerpt(article.body ?? ''),
+  }));
 }
