@@ -1,7 +1,4 @@
-import type { CollectionEntry } from 'astro:content';
 import { SITE } from '../config';
-import { processArticleMetadata } from './metadata';
-import type { CollectionType } from './collections';
 
 // 基本的なSEO設定を生成する共通関数
 export function generateBasicSEO(title: string, description: string, url: string, image?: string) {
@@ -66,30 +63,6 @@ export function generateBasicSEO(title: string, description: string, url: string
         { rel: 'alternate', type: 'application/rss+xml', title: SITE.title, href: '/rss.xml' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/images/site-icon.png' },
-      ],
-    },
-  };
-}
-
-// 記事用のSEO設定を生成する共通関数
-export function generateArticleSEO(article: CollectionEntry<CollectionType>, url: string) {
-  const metadata = processArticleMetadata(article);
-  const title = `${article.data.title} | ${SITE.title}`;
-
-  const basicSEO = generateBasicSEO(title, metadata.description, url, metadata.ogImageUrl);
-
-  return {
-    ...basicSEO,
-    extend: {
-      ...basicSEO.extend,
-      meta: [
-        ...basicSEO.extend.meta,
-        { property: 'article:published_time', content: metadata.publishedTime },
-        ...(metadata.modifiedTime !== metadata.publishedTime
-          ? [{ property: 'article:modified_time', content: metadata.modifiedTime }]
-          : []),
-        { property: 'article:author', content: SITE.author.name },
-        { property: 'article:section', content: 'Technology' },
       ],
     },
   };
