@@ -16,13 +16,13 @@ https://tabelog.com/tokyo/A1311/A131102/13034746/
 今回は、ランチメニューのステーキとハンバーグのセット。
 大変美味しくいただきました。😄
 
-https://www.instagram.com/nawoto/p/DZJrcgmS9aw/
+https://www.instagram.com/p/DZJrcgmS9aw/
 
 ### その後
 
 X とかで閉店したというのが流れてきたので、数日後、店の前に行ってみると…
 
-https://www.instagram.com/nawoto/p/DZKlM3Dyr3M/
+https://www.instagram.com/p/DZKlM3Dyr3M/
 
 ちょうど食べに行ったその日が最終営業日だったとのこと。
 長い間、やられていたお店なので残念。お疲れさまでした。🙏
