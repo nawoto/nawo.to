@@ -1,6 +1,7 @@
 ---
 title: '水槽のある暮らし'
 pubDate: 2026-06-09
+updatedDate: 2026-07-01
 description: '我が家のアクアリウム、試行錯誤の記録。随時更新中。'
 toc: true
 ---

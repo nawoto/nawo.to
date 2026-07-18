@@ -18,7 +18,11 @@ export async function GET(context) {
       ...text,
       type: 'texts',
     })),
-  ].sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+  ].sort(
+    (a, b) =>
+      new Date(b.data.updatedDate ?? b.data.pubDate) -
+      new Date(a.data.updatedDate ?? a.data.pubDate)
+  );
 
   return rss({
     title: SITE.title,
@@ -35,7 +39,7 @@ export async function GET(context) {
 
       return {
         title: item.data.title,
-        pubDate: item.data.pubDate,
+        pubDate: item.data.updatedDate ?? item.data.pubDate,
         description: item.data.description,
         content: marked(item.body ?? ''),
         link: link,
