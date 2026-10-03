@@ -21,17 +21,13 @@ const defaultDescriptions = {
 
 <div class="mt-4">
   <div class="tab-container">
-    {
-      tabs.map((tab) => (
-        <a
-          href={tab.href}
-          class={`tab ${activeTab === tab.id ? 'active' : ''}`}
-          aria-current={activeTab === tab.id ? 'page' : undefined}
-        >
-          {tab.label}
-        </a>
-      ))
-    }
+    {tabs.map((tab) => <a
+      href={tab.href}
+      class={`tab ${activeTab === tab.id ? 'active' : ''}`}
+      aria-current={activeTab === tab.id ? 'page' : undefined}
+    >
+      {tab.label}
+    </a>)}
   </div>
   <p
     class="text-sm text-gray-500 text-left pl-4 mt-2"

@@ -18,15 +18,19 @@ const { years } = Astro.props;
         class="view-mode-btn active px-3 py-1 rounded-sm border"
         role="tab"
         aria-selected="true"
-        aria-controls="flat-view">flat</button
+        aria-controls="flat-view"
       >
+        flat
+      </button>
       <button
         id="yearly-mode"
         class="view-mode-btn px-3 py-1 rounded-sm border"
         role="tab"
         aria-selected="false"
-        aria-controls="yearly-view">yearly</button
+        aria-controls="yearly-view"
       >
+        yearly
+      </button>
     </div>
   </div>
 </nav>
@@ -38,17 +42,13 @@ const { years } = Astro.props;
   >
     <span class="whitespace-nowrap">jump to year:</span>
     <div class="flex flex-wrap gap-2">
-      {
-        years.map((year) => (
-          <button
-            class="year-jump-btn px-2 py-1 rounded-sm border hover:bg-gray-100 transition-colors"
-            data-year={year}
-            aria-label={`${year}年の記事にジャンプ`}
-          >
-            {year}
-          </button>
-        ))
-      }
+      {years.map((year) => <button
+        class="year-jump-btn px-2 py-1 rounded-sm border hover:bg-gray-100 transition-colors"
+        data-year={year}
+        aria-label={`${year}年の記事にジャンプ`}
+      >
+        {year}
+      </button>)}
     </div>
   </div>
 </nav>

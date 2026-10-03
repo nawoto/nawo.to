@@ -21,44 +21,36 @@ const { previousPost, nextPost, collection } = Astro.props;
     role="list"
   >
     <li class="hover-style p-3" role="listitem">
-      {
-        previousPost ? (
-          <a
-            href={getArticleUrl(previousPost.collection as CollectionType, previousPost.id)}
-            title={previousPost.data.title}
-            rel="prev"
-            class="block"
-            aria-label={`前の記事: ${previousPost.data.title}`}
-          >
-            prev
-            <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
-          </a>
-        ) : (
-          <span class="text-gray-400" aria-label="前の記事はありません">
-            prev
-          </span>
-        )
-      }
+      {previousPost ? (
+        <a
+          href={getArticleUrl(previousPost.collection as CollectionType, previousPost.id)}
+          title={previousPost.data.title}
+          rel="prev"
+          class="block"
+          aria-label={`前の記事: ${previousPost.data.title}`}
+        >
+          prev
+          <div class="text-xs text-gray-500 mt-1">{previousPost.data.title}</div>
+        </a>
+      ) : (
+        <span class="text-gray-400" aria-label="前の記事はありません"> prev </span>
+      )}
     </li>
     <li class="hover-style p-3" role="listitem">
-      {
-        nextPost ? (
-          <a
-            href={getArticleUrl(nextPost.collection as CollectionType, nextPost.id)}
-            title={nextPost.data.title}
-            rel="next"
-            class="block"
-            aria-label={`次の記事: ${nextPost.data.title}`}
-          >
-            next
-            <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
-          </a>
-        ) : (
-          <span class="text-gray-400" aria-label="次の記事はありません">
-            next
-          </span>
-        )
-      }
+      {nextPost ? (
+        <a
+          href={getArticleUrl(nextPost.collection as CollectionType, nextPost.id)}
+          title={nextPost.data.title}
+          rel="next"
+          class="block"
+          aria-label={`次の記事: ${nextPost.data.title}`}
+        >
+          next
+          <div class="text-xs text-gray-500 mt-1">{nextPost.data.title}</div>
+        </a>
+      ) : (
+        <span class="text-gray-400" aria-label="次の記事はありません"> next </span>
+      )}
     </li>
   </ul>
   <!-- 2段目: BACK TO XXX -->

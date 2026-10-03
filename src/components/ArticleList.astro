@@ -16,15 +16,13 @@ const { articles, getArticleUrl, showBorder = true } = Astro.props;
 const articlesWithExcerpt = generateArticleExcerpts(articles);
 ---
 
-<ol style="list-style: none;">
-  {
-    articlesWithExcerpt.map((article) => (
-      <ArticleCard
-        article={article}
-        excerpt={article.excerpt}
-        url={getArticleUrl(article.collection, article.id)}
-        showBorder={showBorder}
-      />
-    ))
-  }
+<ol style="list-style: none">
+  {articlesWithExcerpt.map((article) => (
+    <ArticleCard
+      article={article}
+      excerpt={article.excerpt}
+      url={getArticleUrl(article.collection, article.id)}
+      showBorder={showBorder}
+    />
+  ))}
 </ol>

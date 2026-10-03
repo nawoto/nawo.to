@@ -28,38 +28,34 @@ const likes: WebMention[] = mentions.filter(
 <div>
   <div>
     {likes.length === 0 ? <span class="text-gray-500 block text-left">No Webmention</span> : null}
-    {
-      likes.map((author: WebMention) => (
-        <div class="py-1 text-lg md:flex">
-          <p class="flex">
-            <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
-              <img
-                alt={author.author?.name}
-                src={author.author?.photo}
-                loading="lazy"
-                class="z-index overflow-hidden rounded-lg"
-                width="30"
-                height="30"
-              />
-            </a>
-            <span class="px-1 underline decoration-gray-400">
-              <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
-                {author.author?.name}
-              </a>
-            </span>
-          </p>
-          <p>
-            <a
-              href={author['wm-source']}
-              class="underline decoration-gray-400"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              liked this
-            </a>
-          </p>
-        </div>
-      ))
-    }
+    {likes.map((author: WebMention) => <div class="py-1 text-lg md:flex">
+      <p class="flex">
+        <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
+          <img
+            alt={author.author?.name}
+            src={author.author?.photo}
+            loading="lazy"
+            class="z-index overflow-hidden rounded-lg"
+            width="30"
+            height="30"
+          />
+        </a>
+        <span class="px-1 underline decoration-gray-400">
+          <a href={author.author?.url} target="_blank" rel="noopener noreferrer">
+            {author.author?.name}
+          </a>
+        </span>
+      </p>
+      <p>
+        <a
+          href={author['wm-source']}
+          class="underline decoration-gray-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          liked this
+        </a>
+      </p>
+    </div>)}
   </div>
 </div>

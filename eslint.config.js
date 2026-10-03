@@ -10,7 +10,6 @@ export default tsEslint.config(
   ...tsEslint.configs.recommended,
   ...eslintPluginAstro.configs['flat/recommended'],
 
-  eslintConfigPrettier,
   {
     languageOptions: {
       globals: {
@@ -22,10 +21,9 @@ export default tsEslint.config(
       'no-console': 'off',
       'no-debugger': 'error',
       'no-alert': 'error',
-      'no-multiple-empty-lines': ['error', { max: 2 }],
-      'no-trailing-spaces': 'error',
-      'eol-last': 'error',
       '@typescript-eslint/no-unused-vars': 'off',
     },
-  }
+  },
+  // Let Prettier own formatting, including whitespace in embedded Astro styles.
+  eslintConfigPrettier
 );

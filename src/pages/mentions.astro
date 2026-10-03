@@ -91,57 +91,53 @@ function getTypeEmoji(property: string): string {
     {mentions.length === 0 && <p class="text-gray-500">// No webmentions yet.</p>}
 
     <ul class="space-y-8">
-      {
-        sortedGroups.map(([target, items]) => {
-          const path = getPath(target);
-          const title = titleMap.get(path || '');
-          return (
-            <li class="border-t border-gray-200 pt-6">
-              <div class="mb-3">
-                <a href={target} class="text-sm font-bold hover:underline break-all">
-                  {path}
+      {sortedGroups.map(([target, items]) => {
+        const path = getPath(target);
+        const title = titleMap.get(path || '');
+        return <li class="border-t border-gray-200 pt-6">
+          <div class="mb-3">
+            <a href={target} class="text-sm font-bold hover:underline break-all">
+              {path}
+            </a>
+            {title && <p class="text-xs text-gray-500 mt-0.5">「{title}」</p>}
+          </div>
+          <ul class="flex flex-wrap gap-4">
+            {items.map((m) => {
+              const sourceUrl = m.url || m['wm-source'];
+              const emoji = getTypeEmoji(m['wm-property']);
+              return <li class="flex items-center">
+                <a
+                  href={sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`${m.author?.name || 'anonymous'} (${sourceUrl})`}
+                  class="relative block"
+                >
+                  {m.author?.photo ? (
+                    <img
+                      src={m.author.photo}
+                      alt={m.author.name}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      class="rounded-full overflow-hidden hover:opacity-80 transition-opacity"
+                    />
+                  ) : (
+                    <div
+                      class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-lg"
+                    >
+                      ?
+                    </div>
+                  )}
+                  <span class="absolute -bottom-1 -right-1 text-xs leading-none">
+                    {emoji}
+                  </span>
                 </a>
-                {title && <p class="text-xs text-gray-500 mt-0.5">「{title}」</p>}
-              </div>
-              <ul class="flex flex-wrap gap-4">
-                {items.map((m) => {
-                  const sourceUrl = m.url || m['wm-source'];
-                  const emoji = getTypeEmoji(m['wm-property']);
-                  return (
-                    <li class="flex items-center">
-                      <a
-                        href={sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`${m.author?.name || 'anonymous'} (${sourceUrl})`}
-                        class="relative block"
-                      >
-                        {m.author?.photo ? (
-                          <img
-                            src={m.author.photo}
-                            alt={m.author.name}
-                            width="40"
-                            height="40"
-                            loading="lazy"
-                            class="rounded-full overflow-hidden hover:opacity-80 transition-opacity"
-                          />
-                        ) : (
-                          <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-lg">
-                            ?
-                          </div>
-                        )}
-                        <span class="absolute -bottom-1 -right-1 text-xs leading-none">
-                          {emoji}
-                        </span>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-          );
-        })
-      }
+              </li>;
+            })}
+          </ul>
+        </li>;
+      })}
     </ul>
   </div>
 </Layout>
