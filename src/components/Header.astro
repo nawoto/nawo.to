@@ -18,22 +18,18 @@ const { title = SITE.title, textColor = '', showLink = true } = Astro.props;
   </div>
   <nav>
     <ul class="grid grid-cols-3 divide-x text-center text-lg uppercase">
-      {
-        SITE.navigation.items.map((item, index) => {
-          const isFirst = index === 0;
-          const isLast = index === SITE.navigation.items.length - 1;
-          const isSecond = index === 1;
-          const isThird = index === 2;
+      {SITE.navigation.items.map((item, index) => {
+        const isFirst = index === 0;
+        const isLast = index === SITE.navigation.items.length - 1;
+        const isSecond = index === 1;
+        const isThird = index === 2;
 
-          return (
-            <li
-              class={`hover-style ${isFirst || isSecond ? 'border-y' : ''} ${isThird || isLast ? 'border-b md:border-y' : ''}`}
-            >
-              <a href={item.href}>{item.label}</a>
-            </li>
-          );
-        })
-      }
+        return <li
+          class={`hover-style ${isFirst || isSecond ? 'border-y' : ''} ${isThird || isLast ? 'border-b md:border-y' : ''}`}
+        >
+          <a href={item.href}>{item.label}</a>
+        </li>;
+      })}
     </ul>
   </nav>
 </header>

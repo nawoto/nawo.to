@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 import { remarkAmazonCard } from './scripts/remark-amazon-card.js';
@@ -16,33 +17,37 @@ import tailwind from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nawo.to',
+  // Preserve Astro 6's whitespace handling between inline elements.
+  compressHTML: true,
   integrations: [sitemap(), partytown(), react()],
   vite: {
     plugins: [tailwind()],
   },
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
-      remarkYoutubeEmbed,
-      remarkInstagramEmbed,
-      remarkBookCard,
-      [
-        remarkLinkCardPlus,
-        {
-          excludeDomains: [
-            'youtube.com',
-            'www.youtube.com',
-            'youtu.be',
-            'instagram.com',
-            'www.instagram.com',
-          ],
-          // キャッシュを無効化して新しいOG画像URLを取得
-          cache: false,
-        },
+    processor: unified({
+      remarkPlugins: [
+        remarkToc,
+        [remarkAmazonCard, { affiliateTag: SITE.affiliate.amazon }],
+        remarkYoutubeEmbed,
+        remarkInstagramEmbed,
+        remarkBookCard,
+        [
+          remarkLinkCardPlus,
+          {
+            excludeDomains: [
+              'youtube.com',
+              'www.youtube.com',
+              'youtu.be',
+              'instagram.com',
+              'www.instagram.com',
+            ],
+            // キャッシュを無効化して新しいOG画像URLを取得
+            cache: false,
+          },
+        ],
       ],
-    ],
-    rehypePlugins: [rehypeRaw],
+      rehypePlugins: [rehypeRaw],
+    }),
   },
   trailingSlash: 'ignore',
 });

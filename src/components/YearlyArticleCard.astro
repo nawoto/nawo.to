@@ -23,12 +23,10 @@ const tags = article.data.tags || [];
         datetime={article.data.pubDate.toISOString()}
         itemprop="datePublished"
       >
-        {
-          article.data.pubDate.toLocaleDateString('ja-JP', {
-            month: '2-digit',
-            day: '2-digit',
-          })
-        }
+        {article.data.pubDate.toLocaleDateString('ja-JP', {
+          month: '2-digit',
+          day: '2-digit',
+        })}
       </time>
       <a
         href={getArticleUrl(article.collection, article.id)}
@@ -38,16 +36,12 @@ const tags = article.data.tags || [];
         {article.data.title || article.id}
       </a>
     </div>
-    {
-      tags.length > 0 && (
-        <div class="flex flex-wrap gap-1">
-          {tags.map((tag: string) => (
-            <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-sm border">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )
-    }
+    {tags.length > 0 && <div class="flex flex-wrap gap-1">
+      {tags.map((tag: string) => <span
+        class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-sm border"
+      >
+        {tag}
+      </span>)}
+    </div>}
   </div>
 </article>

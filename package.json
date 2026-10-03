@@ -5,6 +5,9 @@
   "license": "MIT",
   "author": "西村直人 (Naoto Nishimura)",
   "homepage": "https://nawo.to",
+  "engines": {
+    "node": "^22.22.3 || ^24.16.0 || >=26.3.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -33,6 +36,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/partytown": "^2.1.7",
     "@astrojs/react": "^6.0.5",
     "@astrojs/rss": "^4.0.19",
@@ -53,6 +57,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^26.6.0",
@@ -65,6 +70,7 @@
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
     "sharp": "^0.35.2",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   }
 }
