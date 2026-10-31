@@ -22,6 +22,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Diagnostic audit and formatting preview
+        run: |
+          npm audit --json > /tmp/npm-audit.json || true
+          node -e 'const a=require("/tmp/npm-audit.json"); console.log("AUDIT SUMMARY",JSON.stringify(a.metadata?.vulnerabilities)); for (const [name,v] of Object.entries(a.vulnerabilities||{})) { if (v.severity === "high" || v.severity === "critical") console.log("AUDIT HIGH",JSON.stringify({name,severity:v.severity,via:v.via,range:v.range,fixAvailable:v.fixAvailable})); }'
+          npx prettier --write src/layouts/ArticleLayout.astro src/pages/404.astro
+          git diff -- src/layouts/ArticleLayout.astro src/pages/404.astro
+
       - name: Check code formatting
         run: npm run format:check
 
