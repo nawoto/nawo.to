@@ -22,13 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Diagnostic dependency security fixes
-        run: |
-          npm audit fix --package-lock-only --ignore-scripts || true
-          node -e 'const fs=require("fs"),cp=require("child_process");const b=JSON.parse(cp.execFileSync("git",["show","HEAD:package-lock.json"],{encoding:"utf8"})),a=JSON.parse(fs.readFileSync("package-lock.json","utf8"));const set={};for(const [k,v] of Object.entries(a.packages)){if(JSON.stringify(v)!==JSON.stringify(b.packages[k]))set[k]=v;}const del=Object.keys(b.packages).filter(k=>!(k in a.packages));console.log("LOCKFIX_DELTA",JSON.stringify({set,del}));'
-          npm audit --json > /tmp/npm-audit-after.json || true
-          node -e 'const a=require("/tmp/npm-audit-after.json");console.log("AUDIT AFTER",JSON.stringify(a.metadata?.vulnerabilities));'
-          git diff -- package.json
+      - name: Audit high-severity dependency vulnerabilities
+        run: npm audit --audit-level=high
 
       - name: Check code formatting
         run: npm run format:check
