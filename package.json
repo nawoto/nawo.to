@@ -6,7 +6,7 @@
   "author": "西村直人 (Naoto Nishimura)",
   "homepage": "https://nawo.to",
   "engines": {
-    "node": "^22.22.3 || ^24.16.0 || >=26.3.0"
+    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
   },
   "scripts": {
     "dev": "astro dev",
