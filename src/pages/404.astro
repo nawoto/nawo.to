@@ -22,60 +22,60 @@ import { SITE } from '../config';
   </div>
   <style>
     .star-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    pointer-events: none;
-    background: #111;
-  }
-  .star {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.95;
-    box-shadow:
-      0 0 16px 8px #fff,
-      0 0 32px 16px #fff4;
-    animation: twinkle 2.5s infinite alternate;
-  }
-  @keyframes twinkle {
-    0% {
-      opacity: 0.5;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      background: #111;
     }
-    100% {
-      opacity: 1;
+    .star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.95;
+      box-shadow:
+        0 0 16px 8px #fff,
+        0 0 32px 16px #fff4;
+      animation: twinkle 2.5s infinite alternate;
     }
-  }
-  .shooting-star {
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, #fff, transparent);
-    opacity: 0.8;
-    border-radius: 2px;
-    transform: rotate(-20deg);
-    animation: shooting 1.2s linear infinite;
-  }
-  @keyframes shooting {
-    0% {
-      opacity: 0;
-      transform: translate(0, 0) rotate(-20deg) scaleX(0.5);
+    @keyframes twinkle {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
     }
-    10% {
-      opacity: 1;
-      transform: translate(0, 0) rotate(-20deg) scaleX(1);
+    .shooting-star {
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, #fff, transparent);
+      opacity: 0.8;
+      border-radius: 2px;
+      transform: rotate(-20deg);
+      animation: shooting 1.2s linear infinite;
     }
-    80% {
-      opacity: 1;
-      transform: translate(220px, 60px) rotate(-20deg) scaleX(1);
+    @keyframes shooting {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-20deg) scaleX(0.5);
+      }
+      10% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-20deg) scaleX(1);
+      }
+      80% {
+        opacity: 1;
+        transform: translate(220px, 60px) rotate(-20deg) scaleX(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(300px, 80px) rotate(-20deg) scaleX(0.5);
+      }
     }
-    100% {
-      opacity: 0;
-      transform: translate(300px, 80px) rotate(-20deg) scaleX(0.5);
-    }
-  }
   </style>
   <main class="container mx-auto px-4 py-16 max-w-4xl text-center relative z-20">
     <div class="text-7xl md:text-9xl mb-6">🧑‍🚀 404 🪐</div>

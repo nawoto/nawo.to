@@ -13,6 +13,10 @@ updates:
       prefix: 'chore'
       prefix-development: 'chore'
       include: 'scope'
+    ignore:
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       npm-dependencies:
         patterns:
